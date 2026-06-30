@@ -23,7 +23,7 @@
 ```
 app/
   main.py            FastAPI 엔트리
-  config.py          .env 설정(LLM provider/키/경로)
+  config.py          .env 설정(제미나이 키/경로)
   core/              llm·embeddings·vectorstore·json_parse 팩토리
   rag/               retriever(메타필터) · ingest(배치)
   tools/             congestion · events  (실시간, RAG 아님)
@@ -42,7 +42,7 @@ cd /Users/seodonghwi/Desktop/lewisai
 source .venv/bin/activate
 pip install -r requirements.txt
 
-cp .env.example .env          # ← LLM_API_KEY / SEOUL_API_KEY 입력
+cp .env.example .env          # ← GOOGLE_API_KEY / SEOUL_API_KEY 입력
 
 # 1) 데이터 export (strangemap TS → data/raw/*.json). 샘플 4개가 이미 있어 생략 가능.
 node scripts/export_data.mjs
@@ -61,8 +61,7 @@ curl -s localhost:8800/agent/place_intro -H 'content-type: application/json' \
   -d '{"place":"남산공원","lat":37.5512,"lng":126.9882}' | jq
 ```
 
-## LLM 공급자 전환 (`.env` 의 `LLM_PROVIDER`)
-- `nim` / `local` / `openai`: OpenAI 호환 → `LLM_BASE_URL`·`LLM_API_KEY`·`LLM_MODEL`.
-- `gemini`: 네이티브 → `GOOGLE_API_KEY`·`GEMINI_MODEL`.
+## LLM / 임베딩
+- 챗 모델·임베딩 모두 제미나이(`langchain-google-genai`) 고정. `.env`의 `GOOGLE_API_KEY`·`GEMINI_MODEL` 설정.
 
 > 임베딩 모델을 바꾸면(`EMBEDDING_MODEL`) 전체 재인제스트 필요.

@@ -13,7 +13,7 @@
 2. **실시간 데이터는 `app/tools/` 에만.** 혼잡도(citydata_ppltn)·행사(culturalEventInfo)는 절대 벡터DB(`app/rag/ingest.py`)에 인제스트하지 말 것. 초단위로 변한다.
 3. **벡터DB에는 잘 안 변하는 컨텐츠만** (장소 서사, 코스 노하우, 큐레이션 글).
 4. **응답 JSON 계약 동결.** `AIPlaceInfo`, `Suggestion[]` 등 서울로 프론트 스키마를 깨지 말 것 (UI 재작업 0이 목표).
-5. **API 키는 `.env` 만.** 코드 하드코딩 금지. (루트 `main.py` 의 하드코딩 NIM 키는 데모 잔재 — 따라하지 말 것.)
+5. **API 키는 `.env` 만.** 코드 하드코딩 금지.
 6. **화이트리스트 강제.** recommend/course 는 LLM 응답 장소가 RAG 후보 목록에 있을 때만 채택(환각 차단). 실패 시 mock 폴백.
 
 ## 메타데이터 규약 (Chroma payload)

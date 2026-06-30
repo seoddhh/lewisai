@@ -9,14 +9,8 @@ httpx>=0.27
 # --- LangChain / RAG ---
 langchain>=0.3
 langchain-core>=0.3
-langchain-community>=0.3
-langchain-openai>=0.2          # NIM / 로컬 OpenAI 호환 / Gemini(OpenAI 호환) LLM
-langchain-google-genai>=2.0    # (선택) Gemini 네이티브
-langchain-huggingface>=0.1     # 로컬 임베딩
+langchain-google-genai>=2.0    # Gemini 챗 모델 + 임베딩
 langchain-chroma>=0.1
 
 # --- Vector DB (Chroma = sqlite 백엔드) ---
 chromadb>=0.5
-
-# --- 임베딩 모델 런타임 ---
-sentence-transformers>=3.0
