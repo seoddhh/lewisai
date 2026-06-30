@@ -1,0 +1,912 @@
+[
+  {
+    "areaName": "남산공원",
+    "displayName": "남산공원",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5512,
+    "lng": 126.9882,
+    "description": "서울 도심 한복판의 산으로, N서울타워와 숲길 산책로를 품고 있어 사계절 시민들이 즐겨 찾는 휴식처예요.",
+    "place": "중구 남산동"
+  },
+  {
+    "areaName": "서울숲공원",
+    "displayName": "서울숲",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5444,
+    "lng": 127.0374,
+    "description": "성수동에 자리한 대형 도시공원으로, 사슴방사장과 너른 잔디밭·산책로가 있어 가족·연인 나들이로 인기예요.",
+    "place": "성동구 성수동"
+  },
+  {
+    "areaName": "청계산",
+    "displayName": "청계산",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 5,
+      "end": 20
+    },
+    "lat": 37.4419,
+    "lng": 127.0534,
+    "description": "서초구와 과천에 걸친 산으로, 완만한 등산로 덕에 초보자도 오르기 좋은 서울 근교 인기 산행 코스예요.",
+    "place": "서초구 원지동"
+  },
+  {
+    "areaName": "아차산",
+    "displayName": "아차산",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 5,
+      "end": 20
+    },
+    "lat": 37.5524,
+    "lng": 127.1014,
+    "description": "광진구 한강변의 낮은 산으로, 정상에서 한강과 서울 전경이 한눈에 내려다보여 일출·트레킹 명소로 꼽혀요.",
+    "place": "광진구 광장동"
+  },
+  {
+    "areaName": "올림픽공원",
+    "displayName": "올림픽공원",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 5,
+      "end": 22
+    },
+    "lat": 37.521,
+    "lng": 127.1198,
+    "description": "88올림픽을 기념해 조성된 송파구 대형 공원으로, 넓은 잔디광장과 조각·호수, 공연장이 어우러진 복합 문화공간이에요.",
+    "place": "송파구 방이동"
+  },
+  {
+    "areaName": "서울대공원",
+    "displayName": "서울대공원",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "lat": 37.4303,
+    "lng": 127.0081,
+    "description": "과천에 있는 대규모 테마파크로, 동물원·식물원과 놀이공원이 함께 있어 아이와 함께하는 나들이 코스로 좋아요.",
+    "place": "과천시 막계동"
+  },
+  {
+    "areaName": "보라매공원",
+    "displayName": "보라매공원",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.4918,
+    "lng": 126.9179,
+    "description": "동작구를 대표하는 시민공원으로, 운동시설과 산책로·잔디밭이 잘 갖춰져 일상 운동과 휴식을 즐기기 좋은 곳이에요.",
+    "place": "동작구 신대방동"
+  },
+  {
+    "areaName": "월드컵공원",
+    "displayName": "월드컵공원",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5686,
+    "lng": 126.897,
+    "description": "상암동에 조성된 대형 생태공원으로, 억새로 유명한 하늘공원과 노을공원에서 서울 도심과 한강 노을을 감상할 수 있어요.",
+    "place": "마포구 상암동"
+  },
+  {
+    "areaName": "안양천",
+    "displayName": "안양천",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5271,
+    "lng": 126.871,
+    "description": "영등포를 흐르는 하천변 공원으로, 자전거길과 조깅 코스가 잘 정비돼 있고 봄이면 벚꽃과 유채가 만발해요.",
+    "place": "영등포구 당산동"
+  },
+  {
+    "areaName": "서울식물원·마곡나루역",
+    "displayName": "서울식물원",
+    "category": "공원·자연",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "lat": 37.5685,
+    "lng": 126.83,
+    "description": "강서구 마곡에 자리한 도시형 식물원으로, 대형 온실과 호수·야외 정원을 갖춰 사계절 식물을 감상하며 산책하기 좋아요.",
+    "place": "강서구 마곡동"
+  },
+  {
+    "areaName": "여의도한강공원",
+    "displayName": "여의도한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5284,
+    "lng": 126.9331,
+    "description": "서울을 대표하는 한강공원으로, 너른 잔디광장과 물빛광장이 있어 피크닉·벚꽃축제·불꽃놀이 명소로 사랑받아요.",
+    "place": "영등포구 여의도동"
+  },
+  {
+    "areaName": "반포한강공원",
+    "displayName": "반포한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5102,
+    "lng": 126.9995,
+    "description": "서초구 한강변 공원으로, 밤이면 반포대교 달빛무지개분수가 펼쳐져 서울을 대표하는 야경 데이트 명소로 꼽혀요.",
+    "place": "서초구 반포동"
+  },
+  {
+    "areaName": "뚝섬한강공원",
+    "displayName": "뚝섬한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5296,
+    "lng": 127.0686,
+    "description": "광진구에 있는 한강공원으로, 수영장·자전거 코스와 자벌레 전망쉼터를 갖춰 물놀이와 레저를 즐기기 좋아요.",
+    "place": "광진구 자양동"
+  },
+  {
+    "areaName": "망원한강공원",
+    "displayName": "망원한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5551,
+    "lng": 126.8998,
+    "description": "마포구 망원동에 자리한 한강공원으로, 돗자리 펴기 좋은 잔디밭과 노을 풍경 덕에 감성 피크닉 장소로 인기예요.",
+    "place": "마포구 망원동"
+  },
+  {
+    "areaName": "잠실한강공원",
+    "displayName": "잠실한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5152,
+    "lng": 127.0739,
+    "description": "송파구 한강변 공원으로, 석촌호수·롯데월드타워와 가까워 자전거 라이딩과 야경 산책을 함께 즐기기 좋아요.",
+    "place": "송파구 잠실동"
+  },
+  {
+    "areaName": "이촌한강공원",
+    "displayName": "이촌한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5183,
+    "lng": 126.9714,
+    "description": "용산구 한강변 공원으로, 국립중앙박물관·이촌역과 인접해 접근성이 좋고 한적하게 산책하기 좋은 곳이에요.",
+    "place": "용산구 이촌동"
+  },
+  {
+    "areaName": "난지한강공원",
+    "displayName": "난지한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5695,
+    "lng": 126.8861,
+    "description": "상암동 한강변 공원으로, 캠핑장과 수상레저 시설을 갖춰 도심 속에서 캠핑과 물놀이를 함께 즐길 수 있어요.",
+    "place": "마포구 상암동"
+  },
+  {
+    "areaName": "양화한강공원",
+    "displayName": "양화한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5456,
+    "lng": 126.9022,
+    "description": "영등포 양평동 한강변 공원으로, 생태공원 선유도와 이어져 한강 드라이브와 야경 산책 코스로 좋아요.",
+    "place": "영등포구 양평동"
+  },
+  {
+    "areaName": "강서한강공원",
+    "displayName": "강서한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.573,
+    "lng": 126.8236,
+    "description": "강서구 염창동에 있는 한강공원으로, 김포공항과 가깝고 한적해 여유롭게 자연을 즐기기 좋은 숨은 명소예요.",
+    "place": "강서구 염창동"
+  },
+  {
+    "areaName": "광나루한강공원",
+    "displayName": "광나루한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5487,
+    "lng": 127.0938,
+    "description": "광진구 한강 상류에 자리한 공원으로, 아차산 자락과 어우러진 너른 잔디밭에서 가족 피크닉을 즐기기 좋아요.",
+    "place": "광진구 광장동"
+  },
+  {
+    "areaName": "잠원한강공원",
+    "displayName": "잠원한강공원",
+    "category": "한강",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "lat": 37.5121,
+    "lng": 127.0016,
+    "description": "서초구 잠원동 한강변 공원으로, 비교적 한적한 산책로와 자전거길을 갖춰 조용히 한강을 즐기기 좋아요.",
+    "place": "서초구 잠원동"
+  },
+  {
+    "areaName": "경복궁",
+    "displayName": "경복궁",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "lat": 37.5796,
+    "lng": 126.977,
+    "description": "조선 왕조의 법궁으로, 웅장한 근정전과 경회루를 둘러볼 수 있고 한복을 입으면 무료로 입장할 수 있어요.",
+    "place": "종로구 세종로"
+  },
+  {
+    "areaName": "창덕궁·종묘",
+    "displayName": "창덕궁·종묘",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "lat": 37.5796,
+    "lng": 126.9893,
+    "description": "자연과 어우러진 후원으로 유명한 창덕궁과 조선 왕실 사당 종묘가 함께 있는 유네스코 세계문화유산이에요.",
+    "place": "종로구 와룡동"
+  },
+  {
+    "areaName": "광화문·덕수궁",
+    "displayName": "광화문·덕수궁",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 9,
+      "end": 21
+    },
+    "lat": 37.572,
+    "lng": 126.9769,
+    "description": "광화문광장과 덕수궁 돌담길이 어우러진 서울의 중심으로, 조선 궁궐과 현대 도심 풍경을 함께 즐길 수 있어요.",
+    "place": "종로구 세종로"
+  },
+  {
+    "areaName": "북촌한옥마을",
+    "displayName": "북촌한옥마을",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 7,
+      "end": 22
+    },
+    "lat": 37.5827,
+    "lng": 126.9843,
+    "description": "경복궁과 창덕궁 사이 언덕에 전통 한옥이 모여 있는 마을로, 골목마다 고즈넉한 정취와 서울 전경을 감상할 수 있어요.",
+    "place": "종로구 가회동"
+  },
+  {
+    "areaName": "인사동",
+    "displayName": "인사동",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 10,
+      "end": 22
+    },
+    "lat": 37.5744,
+    "lng": 126.9855,
+    "description": "전통 공예품 가게와 갤러리·찻집이 모여 있는 문화 거리로, 한국적인 기념품과 전통문화를 만끽하기 좋아요.",
+    "place": "종로구 인사동"
+  },
+  {
+    "areaName": "서촌",
+    "displayName": "서촌마을",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 9,
+      "end": 22
+    },
+    "lat": 37.578,
+    "lng": 126.9697,
+    "description": "경복궁 서쪽에 자리한 동네로, 옛 정취가 남은 골목과 개성 있는 카페·서점이 어우러져 조용히 걷기 좋아요.",
+    "place": "종로구 체부동"
+  },
+  {
+    "areaName": "익선동",
+    "displayName": "익선동",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 10,
+      "end": 23
+    },
+    "lat": 37.5742,
+    "lng": 126.9986,
+    "description": "오래된 한옥을 개조한 카페와 식당이 골목을 가득 채운 곳으로, 레트로 감성의 데이트·맛집 탐방지로 인기예요.",
+    "place": "종로구 익선동"
+  },
+  {
+    "areaName": "남대문시장",
+    "displayName": "남대문시장",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 9,
+      "end": 23
+    },
+    "lat": 37.5579,
+    "lng": 126.9753,
+    "description": "600여 년 역사를 가진 서울 최대 규모의 전통시장으로, 의류·잡화부터 먹거리까지 없는 게 없는 활기찬 시장이에요.",
+    "place": "중구 남창동"
+  },
+  {
+    "areaName": "혜화역",
+    "displayName": "대학로·혜화",
+    "category": "관광·역사",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "lat": 37.5822,
+    "lng": 127.0018,
+    "description": "소극장과 공연장이 밀집한 공연문화의 중심지로, 연극·뮤지컬을 즐기는 젊은이들로 늘 활기가 넘쳐요.",
+    "place": "종로구 혜화동"
+  },
+  {
+    "areaName": "강남 MICE 관광특구",
+    "displayName": "강남 코엑스",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 24
+    },
+    "lat": 37.5012,
+    "lng": 127.0396,
+    "description": "삼성동에 자리한 대형 복합공간으로, 코엑스몰·별마당도서관과 비즈니스 시설이 모여 있는 강남의 랜드마크예요.",
+    "place": "강남구 삼성동"
+  },
+  {
+    "areaName": "홍대 관광특구",
+    "displayName": "홍대",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "lat": 37.5563,
+    "lng": 126.9225,
+    "description": "젊음과 예술의 거리로, 개성 있는 상점과 클럽·버스킹 공연이 어우러져 밤낮없이 활기가 넘치는 번화가예요.",
+    "place": "마포구 서교동"
+  },
+  {
+    "areaName": "명동 관광특구",
+    "displayName": "명동",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 23
+    },
+    "lat": 37.5635,
+    "lng": 126.9858,
+    "description": "쇼핑과 길거리 음식의 천국으로, 화장품·패션 매장과 먹거리가 가득해 국내외 관광객이 가장 많이 찾는 상권이에요.",
+    "place": "중구 명동"
+  },
+  {
+    "areaName": "이태원 관광특구",
+    "displayName": "이태원",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "lat": 37.534,
+    "lng": 126.994,
+    "description": "다양한 나라의 음식점과 이국적인 상점이 모인 글로벌 문화 특구로, 세계 각국의 분위기를 한곳에서 즐길 수 있어요.",
+    "place": "용산구 이태원동"
+  },
+  {
+    "areaName": "잠실 관광특구",
+    "displayName": "잠실",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 23
+    },
+    "lat": 37.5115,
+    "lng": 127.098,
+    "description": "롯데월드와 롯데월드타워·스타필드가 모인 송파구 대표 상권으로, 쇼핑·놀이·전망을 한번에 즐길 수 있어요.",
+    "place": "송파구 잠실동"
+  },
+  {
+    "areaName": "동대문 관광특구",
+    "displayName": "동대문",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "lat": 37.5665,
+    "lng": 127.009,
+    "description": "대형 쇼핑몰과 DDP·재래시장이 어우러진 패션의 메카로, 밤새 문을 여는 의류 상가로 유명해요.",
+    "place": "중구 을지로6가"
+  },
+  {
+    "areaName": "강남역",
+    "displayName": "강남역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 24
+    },
+    "lat": 37.4979,
+    "lng": 127.0276,
+    "description": "서울 최대 유동인구를 자랑하는 번화가로, 대형 쇼핑몰과 맛집·카페·학원이 밀집해 늘 사람들로 붐벼요.",
+    "place": "강남구 역삼동"
+  },
+  {
+    "areaName": "건대입구역",
+    "displayName": "건대입구",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "lat": 37.5403,
+    "lng": 127.0693,
+    "description": "건국대 앞 대학가 번화가로, 먹자골목과 카페·클럽이 모여 있어 젊은이들의 만남과 놀이 장소로 인기예요.",
+    "place": "광진구 화양동"
+  },
+  {
+    "areaName": "왕십리역",
+    "displayName": "왕십리",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 24
+    },
+    "lat": 37.5613,
+    "lng": 127.0374,
+    "description": "성동구 교통 중심지로, 대형 쇼핑몰과 맛집이 밀집해 쇼핑과 식사를 한번에 해결하기 좋은 생활 상권이에요.",
+    "place": "성동구 행당동"
+  },
+  {
+    "areaName": "합정역",
+    "displayName": "합정",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "lat": 37.5498,
+    "lng": 126.9143,
+    "description": "한강과 가까운 마포구 번화가로, 감성 카페와 레스토랑·서점이 모여 있어 데이트와 산책을 즐기기 좋아요.",
+    "place": "마포구 합정동"
+  },
+  {
+    "areaName": "서울역",
+    "displayName": "서울역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 6,
+      "end": 24
+    },
+    "lat": 37.5547,
+    "lng": 126.9707,
+    "description": "전국으로 이어지는 교통의 관문으로, 기차·지하철과 롯데마트·쇼핑시설이 모인 도심의 핵심 거점이에요.",
+    "place": "중구 봉래동"
+  },
+  {
+    "areaName": "용산역",
+    "displayName": "용산",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 24
+    },
+    "lat": 37.5298,
+    "lng": 126.9649,
+    "description": "전자상가와 아이파크몰·용산역이 어우러진 상권으로, 쇼핑과 영화·외식을 한곳에서 즐길 수 있는 복합 공간이에요.",
+    "place": "용산구 한강로"
+  },
+  {
+    "areaName": "동대문역",
+    "displayName": "동대문역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 24
+    },
+    "lat": 37.5717,
+    "lng": 127.0093,
+    "description": "DDP와 광장시장·흥인지문이 가까운 도심 상권으로, 역사 명소와 전통시장 먹거리를 함께 둘러보기 좋아요.",
+    "place": "종로구 예지동"
+  },
+  {
+    "areaName": "선릉역",
+    "displayName": "선릉역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 23
+    },
+    "lat": 37.5045,
+    "lng": 127.0489,
+    "description": "강남 비즈니스 중심가로, 직장인을 위한 맛집과 카페가 밀집해 있고 인근에 조선왕릉 선릉·정릉이 자리해요.",
+    "place": "강남구 대치동"
+  },
+  {
+    "areaName": "역삼역",
+    "displayName": "역삼역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 23
+    },
+    "lat": 37.5007,
+    "lng": 127.0364,
+    "description": "강남의 대표 오피스 밀집 지역으로, 스타트업과 직장인을 위한 맛집·카페가 모여 평일 낮에 특히 활기차요.",
+    "place": "강남구 역삼동"
+  },
+  {
+    "areaName": "영등포 타임스퀘어",
+    "displayName": "영등포 타임스퀘어",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 23
+    },
+    "lat": 37.5157,
+    "lng": 126.9007,
+    "description": "영등포역 인근 대형 복합쇼핑몰을 중심으로 한 상권으로, 백화점·영화관·맛집이 모여 하루를 보내기 좋아요.",
+    "place": "영등포구 영등포동"
+  },
+  {
+    "areaName": "신도림역",
+    "displayName": "신도림",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 23
+    },
+    "lat": 37.5086,
+    "lng": 126.8912,
+    "description": "디큐브시티와 테크노마트가 자리한 환승 요충지로, 쇼핑몰과 공연장이 있어 만남과 쇼핑 장소로 좋아요.",
+    "place": "구로구 신도림동"
+  },
+  {
+    "areaName": "구로디지털단지역",
+    "displayName": "구로디지털단지",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 22
+    },
+    "lat": 37.4851,
+    "lng": 126.9011,
+    "description": "IT·벤처 기업이 밀집한 디지털 산업단지로, 평일 직장인 유동인구가 많고 주변에 식당·카페가 발달해 있어요.",
+    "place": "구로구 구로동"
+  },
+  {
+    "areaName": "가산디지털단지역",
+    "displayName": "가산디지털단지",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 22
+    },
+    "lat": 37.4818,
+    "lng": 126.8827,
+    "description": "IT단지와 대형 패션아울렛이 함께 있는 복합 상권으로, 쇼핑과 업무 인구가 어우러져 활기가 넘쳐요.",
+    "place": "금천구 가산동"
+  },
+  {
+    "areaName": "신림역",
+    "displayName": "신림",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 24
+    },
+    "lat": 37.4841,
+    "lng": 126.9295,
+    "description": "서울대 인근 대학가 번화가로, 저렴한 맛집과 술집이 밀집한 먹자골목으로 젊은 층에게 인기가 많아요.",
+    "place": "관악구 신림동"
+  },
+  {
+    "areaName": "사당역",
+    "displayName": "사당",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 24
+    },
+    "lat": 37.4767,
+    "lng": 126.9815,
+    "description": "여러 노선이 교차하는 강남권 교통 요충지로, 환승 인구가 많고 먹자골목과 술집이 발달한 번화가예요.",
+    "place": "동작구 사당동"
+  },
+  {
+    "areaName": "교대역",
+    "displayName": "교대",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 23
+    },
+    "lat": 37.4934,
+    "lng": 127.0138,
+    "description": "서초구 법조타운과 맞닿은 강남권 상권으로, 직장인을 위한 맛집과 카페가 밀집한 깔끔한 번화가예요.",
+    "place": "서초구 서초동"
+  },
+  {
+    "areaName": "고속터미널역",
+    "displayName": "고속터미널",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 6,
+      "end": 24
+    },
+    "lat": 37.5048,
+    "lng": 127.0047,
+    "description": "전국행 고속버스가 모이는 교통 허브로, 센트럴시티·신세계백화점·지하상가가 연결돼 쇼핑하기 좋아요.",
+    "place": "서초구 반포동"
+  },
+  {
+    "areaName": "노량진",
+    "displayName": "노량진",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 23
+    },
+    "lat": 37.5132,
+    "lng": 126.943,
+    "description": "수산시장과 학원가가 공존하는 동네로, 싱싱한 해산물과 활기찬 고시촌 분위기를 함께 느낄 수 있어요.",
+    "place": "동작구 노량진동"
+  },
+  {
+    "areaName": "연남동",
+    "displayName": "연남동",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "lat": 37.5615,
+    "lng": 126.9236,
+    "description": "경의선숲길을 따라 감성 카페와 맛집이 늘어선 동네로, '연트럴파크'로 불리며 산책과 데이트 명소로 인기예요.",
+    "place": "마포구 연남동"
+  },
+  {
+    "areaName": "성수카페거리",
+    "displayName": "성수 카페거리",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 23
+    },
+    "lat": 37.5444,
+    "lng": 127.0564,
+    "description": "옛 공장을 개조한 개성 있는 카페와 팝업스토어가 모인 거리로, 서울에서 가장 힙한 동네로 손꼽혀요.",
+    "place": "성동구 성수동"
+  },
+  {
+    "areaName": "여의도",
+    "displayName": "여의도",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 23
+    },
+    "lat": 37.5219,
+    "lng": 126.9247,
+    "description": "금융가와 방송국이 모인 업무 중심지로, 봄철 윤중로 벚꽃과 한강공원 덕에 나들이 명소로도 사랑받아요.",
+    "place": "영등포구 여의도동"
+  },
+  {
+    "areaName": "연신내역",
+    "displayName": "연신내",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 7,
+      "end": 23
+    },
+    "lat": 37.6189,
+    "lng": 126.9196,
+    "description": "은평구를 대표하는 번화가로, 로데오거리와 먹자골목이 발달해 쇼핑과 외식을 즐기기 좋은 생활 상권이에요.",
+    "place": "은평구 불광동"
+  },
+  {
+    "areaName": "천호역",
+    "displayName": "천호",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 23
+    },
+    "lat": 37.5386,
+    "lng": 127.1237,
+    "description": "강동구를 대표하는 상권으로, 대형 백화점과 먹자골목·로데오거리가 모여 쇼핑과 식사를 함께 즐기기 좋아요.",
+    "place": "강동구 천호동"
+  },
+  {
+    "areaName": "회기역",
+    "displayName": "회기",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 22
+    },
+    "lat": 37.5928,
+    "lng": 127.0556,
+    "description": "경희대·외대 학생들이 모이는 대학가로, 가성비 좋은 맛집과 술집이 밀집한 활기찬 먹자골목으로 유명해요.",
+    "place": "동대문구 회기동"
+  },
+  {
+    "areaName": "잠실새내역",
+    "displayName": "잠실새내",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 23
+    },
+    "lat": 37.5099,
+    "lng": 127.0856,
+    "description": "잠실 주거단지 사이 먹자골목으로, 다양한 맛집과 카페가 밀집해 저녁이면 직장인과 주민들로 붐벼요.",
+    "place": "송파구 신천동"
+  },
+  {
+    "areaName": "뚝섬역",
+    "displayName": "뚝섬역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 23
+    },
+    "lat": 37.5479,
+    "lng": 127.0476,
+    "description": "성수·뚝섬과 가까운 상권으로, 개성 있는 카페와 한강공원이 인접해 산책과 카페 투어를 즐기기 좋아요.",
+    "place": "성동구 성수동"
+  },
+  {
+    "areaName": "군자역",
+    "displayName": "군자",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 22
+    },
+    "lat": 37.557,
+    "lng": 127.0802,
+    "description": "광진구와 중랑구가 맞닿은 환승 요충지로, 주민 생활밀착형 상가와 먹거리가 발달한 생활 상권이에요.",
+    "place": "광진구 군자동"
+  },
+  {
+    "areaName": "가락시장",
+    "displayName": "가락시장",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 6,
+      "end": 20
+    },
+    "lat": 37.4923,
+    "lng": 127.1157,
+    "description": "국내 최대 규모의 농수산물 도매시장으로, 신선한 청과·수산물을 새벽부터 거래하는 활기찬 시장이에요.",
+    "place": "송파구 가락동"
+  },
+  {
+    "areaName": "장지역",
+    "displayName": "장지역",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 22
+    },
+    "lat": 37.4744,
+    "lng": 127.1449,
+    "description": "문정 법조단지와 가든파이브가 자리한 송파 남부 상권으로, 대형 쇼핑·업무 시설이 모여 있어요.",
+    "place": "송파구 장지동"
+  },
+  {
+    "areaName": "쌍문역",
+    "displayName": "쌍문",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 8,
+      "end": 22
+    },
+    "lat": 37.6488,
+    "lng": 127.0275,
+    "description": "도봉구의 생활밀착형 번화가로, 재래시장과 먹자골목이 정겨운 동네 분위기를 자아내는 곳이에요.",
+    "place": "도봉구 쌍문동"
+  },
+  {
+    "areaName": "성신여대입구역",
+    "displayName": "성신여대입구",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 10,
+      "end": 23
+    },
+    "lat": 37.5924,
+    "lng": 127.0165,
+    "description": "성신여대 앞 대학가 번화가로, 로데오거리와 먹자골목에 카페·맛집이 밀집해 젊은 층에게 인기예요.",
+    "place": "성북구 돈암동"
+  },
+  {
+    "areaName": "미아사거리역",
+    "displayName": "미아사거리",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 9,
+      "end": 22
+    },
+    "lat": 37.613,
+    "lng": 127.0246,
+    "description": "강북구 교통 요충지에 자리한 상권으로, 대형 백화점과 재래시장이 어우러진 생활 중심 번화가예요.",
+    "place": "강북구 미아동"
+  },
+  {
+    "areaName": "김포공항",
+    "displayName": "김포공항",
+    "category": "상권·역세권",
+    "operatingHours": {
+      "start": 5,
+      "end": 24
+    },
+    "lat": 37.5583,
+    "lng": 126.7906,
+    "description": "국내선과 일부 국제선이 오가는 공항으로, 롯데몰·스카이파크 등 상업시설이 함께 있어 쇼핑도 즐길 수 있어요.",
+    "place": "강서구 공항동"
+  },
+  {
+    "areaName": "노들섬",
+    "displayName": "노들섬",
+    "category": "야경·전망",
+    "operatingHours": {
+      "start": 17,
+      "end": 24
+    },
+    "lat": 37.5171,
+    "lng": 126.9378,
+    "description": "한강 한가운데 자리한 섬으로, 공연장과 책방·라운지에서 음악과 함께 도심 야경을 감상하기 좋은 명소예요.",
+    "place": "용산구 이촌동"
+  }
+]
