@@ -1,4 +1,4 @@
-"""Chroma persistent 벡터스토어 래퍼. persist 디렉터리 안에 sqlite 가 함께 저장된다."""
+"""Chroma persistent 벡터스토어 persist 디렉터리 안에 sqlite 저장"""
 from __future__ import annotations
 
 from functools import lru_cache

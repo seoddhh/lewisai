@@ -1,4 +1,4 @@
-"""LLM 팩토리 — 제미나이(langchain-google-genai) 챗 모델 반환."""
+"""제미나이 api 사용 챗 모델 구조"""
 from __future__ import annotations
 
 from functools import lru_cache

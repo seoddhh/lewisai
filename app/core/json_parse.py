@@ -1,7 +1,4 @@
-"""LLM 텍스트 출력에서 JSON을 안전하게 뽑아내는 방어 코드.
-
-guided decoding 이 없는 OpenAI 호환 모델(NIM GLM 등)은 ```json 펜스나
-reasoning 텍스트를 섞어 내보낼 수 있어 후처리가 필요하다.
+"""LLM 텍스트 출력에서 JSON을 안전하게 파싱하는 코드
 """
 from __future__ import annotations
 
