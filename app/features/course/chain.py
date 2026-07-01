@@ -5,7 +5,7 @@
 from __future__ import annotations
 
 from app.core.json_parse import parse_json_object
-from app.core.llm import get_llm
+from app.core.llm import extract_text, get_llm
 from app.rag import retriever
 
 from .prompt import PROMPT
@@ -24,7 +24,7 @@ async def run(req: CourseRequest) -> CourseResponse:
         msg = await chain.ainvoke(
             {"note": req.note, "region": req.region, "time": req.time or "상관없음", "candidates": cand_lines}
         )
-        data = parse_json_object(msg.content)
+        data = parse_json_object(extract_text(msg.content))
         stops = [
             CourseStop(**s) for s in data.get("stops", []) if s.get("name") in allowed
         ]

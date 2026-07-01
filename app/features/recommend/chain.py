@@ -7,7 +7,7 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 
 from app.core.json_parse import parse_json_array
-from app.core.llm import get_llm
+from app.core.llm import extract_text, get_llm
 from app.rag import retriever
 from app.tools.congestion import get_congestion
 
@@ -81,7 +81,7 @@ async def run(req: RecommendRequest) -> RecommendResponse:
                 "candidates": cand_lines,
             }
         )
-        items = parse_json_array(msg.content)
+        items = parse_json_array(extract_text(msg.content))
         suggestions = [
             Suggestion(**s) for s in items if s.get("place") in allowed
         ][:3]

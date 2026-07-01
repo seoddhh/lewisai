@@ -1,13 +1,11 @@
 """place_intro 체인: RAG 검색 → 실시간(혼잡도·행사) 주입 → LLM → JSON → AIPlaceInfo.
-
-1차 구현이라 LangGraph 없이 단순 async 함수로 오케스트레이션한다.
 """
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
 
 from app.core.json_parse import parse_json_object
-from app.core.llm import get_llm
+from app.core.llm import extract_text, get_llm
 from app.rag import retriever
 from app.tools.congestion import get_congestion
 from app.tools.events import get_events
@@ -49,7 +47,7 @@ async def run(req: PlaceIntroRequest) -> PlaceIntroResponse:
                 "events": events_str,
             }
         )
-        data = parse_json_object(msg.content)
+        data = parse_json_object(extract_text(msg.content))
         info = AIPlaceInfo(
             placeName=req.place,
             summary=data["summary"],
