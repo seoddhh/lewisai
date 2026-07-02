@@ -1,4 +1,4 @@
-"""chitchat — 위 3개 의도에 안 맞는 잡담 폴백. 간단한 단발 응답."""
+"""간단한 응답에 사용"""
 from __future__ import annotations
 
 from langchain_core.prompts import ChatPromptTemplate
