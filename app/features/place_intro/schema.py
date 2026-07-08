@@ -1,4 +1,4 @@
-"""place_intro 입출력 스키마. 출력은 서울로 프론트 AIPlaceInfo 계약과 동일하게 유지."""
+"""place_intro 입출력 스키마. 출력은 서울로 프론트 AI PlaceInfo 계약과 동일하게 유지."""
 from __future__ import annotations
 
 from pydantic import BaseModel, Field

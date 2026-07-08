@@ -1,0 +1,26 @@
+[project]
+name = "lewisai"
+version = "0.1.0"
+description = "서울로(strangemap)의 AI 기능을 파이썬 LangGraph RAG 에이전트로 재구현하는 AI 백엔드"
+requires-python = ">=3.11"
+dependencies = [
+    # --- API ---
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "python-dotenv>=1.0",
+    "httpx>=0.27",
+    # --- LangChain / LangGraph / RAG ---
+    "langchain>=0.3",
+    "langchain-core>=0.3",
+    "langgraph>=0.2",              # 통합 에이전트 StateGraph (2차)
+    "langchain-google-genai>=2.0", # Gemini 챗 모델 + 임베딩
+    "langchain-chroma>=0.1",
+    # --- Vector DB (Chroma = sqlite 백엔드) ---
+    "chromadb>=0.5",
+]
+
+[tool.uv]
+# 애플리케이션 저장소 — 프로젝트 자체를 wheel 로 빌드/설치하지 않는다(의존성만 관리).
+package = false

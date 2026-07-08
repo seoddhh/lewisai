@@ -30,6 +30,10 @@ def _place_docs(places: list[dict]) -> list[Document]:
     for p in places:
         place_id = p.get("areaName") or p["displayName"]
         lat, lng = float(p["lat"]), float(p["lng"])
+        # 운영시간 — 동선 최적화(routing.plan_course)의 시간창 제약에 사용. 기본 상시(0~24).
+        hours = p.get("operatingHours") or {}
+        op_start = int(hours.get("start", 0))
+        op_end = int(hours.get("end", 24))
         # 1차: description 1줄을 summary aspect 청크로. 컨텐츠 확장 시 aspect 별로 늘린다.
         meta = {
             "doc_type": "place",
@@ -40,6 +44,8 @@ def _place_docs(places: list[dict]) -> list[Document]:
             "region": _region(lat, lng),
             "lat": lat,
             "lng": lng,
+            "op_start": op_start,
+            "op_end": op_end,
             "aspect": "summary",
         }
         text = f"[{p['displayName']}] ({p.get('category','')}) {p.get('description','')}"
