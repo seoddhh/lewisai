@@ -3,7 +3,7 @@
 서울로(strangemap)의 AI 기능을 **파이썬 LangGraph RAG 에이전트**로 재구현하는 프로젝트.
 추후 서울로를 3-tier(프론트 Next.js / **AI 티어** / 데이터베이스)로 분리하기 위한 AI 백엔드이자 LangChain·LangGraph·RAG를 구현하기 위한 레포지토리
 
-- **1차(완료)**: RAG + LangChain → FastAPI REST. 기능별 결정론적 체인
+- **1차(완료)**: RAG + LangChain → FastAPI REST.
 - **2차(진행 중)**: LangGraph StateGraph 통합 에이전트 + 자연어 진입 `POST /agent/chat`.
   동선 순서는 결정론적 오픈-패스 TSP(`app/core/routing.py`)가 최적화(좌표 기반, strangemap 이식),
   실시간 혼잡도 반영. mcp 연결은 이후 구상
@@ -43,7 +43,8 @@ scripts/             export_data.mjs · run_ingest.py
 
 자연어(`POST /agent/chat`)가 들어오면 그래프가 의도를 분기하고, 각 노드가 아래 **도구**를 결정론적으로
 호출한다. LLM function-calling이 아니라 **구조화 그래프 노드**가 도구를 호출하는 방식이라 흐름이
-예측 가능하고 디버깅이 쉽다. 역할 분리 원칙: **"어떤 장소"는 LLM, "어떤 순서"는 TSP**.
+예측 가능하고 디버깅이 쉽다. 
+역할 분리 원칙: 장소는 LLM이 반환, 그에 맞는 경로는 알고리즘 로직으로 반환
 
 ```
 START → router → parse_intent → (의도 분기)
@@ -268,6 +269,5 @@ curl -s localhost:8800/agent/place_intro -H 'content-type: application/json' \
 > 방문 순서는 LLM 이 아니라 `app/core/routing.py` 의 결정론적 오픈-패스 TSP 가 정한다(지그재그 제거).
 
 ## LLM / 임베딩
-- 챗 모델·임베딩 모두 제미나이(`langchain-google-genai`) 고정. `.env`의 `GOOGLE_API_KEY`·`GEMINI_MODEL` 설정.
+- 1차 구현은 챗 모델·임베딩 모두 제미나이(`langchain-google-genai`) 고정. `.env`의 `GOOGLE_API_KEY`·`GEMINI_MODEL` 설정.
 
-> 임베딩 모델을 바꾸면(`EMBEDDING_MODEL`) 전체 재인제스트 필요.
