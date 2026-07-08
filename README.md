@@ -5,8 +5,7 @@
 
 - **1차(완료)**: RAG + LangChain → FastAPI REST.
 - **2차(진행 중)**: LangGraph StateGraph 통합 에이전트 + 자연어 진입 `POST /agent/chat`.
-  동선 순서는 결정론적 오픈-패스 TSP(`app/core/routing.py`)가 최적화(좌표 기반, strangemap 이식),
-  실시간 혼잡도 반영. mcp 연결은 이후 구상
+  동선 순서는 결정론적 오픈-패스 TSP(`app/core/routing.py`)로 지도에 최적화 동선 오버레이, 실시간 혼잡도 반영
 
 ## 기능 (각 기능 = `app/features/<name>/`)
 
@@ -19,7 +18,7 @@
 | `POST /agent/chat` | 자연어 통합(의도 자동 분기) | — | `{intent, result, source, distance_km}` |
 
 - **RAG 대상(임베딩 O)**: 장소 서사·코스 노하우 → Chroma.
-- **실시간(임베딩 X)**: 혼잡도/행사는 `app/tools/` 에서 매 호출 fetch 후 프롬프트 주입.
+- **실시간(임베딩 X)**: 혼잡도/행사는 `app/tools/` 에서 매 호출 fetch 후 프롬프트 주입 (실시간으로 바뀌는 정보라 RAG로 저장하지 않음)
 
 ## 폴더 구조
 
@@ -34,7 +33,7 @@ app/
   features/          place_intro · recommend · course · chitchat
                      └ 각 폴더: schema.py / prompt.py / chain.py
   api/routes/        기능별 FastAPI 라우터 (+ chat)
-data/raw/            seoul_places.json · theme_courses.json (strangemap export)
+data/raw/            seoul_places.json · theme_courses.json (기존 서울로 json포맷 데이터)
 data/chroma/         Chroma 영속(sqlite 포함) — gitignore
 scripts/             export_data.mjs · run_ingest.py
 ```
@@ -42,9 +41,9 @@ scripts/             export_data.mjs · run_ingest.py
 ## LangGraph 에이전트 & 도구
 
 자연어(`POST /agent/chat`)가 들어오면 그래프가 의도를 분기하고, 각 노드가 아래 **도구**를 결정론적으로
-호출한다. LLM function-calling이 아니라 **구조화 그래프 노드**가 도구를 호출하는 방식이라 흐름이
-예측 가능하고 디버깅이 쉽다. 
-역할 분리 원칙: 장소는 LLM이 반환, 그에 맞는 경로는 알고리즘 로직으로 반환
+호출한다. LLM function-calling이 아니라 **그래프 노드**가 도구를 호출하는 방식
+
+역할 분리 원칙: 장소는 LLM이 반환, 그에 맞는 경로는 알고리즘 로직으로 반환하여 분리 한다.
 
 ```
 START → router → parse_intent → (의도 분기)
@@ -266,7 +265,7 @@ curl -s localhost:8800/agent/place_intro -H 'content-type: application/json' \
 }
 ```
 > `intent` 는 `course|recommend|place_intro|chitchat` 중 하나이며, `result` 는 해당 기능의 응답 스키마와 동일하다.
-> 방문 순서는 LLM 이 아니라 `app/core/routing.py` 의 결정론적 오픈-패스 TSP 가 정한다(지그재그 제거).
+> 방문 순서는 LLM 이 아니라 `app/core/routing.py` 의 오픈-패스 TSP로직으로 결정.
 
 ## LLM / 임베딩
 - 1차 구현은 챗 모델·임베딩 모두 제미나이(`langchain-google-genai`) 고정. `.env`의 `GOOGLE_API_KEY`·`GEMINI_MODEL` 설정.
