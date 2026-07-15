@@ -14,13 +14,25 @@ dependencies = [
     # --- LangChain / LangGraph / RAG ---
     "langchain>=0.3",
     "langchain-core>=0.3",
-    "langgraph>=0.2",              # 통합 에이전트 StateGraph (2차)
+    "langgraph>=0.2", # 통합 에이전트 StateGraph (2차)
     "langchain-google-genai>=2.0", # Gemini 챗 모델 + 임베딩
     "langchain-chroma>=0.1",
     # --- Vector DB (Chroma = sqlite 백엔드) ---
     "chromadb>=0.5",
+    "langchain-anthropic>=1.4.8",
 ]
 
 [tool.uv]
 # 애플리케이션 저장소 — 프로젝트 자체를 wheel 로 빌드/설치하지 않는다(의존성만 관리).
 package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

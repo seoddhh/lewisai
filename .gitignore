@@ -4,5 +4,5 @@ __pycache__/
 .env
 data/chroma/
 .DS_Store
-
-
+tests/
+scripts/build_dataset.mjs

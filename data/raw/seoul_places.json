@@ -1,912 +1,4760 @@
 [
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "남산공원",
     "displayName": "남산공원",
     "category": "공원·자연",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5512,
     "lng": 126.9882,
+    "place": "중구 남산동",
     "description": "서울 도심 한복판의 산으로, N서울타워와 숲길 산책로를 품고 있어 사계절 시민들이 즐겨 찾는 휴식처예요.",
-    "place": "중구 남산동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "종로·중구"
+    ],
+    "ragText": "[남산공원] · 공원·자연 · 중구 남산동\n서울 도심 한복판의 산으로, N서울타워와 숲길 산책로를 품고 있어 사계절 시민들이 즐겨 찾는 휴식처예요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "서울숲공원",
     "displayName": "서울숲",
     "category": "공원·자연",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시개방(내부시설 별도운영)",
     "lat": 37.5444,
     "lng": 127.0374,
+    "place": "성동구 성수동",
     "description": "성수동에 자리한 대형 도시공원으로, 사슴방사장과 너른 잔디밭·산책로가 있어 가족·연인 나들이로 인기예요.",
-    "place": "성동구 성수동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "성수·건대",
+      "공원·정원"
+    ],
+    "ragText": "[서울숲] · 공원·자연 · 성동구 성수동\n성수동에 자리한 대형 도시공원으로, 사슴방사장과 너른 잔디밭·산책로가 있어 가족·연인 나들이로 인기예요.\n운영: 상시(24시간)",
+    "fee": "무료",
+    "transit": "수인분당선 서울숲역 3번 출구 도보 5분 / 지하철 2호선 뚝섬역 8번 출구 도보 15분 / 서울숲 정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://parks.seoul.go.kr/seoulforest"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "청계산",
     "displayName": "청계산",
     "category": "공원·자연",
+    "zone": "관악·사당",
     "operatingHours": {
       "start": 5,
       "end": 20
     },
+    "operatingRaw": "5시~20시",
     "lat": 37.4419,
     "lng": 127.0534,
+    "place": "서초구 원지동",
     "description": "서초구와 과천에 걸친 산으로, 완만한 등산로 덕에 초보자도 오르기 좋은 서울 근교 인기 산행 코스예요.",
-    "place": "서초구 원지동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "관악·사당"
+    ],
+    "ragText": "[청계산] · 공원·자연 · 서초구 원지동\n서초구와 과천에 걸친 산으로, 완만한 등산로 덕에 초보자도 오르기 좋은 서울 근교 인기 산행 코스예요.\n운영: 5시~20시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "아차산",
     "displayName": "아차산",
     "category": "공원·자연",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 5,
       "end": 20
     },
+    "operatingRaw": "5시~20시",
     "lat": 37.5524,
     "lng": 127.1014,
+    "place": "광진구 광장동",
     "description": "광진구 한강변의 낮은 산으로, 정상에서 한강과 서울 전경이 한눈에 내려다보여 일출·트레킹 명소로 꼽혀요.",
-    "place": "광진구 광장동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "성수·건대"
+    ],
+    "ragText": "[아차산] · 공원·자연 · 광진구 광장동\n광진구 한강변의 낮은 산으로, 정상에서 한강과 서울 전경이 한눈에 내려다보여 일출·트레킹 명소로 꼽혀요.\n운영: 5시~20시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "올림픽공원",
     "displayName": "올림픽공원",
     "category": "공원·자연",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 5,
       "end": 22
     },
+    "operatingRaw": "5시~22시",
     "lat": 37.521,
     "lng": 127.1198,
+    "place": "송파구 방이동",
     "description": "88올림픽을 기념해 조성된 송파구 대형 공원으로, 넓은 잔디광장과 조각·호수, 공연장이 어우러진 복합 문화공간이에요.",
-    "place": "송파구 방이동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "잠실·송파"
+    ],
+    "ragText": "[올림픽공원] · 공원·자연 · 송파구 방이동\n88올림픽을 기념해 조성된 송파구 대형 공원으로, 넓은 잔디광장과 조각·호수, 공연장이 어우러진 복합 문화공간이에요.\n운영: 5시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "서울대공원",
     "displayName": "서울대공원",
     "category": "공원·자연",
+    "zone": "관악·사당",
     "operatingHours": {
       "start": 9,
       "end": 18
     },
+    "operatingRaw": "9시~18시",
     "lat": 37.4303,
     "lng": 127.0081,
+    "place": "과천시 막계동",
     "description": "과천에 있는 대규모 테마파크로, 동물원·식물원과 놀이공원이 함께 있어 아이와 함께하는 나들이 코스로 좋아요.",
-    "place": "과천시 막계동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "관악·사당"
+    ],
+    "ragText": "[서울대공원] · 공원·자연 · 과천시 막계동\n과천에 있는 대규모 테마파크로, 동물원·식물원과 놀이공원이 함께 있어 아이와 함께하는 나들이 코스로 좋아요.\n운영: 9시~18시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "보라매공원",
     "displayName": "보라매공원",
     "category": "공원·자연",
+    "zone": "관악·사당",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.4918,
     "lng": 126.9179,
+    "place": "동작구 신대방동",
     "description": "동작구를 대표하는 시민공원으로, 운동시설과 산책로·잔디밭이 잘 갖춰져 일상 운동과 휴식을 즐기기 좋은 곳이에요.",
-    "place": "동작구 신대방동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "관악·사당"
+    ],
+    "ragText": "[보라매공원] · 공원·자연 · 동작구 신대방동\n동작구를 대표하는 시민공원으로, 운동시설과 산책로·잔디밭이 잘 갖춰져 일상 운동과 휴식을 즐기기 좋은 곳이에요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "월드컵공원",
     "displayName": "월드컵공원",
     "category": "공원·자연",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5686,
     "lng": 126.897,
+    "place": "마포구 상암동",
     "description": "상암동에 조성된 대형 생태공원으로, 억새로 유명한 하늘공원과 노을공원에서 서울 도심과 한강 노을을 감상할 수 있어요.",
-    "place": "마포구 상암동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "홍대·마포"
+    ],
+    "ragText": "[월드컵공원] · 공원·자연 · 마포구 상암동\n상암동에 조성된 대형 생태공원으로, 억새로 유명한 하늘공원과 노을공원에서 서울 도심과 한강 노을을 감상할 수 있어요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "안양천",
     "displayName": "안양천",
     "category": "공원·자연",
+    "zone": "여의도·영등포",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5271,
     "lng": 126.871,
+    "place": "영등포구 당산동",
     "description": "영등포를 흐르는 하천변 공원으로, 자전거길과 조깅 코스가 잘 정비돼 있고 봄이면 벚꽃과 유채가 만발해요.",
-    "place": "영등포구 당산동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "여의도·영등포"
+    ],
+    "ragText": "[안양천] · 공원·자연 · 영등포구 당산동\n영등포를 흐르는 하천변 공원으로, 자전거길과 조깅 코스가 잘 정비돼 있고 봄이면 벚꽃과 유채가 만발해요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "서울식물원·마곡나루역",
     "displayName": "서울식물원",
     "category": "공원·자연",
+    "zone": "기타",
     "operatingHours": {
       "start": 9,
       "end": 18
     },
+    "operatingRaw": "하절기(3월~10월) : 09:30~18:00(매표마감 17:00) 동절기(11월~2월) : 09:30~17:00(매표마감 16:00) * 매주 월요일 휴관",
     "lat": 37.5685,
     "lng": 126.83,
+    "place": "강서구 마곡동",
     "description": "강서구 마곡에 자리한 도시형 식물원으로, 대형 온실과 호수·야외 정원을 갖춰 사계절 식물을 감상하며 산책하기 좋아요.",
-    "place": "강서구 마곡동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "기타",
+      "공원·정원"
+    ],
+    "ragText": "[서울식물원] · 공원·자연 · 강서구 마곡동\n강서구 마곡에 자리한 도시형 식물원으로, 대형 온실과 호수·야외 정원을 갖춰 사계절 식물을 감상하며 산책하기 좋아요.\n운영: 9시~18시",
+    "fee": "주제원(온실&주제정원) 유료 이용, 열린숲&호수원& 습지원 무료 이용",
+    "transit": "지하철 9호선 양천향교역 8번출구 도보 10분 / 지하철 9호선, 공항철도 마곡나루역 3,4번출구 열린숲 진입 / 버스정류장 겸재정원미술관, 마곡나루역 정류장 하차 도보 이용",
+    "bestTime": "day",
+    "url": "https://botanicpark.seoul.go.kr/"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "여의도한강공원",
     "displayName": "여의도한강공원",
     "category": "한강",
+    "zone": "여의도·영등포",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5284,
     "lng": 126.9331,
+    "place": "영등포구 여의도동",
     "description": "서울을 대표하는 한강공원으로, 너른 잔디광장과 물빛광장이 있어 피크닉·벚꽃축제·불꽃놀이 명소로 사랑받아요.",
-    "place": "영등포구 여의도동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "여의도·영등포"
+    ],
+    "ragText": "[여의도한강공원] · 한강 · 영등포구 여의도동\n서울을 대표하는 한강공원으로, 너른 잔디광장과 물빛광장이 있어 피크닉·벚꽃축제·불꽃놀이 명소로 사랑받아요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "반포한강공원",
     "displayName": "반포한강공원",
     "category": "한강",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5102,
     "lng": 126.9995,
+    "place": "서초구 반포동",
     "description": "서초구 한강변 공원으로, 밤이면 반포대교 달빛무지개분수가 펼쳐져 서울을 대표하는 야경 데이트 명소로 꼽혀요.",
-    "place": "서초구 반포동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "강남·서초"
+    ],
+    "ragText": "[반포한강공원] · 한강 · 서초구 반포동\n서초구 한강변 공원으로, 밤이면 반포대교 달빛무지개분수가 펼쳐져 서울을 대표하는 야경 데이트 명소로 꼽혀요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "뚝섬한강공원",
     "displayName": "뚝섬한강공원",
     "category": "한강",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5296,
     "lng": 127.0686,
+    "place": "광진구 자양동",
     "description": "광진구에 있는 한강공원으로, 수영장·자전거 코스와 자벌레 전망쉼터를 갖춰 물놀이와 레저를 즐기기 좋아요.",
-    "place": "광진구 자양동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "성수·건대"
+    ],
+    "ragText": "[뚝섬한강공원] · 한강 · 광진구 자양동\n광진구에 있는 한강공원으로, 수영장·자전거 코스와 자벌레 전망쉼터를 갖춰 물놀이와 레저를 즐기기 좋아요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "망원한강공원",
     "displayName": "망원한강공원",
     "category": "한강",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5551,
     "lng": 126.8998,
+    "place": "마포구 망원동",
     "description": "마포구 망원동에 자리한 한강공원으로, 돗자리 펴기 좋은 잔디밭과 노을 풍경 덕에 감성 피크닉 장소로 인기예요.",
-    "place": "마포구 망원동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "홍대·마포"
+    ],
+    "ragText": "[망원한강공원] · 한강 · 마포구 망원동\n마포구 망원동에 자리한 한강공원으로, 돗자리 펴기 좋은 잔디밭과 노을 풍경 덕에 감성 피크닉 장소로 인기예요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "잠실한강공원",
     "displayName": "잠실한강공원",
     "category": "한강",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5152,
     "lng": 127.0739,
+    "place": "송파구 잠실동",
     "description": "송파구 한강변 공원으로, 석촌호수·롯데월드타워와 가까워 자전거 라이딩과 야경 산책을 함께 즐기기 좋아요.",
-    "place": "송파구 잠실동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "잠실·송파"
+    ],
+    "ragText": "[잠실한강공원] · 한강 · 송파구 잠실동\n송파구 한강변 공원으로, 석촌호수·롯데월드타워와 가까워 자전거 라이딩과 야경 산책을 함께 즐기기 좋아요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "이촌한강공원",
     "displayName": "이촌한강공원",
     "category": "한강",
+    "zone": "용산·이태원",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시개방",
     "lat": 37.5183,
     "lng": 126.9714,
+    "place": "용산구 이촌동",
     "description": "용산구 한강변 공원으로, 국립중앙박물관·이촌역과 인접해 접근성이 좋고 한적하게 산책하기 좋은 곳이에요.",
-    "place": "용산구 이촌동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "용산·이태원",
+      "한강·다리"
+    ],
+    "ragText": "[이촌한강공원] · 한강 · 용산구 이촌동\n용산구 한강변 공원으로, 국립중앙박물관·이촌역과 인접해 접근성이 좋고 한적하게 산책하기 좋은 곳이에요.\n운영: 상시(24시간)",
+    "fee": "무료",
+    "transit": "4호선, 경의중앙선 이촌역 4번 출구에서 도보 500m / 이촌동한강맨션, 동부이촌동, 한강대교전망카페 등 버스정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://hangang.seoul.go.kr/www/contents/660.do?mid=458 "
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "난지한강공원",
     "displayName": "난지한강공원",
     "category": "한강",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5695,
     "lng": 126.8861,
+    "place": "마포구 상암동",
     "description": "상암동 한강변 공원으로, 캠핑장과 수상레저 시설을 갖춰 도심 속에서 캠핑과 물놀이를 함께 즐길 수 있어요.",
-    "place": "마포구 상암동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "홍대·마포"
+    ],
+    "ragText": "[난지한강공원] · 한강 · 마포구 상암동\n상암동 한강변 공원으로, 캠핑장과 수상레저 시설을 갖춰 도심 속에서 캠핑과 물놀이를 함께 즐길 수 있어요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "양화한강공원",
     "displayName": "양화한강공원",
     "category": "한강",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5456,
     "lng": 126.9022,
+    "place": "영등포구 양평동",
     "description": "영등포 양평동 한강변 공원으로, 생태공원 선유도와 이어져 한강 드라이브와 야경 산책 코스로 좋아요.",
-    "place": "영등포구 양평동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "홍대·마포"
+    ],
+    "ragText": "[양화한강공원] · 한강 · 영등포구 양평동\n영등포 양평동 한강변 공원으로, 생태공원 선유도와 이어져 한강 드라이브와 야경 산책 코스로 좋아요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "강서한강공원",
     "displayName": "강서한강공원",
     "category": "한강",
+    "zone": "기타",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.573,
     "lng": 126.8236,
+    "place": "강서구 염창동",
     "description": "강서구 염창동에 있는 한강공원으로, 김포공항과 가깝고 한적해 여유롭게 자연을 즐기기 좋은 숨은 명소예요.",
-    "place": "강서구 염창동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "기타"
+    ],
+    "ragText": "[강서한강공원] · 한강 · 강서구 염창동\n강서구 염창동에 있는 한강공원으로, 김포공항과 가깝고 한적해 여유롭게 자연을 즐기기 좋은 숨은 명소예요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "광나루한강공원",
     "displayName": "광나루한강공원",
     "category": "한강",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5487,
     "lng": 127.0938,
+    "place": "광진구 광장동",
     "description": "광진구 한강 상류에 자리한 공원으로, 아차산 자락과 어우러진 너른 잔디밭에서 가족 피크닉을 즐기기 좋아요.",
-    "place": "광진구 광장동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "성수·건대"
+    ],
+    "ragText": "[광나루한강공원] · 한강 · 광진구 광장동\n광진구 한강 상류에 자리한 공원으로, 아차산 자락과 어우러진 너른 잔디밭에서 가족 피크닉을 즐기기 좋아요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "잠원한강공원",
     "displayName": "잠원한강공원",
     "category": "한강",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 0,
       "end": 24
     },
+    "operatingRaw": "상시(24시간)",
     "lat": 37.5121,
     "lng": 127.0016,
+    "place": "서초구 잠원동",
     "description": "서초구 잠원동 한강변 공원으로, 비교적 한적한 산책로와 자전거길을 갖춰 조용히 한강을 즐기기 좋아요.",
-    "place": "서초구 잠원동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강",
+      "강남·서초"
+    ],
+    "ragText": "[잠원한강공원] · 한강 · 서초구 잠원동\n서초구 잠원동 한강변 공원으로, 비교적 한적한 산책로와 자전거길을 갖춰 조용히 한강을 즐기기 좋아요.\n운영: 상시(24시간)"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "경복궁",
     "displayName": "경복궁",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 9,
       "end": 18
     },
+    "operatingRaw": "1월~2월, 11월~12월 09:00~17:00, 3월~5월, 9월~10월 09:00~18:00, 6월~8월 09:00~18:30",
     "lat": 37.5796,
     "lng": 126.977,
+    "place": "종로구 세종로",
     "description": "조선 왕조의 법궁으로, 웅장한 근정전과 경회루를 둘러볼 수 있고 한복을 입으면 무료로 입장할 수 있어요.",
-    "place": "종로구 세종로"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구",
+      "고궁·역사"
+    ],
+    "ragText": "[경복궁] · 관광·역사 · 종로구 세종로\n조선 왕조의 법궁으로, 웅장한 근정전과 경회루를 둘러볼 수 있고 한복을 입으면 무료로 입장할 수 있어요.\n운영: 9시~18시",
+    "fee": "유료 대인 3,000원, 한복착용자 무료",
+    "transit": "지하철 3호선 경복궁 5번 출구 도보 이용 / 경복궁 정류장 하차 도보 이용",
+    "bestTime": "day",
+    "url": "https://royal.khs.go.kr/gbg"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "창덕궁·종묘",
     "displayName": "창덕궁·종묘",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 9,
       "end": 18
     },
+    "operatingRaw": "9시~18시",
     "lat": 37.5796,
     "lng": 126.9893,
+    "place": "종로구 와룡동",
     "description": "자연과 어우러진 후원으로 유명한 창덕궁과 조선 왕실 사당 종묘가 함께 있는 유네스코 세계문화유산이에요.",
-    "place": "종로구 와룡동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[창덕궁·종묘] · 관광·역사 · 종로구 와룡동\n자연과 어우러진 후원으로 유명한 창덕궁과 조선 왕실 사당 종묘가 함께 있는 유네스코 세계문화유산이에요.\n운영: 9시~18시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "광화문·덕수궁",
     "displayName": "광화문·덕수궁",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 9,
       "end": 21
     },
+    "operatingRaw": "9시~21시",
     "lat": 37.572,
     "lng": 126.9769,
+    "place": "종로구 세종로",
     "description": "광화문광장과 덕수궁 돌담길이 어우러진 서울의 중심으로, 조선 궁궐과 현대 도심 풍경을 함께 즐길 수 있어요.",
-    "place": "종로구 세종로"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[광화문·덕수궁] · 관광·역사 · 종로구 세종로\n광화문광장과 덕수궁 돌담길이 어우러진 서울의 중심으로, 조선 궁궐과 현대 도심 풍경을 함께 즐길 수 있어요.\n운영: 9시~21시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "북촌한옥마을",
     "displayName": "북촌한옥마을",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 7,
       "end": 22
     },
+    "operatingRaw": "7시~22시",
     "lat": 37.5827,
     "lng": 126.9843,
+    "place": "종로구 가회동",
     "description": "경복궁과 창덕궁 사이 언덕에 전통 한옥이 모여 있는 마을로, 골목마다 고즈넉한 정취와 서울 전경을 감상할 수 있어요.",
-    "place": "종로구 가회동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[북촌한옥마을] · 관광·역사 · 종로구 가회동\n경복궁과 창덕궁 사이 언덕에 전통 한옥이 모여 있는 마을로, 골목마다 고즈넉한 정취와 서울 전경을 감상할 수 있어요.\n운영: 7시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "인사동",
     "displayName": "인사동",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 10,
       "end": 22
     },
+    "operatingRaw": "10시~22시",
     "lat": 37.5744,
     "lng": 126.9855,
+    "place": "종로구 인사동",
     "description": "전통 공예품 가게와 갤러리·찻집이 모여 있는 문화 거리로, 한국적인 기념품과 전통문화를 만끽하기 좋아요.",
-    "place": "종로구 인사동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[인사동] · 관광·역사 · 종로구 인사동\n전통 공예품 가게와 갤러리·찻집이 모여 있는 문화 거리로, 한국적인 기념품과 전통문화를 만끽하기 좋아요.\n운영: 10시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "서촌",
     "displayName": "서촌마을",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 9,
       "end": 22
     },
+    "operatingRaw": "9시~22시",
     "lat": 37.578,
     "lng": 126.9697,
+    "place": "종로구 체부동",
     "description": "경복궁 서쪽에 자리한 동네로, 옛 정취가 남은 골목과 개성 있는 카페·서점이 어우러져 조용히 걷기 좋아요.",
-    "place": "종로구 체부동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[서촌마을] · 관광·역사 · 종로구 체부동\n경복궁 서쪽에 자리한 동네로, 옛 정취가 남은 골목과 개성 있는 카페·서점이 어우러져 조용히 걷기 좋아요.\n운영: 9시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "익선동",
     "displayName": "익선동",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 10,
       "end": 23
     },
+    "operatingRaw": "10시~23시",
     "lat": 37.5742,
     "lng": 126.9986,
+    "place": "종로구 익선동",
     "description": "오래된 한옥을 개조한 카페와 식당이 골목을 가득 채운 곳으로, 레트로 감성의 데이트·맛집 탐방지로 인기예요.",
-    "place": "종로구 익선동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[익선동] · 관광·역사 · 종로구 익선동\n오래된 한옥을 개조한 카페와 식당이 골목을 가득 채운 곳으로, 레트로 감성의 데이트·맛집 탐방지로 인기예요.\n운영: 10시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "남대문시장",
     "displayName": "남대문시장",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 9,
       "end": 23
     },
+    "operatingRaw": "9시~23시",
     "lat": 37.5579,
     "lng": 126.9753,
+    "place": "중구 남창동",
     "description": "600여 년 역사를 가진 서울 최대 규모의 전통시장으로, 의류·잡화부터 먹거리까지 없는 게 없는 활기찬 시장이에요.",
-    "place": "중구 남창동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[남대문시장] · 관광·역사 · 중구 남창동\n600여 년 역사를 가진 서울 최대 규모의 전통시장으로, 의류·잡화부터 먹거리까지 없는 게 없는 활기찬 시장이에요.\n운영: 9시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "혜화역",
     "displayName": "대학로·혜화",
     "category": "관광·역사",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 10,
       "end": 24
     },
+    "operatingRaw": "10시~24시",
     "lat": 37.5822,
     "lng": 127.0018,
+    "place": "종로구 혜화동",
     "description": "소극장과 공연장이 밀집한 공연문화의 중심지로, 연극·뮤지컬을 즐기는 젊은이들로 늘 활기가 넘쳐요.",
-    "place": "종로구 혜화동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[대학로·혜화] · 관광·역사 · 종로구 혜화동\n소극장과 공연장이 밀집한 공연문화의 중심지로, 연극·뮤지컬을 즐기는 젊은이들로 늘 활기가 넘쳐요.\n운영: 10시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "강남 MICE 관광특구",
     "displayName": "강남 코엑스",
     "category": "상권·역세권",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 7,
       "end": 24
     },
+    "operatingRaw": "7시~24시",
     "lat": 37.5012,
     "lng": 127.0396,
+    "place": "강남구 삼성동",
     "description": "삼성동에 자리한 대형 복합공간으로, 코엑스몰·별마당도서관과 비즈니스 시설이 모여 있는 강남의 랜드마크예요.",
-    "place": "강남구 삼성동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[강남 코엑스] · 상권·역세권 · 강남구 삼성동\n삼성동에 자리한 대형 복합공간으로, 코엑스몰·별마당도서관과 비즈니스 시설이 모여 있는 강남의 랜드마크예요.\n운영: 7시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "홍대 관광특구",
     "displayName": "홍대",
     "category": "상권·역세권",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 10,
       "end": 24
     },
+    "operatingRaw": "10시~24시",
     "lat": 37.5563,
     "lng": 126.9225,
+    "place": "마포구 서교동",
     "description": "젊음과 예술의 거리로, 개성 있는 상점과 클럽·버스킹 공연이 어우러져 밤낮없이 활기가 넘치는 번화가예요.",
-    "place": "마포구 서교동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "홍대·마포"
+    ],
+    "ragText": "[홍대] · 상권·역세권 · 마포구 서교동\n젊음과 예술의 거리로, 개성 있는 상점과 클럽·버스킹 공연이 어우러져 밤낮없이 활기가 넘치는 번화가예요.\n운영: 10시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "명동 관광특구",
     "displayName": "명동",
     "category": "상권·역세권",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 10,
       "end": 23
     },
+    "operatingRaw": "10시~23시",
     "lat": 37.5635,
     "lng": 126.9858,
+    "place": "중구 명동",
     "description": "쇼핑과 길거리 음식의 천국으로, 화장품·패션 매장과 먹거리가 가득해 국내외 관광객이 가장 많이 찾는 상권이에요.",
-    "place": "중구 명동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "종로·중구"
+    ],
+    "ragText": "[명동] · 상권·역세권 · 중구 명동\n쇼핑과 길거리 음식의 천국으로, 화장품·패션 매장과 먹거리가 가득해 국내외 관광객이 가장 많이 찾는 상권이에요.\n운영: 10시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "이태원 관광특구",
     "displayName": "이태원",
     "category": "상권·역세권",
+    "zone": "용산·이태원",
     "operatingHours": {
       "start": 11,
       "end": 24
     },
+    "operatingRaw": "11시~24시",
     "lat": 37.534,
     "lng": 126.994,
+    "place": "용산구 이태원동",
     "description": "다양한 나라의 음식점과 이국적인 상점이 모인 글로벌 문화 특구로, 세계 각국의 분위기를 한곳에서 즐길 수 있어요.",
-    "place": "용산구 이태원동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "용산·이태원"
+    ],
+    "ragText": "[이태원] · 상권·역세권 · 용산구 이태원동\n다양한 나라의 음식점과 이국적인 상점이 모인 글로벌 문화 특구로, 세계 각국의 분위기를 한곳에서 즐길 수 있어요.\n운영: 11시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "잠실 관광특구",
     "displayName": "잠실",
     "category": "상권·역세권",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 9,
       "end": 23
     },
+    "operatingRaw": "9시~23시",
     "lat": 37.5115,
     "lng": 127.098,
+    "place": "송파구 잠실동",
     "description": "롯데월드와 롯데월드타워·스타필드가 모인 송파구 대표 상권으로, 쇼핑·놀이·전망을 한번에 즐길 수 있어요.",
-    "place": "송파구 잠실동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "잠실·송파"
+    ],
+    "ragText": "[잠실] · 상권·역세권 · 송파구 잠실동\n롯데월드와 롯데월드타워·스타필드가 모인 송파구 대표 상권으로, 쇼핑·놀이·전망을 한번에 즐길 수 있어요.\n운영: 9시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "동대문 관광특구",
     "displayName": "동대문",
     "category": "상권·역세권",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 10,
       "end": 24
     },
+    "operatingRaw": "10시~24시",
     "lat": 37.5665,
     "lng": 127.009,
+    "place": "중구 을지로6가",
     "description": "대형 쇼핑몰과 DDP·재래시장이 어우러진 패션의 메카로, 밤새 문을 여는 의류 상가로 유명해요.",
-    "place": "중구 을지로6가"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "종로·중구"
+    ],
+    "ragText": "[동대문] · 상권·역세권 · 중구 을지로6가\n대형 쇼핑몰과 DDP·재래시장이 어우러진 패션의 메카로, 밤새 문을 여는 의류 상가로 유명해요.\n운영: 10시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "강남역",
     "displayName": "강남역",
     "category": "상권·역세권",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 7,
       "end": 24
     },
+    "operatingRaw": "7시~24시",
     "lat": 37.4979,
     "lng": 127.0276,
+    "place": "강남구 역삼동",
     "description": "서울 최대 유동인구를 자랑하는 번화가로, 대형 쇼핑몰과 맛집·카페·학원이 밀집해 늘 사람들로 붐벼요.",
-    "place": "강남구 역삼동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[강남역] · 상권·역세권 · 강남구 역삼동\n서울 최대 유동인구를 자랑하는 번화가로, 대형 쇼핑몰과 맛집·카페·학원이 밀집해 늘 사람들로 붐벼요.\n운영: 7시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "건대입구역",
     "displayName": "건대입구",
     "category": "상권·역세권",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 10,
       "end": 24
     },
+    "operatingRaw": "10시~24시",
     "lat": 37.5403,
     "lng": 127.0693,
+    "place": "광진구 화양동",
     "description": "건국대 앞 대학가 번화가로, 먹자골목과 카페·클럽이 모여 있어 젊은이들의 만남과 놀이 장소로 인기예요.",
-    "place": "광진구 화양동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "성수·건대"
+    ],
+    "ragText": "[건대입구] · 상권·역세권 · 광진구 화양동\n건국대 앞 대학가 번화가로, 먹자골목과 카페·클럽이 모여 있어 젊은이들의 만남과 놀이 장소로 인기예요.\n운영: 10시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "왕십리역",
     "displayName": "왕십리",
     "category": "상권·역세권",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 9,
       "end": 24
     },
+    "operatingRaw": "9시~24시",
     "lat": 37.5613,
     "lng": 127.0374,
+    "place": "성동구 행당동",
     "description": "성동구 교통 중심지로, 대형 쇼핑몰과 맛집이 밀집해 쇼핑과 식사를 한번에 해결하기 좋은 생활 상권이에요.",
-    "place": "성동구 행당동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "성수·건대"
+    ],
+    "ragText": "[왕십리] · 상권·역세권 · 성동구 행당동\n성동구 교통 중심지로, 대형 쇼핑몰과 맛집이 밀집해 쇼핑과 식사를 한번에 해결하기 좋은 생활 상권이에요.\n운영: 9시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "합정역",
     "displayName": "합정",
     "category": "상권·역세권",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 10,
       "end": 24
     },
+    "operatingRaw": "10시~24시",
     "lat": 37.5498,
     "lng": 126.9143,
+    "place": "마포구 합정동",
     "description": "한강과 가까운 마포구 번화가로, 감성 카페와 레스토랑·서점이 모여 있어 데이트와 산책을 즐기기 좋아요.",
-    "place": "마포구 합정동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "홍대·마포"
+    ],
+    "ragText": "[합정] · 상권·역세권 · 마포구 합정동\n한강과 가까운 마포구 번화가로, 감성 카페와 레스토랑·서점이 모여 있어 데이트와 산책을 즐기기 좋아요.\n운영: 10시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "서울역",
     "displayName": "서울역",
     "category": "상권·역세권",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 6,
       "end": 24
     },
+    "operatingRaw": "6시~24시",
     "lat": 37.5547,
     "lng": 126.9707,
+    "place": "중구 봉래동",
     "description": "전국으로 이어지는 교통의 관문으로, 기차·지하철과 롯데마트·쇼핑시설이 모인 도심의 핵심 거점이에요.",
-    "place": "중구 봉래동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "종로·중구"
+    ],
+    "ragText": "[서울역] · 상권·역세권 · 중구 봉래동\n전국으로 이어지는 교통의 관문으로, 기차·지하철과 롯데마트·쇼핑시설이 모인 도심의 핵심 거점이에요.\n운영: 6시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "용산역",
     "displayName": "용산",
     "category": "상권·역세권",
+    "zone": "용산·이태원",
     "operatingHours": {
       "start": 7,
       "end": 24
     },
+    "operatingRaw": "7시~24시",
     "lat": 37.5298,
     "lng": 126.9649,
+    "place": "용산구 한강로",
     "description": "전자상가와 아이파크몰·용산역이 어우러진 상권으로, 쇼핑과 영화·외식을 한곳에서 즐길 수 있는 복합 공간이에요.",
-    "place": "용산구 한강로"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "용산·이태원"
+    ],
+    "ragText": "[용산] · 상권·역세권 · 용산구 한강로\n전자상가와 아이파크몰·용산역이 어우러진 상권으로, 쇼핑과 영화·외식을 한곳에서 즐길 수 있는 복합 공간이에요.\n운영: 7시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "동대문역",
     "displayName": "동대문역",
     "category": "상권·역세권",
+    "zone": "종로·중구",
     "operatingHours": {
       "start": 9,
       "end": 24
     },
+    "operatingRaw": "9시~24시",
     "lat": 37.5717,
     "lng": 127.0093,
+    "place": "종로구 예지동",
     "description": "DDP와 광장시장·흥인지문이 가까운 도심 상권으로, 역사 명소와 전통시장 먹거리를 함께 둘러보기 좋아요.",
-    "place": "종로구 예지동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "종로·중구"
+    ],
+    "ragText": "[동대문역] · 상권·역세권 · 종로구 예지동\nDDP와 광장시장·흥인지문이 가까운 도심 상권으로, 역사 명소와 전통시장 먹거리를 함께 둘러보기 좋아요.\n운영: 9시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "선릉역",
     "displayName": "선릉역",
     "category": "상권·역세권",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 8,
       "end": 23
     },
+    "operatingRaw": "8시~23시",
     "lat": 37.5045,
     "lng": 127.0489,
+    "place": "강남구 대치동",
     "description": "강남 비즈니스 중심가로, 직장인을 위한 맛집과 카페가 밀집해 있고 인근에 조선왕릉 선릉·정릉이 자리해요.",
-    "place": "강남구 대치동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[선릉역] · 상권·역세권 · 강남구 대치동\n강남 비즈니스 중심가로, 직장인을 위한 맛집과 카페가 밀집해 있고 인근에 조선왕릉 선릉·정릉이 자리해요.\n운영: 8시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "역삼역",
     "displayName": "역삼역",
     "category": "상권·역세권",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 8,
       "end": 23
     },
+    "operatingRaw": "8시~23시",
     "lat": 37.5007,
     "lng": 127.0364,
+    "place": "강남구 역삼동",
     "description": "강남의 대표 오피스 밀집 지역으로, 스타트업과 직장인을 위한 맛집·카페가 모여 평일 낮에 특히 활기차요.",
-    "place": "강남구 역삼동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[역삼역] · 상권·역세권 · 강남구 역삼동\n강남의 대표 오피스 밀집 지역으로, 스타트업과 직장인을 위한 맛집·카페가 모여 평일 낮에 특히 활기차요.\n운영: 8시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "영등포 타임스퀘어",
     "displayName": "영등포 타임스퀘어",
     "category": "상권·역세권",
+    "zone": "여의도·영등포",
     "operatingHours": {
       "start": 10,
       "end": 23
     },
+    "operatingRaw": "10시~23시",
     "lat": 37.5157,
     "lng": 126.9007,
+    "place": "영등포구 영등포동",
     "description": "영등포역 인근 대형 복합쇼핑몰을 중심으로 한 상권으로, 백화점·영화관·맛집이 모여 하루를 보내기 좋아요.",
-    "place": "영등포구 영등포동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "여의도·영등포"
+    ],
+    "ragText": "[영등포 타임스퀘어] · 상권·역세권 · 영등포구 영등포동\n영등포역 인근 대형 복합쇼핑몰을 중심으로 한 상권으로, 백화점·영화관·맛집이 모여 하루를 보내기 좋아요.\n운영: 10시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "신도림역",
     "displayName": "신도림",
     "category": "상권·역세권",
+    "zone": "여의도·영등포",
     "operatingHours": {
       "start": 7,
       "end": 23
     },
+    "operatingRaw": "7시~23시",
     "lat": 37.5086,
     "lng": 126.8912,
+    "place": "구로구 신도림동",
     "description": "디큐브시티와 테크노마트가 자리한 환승 요충지로, 쇼핑몰과 공연장이 있어 만남과 쇼핑 장소로 좋아요.",
-    "place": "구로구 신도림동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "여의도·영등포"
+    ],
+    "ragText": "[신도림] · 상권·역세권 · 구로구 신도림동\n디큐브시티와 테크노마트가 자리한 환승 요충지로, 쇼핑몰과 공연장이 있어 만남과 쇼핑 장소로 좋아요.\n운영: 7시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "구로디지털단지역",
     "displayName": "구로디지털단지",
     "category": "상권·역세권",
+    "zone": "기타",
     "operatingHours": {
       "start": 7,
       "end": 22
     },
+    "operatingRaw": "7시~22시",
     "lat": 37.4851,
     "lng": 126.9011,
+    "place": "구로구 구로동",
     "description": "IT·벤처 기업이 밀집한 디지털 산업단지로, 평일 직장인 유동인구가 많고 주변에 식당·카페가 발달해 있어요.",
-    "place": "구로구 구로동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "기타"
+    ],
+    "ragText": "[구로디지털단지] · 상권·역세권 · 구로구 구로동\nIT·벤처 기업이 밀집한 디지털 산업단지로, 평일 직장인 유동인구가 많고 주변에 식당·카페가 발달해 있어요.\n운영: 7시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "가산디지털단지역",
     "displayName": "가산디지털단지",
     "category": "상권·역세권",
+    "zone": "기타",
     "operatingHours": {
       "start": 7,
       "end": 22
     },
+    "operatingRaw": "7시~22시",
     "lat": 37.4818,
     "lng": 126.8827,
+    "place": "금천구 가산동",
     "description": "IT단지와 대형 패션아울렛이 함께 있는 복합 상권으로, 쇼핑과 업무 인구가 어우러져 활기가 넘쳐요.",
-    "place": "금천구 가산동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "기타"
+    ],
+    "ragText": "[가산디지털단지] · 상권·역세권 · 금천구 가산동\nIT단지와 대형 패션아울렛이 함께 있는 복합 상권으로, 쇼핑과 업무 인구가 어우러져 활기가 넘쳐요.\n운영: 7시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "신림역",
     "displayName": "신림",
     "category": "상권·역세권",
+    "zone": "관악·사당",
     "operatingHours": {
       "start": 7,
       "end": 24
     },
+    "operatingRaw": "7시~24시",
     "lat": 37.4841,
     "lng": 126.9295,
+    "place": "관악구 신림동",
     "description": "서울대 인근 대학가 번화가로, 저렴한 맛집과 술집이 밀집한 먹자골목으로 젊은 층에게 인기가 많아요.",
-    "place": "관악구 신림동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "관악·사당"
+    ],
+    "ragText": "[신림] · 상권·역세권 · 관악구 신림동\n서울대 인근 대학가 번화가로, 저렴한 맛집과 술집이 밀집한 먹자골목으로 젊은 층에게 인기가 많아요.\n운영: 7시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "사당역",
     "displayName": "사당",
     "category": "상권·역세권",
+    "zone": "관악·사당",
     "operatingHours": {
       "start": 7,
       "end": 24
     },
+    "operatingRaw": "7시~24시",
     "lat": 37.4767,
     "lng": 126.9815,
+    "place": "동작구 사당동",
     "description": "여러 노선이 교차하는 강남권 교통 요충지로, 환승 인구가 많고 먹자골목과 술집이 발달한 번화가예요.",
-    "place": "동작구 사당동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "관악·사당"
+    ],
+    "ragText": "[사당] · 상권·역세권 · 동작구 사당동\n여러 노선이 교차하는 강남권 교통 요충지로, 환승 인구가 많고 먹자골목과 술집이 발달한 번화가예요.\n운영: 7시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "교대역",
     "displayName": "교대",
     "category": "상권·역세권",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 8,
       "end": 23
     },
+    "operatingRaw": "8시~23시",
     "lat": 37.4934,
     "lng": 127.0138,
+    "place": "서초구 서초동",
     "description": "서초구 법조타운과 맞닿은 강남권 상권으로, 직장인을 위한 맛집과 카페가 밀집한 깔끔한 번화가예요.",
-    "place": "서초구 서초동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[교대] · 상권·역세권 · 서초구 서초동\n서초구 법조타운과 맞닿은 강남권 상권으로, 직장인을 위한 맛집과 카페가 밀집한 깔끔한 번화가예요.\n운영: 8시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "고속터미널역",
     "displayName": "고속터미널",
     "category": "상권·역세권",
+    "zone": "강남·서초",
     "operatingHours": {
       "start": 6,
       "end": 24
     },
+    "operatingRaw": "6시~24시",
     "lat": 37.5048,
     "lng": 127.0047,
+    "place": "서초구 반포동",
     "description": "전국행 고속버스가 모이는 교통 허브로, 센트럴시티·신세계백화점·지하상가가 연결돼 쇼핑하기 좋아요.",
-    "place": "서초구 반포동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[고속터미널] · 상권·역세권 · 서초구 반포동\n전국행 고속버스가 모이는 교통 허브로, 센트럴시티·신세계백화점·지하상가가 연결돼 쇼핑하기 좋아요.\n운영: 6시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "노량진",
     "displayName": "노량진",
     "category": "상권·역세권",
+    "zone": "여의도·영등포",
     "operatingHours": {
       "start": 8,
       "end": 23
     },
+    "operatingRaw": "8시~23시",
     "lat": 37.5132,
     "lng": 126.943,
+    "place": "동작구 노량진동",
     "description": "수산시장과 학원가가 공존하는 동네로, 싱싱한 해산물과 활기찬 고시촌 분위기를 함께 느낄 수 있어요.",
-    "place": "동작구 노량진동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "여의도·영등포"
+    ],
+    "ragText": "[노량진] · 상권·역세권 · 동작구 노량진동\n수산시장과 학원가가 공존하는 동네로, 싱싱한 해산물과 활기찬 고시촌 분위기를 함께 느낄 수 있어요.\n운영: 8시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "연남동",
     "displayName": "연남동",
     "category": "상권·역세권",
+    "zone": "홍대·마포",
     "operatingHours": {
       "start": 11,
       "end": 24
     },
+    "operatingRaw": "11시~24시",
     "lat": 37.5615,
     "lng": 126.9236,
+    "place": "마포구 연남동",
     "description": "경의선숲길을 따라 감성 카페와 맛집이 늘어선 동네로, '연트럴파크'로 불리며 산책과 데이트 명소로 인기예요.",
-    "place": "마포구 연남동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "홍대·마포"
+    ],
+    "ragText": "[연남동] · 상권·역세권 · 마포구 연남동\n경의선숲길을 따라 감성 카페와 맛집이 늘어선 동네로, '연트럴파크'로 불리며 산책과 데이트 명소로 인기예요.\n운영: 11시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "성수카페거리",
     "displayName": "성수 카페거리",
     "category": "상권·역세권",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 10,
       "end": 23
     },
+    "operatingRaw": "10시~23시",
     "lat": 37.5444,
     "lng": 127.0564,
+    "place": "성동구 성수동",
     "description": "옛 공장을 개조한 개성 있는 카페와 팝업스토어가 모인 거리로, 서울에서 가장 힙한 동네로 손꼽혀요.",
-    "place": "성동구 성수동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "성수·건대"
+    ],
+    "ragText": "[성수 카페거리] · 상권·역세권 · 성동구 성수동\n옛 공장을 개조한 개성 있는 카페와 팝업스토어가 모인 거리로, 서울에서 가장 힙한 동네로 손꼽혀요.\n운영: 10시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "여의도",
     "displayName": "여의도",
     "category": "상권·역세권",
+    "zone": "여의도·영등포",
     "operatingHours": {
       "start": 8,
       "end": 23
     },
+    "operatingRaw": "8시~23시",
     "lat": 37.5219,
     "lng": 126.9247,
+    "place": "영등포구 여의도동",
     "description": "금융가와 방송국이 모인 업무 중심지로, 봄철 윤중로 벚꽃과 한강공원 덕에 나들이 명소로도 사랑받아요.",
-    "place": "영등포구 여의도동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "여의도·영등포"
+    ],
+    "ragText": "[여의도] · 상권·역세권 · 영등포구 여의도동\n금융가와 방송국이 모인 업무 중심지로, 봄철 윤중로 벚꽃과 한강공원 덕에 나들이 명소로도 사랑받아요.\n운영: 8시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "연신내역",
     "displayName": "연신내",
     "category": "상권·역세권",
+    "zone": "기타",
     "operatingHours": {
       "start": 7,
       "end": 23
     },
+    "operatingRaw": "7시~23시",
     "lat": 37.6189,
     "lng": 126.9196,
+    "place": "은평구 불광동",
     "description": "은평구를 대표하는 번화가로, 로데오거리와 먹자골목이 발달해 쇼핑과 외식을 즐기기 좋은 생활 상권이에요.",
-    "place": "은평구 불광동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "기타"
+    ],
+    "ragText": "[연신내] · 상권·역세권 · 은평구 불광동\n은평구를 대표하는 번화가로, 로데오거리와 먹자골목이 발달해 쇼핑과 외식을 즐기기 좋은 생활 상권이에요.\n운영: 7시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "천호역",
     "displayName": "천호",
     "category": "상권·역세권",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 8,
       "end": 23
     },
+    "operatingRaw": "8시~23시",
     "lat": 37.5386,
     "lng": 127.1237,
+    "place": "강동구 천호동",
     "description": "강동구를 대표하는 상권으로, 대형 백화점과 먹자골목·로데오거리가 모여 쇼핑과 식사를 함께 즐기기 좋아요.",
-    "place": "강동구 천호동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "잠실·송파"
+    ],
+    "ragText": "[천호] · 상권·역세권 · 강동구 천호동\n강동구를 대표하는 상권으로, 대형 백화점과 먹자골목·로데오거리가 모여 쇼핑과 식사를 함께 즐기기 좋아요.\n운영: 8시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "회기역",
     "displayName": "회기",
     "category": "상권·역세권",
+    "zone": "강북·성북",
     "operatingHours": {
       "start": 8,
       "end": 22
     },
+    "operatingRaw": "8시~22시",
     "lat": 37.5928,
     "lng": 127.0556,
+    "place": "동대문구 회기동",
     "description": "경희대·외대 학생들이 모이는 대학가로, 가성비 좋은 맛집과 술집이 밀집한 활기찬 먹자골목으로 유명해요.",
-    "place": "동대문구 회기동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강북·성북"
+    ],
+    "ragText": "[회기] · 상권·역세권 · 동대문구 회기동\n경희대·외대 학생들이 모이는 대학가로, 가성비 좋은 맛집과 술집이 밀집한 활기찬 먹자골목으로 유명해요.\n운영: 8시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "잠실새내역",
     "displayName": "잠실새내",
     "category": "상권·역세권",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 9,
       "end": 23
     },
+    "operatingRaw": "9시~23시",
     "lat": 37.5099,
     "lng": 127.0856,
+    "place": "송파구 신천동",
     "description": "잠실 주거단지 사이 먹자골목으로, 다양한 맛집과 카페가 밀집해 저녁이면 직장인과 주민들로 붐벼요.",
-    "place": "송파구 신천동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "잠실·송파"
+    ],
+    "ragText": "[잠실새내] · 상권·역세권 · 송파구 신천동\n잠실 주거단지 사이 먹자골목으로, 다양한 맛집과 카페가 밀집해 저녁이면 직장인과 주민들로 붐벼요.\n운영: 9시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "뚝섬역",
     "displayName": "뚝섬역",
     "category": "상권·역세권",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 9,
       "end": 23
     },
+    "operatingRaw": "9시~23시",
     "lat": 37.5479,
     "lng": 127.0476,
+    "place": "성동구 성수동",
     "description": "성수·뚝섬과 가까운 상권으로, 개성 있는 카페와 한강공원이 인접해 산책과 카페 투어를 즐기기 좋아요.",
-    "place": "성동구 성수동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "성수·건대"
+    ],
+    "ragText": "[뚝섬역] · 상권·역세권 · 성동구 성수동\n성수·뚝섬과 가까운 상권으로, 개성 있는 카페와 한강공원이 인접해 산책과 카페 투어를 즐기기 좋아요.\n운영: 9시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "군자역",
     "displayName": "군자",
     "category": "상권·역세권",
+    "zone": "성수·건대",
     "operatingHours": {
       "start": 9,
       "end": 22
     },
+    "operatingRaw": "9시~22시",
     "lat": 37.557,
     "lng": 127.0802,
+    "place": "광진구 군자동",
     "description": "광진구와 중랑구가 맞닿은 환승 요충지로, 주민 생활밀착형 상가와 먹거리가 발달한 생활 상권이에요.",
-    "place": "광진구 군자동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "성수·건대"
+    ],
+    "ragText": "[군자] · 상권·역세권 · 광진구 군자동\n광진구와 중랑구가 맞닿은 환승 요충지로, 주민 생활밀착형 상가와 먹거리가 발달한 생활 상권이에요.\n운영: 9시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "가락시장",
     "displayName": "가락시장",
     "category": "상권·역세권",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 6,
       "end": 20
     },
+    "operatingRaw": "6시~20시",
     "lat": 37.4923,
     "lng": 127.1157,
+    "place": "송파구 가락동",
     "description": "국내 최대 규모의 농수산물 도매시장으로, 신선한 청과·수산물을 새벽부터 거래하는 활기찬 시장이에요.",
-    "place": "송파구 가락동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "잠실·송파"
+    ],
+    "ragText": "[가락시장] · 상권·역세권 · 송파구 가락동\n국내 최대 규모의 농수산물 도매시장으로, 신선한 청과·수산물을 새벽부터 거래하는 활기찬 시장이에요.\n운영: 6시~20시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "장지역",
     "displayName": "장지역",
     "category": "상권·역세권",
+    "zone": "잠실·송파",
     "operatingHours": {
       "start": 8,
       "end": 22
     },
+    "operatingRaw": "8시~22시",
     "lat": 37.4744,
     "lng": 127.1449,
+    "place": "송파구 장지동",
     "description": "문정 법조단지와 가든파이브가 자리한 송파 남부 상권으로, 대형 쇼핑·업무 시설이 모여 있어요.",
-    "place": "송파구 장지동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "잠실·송파"
+    ],
+    "ragText": "[장지역] · 상권·역세권 · 송파구 장지동\n문정 법조단지와 가든파이브가 자리한 송파 남부 상권으로, 대형 쇼핑·업무 시설이 모여 있어요.\n운영: 8시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "쌍문역",
     "displayName": "쌍문",
     "category": "상권·역세권",
+    "zone": "강북·성북",
     "operatingHours": {
       "start": 8,
       "end": 22
     },
+    "operatingRaw": "8시~22시",
     "lat": 37.6488,
     "lng": 127.0275,
+    "place": "도봉구 쌍문동",
     "description": "도봉구의 생활밀착형 번화가로, 재래시장과 먹자골목이 정겨운 동네 분위기를 자아내는 곳이에요.",
-    "place": "도봉구 쌍문동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강북·성북"
+    ],
+    "ragText": "[쌍문] · 상권·역세권 · 도봉구 쌍문동\n도봉구의 생활밀착형 번화가로, 재래시장과 먹자골목이 정겨운 동네 분위기를 자아내는 곳이에요.\n운영: 8시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "성신여대입구역",
     "displayName": "성신여대입구",
     "category": "상권·역세권",
+    "zone": "강북·성북",
     "operatingHours": {
       "start": 10,
       "end": 23
     },
+    "operatingRaw": "10시~23시",
     "lat": 37.5924,
     "lng": 127.0165,
+    "place": "성북구 돈암동",
     "description": "성신여대 앞 대학가 번화가로, 로데오거리와 먹자골목에 카페·맛집이 밀집해 젊은 층에게 인기예요.",
-    "place": "성북구 돈암동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강북·성북"
+    ],
+    "ragText": "[성신여대입구] · 상권·역세권 · 성북구 돈암동\n성신여대 앞 대학가 번화가로, 로데오거리와 먹자골목에 카페·맛집이 밀집해 젊은 층에게 인기예요.\n운영: 10시~23시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "미아사거리역",
     "displayName": "미아사거리",
     "category": "상권·역세권",
+    "zone": "강북·성북",
     "operatingHours": {
       "start": 9,
       "end": 22
     },
+    "operatingRaw": "9시~22시",
     "lat": 37.613,
     "lng": 127.0246,
+    "place": "강북구 미아동",
     "description": "강북구 교통 요충지에 자리한 상권으로, 대형 백화점과 재래시장이 어우러진 생활 중심 번화가예요.",
-    "place": "강북구 미아동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강북·성북"
+    ],
+    "ragText": "[미아사거리] · 상권·역세권 · 강북구 미아동\n강북구 교통 요충지에 자리한 상권으로, 대형 백화점과 재래시장이 어우러진 생활 중심 번화가예요.\n운영: 9시~22시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "김포공항",
     "displayName": "김포공항",
     "category": "상권·역세권",
+    "zone": "기타",
     "operatingHours": {
       "start": 5,
       "end": 24
     },
+    "operatingRaw": "5시~24시",
     "lat": 37.5583,
     "lng": 126.7906,
+    "place": "강서구 공항동",
     "description": "국내선과 일부 국제선이 오가는 공항으로, 롯데몰·스카이파크 등 상업시설이 함께 있어 쇼핑도 즐길 수 있어요.",
-    "place": "강서구 공항동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "기타"
+    ],
+    "ragText": "[김포공항] · 상권·역세권 · 강서구 공항동\n국내선과 일부 국제선이 오가는 공항으로, 롯데몰·스카이파크 등 상업시설이 함께 있어 쇼핑도 즐길 수 있어요.\n운영: 5시~24시"
   },
   {
+    "source": "seoul_places",
+    "aspect": "summary",
     "areaName": "노들섬",
     "displayName": "노들섬",
     "category": "야경·전망",
+    "zone": "용산·이태원",
     "operatingHours": {
       "start": 17,
       "end": 24
     },
+    "operatingRaw": "17시~24시",
     "lat": 37.5171,
     "lng": 126.9378,
+    "place": "용산구 이촌동",
     "description": "한강 한가운데 자리한 섬으로, 공연장과 책방·라운지에서 음악과 함께 도심 야경을 감상하기 좋은 명소예요.",
-    "place": "용산구 이촌동"
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "야경·전망",
+      "용산·이태원"
+    ],
+    "ragText": "[노들섬] · 야경·전망 · 용산구 이촌동\n한강 한가운데 자리한 섬으로, 공연장과 책방·라운지에서 음악과 함께 도심 야경을 감상하기 좋은 명소예요.\n운영: 17시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "DDP(동대문디자인플라자)",
+    "displayName": "DDP",
+    "category": "야경·전망",
+    "zone": "종로·중구",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "operatingRaw": "10시~24시",
+    "lat": 37.5669,
+    "lng": 127.0102,
+    "place": "중구 을지로7가",
+    "description": "자하 하디드가 설계한 곡선형 랜드마크로, 전시와 디자인숍, 밤이면 빛나는 LED장미정원까지 즐길 수 있는 복합문화공간이에요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "야경·전망",
+      "종로·중구"
+    ],
+    "ragText": "[DDP] · 야경·전망 · 중구 을지로7가\n자하 하디드가 설계한 곡선형 랜드마크로, 전시와 디자인숍, 밤이면 빛나는 LED장미정원까지 즐길 수 있는 복합문화공간이에요.\n운영: 10시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "광장(전통)시장",
+    "displayName": "광장시장",
+    "category": "관광·역사",
+    "zone": "종로·중구",
+    "operatingHours": {
+      "start": 9,
+      "end": 23
+    },
+    "operatingRaw": "9시~23시",
+    "lat": 37.57,
+    "lng": 126.9999,
+    "place": "종로구 예지동",
+    "description": "빈대떡과 마약김밥으로 유명한 100년 전통시장으로, 좁은 골목을 가득 채운 먹거리 열기를 그대로 느낄 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[광장시장] · 관광·역사 · 종로구 예지동\n빈대떡과 마약김밥으로 유명한 100년 전통시장으로, 좁은 골목을 가득 채운 먹거리 열기를 그대로 느낄 수 있어요.\n운영: 9시~23시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "덕수궁길·정동길",
+    "displayName": "덕수궁길·정동길",
+    "category": "관광·역사",
+    "zone": "종로·중구",
+    "operatingHours": {
+      "start": 9,
+      "end": 22
+    },
+    "operatingRaw": "9시~22시",
+    "lat": 37.5663,
+    "lng": 126.9717,
+    "place": "중구 정동",
+    "description": "덕수궁 돌담을 따라 이어지는 낭만적인 산책길로, 근대 건축물과 미술관·공연장이 어우러져 걷기 좋은 길이에요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "종로·중구"
+    ],
+    "ragText": "[덕수궁길·정동길] · 관광·역사 · 중구 정동\n덕수궁 돌담을 따라 이어지는 낭만적인 산책길로, 근대 건축물과 미술관·공연장이 어우러져 걷기 좋은 길이에요.\n운영: 9시~22시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "북창동 먹자골목",
+    "displayName": "북창동 먹자골목",
+    "category": "상권·역세권",
+    "zone": "종로·중구",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "operatingRaw": "11시~24시",
+    "lat": 37.5622,
+    "lng": 126.9784,
+    "place": "중구 북창동",
+    "description": "시청 뒤편에 자리한 오래된 먹자골목으로, 순댓국·불백 같은 노포 맛집이 밀집해 점심·저녁이면 활기가 넘쳐요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "종로·중구"
+    ],
+    "ragText": "[북창동 먹자골목] · 상권·역세권 · 중구 북창동\n시청 뒤편에 자리한 오래된 먹자골목으로, 순댓국·불백 같은 노포 맛집이 밀집해 점심·저녁이면 활기가 넘쳐요.\n운영: 11시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "종로·청계 관광특구",
+    "displayName": "청계천",
+    "category": "공원·자연",
+    "zone": "종로·중구",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방(강우예보 및 우천시 출입통제)",
+    "lat": 37.57,
+    "lng": 126.9973,
+    "place": "종로구 관철동",
+    "description": "도심 한복판을 가로지르는 하천 산책로로, 물길을 따라 걷다 보면 빌딩숲 사이에서 여유를 느낄 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "종로·중구",
+      "도심·거리"
+    ],
+    "ragText": "[청계천] · 공원·자연 · 종로구 관철동\n도심 한복판을 가로지르는 하천 산책로로, 물길을 따라 걷다 보면 빌딩숲 사이에서 여유를 느낄 수 있어요.\n운영: 상시(24시간)",
+    "fee": "무료",
+    "transit": "지하철 5호선 광화문역 5번출구에서 약 60m 이동 / 지하철 1, 2호선 시청역 4번출구에서 약 300m 이동 / 시청.서울신문사(02137, 02706) 하차 / 간선 : 101,150,501,506,708 / 지선 : 1711,7016 / 순환 : 01A",
+    "bestTime": "any",
+    "url": "https://www.sisul.or.kr/open_content/cheonggye/"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "북서울꿈의숲",
+    "displayName": "북서울꿈의숲",
+    "category": "공원·자연",
+    "zone": "강북·성북",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시(24시간)",
+    "lat": 37.6218,
+    "lng": 127.0411,
+    "place": "강북구 번동",
+    "description": "강북 최대 규모의 공원으로, 너른 잔디밭과 호수·전망대에서 도봉산과 서울 북부 풍경을 한눈에 담을 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "강북·성북"
+    ],
+    "ragText": "[북서울꿈의숲] · 공원·자연 · 강북구 번동\n강북 최대 규모의 공원으로, 너른 잔디밭과 호수·전망대에서 도봉산과 서울 북부 풍경을 한눈에 담을 수 있어요.\n운영: 상시(24시간)"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "신촌·이대역",
+    "displayName": "신촌·이대",
+    "category": "상권·역세권",
+    "zone": "홍대·마포",
+    "operatingHours": {
+      "start": 10,
+      "end": 24
+    },
+    "operatingRaw": "10시~24시",
+    "lat": 37.557,
+    "lng": 126.9389,
+    "place": "서대문구 창천동",
+    "description": "연세대·이대 앞 대학가 번화가로, 먹자골목과 소극장·상점가가 어우러져 청춘의 활기를 느낄 수 있는 거리예요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "홍대·마포"
+    ],
+    "ragText": "[신촌·이대] · 상권·역세권 · 서대문구 창천동\n연세대·이대 앞 대학가 번화가로, 먹자골목과 소극장·상점가가 어우러져 청춘의 활기를 느낄 수 있는 거리예요.\n운영: 10시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "서대문독립공원",
+    "displayName": "서대문독립공원",
+    "category": "관광·역사",
+    "zone": "홍대·마포",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시(24시간)",
+    "lat": 37.574,
+    "lng": 126.9566,
+    "place": "서대문구 현저동",
+    "description": "독립문과 서대문형무소역사관이 자리한 공원으로, 산책과 함께 근현대 독립운동의 역사를 돌아볼 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "홍대·마포"
+    ],
+    "ragText": "[서대문독립공원] · 관광·역사 · 서대문구 현저동\n독립문과 서대문형무소역사관이 자리한 공원으로, 산책과 함께 근현대 독립운동의 역사를 돌아볼 수 있어요.\n운영: 상시(24시간)"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "용리단길",
+    "displayName": "용리단길",
+    "category": "상권·역세권",
+    "zone": "용산·이태원",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "operatingRaw": "11시~24시",
+    "lat": 37.5311,
+    "lng": 126.9712,
+    "place": "용산구 한강로",
+    "description": "신용산역 뒷골목에 개성 있는 식당과 와인바가 들어선 거리로, 요즘 서울에서 가장 핫한 맛집 골목으로 꼽혀요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "용산·이태원"
+    ],
+    "ragText": "[용리단길] · 상권·역세권 · 용산구 한강로\n신용산역 뒷골목에 개성 있는 식당과 와인바가 들어선 거리로, 요즘 서울에서 가장 핫한 맛집 골목으로 꼽혀요.\n운영: 11시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "해방촌·경리단길",
+    "displayName": "해방촌·경리단길",
+    "category": "상권·역세권",
+    "zone": "용산·이태원",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "operatingRaw": "11시~24시",
+    "lat": 37.5423,
+    "lng": 126.9871,
+    "place": "용산구 용산동2가",
+    "description": "남산 자락 언덕에 이국적인 맛집과 루프탑 바가 모인 동네로, 골목 사이로 보이는 남산타워 뷰가 매력적이에요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "용산·이태원"
+    ],
+    "ragText": "[해방촌·경리단길] · 상권·역세권 · 용산구 용산동2가\n남산 자락 언덕에 이국적인 맛집과 루프탑 바가 모인 동네로, 골목 사이로 보이는 남산타워 뷰가 매력적이에요.\n운영: 11시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "국립중앙박물관·용산가족공원",
+    "displayName": "국립중앙박물관",
+    "category": "관광·역사",
+    "zone": "용산·이태원",
+    "operatingHours": {
+      "start": 10,
+      "end": 18
+    },
+    "operatingRaw": "월, 화, 목, 금, 일: 09:30 ~ 17:30 / 수, 토 : 09:30 ~ 21:00",
+    "lat": 37.5227,
+    "lng": 126.9814,
+    "place": "용산구 용산동6가",
+    "description": "한국 대표 유물을 품은 국내 최대 박물관으로, 거울못과 용산가족공원 산책까지 하루 나들이로 즐기기 좋아요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "용산·이태원",
+      "미술관·박물관"
+    ],
+    "ragText": "[국립중앙박물관] · 관광·역사 · 용산구 용산동6가\n한국 대표 유물을 품은 국내 최대 박물관으로, 거울못과 용산가족공원 산책까지 하루 나들이로 즐기기 좋아요.\n운영: 10시~18시",
+    "fee": "상설전시 무료 (특별전시 유료)",
+    "transit": "지하철 4호선, 경의중앙선 이촌역 2번 출구 연결통로 이용 / 국립중앙박물관 정류장 하차 도보 이용",
+    "bestTime": "day",
+    "url": "https://www.museum.go.kr/"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "여의서로",
+    "displayName": "여의서로 벚꽃길",
+    "category": "공원·자연",
+    "zone": "여의도·영등포",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시(24시간)",
+    "lat": 37.5327,
+    "lng": 126.9145,
+    "place": "영등포구 여의도동",
+    "description": "국회의사당 뒤편 한강변을 따라 이어지는 길로, 봄이면 1,600여 그루 벚나무가 터널을 이루는 벚꽃 명소예요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "여의도·영등포"
+    ],
+    "ragText": "[여의서로 벚꽃길] · 공원·자연 · 영등포구 여의도동\n국회의사당 뒤편 한강변을 따라 이어지는 길로, 봄이면 1,600여 그루 벚나무가 터널을 이루는 벚꽃 명소예요.\n운영: 상시(24시간)"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "가로수길",
+    "displayName": "가로수길",
+    "category": "상권·역세권",
+    "zone": "강남·서초",
+    "operatingHours": {
+      "start": 10,
+      "end": 23
+    },
+    "operatingRaw": "10시~23시",
+    "lat": 37.5213,
+    "lng": 127.0235,
+    "place": "강남구 신사동",
+    "description": "신사동의 세련된 쇼핑 거리로, 감각적인 편집숍과 카페·플래그십 스토어가 은행나무 길을 따라 이어져요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[가로수길] · 상권·역세권 · 강남구 신사동\n신사동의 세련된 쇼핑 거리로, 감각적인 편집숍과 카페·플래그십 스토어가 은행나무 길을 따라 이어져요.\n운영: 10시~23시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "압구정로데오거리",
+    "displayName": "압구정로데오",
+    "category": "상권·역세권",
+    "zone": "강남·서초",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "operatingRaw": "11시~24시",
+    "lat": 37.5254,
+    "lng": 127.0387,
+    "place": "강남구 신사동",
+    "description": "유행을 이끄는 패션·맛집 거리로, 트렌디한 레스토랑과 카페가 모여 다시 뜨는 강남 핫플레이스로 주목받아요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[압구정로데오] · 상권·역세권 · 강남구 신사동\n유행을 이끄는 패션·맛집 거리로, 트렌디한 레스토랑과 카페가 모여 다시 뜨는 강남 핫플레이스로 주목받아요.\n운영: 11시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "청담동 명품거리",
+    "displayName": "청담동 명품거리",
+    "category": "상권·역세권",
+    "zone": "강남·서초",
+    "operatingHours": {
+      "start": 10,
+      "end": 22
+    },
+    "operatingRaw": "10시~22시",
+    "lat": 37.5258,
+    "lng": 127.0437,
+    "place": "강남구 청담동",
+    "description": "명품 플래그십 매장이 늘어선 패션 1번지로, 세련된 갤러리·카페와 함께 하이엔드 쇼핑 분위기를 느낄 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "강남·서초"
+    ],
+    "ragText": "[청담동 명품거리] · 상권·역세권 · 강남구 청담동\n명품 플래그십 매장이 늘어선 패션 1번지로, 세련된 갤러리·카페와 함께 하이엔드 쇼핑 분위기를 느낄 수 있어요.\n운영: 10시~22시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "서리풀공원·몽마르뜨공원",
+    "displayName": "서리풀공원",
+    "category": "공원·자연",
+    "zone": "강남·서초",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시(24시간)",
+    "lat": 37.4915,
+    "lng": 127.0026,
+    "place": "서초구 서초동",
+    "description": "서초동 주택가 사이 언덕 공원으로, 누에다리로 이어지는 조용한 숲길이 있어 동네 산책하듯 걷기 좋아요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "강남·서초"
+    ],
+    "ragText": "[서리풀공원] · 공원·자연 · 서초구 서초동\n서초동 주택가 사이 언덕 공원으로, 누에다리로 이어지는 조용한 숲길이 있어 동네 산책하듯 걷기 좋아요.\n운영: 상시(24시간)"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "어린이대공원",
+    "displayName": "어린이대공원",
+    "category": "공원·자연",
+    "zone": "성수·건대",
+    "operatingHours": {
+      "start": 5,
+      "end": 22
+    },
+    "operatingRaw": "5시~22시",
+    "lat": 37.549,
+    "lng": 127.0813,
+    "place": "광진구 능동",
+    "description": "동물원과 놀이동산·식물원을 무료로 즐길 수 있는 대형 공원으로, 아이와 함께하는 가족 나들이 명소예요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·자연",
+      "성수·건대"
+    ],
+    "ragText": "[어린이대공원] · 공원·자연 · 광진구 능동\n동물원과 놀이동산·식물원을 무료로 즐길 수 있는 대형 공원으로, 아이와 함께하는 가족 나들이 명소예요.\n운영: 5시~22시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "응봉산",
+    "displayName": "응봉산",
+    "category": "야경·전망",
+    "zone": "성수·건대",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시(24시간)",
+    "lat": 37.5482,
+    "lng": 127.0304,
+    "place": "성동구 응봉동",
+    "description": "성동구 한강변의 작은 산으로, 정상 팔각정에 오르면 서울숲과 한강·강남 야경이 파노라마로 펼쳐져요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "야경·전망",
+      "성수·건대"
+    ],
+    "ragText": "[응봉산] · 야경·전망 · 성동구 응봉동\n성동구 한강변의 작은 산으로, 정상 팔각정에 오르면 서울숲과 한강·강남 야경이 파노라마로 펼쳐져요.\n운영: 상시(24시간)"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "잠실롯데타워·석촌호수",
+    "displayName": "롯데월드타워·석촌호수",
+    "category": "야경·전망",
+    "zone": "잠실·송파",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시(24시간)",
+    "lat": 37.5115,
+    "lng": 127.1033,
+    "place": "송파구 잠실동",
+    "description": "123층 롯데월드타워 아래 석촌호수가 펼쳐진 곳으로, 호수 산책로를 따라 타워 야경과 벚꽃 풍경을 즐길 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "야경·전망",
+      "잠실·송파"
+    ],
+    "ragText": "[롯데월드타워·석촌호수] · 야경·전망 · 송파구 잠실동\n123층 롯데월드타워 아래 석촌호수가 펼쳐진 곳으로, 호수 산책로를 따라 타워 야경과 벚꽃 풍경을 즐길 수 있어요.\n운영: 상시(24시간)"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "송리단길·호수단길",
+    "displayName": "송리단길",
+    "category": "상권·역세권",
+    "zone": "잠실·송파",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "operatingRaw": "11시~24시",
+    "lat": 37.508,
+    "lng": 127.1063,
+    "place": "송파구 송파동",
+    "description": "석촌호수 동쪽 골목에 감성 카페와 브런치 맛집이 모인 거리로, 호수 산책과 카페 투어를 함께 즐기기 좋아요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "잠실·송파"
+    ],
+    "ragText": "[송리단길] · 상권·역세권 · 송파구 송파동\n석촌호수 동쪽 골목에 감성 카페와 브런치 맛집이 모인 거리로, 호수 산책과 카페 투어를 함께 즐기기 좋아요.\n운영: 11시~24시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "서울 암사동 유적",
+    "displayName": "암사동 유적",
+    "category": "관광·역사",
+    "zone": "잠실·송파",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "operatingRaw": "9시~18시",
+    "lat": 37.5606,
+    "lng": 127.1307,
+    "place": "강동구 암사동",
+    "description": "한강변에 남은 신석기시대 마을 유적으로, 움집 전시와 유물관을 둘러보며 선사시대 생활을 체험할 수 있어요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "관광·역사",
+      "잠실·송파"
+    ],
+    "ragText": "[암사동 유적] · 관광·역사 · 강동구 암사동\n한강변에 남은 신석기시대 마을 유적으로, 움집 전시와 유물관을 둘러보며 선사시대 생활을 체험할 수 있어요.\n운영: 9시~18시"
+  },
+  {
+    "source": "seoul_places",
+    "aspect": "summary",
+    "areaName": "서울대입구역",
+    "displayName": "샤로수길",
+    "category": "상권·역세권",
+    "zone": "관악·사당",
+    "operatingHours": {
+      "start": 11,
+      "end": 24
+    },
+    "operatingRaw": "11시~24시",
+    "lat": 37.4806,
+    "lng": 126.953,
+    "place": "관악구 봉천동",
+    "description": "서울대입구역 뒷골목에 세계 각국 음식점이 모인 거리로, 가성비 좋은 이색 맛집 투어 코스로 젊은 층에게 인기예요.",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "상권·역세권",
+      "관악·사당"
+    ],
+    "ragText": "[샤로수길] · 상권·역세권 · 관악구 봉천동\n서울대입구역 뒷골목에 세계 각국 음식점이 모인 거리로, 가성비 좋은 이색 맛집 투어 코스로 젊은 층에게 인기예요.\n운영: 11시~24시"
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "남산서울타워",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5511225714939,
+    "lng": 126.987867837993,
+    "place": "서울특별시 용산구 남산공원길 105",
+    "description": "남산서울타워은(는) 전망대·산 명소예요. 주소: 서울특별시 용산구 남산공원길 105. 운영: 상시개방. 요금: 남산공원 입장료 없음(전망대 등 개별 이용시설 요금 별도). 교통: 지하철 4호선 회현역 3번 출구 도보 이용 / 남산순환버스 01A번, 01B번 이용 * 남산공원 생태 환경 보호 일환으로 승용차량 통행 제한.",
+    "fee": "남산공원 입장료 없음(전망대 등 개별 이용시설 요금 별도)",
+    "transit": "지하철 4호선 회현역 3번 출구 도보 이용 / 남산순환버스 01A번, 01B번 이용 * 남산공원 생태 환경 보호 일환으로 승용차량 통행 제한",
+    "bestTime": "night",
+    "url": "https://www.seoultower.co.kr/",
+    "image": "/spots/1.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "문화/체육",
+      "night"
+    ],
+    "ragText": "[남산서울타워] · 전망대·산 · 서울특별시 용산구 남산공원길 105\n남산서울타워은(는) 전망대·산 명소예요. 주소: 서울특별시 용산구 남산공원길 105. 운영: 상시개방. 요금: 남산공원 입장료 없음(전망대 등 개별 이용시설 요금 별도). 교통: 지하철 4호선 회현역 3번 출구 도보 이용 / 남산순환버스 01A번, 01B번 이용 * 남산공원 생태 환경 보호 일환으로 승용차량 통행 제한."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "용양봉저정 공원",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5118003827004,
+    "lng": 126.958588093172,
+    "place": "서울 동작구 본동 산 3-9",
+    "description": "용양봉저정 공원은(는) 전망대·산 명소예요. 주소: 서울 동작구 본동 산 3-9. 운영: 상시개방. 요금: 무료. 교통: 9호선 노들역 3번 출구 도보 20분 / 동작실버센터 정류장, 흑석동효사정 하차 도보 5분.",
+    "fee": "무료",
+    "transit": "9호선 노들역 3번 출구 도보 20분 / 동작실버센터 정류장, 흑석동효사정 하차 도보 5분",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/3.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "공원/광장",
+      "night"
+    ],
+    "ragText": "[용양봉저정 공원] · 전망대·산 · 서울 동작구 본동 산 3-9\n용양봉저정 공원은(는) 전망대·산 명소예요. 주소: 서울 동작구 본동 산 3-9. 운영: 상시개방. 요금: 무료. 교통: 9호선 노들역 3번 출구 도보 20분 / 동작실버센터 정류장, 흑석동효사정 하차 도보 5분."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "창경궁",
+    "category": "고궁·역사",
+    "zone": "",
+    "operatingHours": {
+      "start": 9,
+      "end": 21
+    },
+    "operatingRaw": "화~일 09:00~21:00 * 매주 월요일 정기휴관",
+    "lat": 37.579412935392185,
+    "lng": 126.99522255388881,
+    "place": "서울특별시 종로구 창경궁로 185",
+    "description": "창경궁은(는) 고궁·역사 명소예요. 주소: 서울특별시 종로구 창경궁로 185. 운영: 화~일 09:00~21:00 * 매주 월요일 정기휴관. 요금: 유료 대인 1,000원, 한복착용자 무료. 교통: 지하철 4호선 혜화역 4번 출구 도보 이용 / 창경궁 정류장 하차 도보 이용.",
+    "fee": "유료 대인 1,000원, 한복착용자 무료",
+    "transit": "지하철 4호선 혜화역 4번 출구 도보 이용 / 창경궁 정류장 하차 도보 이용",
+    "bestTime": "day",
+    "url": "https://royal.khs.go.kr/cgg",
+    "image": "/spots/4.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "고궁·역사",
+      "문화/체육",
+      "day"
+    ],
+    "ragText": "[창경궁] · 고궁·역사 · 서울특별시 종로구 창경궁로 185\n창경궁은(는) 고궁·역사 명소예요. 주소: 서울특별시 종로구 창경궁로 185. 운영: 화~일 09:00~21:00 * 매주 월요일 정기휴관. 요금: 유료 대인 1,000원, 한복착용자 무료. 교통: 지하철 4호선 혜화역 4번 출구 도보 이용 / 창경궁 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "북악스카이웨이 팔각정",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.60155,
+    "lng": 126.98067,
+    "place": "서울특별시 종로구 북악산로 267",
+    "description": "북악스카이웨이 팔각정은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 북악산로 267. 운영: 상시개방. 요금: 무료.",
+    "fee": "무료",
+    "transit": "",
+    "bestTime": "night",
+    "url": "https://www.ijongno.co.kr/www/125",
+    "image": "/spots/5.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "공원/전망대",
+      "night"
+    ],
+    "ragText": "[북악스카이웨이 팔각정] · 전망대·산 · 서울특별시 종로구 북악산로 267\n북악스카이웨이 팔각정은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 북악산로 267. 운영: 상시개방. 요금: 무료."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "창덕궁",
+    "category": "고궁·역사",
+    "zone": "",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "operatingRaw": "화~일 09:00~18:00 * 매주 월요일 정기휴관",
+    "lat": 37.57950279094907,
+    "lng": 126.99103378705136,
+    "place": "서울특별시 종로구 율곡로 99",
+    "description": "창덕궁은(는) 고궁·역사 명소예요. 주소: 서울특별시 종로구 율곡로 99. 운영: 화~일 09:00~18:00 * 매주 월요일 정기휴관. 요금: 대인 3,000원, 한복착용자 무료. 교통: 지하철 1호선 종로3가역 6번 출구 도보 이용 / 창덕궁 정류장 하차 도보 이용.",
+    "fee": "대인 3,000원, 한복착용자 무료",
+    "transit": "지하철 1호선 종로3가역 6번 출구 도보 이용 / 창덕궁 정류장 하차 도보 이용",
+    "bestTime": "day",
+    "url": "https://royal.cha.go.kr/cdg",
+    "image": "/spots/6.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "고궁·역사",
+      "문화/체육",
+      "day"
+    ],
+    "ragText": "[창덕궁] · 고궁·역사 · 서울특별시 종로구 율곡로 99\n창덕궁은(는) 고궁·역사 명소예요. 주소: 서울특별시 종로구 율곡로 99. 운영: 화~일 09:00~18:00 * 매주 월요일 정기휴관. 요금: 대인 3,000원, 한복착용자 무료. 교통: 지하철 1호선 종로3가역 6번 출구 도보 이용 / 창덕궁 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "여의도한강공원 물빛광장",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 12,
+      "end": 21
+    },
+    "operatingRaw": "성수기(7~8월), (정각 마다 30분) 12:00 ~ 21:00(10회), 비수기(4~6월, 9~10월) (매회 30분) 12:00, 17:00, 18:00, 19:00, 20:00(5회)",
+    "lat": 37.5312466908117,
+    "lng": 126.928686496763,
+    "place": "서울 영등포구 여의도동 84-9",
+    "description": "여의도한강공원 물빛광장은(는) 한강·다리 명소예요. 주소: 서울 영등포구 여의도동 84-9. 운영: 성수기(7~8월), (정각 마다 30분) 12:00 ~ 21:00(10회), 비수기(4~6월, 9~10월) (매회 30분) 12:00, 17:00, 18:00, 19:00, 20:00(5회) . 요금: 무료. 교통: 지하철 5호선 여의나루역 1번, 2번 출구 도보 이용 / 여의도 순복음교회 앞 / 여의도공원 앞 버스정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 5호선 여의나루역 1번, 2번 출구 도보 이용 / 여의도 순복음교회 앞 / 여의도공원 앞 버스정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": " https://hangang.seoul.go.kr/www/contents/861.do?mid=854",
+    "image": "/spots/7.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "any"
+    ],
+    "ragText": "[여의도한강공원 물빛광장] · 한강·다리 · 서울 영등포구 여의도동 84-9\n여의도한강공원 물빛광장은(는) 한강·다리 명소예요. 주소: 서울 영등포구 여의도동 84-9. 운영: 성수기(7~8월), (정각 마다 30분) 12:00 ~ 21:00(10회), 비수기(4~6월, 9~10월) (매회 30분) 12:00, 17:00, 18:00, 19:00, 20:00(5회) . 요금: 무료. 교통: 지하철 5호선 여의나루역 1번, 2번 출구 도보 이용 / 여의도 순복음교회 앞 / 여의도공원 앞 버스정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "북촌6경",
+    "category": "고궁·역사",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방(주민거주 지역으로 소란자제)",
+    "lat": 37.583144,
+    "lng": 126.983411,
+    "place": "서울특별시 종로구 북촌로11나길 일대",
+    "description": "북촌6경은(는) 고궁·역사 명소예요. 주소: 서울특별시 종로구 북촌로11나길 일대. 운영: 상시개방(주민거주 지역으로 소란자제). 요금: 무료. 교통: 안국역(3호선) / 마을버스 종로02.",
+    "fee": "무료",
+    "transit": "안국역(3호선) / 마을버스 종로02",
+    "bestTime": "day",
+    "url": "https://hanok.seoul.go.kr/",
+    "image": "/spots/8.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "고궁·역사",
+      "관광지",
+      "day"
+    ],
+    "ragText": "[북촌6경] · 고궁·역사 · 서울특별시 종로구 북촌로11나길 일대\n북촌6경은(는) 고궁·역사 명소예요. 주소: 서울특별시 종로구 북촌로11나길 일대. 운영: 상시개방(주민거주 지역으로 소란자제). 요금: 무료. 교통: 안국역(3호선) / 마을버스 종로02."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "성수대교",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "일몰 30분후 점등 ~ 23:00 소등",
+    "lat": 37.53617802719353,
+    "lng": 127.03489368057885,
+    "place": "서울 성동구 옥수동 484",
+    "description": "성수대교은(는) 한강·다리 명소예요. 주소: 서울 성동구 옥수동 484. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: (북단) 지하철 2호선 뚝섬역 8번출구 도보 이용, (남단) 지하철 3호선 압구정역 1번출구 도보 이용 / (북단) 버스정류장 뚝섬서울숲 정류장 하차 후 도보 이용, (남단) 압구정중고등학교 정류장 하차 후 도보 이용.",
+    "fee": "무료",
+    "transit": "(북단) 지하철 2호선 뚝섬역 8번출구 도보 이용, (남단) 지하철 3호선 압구정역 1번출구 도보 이용 / (북단) 버스정류장 뚝섬서울숲 정류장 하차 후 도보 이용, (남단) 압구정중고등학교 정류장 하차 후 도보 이용",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/10.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "night"
+    ],
+    "ragText": "[성수대교] · 한강·다리 · 서울 성동구 옥수동 484\n성수대교은(는) 한강·다리 명소예요. 주소: 서울 성동구 옥수동 484. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: (북단) 지하철 2호선 뚝섬역 8번출구 도보 이용, (남단) 지하철 3호선 압구정역 1번출구 도보 이용 / (북단) 버스정류장 뚝섬서울숲 정류장 하차 후 도보 이용, (남단) 압구정중고등학교 정류장 하차 후 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "마포대교",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "일몰 30분후 점등 ~ 23:00 소등",
+    "lat": 37.533937,
+    "lng": 126.937313,
+    "place": "서울 영등포구 여의도동 85-2",
+    "description": "마포대교은(는) 한강·다리 명소예요. 주소: 서울 영등포구 여의도동 85-2. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: 북단) 지하철 5호선 마포역 1,4번출구 도보 15분 / (남단) 지하철 5호선 여의나루역 2번 출구 도보 17분 / (북단) 버스정류장 강변한신코아 정류장 하차 후 도보 이용 / (남단) 버스정류장 여의도공원 정류장 하차 후 도보 이용.",
+    "fee": "무료",
+    "transit": "북단) 지하철 5호선 마포역 1,4번출구 도보 15분 / (남단) 지하철 5호선 여의나루역 2번 출구 도보 17분 / (북단) 버스정류장 강변한신코아 정류장 하차 후 도보 이용 / (남단) 버스정류장 여의도공원 정류장 하차 후 도보 이용",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/11.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "night"
+    ],
+    "ragText": "[마포대교] · 한강·다리 · 서울 영등포구 여의도동 85-2\n마포대교은(는) 한강·다리 명소예요. 주소: 서울 영등포구 여의도동 85-2. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: 북단) 지하철 5호선 마포역 1,4번출구 도보 15분 / (남단) 지하철 5호선 여의나루역 2번 출구 도보 17분 / (북단) 버스정류장 강변한신코아 정류장 하차 후 도보 이용 / (남단) 버스정류장 여의도공원 정류장 하차 후 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "난지거울분수",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 12,
+      "end": 21
+    },
+    "operatingRaw": "성수기(7~8월) (매시 정각 20분) 12:00 ~ 21:00(10회) 비수기(4~6월, 9~10월) (매회 20분) 12:00, 17:00, 18:00, 19:00, 20:00(5회)",
+    "lat": 37.5599345342961,
+    "lng": 126.88981563725,
+    "place": "서울 마포구 상암동 1536-1",
+    "description": "난지거울분수은(는) 한강·다리 명소예요. 주소: 서울 마포구 상암동 1536-1. 운영: 성수기(7~8월) (매시 정각 20분) 12:00 ~ 21:00(10회) 비수기(4~6월, 9~10월) (매회 20분) 12:00, 17:00, 18:00, 19:00, 20:00(5회) . 요금: 무료. 교통: 지하철 6호선 마포구청역 7번, 6번 출구 도보 이용 / 마포구청역 버스정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 6호선 마포구청역 7번, 6번 출구 도보 이용 / 마포구청역 버스정류장 하차 도보 이용",
+    "bestTime": "night",
+    "url": "https://hangang.seoul.go.kr/www/facility/map.tab?srchCd=9054",
+    "image": "/spots/12.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "night"
+    ],
+    "ragText": "[난지거울분수] · 한강·다리 · 서울 마포구 상암동 1536-1\n난지거울분수은(는) 한강·다리 명소예요. 주소: 서울 마포구 상암동 1536-1. 운영: 성수기(7~8월) (매시 정각 20분) 12:00 ~ 21:00(10회) 비수기(4~6월, 9~10월) (매회 20분) 12:00, 17:00, 18:00, 19:00, 20:00(5회) . 요금: 무료. 교통: 지하철 6호선 마포구청역 7번, 6번 출구 도보 이용 / 마포구청역 버스정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "남산공원 백범광장",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5550484830696,
+    "lng": 126.98043243063,
+    "place": "서울 중구 회현동1가 산 1-44",
+    "description": "남산공원 백범광장은(는) 공원·정원 명소예요. 주소: 서울 중구 회현동1가 산 1-44. 운영: 상시개방. 요금: 무료. 교통: 지하철 4호선 명동역 4번 출구 도보 이용 / 힐튼호텔, 백범광장(힐튼호텔방면) 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 4호선 명동역 4번 출구 도보 이용 / 힐튼호텔, 백범광장(힐튼호텔방면) 정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://parks.seoul.go.kr/template/sub/namsan.do",
+    "image": "/spots/14.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[남산공원 백범광장] · 공원·정원 · 서울 중구 회현동1가 산 1-44\n남산공원 백범광장은(는) 공원·정원 명소예요. 주소: 서울 중구 회현동1가 산 1-44. 운영: 상시개방. 요금: 무료. 교통: 지하철 4호선 명동역 4번 출구 도보 이용 / 힐튼호텔, 백범광장(힐튼호텔방면) 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "사육신공원",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5134579901091,
+    "lng": 126.949411135441,
+    "place": "서울특별시 동작구 노량진로 191",
+    "description": "사육신공원은(는) 공원·정원 명소예요. 주소: 서울특별시 동작구 노량진로 191. 운영: 상시개방. 요금: 무료. 교통: 1호선 노량진역 2번 출구 도보 10분/9호선 노들역 1번 출구 도보 10분 / 버스정류장 사육신공원 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "1호선 노량진역 2번 출구 도보 10분/9호선 노들역 1번 출구 도보 10분 / 버스정류장 사육신공원 정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "",
+    "image": "/spots/15.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[사육신공원] · 공원·정원 · 서울특별시 동작구 노량진로 191\n사육신공원은(는) 공원·정원 명소예요. 주소: 서울특별시 동작구 노량진로 191. 운영: 상시개방. 요금: 무료. 교통: 1호선 노량진역 2번 출구 도보 10분/9호선 노들역 1번 출구 도보 10분 / 버스정류장 사육신공원 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "녹사평육교",
+    "category": "도심·거리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.534948,
+    "lng": 126.987051,
+    "place": "서울특별시 용산구 녹사평대로 195 앞 (녹사평역 인근)",
+    "description": "녹사평육교은(는) 도심·거리 명소예요. 주소: 서울특별시 용산구 녹사평대로 195 앞 (녹사평역 인근). 운영: 상시개방. 요금: 무료. 교통: 6호선 녹사평(용산구청)역 1번, 3번 출구 도보 1분 / 용산구청.이태원시장 또는 녹사평역 정류장 하차.",
+    "fee": "무료",
+    "transit": "6호선 녹사평(용산구청)역 1번, 3번 출구 도보 1분 / 용산구청.이태원시장 또는 녹사평역 정류장 하차",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/16.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "도심·거리",
+      "전망대/육교",
+      "night"
+    ],
+    "ragText": "[녹사평육교] · 도심·거리 · 서울특별시 용산구 녹사평대로 195 앞 (녹사평역 인근)\n녹사평육교은(는) 도심·거리 명소예요. 주소: 서울특별시 용산구 녹사평대로 195 앞 (녹사평역 인근). 운영: 상시개방. 요금: 무료. 교통: 6호선 녹사평(용산구청)역 1번, 3번 출구 도보 1분 / 용산구청.이태원시장 또는 녹사평역 정류장 하차."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "문화비축기지",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "야외공원 상시개방, 탱크 T1~T6 화~일요일 10:00~18:00 (월요일 휴관)",
+    "lat": 37.5703466887615,
+    "lng": 126.895031420115,
+    "place": "서울특별시 마포구 증산로 87",
+    "description": "문화비축기지은(는) 공원·정원 명소예요. 주소: 서울특별시 마포구 증산로 87. 운영: 야외공원 상시개방, 탱크 T1~T6 화~일요일 10:00~18:00 (월요일 휴관). 요금: 무료. 교통: 6호선 월드컵경기장역 2·3번 출구에서 도보 10분 / 문화비축기지 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "6호선 월드컵경기장역 2·3번 출구에서 도보 10분 / 문화비축기지 정류장 하차 도보 이용",
+    "bestTime": "day",
+    "url": "https://parks.seoul.go.kr/template/sub/culturetank.do",
+    "image": "/spots/17.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "day"
+    ],
+    "ragText": "[문화비축기지] · 공원·정원 · 서울특별시 마포구 증산로 87\n문화비축기지은(는) 공원·정원 명소예요. 주소: 서울특별시 마포구 증산로 87. 운영: 야외공원 상시개방, 탱크 T1~T6 화~일요일 10:00~18:00 (월요일 휴관). 요금: 무료. 교통: 6호선 월드컵경기장역 2·3번 출구에서 도보 10분 / 문화비축기지 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "숭례문(남대문)",
+    "category": "고궁·역사",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5599277853801,
+    "lng": 126.975359779271,
+    "place": "서울특별시 중구 세종대로 40",
+    "description": "숭례문(남대문)은(는) 고궁·역사 명소예요. 주소: 서울특별시 중구 세종대로 40. 운영: 상시개방. 요금: 무료. 교통: 지하철 1, 2호선 시청역 2번 출구 도보 이용 / 숭례문 또는 남대문시장 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 1, 2호선 시청역 2번 출구 도보 이용 / 숭례문 또는 남대문시장 정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://royal.khs.go.kr/ROYAL/contents/menuInfo-sym.do?grpCode=sym",
+    "image": "/spots/18.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "고궁·역사",
+      "문화/체육",
+      "any"
+    ],
+    "ragText": "[숭례문(남대문)] · 고궁·역사 · 서울특별시 중구 세종대로 40\n숭례문(남대문)은(는) 고궁·역사 명소예요. 주소: 서울특별시 중구 세종대로 40. 운영: 상시개방. 요금: 무료. 교통: 지하철 1, 2호선 시청역 2번 출구 도보 이용 / 숭례문 또는 남대문시장 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "이태원 부군당 역사공원",
+    "category": "고궁·역사",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.535801,
+    "lng": 126.989755,
+    "place": "서울특별시 용산구 녹사평대로40다길 33",
+    "description": "이태원 부군당 역사공원은(는) 고궁·역사 명소예요. 주소: 서울특별시 용산구 녹사평대로40다길 33. 운영: 상시개방. 요금: 무료. 교통: 녹사평역(6호선), 이태원역(6호선) / 마을버스 용산03.",
+    "fee": "무료",
+    "transit": "녹사평역(6호선), 이태원역(6호선) / 마을버스 용산03",
+    "bestTime": "any",
+    "url": "https://mediahub.seoul.go.kr/archives/2001416",
+    "image": "/spots/19.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "고궁·역사",
+      "공원/전망대",
+      "any"
+    ],
+    "ragText": "[이태원 부군당 역사공원] · 고궁·역사 · 서울특별시 용산구 녹사평대로40다길 33\n이태원 부군당 역사공원은(는) 고궁·역사 명소예요. 주소: 서울특별시 용산구 녹사평대로40다길 33. 운영: 상시개방. 요금: 무료. 교통: 녹사평역(6호선), 이태원역(6호선) / 마을버스 용산03."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "노들섬(2028년 완공예정)",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "야외공원 상시개방, 화~금 10:00~21:00, 주말, 공휴일 10:00~22:00",
+    "lat": 37.5176638307111,
+    "lng": 126.958036465507,
+    "place": "서울특별시 용산구 양녕로 445",
+    "description": "노들섬(2028년 완공예정)은(는) 한강·다리 명소예요. 주소: 서울특별시 용산구 양녕로 445. 운영: 야외공원 상시개방, 화~금 10:00~21:00, 주말, 공휴일 10:00~22:00. 요금: 무료. 교통: 1호선 용산역 1번 출구 또는 4호선 신용산역 3번출구 근처 버스정류장에서 노들섬 방면 버스 승차 이용, 9호선 노들역 2번출구에서 한강대교 방면 700m 도보 이동 / 버스정류장 노들섬에서 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "1호선 용산역 1번 출구 또는 4호선 신용산역 3번출구 근처 버스정류장에서 노들섬 방면 버스 승차 이용, 9호선 노들역 2번출구에서 한강대교 방면 700m 도보 이동 / 버스정류장 노들섬에서 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://nodeul.org/",
+    "image": "/spots/20.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[노들섬(2028년 완공예정)] · 한강·다리 · 서울특별시 용산구 양녕로 445\n노들섬(2028년 완공예정)은(는) 한강·다리 명소예요. 주소: 서울특별시 용산구 양녕로 445. 운영: 야외공원 상시개방, 화~금 10:00~21:00, 주말, 공휴일 10:00~22:00. 요금: 무료. 교통: 1호선 용산역 1번 출구 또는 4호선 신용산역 3번출구 근처 버스정류장에서 노들섬 방면 버스 승차 이용, 9호선 노들역 2번출구에서 한강대교 방면 700m 도보 이동 / 버스정류장 노들섬에서 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "광화문광장(광화문)",
+    "category": "도심·거리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5716228232824,
+    "lng": 126.976787992565,
+    "place": "서울특별시 종로구 세종대로 172",
+    "description": "광화문광장(광화문)은(는) 도심·거리 명소예요. 주소: 서울특별시 종로구 세종대로 172. 운영: 상시개방. 요금: 무료. 교통: 지하철 5호선 광화문역 7번 출구 도보 이용 / 세종문화회관, KT광화문지사 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 5호선 광화문역 7번 출구 도보 이용 / 세종문화회관, KT광화문지사 정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://gwanghwamun.seoul.go.kr/",
+    "image": "/spots/21.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "도심·거리",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[광화문광장(광화문)] · 도심·거리 · 서울특별시 종로구 세종대로 172\n광화문광장(광화문)은(는) 도심·거리 명소예요. 주소: 서울특별시 종로구 세종대로 172. 운영: 상시개방. 요금: 무료. 교통: 지하철 5호선 광화문역 7번 출구 도보 이용 / 세종문화회관, KT광화문지사 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "하늘공원(월드컵공원내)",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "월별 운영시간 상이 (하단 공원소개 내용 참조)",
+    "lat": 37.5690794796181,
+    "lng": 126.886318397942,
+    "place": "서울특별시 마포구 하늘공원로 95",
+    "description": "하늘공원(월드컵공원내)은(는) 공원·정원 명소예요. 주소: 서울특별시 마포구 하늘공원로 95. 운영: 월별 운영시간 상이 (하단 공원소개 내용 참조). 요금: 무료. 교통: 지하철 6호선 월드컵경기장역 1번 출구에서 도보 2km / 난지천공원에서 하늘공원 정상까지 맹꽁이 전기차 탑승.",
+    "fee": "무료",
+    "transit": "지하철 6호선 월드컵경기장역 1번 출구에서 도보 2km / 난지천공원에서 하늘공원 정상까지 맹꽁이 전기차 탑승",
+    "bestTime": "any",
+    "url": "https://parks.seoul.go.kr/template/sub/worldcuppark.do",
+    "image": "/spots/22.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[하늘공원(월드컵공원내)] · 공원·정원 · 서울특별시 마포구 하늘공원로 95\n하늘공원(월드컵공원내)은(는) 공원·정원 명소예요. 주소: 서울특별시 마포구 하늘공원로 95. 운영: 월별 운영시간 상이 (하단 공원소개 내용 참조). 요금: 무료. 교통: 지하철 6호선 월드컵경기장역 1번 출구에서 도보 2km / 난지천공원에서 하늘공원 정상까지 맹꽁이 전기차 탑승."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "동대문디자인플라자(DDP)",
+    "category": "복합공간·쇼핑",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 20
+    },
+    "operatingRaw": "10:00 ~ 20:00 (공간별 운영시간 상이, 홈페이지 참조)",
+    "lat": 37.56769968798189,
+    "lng": 127.00984769474137,
+    "place": "서울특별시 중구 을지로 281",
+    "description": "동대문디자인플라자(DDP)은(는) 복합공간·쇼핑 명소예요. 주소: 서울특별시 중구 을지로 281. 운영: 10:00 ~ 20:00 (공간별 운영시간 상이, 홈페이지 참조). 요금: 무료. 교통: 동대문역사문화공원역 1번, 2번 출구 / 동대문역사문화공원, 동대문디자인플라자 정류장 하차.",
+    "fee": "무료",
+    "transit": "동대문역사문화공원역 1번, 2번 출구 / 동대문역사문화공원, 동대문디자인플라자 정류장 하차",
+    "bestTime": "night",
+    "url": "https://ddp.or.kr/",
+    "image": "/spots/23.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "복합공간·쇼핑",
+      "문화/체육",
+      "night"
+    ],
+    "ragText": "[동대문디자인플라자(DDP)] · 복합공간·쇼핑 · 서울특별시 중구 을지로 281\n동대문디자인플라자(DDP)은(는) 복합공간·쇼핑 명소예요. 주소: 서울특별시 중구 을지로 281. 운영: 10:00 ~ 20:00 (공간별 운영시간 상이, 홈페이지 참조). 요금: 무료. 교통: 동대문역사문화공원역 1번, 2번 출구 / 동대문역사문화공원, 동대문디자인플라자 정류장 하차."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "잠원한강공원 그라스정원",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.516917,
+    "lng": 127.005719,
+    "place": "서울특별시 서초구 잠원로 221-124",
+    "description": "잠원한강공원 그라스정원은(는) 한강·다리 명소예요. 주소: 서울특별시 서초구 잠원로 221-124. 운영: 상시개방. 요금: 무료. 교통: 잠원역(3호선), 신사역(3호선, 신분당선).",
+    "fee": "무료",
+    "transit": "잠원역(3호선), 신사역(3호선, 신분당선)",
+    "bestTime": "any",
+    "url": "https://hangang.seoul.go.kr/",
+    "image": "/spots/24.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공원/정원",
+      "any"
+    ],
+    "ragText": "[잠원한강공원 그라스정원] · 한강·다리 · 서울특별시 서초구 잠원로 221-124\n잠원한강공원 그라스정원은(는) 한강·다리 명소예요. 주소: 서울특별시 서초구 잠원로 221-124. 운영: 상시개방. 요금: 무료. 교통: 잠원역(3호선), 신사역(3호선, 신분당선)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "서울로7017",
+    "category": "도심·거리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.556978,
+    "lng": 126.974766,
+    "place": "서울특별시 중구 통일로 15",
+    "description": "서울로7017은(는) 도심·거리 명소예요. 주소: 서울특별시 중구 통일로 15. 운영: 상시개방. 요금: 무료. 교통: 서울역(1호선, 4호선, 경의중앙선, 공항철도).",
+    "fee": "무료",
+    "transit": "서울역(1호선, 4호선, 경의중앙선, 공항철도)",
+    "bestTime": "any",
+    "url": "https://korean.visitseoul.net/tours/seoullo-night-trip/KON021913",
+    "image": "/spots/25.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "도심·거리",
+      "공공시설",
+      "any"
+    ],
+    "ragText": "[서울로7017] · 도심·거리 · 서울특별시 중구 통일로 15\n서울로7017은(는) 도심·거리 명소예요. 주소: 서울특별시 중구 통일로 15. 운영: 상시개방. 요금: 무료. 교통: 서울역(1호선, 4호선, 경의중앙선, 공항철도)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "마포새빛문화숲",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.543868,
+    "lng": 126.919384,
+    "place": "서울특별시 마포구 토정로 56",
+    "description": "마포새빛문화숲은(는) 공원·정원 명소예요. 주소: 서울특별시 마포구 토정로 56. 운영: 상시개방. 요금: 무료. 교통: 상수역(6호선), 합정역(2호선, 6호선) / 마을버스 마포07.",
+    "fee": "무료",
+    "transit": "상수역(6호선), 합정역(2호선, 6호선) / 마을버스 마포07",
+    "bestTime": "night",
+    "url": "https://www.mapo.go.kr/",
+    "image": "/spots/26.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/문화공간",
+      "night"
+    ],
+    "ragText": "[마포새빛문화숲] · 공원·정원 · 서울특별시 마포구 토정로 56\n마포새빛문화숲은(는) 공원·정원 명소예요. 주소: 서울특별시 마포구 토정로 56. 운영: 상시개방. 요금: 무료. 교통: 상수역(6호선), 합정역(2호선, 6호선) / 마을버스 마포07."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "반포대교 달빛무지개 분수",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "성수기(7~8월) 12:00, 19:30, 20:00, 20:30, 21:00, 21:30, 비수기(4~6월, 9~10월) 12:00, 19:30, 20:00, 20:30, 21:00",
+    "lat": 37.512605,
+    "lng": 126.998362,
+    "place": "서울 서초구 반포동 647",
+    "description": "반포대교 달빛무지개 분수은(는) 한강·다리 명소예요. 주소: 서울 서초구 반포동 647. 운영: 성수기(7~8월) 12:00, 19:30, 20:00, 20:30, 21:00, 21:30, 비수기(4~6월, 9~10월) 12:00, 19:30, 20:00, 20:30, 21:00  . 요금: 무료. 교통: 지하철 3, 7, 9호선 고속터미널역 8-1번, 8-2번 출구 도보 이용 / 반포한강공원, 반포대교남단 한강시민공윈 입구 버스정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 3, 7, 9호선 고속터미널역 8-1번, 8-2번 출구 도보 이용 / 반포한강공원, 반포대교남단 한강시민공윈 입구 버스정류장 하차 도보 이용",
+    "bestTime": "night",
+    "url": "https://hangang.seoul.go.kr/www/contents/856.do?mid=849",
+    "image": "/spots/27.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "night"
+    ],
+    "ragText": "[반포대교 달빛무지개 분수] · 한강·다리 · 서울 서초구 반포동 647\n반포대교 달빛무지개 분수은(는) 한강·다리 명소예요. 주소: 서울 서초구 반포동 647. 운영: 성수기(7~8월) 12:00, 19:30, 20:00, 20:30, 21:00, 21:30, 비수기(4~6월, 9~10월) 12:00, 19:30, 20:00, 20:30, 21:00  . 요금: 무료. 교통: 지하철 3, 7, 9호선 고속터미널역 8-1번, 8-2번 출구 도보 이용 / 반포한강공원, 반포대교남단 한강시민공윈 입구 버스정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "윤동주 시인의 언덕",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "10:00 - 18:00 (월요일 휴관, 시인의 언덕은 상시 개방)",
+    "lat": 37.590956,
+    "lng": 126.966155,
+    "place": "서울특별시 종로구 창의문로 119",
+    "description": "윤동주 시인의 언덕은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 창의문로 119. 운영: 10:00 - 18:00 (월요일 휴관, 시인의 언덕은 상시 개방). 요금: 무료. 교통: 경복궁역(3호선)에서 버스 환승 / 지선 1020, 7022, 7212 (윤동주문학관 하차).",
+    "fee": "무료",
+    "transit": "경복궁역(3호선)에서 버스 환승 / 지선 1020, 7022, 7212 (윤동주문학관 하차)",
+    "bestTime": "any",
+    "url": "https://www.jfac.or.kr/site/main/content/yoondj01",
+    "image": "/spots/28.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "문화/공원",
+      "any"
+    ],
+    "ragText": "[윤동주 시인의 언덕] · 전망대·산 · 서울특별시 종로구 창의문로 119\n윤동주 시인의 언덕은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 창의문로 119. 운영: 10:00 - 18:00 (월요일 휴관, 시인의 언덕은 상시 개방). 요금: 무료. 교통: 경복궁역(3호선)에서 버스 환승 / 지선 1020, 7022, 7212 (윤동주문학관 하차)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "별마당 도서관",
+    "category": "복합공간·쇼핑",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 22
+    },
+    "operatingRaw": "10:30 - 22:00",
+    "lat": 37.512558,
+    "lng": 127.058814,
+    "place": "서울특별시 강남구 영동대로 513 스타필드 코엑스몰 B1",
+    "description": "별마당 도서관은(는) 복합공간·쇼핑 명소예요. 주소: 서울특별시 강남구 영동대로 513 스타필드 코엑스몰 B1. 운영: 10:30 - 22:00. 요금: 무료. 교통: 2호선 삼성역 5, 6번 출구 / 9호선 봉은사역 7번 출구 지하 연결 통로 이용 / 삼성역.코엑스 또는 무역센터 정류장 하차.",
+    "fee": "무료",
+    "transit": "2호선 삼성역 5, 6번 출구 / 9호선 봉은사역 7번 출구 지하 연결 통로 이용 / 삼성역.코엑스 또는 무역센터 정류장 하차",
+    "bestTime": "any",
+    "url": "https://www.starfield.co.kr/coexmall/starfieldLibrary/library.do",
+    "image": "/spots/29.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "복합공간·쇼핑",
+      "문화/도서관",
+      "any"
+    ],
+    "ragText": "[별마당 도서관] · 복합공간·쇼핑 · 서울특별시 강남구 영동대로 513 스타필드 코엑스몰 B1\n별마당 도서관은(는) 복합공간·쇼핑 명소예요. 주소: 서울특별시 강남구 영동대로 513 스타필드 코엑스몰 B1. 운영: 10:30 - 22:00. 요금: 무료. 교통: 2호선 삼성역 5, 6번 출구 / 9호선 봉은사역 7번 출구 지하 연결 통로 이용 / 삼성역.코엑스 또는 무역센터 정류장 하차."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "세빛섬",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "개별시설별 운영시간 상이",
+    "lat": 37.5124362037118,
+    "lng": 126.995962256954,
+    "place": "서울특별시 서초구 올림픽대로 2085-14",
+    "description": "세빛섬은(는) 한강·다리 명소예요. 주소: 서울특별시 서초구 올림픽대로 2085-14. 운영: 개별시설별 운영시간 상이. 요금: 무료입장 가능, 개별 시설 이용료 별도. 교통: 지하철 3, 7, 9호선 8-1번 출구 도보 이용 / 반포대교 남단 정류장 하차 도보 이용.",
+    "fee": "무료입장 가능, 개별 시설 이용료 별도",
+    "transit": "지하철 3, 7, 9호선 8-1번 출구 도보 이용 / 반포대교 남단 정류장 하차 도보 이용",
+    "bestTime": "night",
+    "url": "https://www.somesevit.co.kr/",
+    "image": "/spots/30.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "문화/체육",
+      "night"
+    ],
+    "ragText": "[세빛섬] · 한강·다리 · 서울특별시 서초구 올림픽대로 2085-14\n세빛섬은(는) 한강·다리 명소예요. 주소: 서울특별시 서초구 올림픽대로 2085-14. 운영: 개별시설별 운영시간 상이. 요금: 무료입장 가능, 개별 시설 이용료 별도. 교통: 지하철 3, 7, 9호선 8-1번 출구 도보 이용 / 반포대교 남단 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "서울함 공원",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 19
+    },
+    "operatingRaw": "하절기(3월-10월) 평일 10:00~19:00 / 주말,공휴일 10:00~20:00 동절기(11월-2월) 평일 10:00~18:00 / 주말,공휴일 10:00~18:00",
+    "lat": 37.5557880616618,
+    "lng": 126.893953718935,
+    "place": "서울특별시 마포구 마포나루길 407",
+    "description": "서울함 공원은(는) 한강·다리 명소예요. 주소: 서울특별시 마포구 마포나루길 407. 운영: 하절기(3월-10월) 평일 10:00~19:00 / 주말,공휴일 10:00~20:00 동절기(11월-2월) 평일 10:00~18:00 / 주말,공휴일 10:00~18:00. 요금: 성인 3,000원 / 청소년, 군인 2,000원 / 어린이 1,000원(시설 방문 유료, 공원만 방문 무료). 교통: 6호선 망원역 1번 출구 앞 버스정류장에서 마포09번 버스 탑승 후 '한강공원입구' 정류장에서 하차 후 도보 7분 / 2, 6호선 합정역 1번 출구 앞 버스정류장에서 마포16번 버스 탑승 후 '망원유수지, 마포구민체육센터' 버스정류장 하차 후 도보 7분.",
+    "fee": "성인 3,000원 / 청소년, 군인 2,000원 / 어린이 1,000원(시설 방문 유료, 공원만 방문 무료)",
+    "transit": "6호선 망원역 1번 출구 앞 버스정류장에서 마포09번 버스 탑승 후 '한강공원입구' 정류장에서 하차 후 도보 7분 / 2, 6호선 합정역 1번 출구 앞 버스정류장에서 마포16번 버스 탑승 후 '망원유수지, 마포구민체육센터' 버스정류장 하차 후 도보 7분",
+    "bestTime": "any",
+    "url": "https://www.seoulbattleshippark.com/",
+    "image": "/spots/31.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[서울함 공원] · 한강·다리 · 서울특별시 마포구 마포나루길 407\n서울함 공원은(는) 한강·다리 명소예요. 주소: 서울특별시 마포구 마포나루길 407. 운영: 하절기(3월-10월) 평일 10:00~19:00 / 주말,공휴일 10:00~20:00 동절기(11월-2월) 평일 10:00~18:00 / 주말,공휴일 10:00~18:00. 요금: 성인 3,000원 / 청소년, 군인 2,000원 / 어린이 1,000원(시설 방문 유료, 공원만 방문 무료). 교통: 6호선 망원역 1번 출구 앞 버스정류장에서 마포09번 버스 탑승 후 '한강공원입구' 정류장에서 하차 후 도보 7분 / 2, 6호선 합정역 1번 출구 앞 버스정류장에서 마포16번 버스 탑승 후 '망원유수지, 마포구민체육센터' 버스정류장 하차 후 도보 7분."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "낙산공원 - 한양도성 성곽길",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.579840084989,
+    "lng": 127.008253028696,
+    "place": "서울특별시 종로구 낙산성곽서길 173",
+    "description": "낙산공원 - 한양도성 성곽길은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 낙산성곽서길 173. 운영: 상시개방. 요금: 무료. 교통: 지하철 4호선 혜화역 2번 출구 도보 10분 / 낙산공원(낙산삼거리방면), 혜화역 마로니애공원 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 4호선 혜화역 2번 출구 도보 10분 / 낙산공원(낙산삼거리방면), 혜화역 마로니애공원 정류장 하차 도보 이용",
+    "bestTime": "night",
+    "url": "https://parks.seoul.go.kr/template/sub/naksan.do",
+    "image": "/spots/32.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "공원/광장",
+      "night"
+    ],
+    "ragText": "[낙산공원 - 한양도성 성곽길] · 전망대·산 · 서울특별시 종로구 낙산성곽서길 173\n낙산공원 - 한양도성 성곽길은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 낙산성곽서길 173. 운영: 상시개방. 요금: 무료. 교통: 지하철 4호선 혜화역 2번 출구 도보 10분 / 낙산공원(낙산삼거리방면), 혜화역 마로니애공원 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "아뜰리에 광화",
+    "category": "미술관·박물관",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "일몰후~ 23:00",
+    "lat": 37.5718478584908,
+    "lng": 126.976168275947,
+    "place": "서울특별시 종로구 세종대로 175",
+    "description": "아뜰리에 광화은(는) 미술관·박물관 명소예요. 주소: 서울특별시 종로구 세종대로 175. 운영: 일몰후~ 23:00. 요금: 무료. 교통: 지하철 5호선 광화문역 7번 출구 도보 이용 / 세종문화회관, KT광화문지사 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 5호선 광화문역 7번 출구 도보 이용 / 세종문화회관, KT광화문지사 정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": "https://www.instagram.com/mediaartseoul/",
+    "image": "/spots/33.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "미술관·박물관",
+      "문화/체육",
+      "any"
+    ],
+    "ragText": "[아뜰리에 광화] · 미술관·박물관 · 서울특별시 종로구 세종대로 175\n아뜰리에 광화은(는) 미술관·박물관 명소예요. 주소: 서울특별시 종로구 세종대로 175. 운영: 일몰후~ 23:00. 요금: 무료. 교통: 지하철 5호선 광화문역 7번 출구 도보 이용 / 세종문화회관, KT광화문지사 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "백빈건널목",
+    "category": "도심·거리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.525113,
+    "lng": 126.960809,
+    "place": "서울특별시 용산구 이촌로29길 일대 (백빈건널목)",
+    "description": "백빈건널목은(는) 도심·거리 명소예요. 주소: 서울특별시 용산구 이촌로29길 일대 (백빈건널목). 운영: 상시개방. 요금: 무료. 교통: 1호선, 경의중앙선 용산역 1번 출구 도보 약 10분 / 용산역 또는 신용산역 정류장 하차 후 도보 이용.",
+    "fee": "무료",
+    "transit": "1호선, 경의중앙선 용산역 1번 출구 도보 약 10분 / 용산역 또는 신용산역 정류장 하차 후 도보 이용",
+    "bestTime": "any",
+    "url": "",
+    "image": "/spots/34.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "도심·거리",
+      "명소/거리",
+      "any"
+    ],
+    "ragText": "[백빈건널목] · 도심·거리 · 서울특별시 용산구 이촌로29길 일대 (백빈건널목)\n백빈건널목은(는) 도심·거리 명소예요. 주소: 서울특별시 용산구 이촌로29길 일대 (백빈건널목). 운영: 상시개방. 요금: 무료. 교통: 1호선, 경의중앙선 용산역 1번 출구 도보 약 10분 / 용산역 또는 신용산역 정류장 하차 후 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "삼성해맞이공원",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.519643,
+    "lng": 127.06195,
+    "place": "서울특별시 강남구 영동대로128길 39",
+    "description": "삼성해맞이공원은(는) 전망대·산 명소예요. 주소: 서울특별시 강남구 영동대로128길 39. 운영: 상시개방. 요금: 무료. 교통: 7호선 청담역 1번 출구 도보 약 15분 / 9호선 봉은사역 3번 출구 도보 약 15분 / 마을버스 강남01 (삼성해맞이공원 정류장 하차).",
+    "fee": "무료",
+    "transit": "7호선 청담역 1번 출구 도보 약 15분 / 9호선 봉은사역 3번 출구 도보 약 15분 / 마을버스 강남01 (삼성해맞이공원 정류장 하차)",
+    "bestTime": "night",
+    "url": "https://visitgangnam.net/",
+    "image": "/spots/35.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "공원/전망대",
+      "night"
+    ],
+    "ragText": "[삼성해맞이공원] · 전망대·산 · 서울특별시 강남구 영동대로128길 39\n삼성해맞이공원은(는) 전망대·산 명소예요. 주소: 서울특별시 강남구 영동대로128길 39. 운영: 상시개방. 요금: 무료. 교통: 7호선 청담역 1번 출구 도보 약 15분 / 9호선 봉은사역 3번 출구 도보 약 15분 / 마을버스 강남01 (삼성해맞이공원 정류장 하차)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "잠수교",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방(기상 악화 시 통제)",
+    "lat": 37.51363,
+    "lng": 126.996874,
+    "place": "서울특별시 서초구 반포동 ~ 용산구 서빙고동 (잠수교)",
+    "description": "잠수교은(는) 한강·다리 명소예요. 주소: 서울특별시 서초구 반포동 ~ 용산구 서빙고동 (잠수교). 운영: 상시개방(기상 악화 시 통제). 요금: 무료. 교통: 3, 7, 9호선 고속터미널역 8-1, 8-2번 출구 도보 약 15분 / 경의중앙선 서빙고역 2번 출구 도보 약 15분 / 반포한강공원.세빛섬 정류장(740번 등) 하차.",
+    "fee": "무료",
+    "transit": "3, 7, 9호선 고속터미널역 8-1, 8-2번 출구 도보 약 15분 / 경의중앙선 서빙고역 2번 출구 도보 약 15분 / 반포한강공원.세빛섬 정류장(740번 등) 하차",
+    "bestTime": "any",
+    "url": "https://hangang.seoul.go.kr/",
+    "image": "/spots/36.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "교량/산책로",
+      "any"
+    ],
+    "ragText": "[잠수교] · 한강·다리 · 서울특별시 서초구 반포동 ~ 용산구 서빙고동 (잠수교)\n잠수교은(는) 한강·다리 명소예요. 주소: 서울특별시 서초구 반포동 ~ 용산구 서빙고동 (잠수교). 운영: 상시개방(기상 악화 시 통제). 요금: 무료. 교통: 3, 7, 9호선 고속터미널역 8-1, 8-2번 출구 도보 약 15분 / 경의중앙선 서빙고역 2번 출구 도보 약 15분 / 반포한강공원.세빛섬 정류장(740번 등) 하차."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "동작대교",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "일몰 30분후 점등 ~ 23:00 소등",
+    "lat": 37.51007066016623,
+    "lng": 126.98138294783693,
+    "place": "서울 용산구 이촌동 385",
+    "description": "동작대교은(는) 한강·다리 명소예요. 주소: 서울 용산구 이촌동 385. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: (북단) 지하철 4호선 이촌역 3-1번출구 도보 20분 / (남단) 지하철 4호선 동작역 2번 출구 도보 10분 / (북단) 버스정류장 금강병원, 반도아파트 정류장 하차 후 도보 이용, (남단) 버스정류장 동작역, 국립현충원 정류장 하차 후 도보 이용.",
+    "fee": "무료",
+    "transit": "(북단) 지하철 4호선 이촌역 3-1번출구 도보 20분 / (남단) 지하철 4호선 동작역 2번 출구 도보 10분 / (북단) 버스정류장 금강병원, 반도아파트 정류장 하차 후 도보 이용, (남단) 버스정류장 동작역, 국립현충원 정류장 하차 후 도보 이용",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/37.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "night"
+    ],
+    "ragText": "[동작대교] · 한강·다리 · 서울 용산구 이촌동 385\n동작대교은(는) 한강·다리 명소예요. 주소: 서울 용산구 이촌동 385. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: (북단) 지하철 4호선 이촌역 3-1번출구 도보 20분 / (남단) 지하철 4호선 동작역 2번 출구 도보 10분 / (북단) 버스정류장 금강병원, 반도아파트 정류장 하차 후 도보 이용, (남단) 버스정류장 동작역, 국립현충원 정류장 하차 후 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "흥인지문공원",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.5719236,
+    "lng": 127.0090775,
+    "place": "서울특별시 종로구 종로6가 70",
+    "description": "흥인지문공원은(는) 공원·정원 명소예요. 주소: 서울특별시 종로구 종로6가 70. 운영: 상시개방. 요금: 무료. 교통: 지하철 1호선 동대문역 1번 출구, 4호선 동대문역 10번 출구 도보 이용 / 동대문 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 1호선 동대문역 1번 출구, 4호선 동대문역 10번 출구 도보 이용 / 동대문 정류장 하차 도보 이용",
+    "bestTime": "night",
+    "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=cdf4fd57-025d-4ba5-a4ee-78949b670d2c",
+    "image": "/spots/38.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "문화/체육",
+      "night"
+    ],
+    "ragText": "[흥인지문공원] · 공원·정원 · 서울특별시 종로구 종로6가 70\n흥인지문공원은(는) 공원·정원 명소예요. 주소: 서울특별시 종로구 종로6가 70. 운영: 상시개방. 요금: 무료. 교통: 지하철 1호선 동대문역 1번 출구, 4호선 동대문역 10번 출구 도보 이용 / 동대문 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "덕수궁 돌담길",
+    "category": "고궁·역사",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.564976656898445,
+    "lng": 126.97602682975977,
+    "place": "서울특별시 중구 세종대로 99",
+    "description": "덕수궁 돌담길은(는) 고궁·역사 명소예요. 주소: 서울특별시 중구 세종대로 99. 운영: 상시개방. 요금: 유료. 교통: 지하철 1, 2호선 시청역 2번출구 도보 5분 / 버스정류장 시청덕수궁 도보 3분.",
+    "fee": "유료",
+    "transit": "지하철 1, 2호선 시청역 2번출구 도보 5분 / 버스정류장 시청덕수궁 도보 3분",
+    "bestTime": "any",
+    "url": "",
+    "image": "/spots/40.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "고궁·역사",
+      "역사/산책로",
+      "any"
+    ],
+    "ragText": "[덕수궁 돌담길] · 고궁·역사 · 서울특별시 중구 세종대로 99\n덕수궁 돌담길은(는) 고궁·역사 명소예요. 주소: 서울특별시 중구 세종대로 99. 운영: 상시개방. 요금: 유료. 교통: 지하철 1, 2호선 시청역 2번출구 도보 5분 / 버스정류장 시청덕수궁 도보 3분."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "광진교 8번가",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 12,
+      "end": 20
+    },
+    "operatingRaw": "4월~10월(12:00~20:00), 3월,11월(12:00~18:00)",
+    "lat": 37.5451462595072,
+    "lng": 127.112687934633,
+    "place": "서울 강동구 천호동 527-2",
+    "description": "광진교 8번가은(는) 한강·다리 명소예요. 주소: 서울 강동구 천호동 527-2. 운영: 4월~10월(12:00~20:00), 3월,11월(12:00~18:00). 요금: 무료. 교통: 지하철 5호선 광나루역(도보 약 15분), 지하철 5호선 천호역(도보 약 15분) / 광나루 한강공원 2주차장(강동구 천호동 483-8), 광나루 한강공원 3주차장(송파구 풍납동 49-2).",
+    "fee": "무료",
+    "transit": "지하철 5호선 광나루역(도보 약 15분), 지하철 5호선 천호역(도보 약 15분) / 광나루 한강공원 2주차장(강동구 천호동 483-8), 광나루 한강공원 3주차장(송파구 풍납동 49-2)",
+    "bestTime": "night",
+    "url": "https://riverview8.co.kr/rv/html/",
+    "image": "/spots/41.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "문화/체육",
+      "night"
+    ],
+    "ragText": "[광진교 8번가] · 한강·다리 · 서울 강동구 천호동 527-2\n광진교 8번가은(는) 한강·다리 명소예요. 주소: 서울 강동구 천호동 527-2. 운영: 4월~10월(12:00~20:00), 3월,11월(12:00~18:00). 요금: 무료. 교통: 지하철 5호선 광나루역(도보 약 15분), 지하철 5호선 천호역(도보 약 15분) / 광나루 한강공원 2주차장(강동구 천호동 483-8), 광나루 한강공원 3주차장(송파구 풍납동 49-2)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "인왕산(무무대 전망대)",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.584077,
+    "lng": 126.963725,
+    "place": "서울특별시 종로구 옥인동 산3-13",
+    "description": "인왕산(무무대 전망대)은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 옥인동 산3-13. 운영: 상시개방. 요금: 무료. 교통: 경복궁역(3호선)에서 마을버스 환승 / 마을버스 종로09 (수성동계곡 하차 후 도보).",
+    "fee": "무료",
+    "transit": "경복궁역(3호선)에서 마을버스 환승 / 마을버스 종로09 (수성동계곡 하차 후 도보)",
+    "bestTime": "night",
+    "url": "https://parks.seoul.go.kr/parks/detailView.do?pIdx=110",
+    "image": "/spots/42.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "전망대/산책로",
+      "night"
+    ],
+    "ragText": "[인왕산(무무대 전망대)] · 전망대·산 · 서울특별시 종로구 옥인동 산3-13\n인왕산(무무대 전망대)은(는) 전망대·산 명소예요. 주소: 서울특별시 종로구 옥인동 산3-13. 운영: 상시개방. 요금: 무료. 교통: 경복궁역(3호선)에서 마을버스 환승 / 마을버스 종로09 (수성동계곡 하차 후 도보)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "테크노마트 하늘공원",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 22
+    },
+    "operatingRaw": "10:00 - 22:00 (옥상정원 개방시간, 건물 사정에 따라 변동)",
+    "lat": 37.5353467,
+    "lng": 127.0961089,
+    "place": "서울특별시 광진구 광나루로56길 85 (강변테크노마트 옥상)",
+    "description": "테크노마트 하늘공원은(는) 전망대·산 명소예요. 주소: 서울특별시 광진구 광나루로56길 85 (강변테크노마트 옥상). 운영: 10:00 - 22:00 (옥상정원 개방시간, 건물 사정에 따라 변동). 요금: 무료. 교통: 지하철 2호선 강변역 1번 출구, 강변테크노마트와 연결 통로 이용 / 강변역.강변테크노마트 정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 2호선 강변역 1번 출구, 강변테크노마트와 연결 통로 이용 / 강변역.강변테크노마트 정류장 하차 도보 이용",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/43.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "공원/전망대",
+      "night"
+    ],
+    "ragText": "[테크노마트 하늘공원] · 전망대·산 · 서울특별시 광진구 광나루로56길 85 (강변테크노마트 옥상)\n테크노마트 하늘공원은(는) 전망대·산 명소예요. 주소: 서울특별시 광진구 광나루로56길 85 (강변테크노마트 옥상). 운영: 10:00 - 22:00 (옥상정원 개방시간, 건물 사정에 따라 변동). 요금: 무료. 교통: 지하철 2호선 강변역 1번 출구, 강변테크노마트와 연결 통로 이용 / 강변역.강변테크노마트 정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "뚝섬 공원",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.529932,
+    "lng": 127.065317,
+    "place": "서울 광진구 자양동 435",
+    "description": "뚝섬 공원은(는) 한강·다리 명소예요. 주소: 서울 광진구 자양동 435. 운영: 상시개방. 요금: 무료. 교통: 지하철 7호선 자양역 2번 출구 도보 이용 / 자양4동주민센터 앞 / 신자초등학교 앞 버스정류장 하차 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 7호선 자양역 2번 출구 도보 이용 / 자양4동주민센터 앞 / 신자초등학교 앞 버스정류장 하차 도보 이용",
+    "bestTime": "any",
+    "url": " https://hangang.seoul.go.kr/www/contents/859.do?mid=852#none",
+    "image": "/spots/44.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "any"
+    ],
+    "ragText": "[뚝섬 공원] · 한강·다리 · 서울 광진구 자양동 435\n뚝섬 공원은(는) 한강·다리 명소예요. 주소: 서울 광진구 자양동 435. 운영: 상시개방. 요금: 무료. 교통: 지하철 7호선 자양역 2번 출구 도보 이용 / 자양4동주민센터 앞 / 신자초등학교 앞 버스정류장 하차 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "달맞이 근린공원",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.53866839156651,
+    "lng": 127.01914464062273,
+    "place": "서울특별시 성동구 금호동4가 산27",
+    "description": "달맞이 근린공원은(는) 전망대·산 명소예요. 주소: 서울특별시 성동구 금호동4가 산27. 운영: 상시개방. 요금: 무료. 교통: 지하철 3호선·경의중앙선 옥수역 4번 출구에서 도보 약 5~10분 / 옥수삼성아파트(04-131) 정류장 하차 후 도보 이용.",
+    "fee": "무료",
+    "transit": "지하철 3호선·경의중앙선 옥수역 4번 출구에서 도보 약 5~10분 / 옥수삼성아파트(04-131) 정류장 하차 후 도보 이용",
+    "bestTime": "night",
+    "url": "https://parks.seoul.go.kr/parks/detailView.do?pIdx=1011",
+    "image": "/spots/46.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "공원/광장",
+      "night"
+    ],
+    "ragText": "[달맞이 근린공원] · 전망대·산 · 서울특별시 성동구 금호동4가 산27\n달맞이 근린공원은(는) 전망대·산 명소예요. 주소: 서울특별시 성동구 금호동4가 산27. 운영: 상시개방. 요금: 무료. 교통: 지하철 3호선·경의중앙선 옥수역 4번 출구에서 도보 약 5~10분 / 옥수삼성아파트(04-131) 정류장 하차 후 도보 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "선유도공원",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 6,
+      "end": 24
+    },
+    "operatingRaw": "06:00 - 24:00",
+    "lat": 37.5423832345578,
+    "lng": 126.901819342041,
+    "place": "서울특별시 영등포구 선유로 343",
+    "description": "선유도공원은(는) 공원·정원 명소예요. 주소: 서울특별시 영등포구 선유로 343. 운영: 06:00 - 24:00. 요금: 무료. 교통: 선유도역 - 9호선 (도보 약 10분) / 당산역 - 2호선, 9호선 (도보 약 15분) / 선유도 정류장 하차 도보 이용 * 장애인주차만 가능, 일반차량의 경우 양화한강공원3주차장 이용.",
+    "fee": "무료",
+    "transit": "선유도역 - 9호선 (도보 약 10분) / 당산역 - 2호선, 9호선 (도보 약 15분) / 선유도 정류장 하차 도보 이용 * 장애인주차만 가능, 일반차량의 경우 양화한강공원3주차장 이용",
+    "bestTime": "any",
+    "url": "https://parks.seoul.go.kr/template/sub/seonyudo.do",
+    "image": "/spots/47.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "any"
+    ],
+    "ragText": "[선유도공원] · 공원·정원 · 서울특별시 영등포구 선유로 343\n선유도공원은(는) 공원·정원 명소예요. 주소: 서울특별시 영등포구 선유로 343. 운영: 06:00 - 24:00. 요금: 무료. 교통: 선유도역 - 9호선 (도보 약 10분) / 당산역 - 2호선, 9호선 (도보 약 15분) / 선유도 정류장 하차 도보 이용 * 장애인주차만 가능, 일반차량의 경우 양화한강공원3주차장 이용."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "용마산 스카이워크",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시 개방",
+    "lat": 37.5829,
+    "lng": 127.102923,
+    "place": "서울특별시 중랑구 면목동 용마산 정상 부근 (서울둘레길 4코스 망우·용마산 구간 내)",
+    "description": "용마산 스카이워크은(는) 전망대·산 명소예요. 주소: 서울특별시 중랑구 면목동 용마산 정상 부근 (서울둘레길 4코스 망우·용마산 구간 내). 운영: 상시 개방. 요금: 무료. 교통: 7호선 사가정역 4번 출구 도보 약 50분(2.4km) / 7호선 용마산역 2번 출구 도보 약 1시간~1시간 30분 / 사가정역·용마산역 인근 정류장 하차 후 도보 이동 (차량 접근 불가 구간).",
+    "fee": "무료",
+    "transit": "7호선 사가정역 4번 출구 도보 약 50분(2.4km) / 7호선 용마산역 2번 출구 도보 약 1시간~1시간 30분 / 사가정역·용마산역 인근 정류장 하차 후 도보 이동 (차량 접근 불가 구간)",
+    "bestTime": "night",
+    "url": "https://korean.visitseoul.net/area/YongmasanSkywalk/KOP998h6q",
+    "image": "/spots/48.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "전망대/산책로",
+      "night"
+    ],
+    "ragText": "[용마산 스카이워크] · 전망대·산 · 서울특별시 중랑구 면목동 용마산 정상 부근 (서울둘레길 4코스 망우·용마산 구간 내)\n용마산 스카이워크은(는) 전망대·산 명소예요. 주소: 서울특별시 중랑구 면목동 용마산 정상 부근 (서울둘레길 4코스 망우·용마산 구간 내). 운영: 상시 개방. 요금: 무료. 교통: 7호선 사가정역 4번 출구 도보 약 50분(2.4km) / 7호선 용마산역 2번 출구 도보 약 1시간~1시간 30분 / 사가정역·용마산역 인근 정류장 하차 후 도보 이동 (차량 접근 불가 구간)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "노원불빛정원(화랑대철도공원 내)",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "화~일요일, 일몰전 30분~22:00 ※ 월요일 휴무",
+    "lat": 37.6244509765399,
+    "lng": 127.093089721731,
+    "place": "서울특별시 노원구 화랑로 608",
+    "description": "노원불빛정원(화랑대철도공원 내)은(는) 공원·정원 명소예요. 주소: 서울특별시 노원구 화랑로 608. 운영: 화~일요일, 일몰전 30분~22:00 ※ 월요일 휴무. 요금: 무료 ※ 단, 화랑대철도공원 내 일부 문화시설(기차마을 등) 입장료 있음. 교통: 6호선 화랑대역 4번출구 하차 후 도보 10분 (약 898m) / ‘경춘선숲길.화랑대역공원’ 버스정류장 하차 (간선버스 202 / 지선버스 1155, 2212 / 일반버스 115 / 마을버스 82A, 82B).",
+    "fee": "무료 ※ 단, 화랑대철도공원 내 일부 문화시설(기차마을 등) 입장료 있음",
+    "transit": "6호선 화랑대역 4번출구 하차 후 도보 10분 (약 898m) / ‘경춘선숲길.화랑대역공원’ 버스정류장 하차 (간선버스 202 / 지선버스 1155, 2212 / 일반버스 115 / 마을버스 82A, 82B)",
+    "bestTime": "night",
+    "url": "https://www.nowon.kr/www/info/info1/info1_06/info1_06_08/info1_06_08_01.jsp",
+    "image": "/spots/49.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "night"
+    ],
+    "ragText": "[노원불빛정원(화랑대철도공원 내)] · 공원·정원 · 서울특별시 노원구 화랑로 608\n노원불빛정원(화랑대철도공원 내)은(는) 공원·정원 명소예요. 주소: 서울특별시 노원구 화랑로 608. 운영: 화~일요일, 일몰전 30분~22:00 ※ 월요일 휴무. 요금: 무료 ※ 단, 화랑대철도공원 내 일부 문화시설(기차마을 등) 입장료 있음. 교통: 6호선 화랑대역 4번출구 하차 후 도보 10분 (약 898m) / ‘경춘선숲길.화랑대역공원’ 버스정류장 하차 (간선버스 202 / 지선버스 1155, 2212 / 일반버스 115 / 마을버스 82A, 82B)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "서울어린이대공원 음악분수",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 5,
+      "end": 22
+    },
+    "operatingRaw": "5:00~22:00 (연중무휴)",
+    "lat": 37.5520117940291,
+    "lng": 127.078770241307,
+    "place": "서울특별시 광진구 능동로 216",
+    "description": "서울어린이대공원 음악분수은(는) 공원·정원 명소예요. 주소: 서울특별시 광진구 능동로 216. 운영: 5:00~22:00 (연중무휴). 요금: 무료. 교통: 7호선 어린이대공원역 1번출구 / ‘세종대학교’ 정류소 하차.",
+    "fee": "무료",
+    "transit": "7호선 어린이대공원역 1번출구 / ‘세종대학교’ 정류소 하차",
+    "bestTime": "night",
+    "url": "https://www.sisul.or.kr/open_content/childrenpark/guidance/fun/water.jsp",
+    "image": "/spots/50.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/광장",
+      "night"
+    ],
+    "ragText": "[서울어린이대공원 음악분수] · 공원·정원 · 서울특별시 광진구 능동로 216\n서울어린이대공원 음악분수은(는) 공원·정원 명소예요. 주소: 서울특별시 광진구 능동로 216. 운영: 5:00~22:00 (연중무휴). 요금: 무료. 교통: 7호선 어린이대공원역 1번출구 / ‘세종대학교’ 정류소 하차."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "성산대교",
+    "category": "한강·다리",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "일몰 30분후 점등 ~ 23:00 소등",
+    "lat": 37.5514767278681,
+    "lng": 126.891604816192,
+    "place": "서울 마포구 망원동 306-53",
+    "description": "성산대교은(는) 한강·다리 명소예요. 주소: 서울 마포구 망원동 306-53. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: (북단) 지하철 6호선 마포구청역 6번 출구로 나와 도보 / (남단) 지하철 9호선 선유도역 1, 3번 출구로 나와 도보 / (북단) 버스정류장 마포구청역 하차 후 도보 / (남단) 버스정류장 양평동한솔아파트 하차 후 도보.",
+    "fee": "무료",
+    "transit": "(북단) 지하철 6호선 마포구청역 6번 출구로 나와 도보 / (남단) 지하철 9호선 선유도역 1, 3번 출구로 나와 도보 / (북단) 버스정류장 마포구청역 하차 후 도보 / (남단) 버스정류장 양평동한솔아파트 하차 후 도보",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/51.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "한강·다리",
+      "공공시설",
+      "night"
+    ],
+    "ragText": "[성산대교] · 한강·다리 · 서울 마포구 망원동 306-53\n성산대교은(는) 한강·다리 명소예요. 주소: 서울 마포구 망원동 306-53. 운영: 일몰 30분후 점등 ~ 23:00 소등. 요금: 무료. 교통: (북단) 지하철 6호선 마포구청역 6번 출구로 나와 도보 / (남단) 지하철 9호선 선유도역 1, 3번 출구로 나와 도보 / (북단) 버스정류장 마포구청역 하차 후 도보 / (남단) 버스정류장 양평동한솔아파트 하차 후 도보."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "북서울 꿈의숲",
+    "category": "공원·정원",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "공원 상시 개방 / 전망대·아트센터 등 부속시설은 별도 운영시간 적용",
+    "lat": 37.621052,
+    "lng": 127.041079,
+    "place": "서울특별시 강북구 월계로 173 (번동)",
+    "description": "북서울 꿈의숲은(는) 공원·정원 명소예요. 주소: 서울특별시 강북구 월계로 173 (번동). 운영: 공원 상시 개방 / 전망대·아트센터 등 부속시설은 별도 운영시간 적용. 요금: 무료 (전망대 및 공원 입장료 없음, 일부 전시·공연 시설은 유료). 교통: 4호선 미아사거리역 1·2·3번 출구 도보 약 15~20분 / 1호선 월계역 1번 출구·석계역 1번 출구, 6호선 돌곶이역 3번 출구에서 버스 연계 / 북서울꿈의숲 정류장 하차 (간선 100, 111, 147, 172, 6011 / 마을버스 강북09, 강북11 등).",
+    "fee": "무료 (전망대 및 공원 입장료 없음, 일부 전시·공연 시설은 유료)",
+    "transit": "4호선 미아사거리역 1·2·3번 출구 도보 약 15~20분 / 1호선 월계역 1번 출구·석계역 1번 출구, 6호선 돌곶이역 3번 출구에서 버스 연계 / 북서울꿈의숲 정류장 하차 (간선 100, 111, 147, 172, 6011 / 마을버스 강북09, 강북11 등)",
+    "bestTime": "any",
+    "url": "https://parks.seoul.go.kr/template/sub/dreamforest.do",
+    "image": "/spots/52.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "공원·정원",
+      "공원/정원",
+      "any"
+    ],
+    "ragText": "[북서울 꿈의숲] · 공원·정원 · 서울특별시 강북구 월계로 173 (번동)\n북서울 꿈의숲은(는) 공원·정원 명소예요. 주소: 서울특별시 강북구 월계로 173 (번동). 운영: 공원 상시 개방 / 전망대·아트센터 등 부속시설은 별도 운영시간 적용. 요금: 무료 (전망대 및 공원 입장료 없음, 일부 전시·공연 시설은 유료). 교통: 4호선 미아사거리역 1·2·3번 출구 도보 약 15~20분 / 1호선 월계역 1번 출구·석계역 1번 출구, 6호선 돌곶이역 3번 출구에서 버스 연계 / 북서울꿈의숲 정류장 하차 (간선 100, 111, 147, 172, 6011 / 마을버스 강북09, 강북11 등)."
+  },
+  {
+    "source": "seoul_spots",
+    "aspect": "access",
+    "areaName": "",
+    "displayName": "소월로",
+    "category": "전망대·산",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시개방",
+    "lat": 37.54653,
+    "lng": 126.98516,
+    "place": "서울 용산구 용산동 2가 1-1179",
+    "description": "소월로은(는) 전망대·산 명소예요. 주소: 서울 용산구 용산동 2가 1-1179. 운영: 상시개방. 요금: 무료. 교통: 6호선 녹사평역 2번 출구 도보 이용.",
+    "fee": "무료",
+    "transit": "6호선 녹사평역 2번 출구 도보 이용",
+    "bestTime": "night",
+    "url": "",
+    "image": "/spots/53.jpg",
+    "isFilming": false,
+    "contentTitle": "",
+    "tags": [
+      "전망대·산",
+      "전망대/도로",
+      "night"
+    ],
+    "ragText": "[소월로] · 전망대·산 · 서울 용산구 용산동 2가 1-1179\n소월로은(는) 전망대·산 명소예요. 주소: 서울 용산구 용산동 2가 1-1179. 운영: 상시개방. 요금: 무료. 교통: 6호선 녹사평역 2번 출구 도보 이용."
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "여의도 한강공원",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5215,
+    "lng": 126.9417,
+    "place": "서울특별시 영등포구 여의도동 86-7",
+    "description": "여의도 한강공원은(는) 드라마 '너의 시간 속으로'의 촬영지예요. 증권가의 중심지인 여의도에 자리잡고 있는 시민공원이다. 여의나루역과 매우 가까워 접근성이 편리하고 봄에는 벚꽃 명소로, 가을에는 세계불꽃축제가 열리는 등 항상 사람들로 북적이는 명소이다. 너의 시간 속으로에서는 민주, 시헌, 인규가 한강에서 컵라면을 먹는 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "너의 시간 속으로",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "너의 시간 속으로"
+    ],
+    "ragText": "[여의도 한강공원 — 드라마 '너의 시간 속으로' 촬영지] · 서울특별시 영등포구 여의도동 86-7\n여의도 한강공원은(는) 드라마 '너의 시간 속으로'의 촬영지예요. 증권가의 중심지인 여의도에 자리잡고 있는 시민공원이다. 여의나루역과 매우 가까워 접근성이 편리하고 봄에는 벚꽃 명소로, 가을에는 세계불꽃축제가 열리는 등 항상 사람들로 북적이는 명소이다. 너의 시간 속으로에서는 민주, 시헌, 인규가 한강에서 컵라면을 먹는 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "서울시립대학교",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5826,
+    "lng": 127.06,
+    "place": "서울특별시 동대문구 휘경동 371",
+    "description": "서울시립대학교은(는) 드라마 '더글로리'의 촬영지예요. 서울특별시 동대문구에 소재한 4년제 공립 종합대학이다. 일제강점기 조선총독부가 설치한 경성공립농업학교를 모체로 1986년도 종합대학으로 개편 후 1987년도부터 서울시립대학교가 되었다. 더 글로리에서는 복수를 마친 문동은이 새롭게 대학 생활을 시작하는 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "더글로리",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "더글로리"
+    ],
+    "ragText": "[서울시립대학교 — 드라마 '더글로리' 촬영지] · 서울특별시 동대문구 휘경동 371\n서울시립대학교은(는) 드라마 '더글로리'의 촬영지예요. 서울특별시 동대문구에 소재한 4년제 공립 종합대학이다. 일제강점기 조선총독부가 설치한 경성공립농업학교를 모체로 1986년도 종합대학으로 개편 후 1987년도부터 서울시립대학교가 되었다. 더 글로리에서는 복수를 마친 문동은이 새롭게 대학 생활을 시작하는 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "종각역",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5702,
+    "lng": 126.9832,
+    "place": "서울특별시 종로구 종로1가 54",
+    "description": "종각역은(는) 드라마 '오징어게임'의 촬영지예요. 1974년 8월 15일 1호선 개통으로 영업을 개시한 수도권 전철 1호선의 역으로 지하상가와 연결되어 있다. 일 평균 이용객이 7만명에 이르는 시민들의 훌륭한 대중교통 수단이다. 오징어게임2에서는 주인공 기훈이 딱지맨을 찾으러 돌아다니는 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "오징어게임",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "오징어게임"
+    ],
+    "ragText": "[종각역 — 드라마 '오징어게임' 촬영지] · 서울특별시 종로구 종로1가 54\n종각역은(는) 드라마 '오징어게임'의 촬영지예요. 1974년 8월 15일 1호선 개통으로 영업을 개시한 수도권 전철 1호선의 역으로 지하상가와 연결되어 있다. 일 평균 이용객이 7만명에 이르는 시민들의 훌륭한 대중교통 수단이다. 오징어게임2에서는 주인공 기훈이 딱지맨을 찾으러 돌아다니는 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "경의선숲길",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5547,
+    "lng": 126.9322,
+    "place": "서울특별시 마포구 서교동 9-6",
+    "description": "경의선숲길은(는) 드라마 '정신병동에도 아침이 와요'의 촬영지예요. 6.3km 길이의 공원으로 가장 긴 연남동 구간은 연트럴파크로 불리며 돗자리를 깔고 맥주를 즐기는 젊은 사람들로 가득하다. 그 외에 구간에도 산책을 즐기는 주민들로 가득하며 서울에서 도심 속 녹지를 즐길 수 있는 공간이다. 정신병동에도 아침이 와요에서는 병원 사람들의 회식 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "정신병동에도 아침이 와요",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "정신병동에도 아침이 와요"
+    ],
+    "ragText": "[경의선숲길 — 드라마 '정신병동에도 아침이 와요' 촬영지] · 서울특별시 마포구 서교동 9-6\n경의선숲길은(는) 드라마 '정신병동에도 아침이 와요'의 촬영지예요. 6.3km 길이의 공원으로 가장 긴 연남동 구간은 연트럴파크로 불리며 돗자리를 깔고 맥주를 즐기는 젊은 사람들로 가득하다. 그 외에 구간에도 산책을 즐기는 주민들로 가득하며 서울에서 도심 속 녹지를 즐길 수 있는 공간이다. 정신병동에도 아침이 와요에서는 병원 사람들의 회식 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "여의도공원",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5268,
+    "lng": 126.9223,
+    "place": "서울특별시 영등포구 여의도동 2",
+    "description": "여의도공원은(는) 드라마 '멜로무비'의 촬영지예요. 1971년 활주로가 있던 자리에 여의도 광장으로 문을 열었다. 한국 전통의 숲, 문화의 마당, 잔디마당, 자연 생태의 숲 등 네 개의 공간으로 이루어져 있으며 주변에 자전거 도로와 산책로가 조성되어 있어 시민들에게 휴식공간이자 문화공간의 역할을 하고 있다. 멜로무비에서는 손주아가 옛 연인인 홍시준과의 추억을 회상하는 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "멜로무비",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "멜로무비"
+    ],
+    "ragText": "[여의도공원 — 드라마 '멜로무비' 촬영지] · 서울특별시 영등포구 여의도동 2\n여의도공원은(는) 드라마 '멜로무비'의 촬영지예요. 1971년 활주로가 있던 자리에 여의도 광장으로 문을 열었다. 한국 전통의 숲, 문화의 마당, 잔디마당, 자연 생태의 숲 등 네 개의 공간으로 이루어져 있으며 주변에 자전거 도로와 산책로가 조성되어 있어 시민들에게 휴식공간이자 문화공간의 역할을 하고 있다. 멜로무비에서는 손주아가 옛 연인인 홍시준과의 추억을 회상하는 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "이대서울병원",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5573,
+    "lng": 126.8363,
+    "place": "서울특별시 강서구 마곡동 808",
+    "description": "이대서울병원은(는) 드라마 '중증외상센터'의 촬영지예요. 이화여자대학교 의료원의 제2부속병원으로 2019년 2월에 개원 된 종합병원이다. 지하6층, 지상10층 규모의 건물로 ‘2022 미래행복대상’에서 보건복지부 장관상을 수상하였다. 중증외상센터에서 주된 배경이 되는 대부분의 병원 관련 장면에 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "중증외상센터",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "중증외상센터"
+    ],
+    "ragText": "[이대서울병원 — 드라마 '중증외상센터' 촬영지] · 서울특별시 강서구 마곡동 808\n이대서울병원은(는) 드라마 '중증외상센터'의 촬영지예요. 이화여자대학교 의료원의 제2부속병원으로 2019년 2월에 개원 된 종합병원이다. 지하6층, 지상10층 규모의 건물로 ‘2022 미래행복대상’에서 보건복지부 장관상을 수상하였다. 중증외상센터에서 주된 배경이 되는 대부분의 병원 관련 장면에 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "낙산공원",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5806,
+    "lng": 127.0065,
+    "place": "서울특별시 종로구 동숭동 산 2-10",
+    "description": "낙산공원은(는) 드라마 '이두나'의 촬영지예요. 산세가 낙타를 닮았다고 해 낙타산으로 부르다 이를 줄여 낙산이라 이름 붙여진 공원이다.?2007년 공공미술추진위원회에서 진행한 낙산공공미술 프로젝트를 통해 산동네이던 낙산 언저리를 '그림'으로 만들어 더욱 생기 있어졌다. 이두나에서는 두나가 원준에게 진주를 설레게 만드는 팁을 알려주는 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "이두나",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "이두나"
+    ],
+    "ragText": "[낙산공원 — 드라마 '이두나' 촬영지] · 서울특별시 종로구 동숭동 산 2-10\n낙산공원은(는) 드라마 '이두나'의 촬영지예요. 산세가 낙타를 닮았다고 해 낙타산으로 부르다 이를 줄여 낙산이라 이름 붙여진 공원이다.?2007년 공공미술추진위원회에서 진행한 낙산공공미술 프로젝트를 통해 산동네이던 낙산 언저리를 '그림'으로 만들어 더욱 생기 있어졌다. 이두나에서는 두나가 원준에게 진주를 설레게 만드는 팁을 알려주는 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "한국의집",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5602,
+    "lng": 126.9945,
+    "place": "서울특별시 중구 필동2가 80-2",
+    "description": "한국의집은(는) 드라마 '돌풍'의 촬영지예요. 한국의 전통문화와 음식을 경험할 수 있는 복합문화공간이다. 전통혼례를 올릴 수 있는 공간이 있으며, 프리미엄 궁중다과 브랜드 고호재의 1인 다과상을 체험 할 수 있다. 돌풍에서는 극중 정치인들의 회동 또는 만찬 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "돌풍",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "돌풍"
+    ],
+    "ragText": "[한국의집 — 드라마 '돌풍' 촬영지] · 서울특별시 중구 필동2가 80-2\n한국의집은(는) 드라마 '돌풍'의 촬영지예요. 한국의 전통문화와 음식을 경험할 수 있는 복합문화공간이다. 전통혼례를 올릴 수 있는 공간이 있으며, 프리미엄 궁중다과 브랜드 고호재의 1인 다과상을 체험 할 수 있다. 돌풍에서는 극중 정치인들의 회동 또는 만찬 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "효자로",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5814,
+    "lng": 126.9736,
+    "place": "서울특별시 종로구 창성동 6",
+    "description": "효자로은(는) 드라마 '폭싹 속았수다'의 촬영지예요. 경복궁 서쪽 담과 붙어 있는 길로 한 때는 서울전차가 운행했던 길이다. 고궁과 함께 담벼락이 늘어선 길을 걸을 수 있으며 특히 가을철 은행나무 명소로 유명하다. 폭싹 속았수다에서는 혼주 한복을 맞추러 가는 애순과 금명이 다투는 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "폭싹 속았수다",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "폭싹 속았수다"
+    ],
+    "ragText": "[효자로 — 드라마 '폭싹 속았수다' 촬영지] · 서울특별시 종로구 창성동 6\n효자로은(는) 드라마 '폭싹 속았수다'의 촬영지예요. 경복궁 서쪽 담과 붙어 있는 길로 한 때는 서울전차가 운행했던 길이다. 고궁과 함께 담벼락이 늘어선 길을 걸을 수 있으며 특히 가을철 은행나무 명소로 유명하다. 폭싹 속았수다에서는 혼주 한복을 맞추러 가는 애순과 금명이 다투는 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "정동길",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5663,
+    "lng": 126.9722,
+    "place": "서울특별시 중구 정동 1-28",
+    "description": "정동길은(는) 드라마 '경성크리처2'의 촬영지예요. 개화기부터 근대 초기까지 근대사를 관통하는 유서 깊은 건축물이 많은 길이다. 고궁의 고즈넉한 담벼락, 늘어선 가로수를 따라 걷다 보면 서울시립미술관, 이화여고, 예원여고 등 다양한 근대 건축물과 문화 시설을 마주할 수 있다. 경성크리처 시즌2에서는 긴박한 사투가 끝난 뒤 도시의 평온한 일상을 그려내며 대단원의 막을 내리는 엔딩 장면의 배경으로 등장했다.",
+    "isFilming": true,
+    "contentTitle": "경성크리처2",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "경성크리처2"
+    ],
+    "ragText": "[정동길 — 드라마 '경성크리처2' 촬영지] · 서울특별시 중구 정동 1-28\n정동길은(는) 드라마 '경성크리처2'의 촬영지예요. 개화기부터 근대 초기까지 근대사를 관통하는 유서 깊은 건축물이 많은 길이다. 고궁의 고즈넉한 담벼락, 늘어선 가로수를 따라 걷다 보면 서울시립미술관, 이화여고, 예원여고 등 다양한 근대 건축물과 문화 시설을 마주할 수 있다. 경성크리처 시즌2에서는 긴박한 사투가 끝난 뒤 도시의 평온한 일상을 그려내며 대단원의 막을 내리는 엔딩 장면의 배경으로 등장했다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "광운대학교 동해문화예술관",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 9,
+      "end": 22
+    },
+    "operatingRaw": "평일 09:00~22:00",
+    "lat": 37.6193,
+    "lng": 127.0583,
+    "place": "서울특별시 노원구 월계동 447-1",
+    "description": "광운대학교 동해문화예술관은(는) 뮤직비디오 '세븐틴 '마에스트로' MV'의 촬영지예요. 세븐틴이 2024년도에 발매한 마에스트로(MAESTRO)의 뮤직비디오가 대극장에서 촬영되었다. 멤버들이 무대에서 역동적이고 화려한 안무를 선보이는 장면의 배경으로 등장하며, 객석의 구조와 조명을 활용하여 퍼포먼스의 분위기를 극대화하며 곡의 에너지와 강렬함이 부각되도록 연출했다.",
+    "isFilming": true,
+    "contentTitle": "세븐틴 '마에스트로' MV",
+    "contentType": "mv",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "뮤직비디오",
+      "세븐틴 '마에스트로' MV"
+    ],
+    "ragText": "[광운대학교 동해문화예술관 — 뮤직비디오 '세븐틴 '마에스트로' MV' 촬영지] · 서울특별시 노원구 월계동 447-1\n광운대학교 동해문화예술관은(는) 뮤직비디오 '세븐틴 '마에스트로' MV'의 촬영지예요. 세븐틴이 2024년도에 발매한 마에스트로(MAESTRO)의 뮤직비디오가 대극장에서 촬영되었다. 멤버들이 무대에서 역동적이고 화려한 안무를 선보이는 장면의 배경으로 등장하며, 객석의 구조와 조명을 활용하여 퍼포먼스의 분위기를 극대화하며 곡의 에너지와 강렬함이 부각되도록 연출했다.\n운영: 평일 09:00~22:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "더현대서울",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 20
+    },
+    "operatingRaw": "월~목요일 10:30~20:00, 토·일요일 10:30~20:30, 휴점일 변동(공식홈페이지 참고)",
+    "lat": 37.5252,
+    "lng": 126.9291,
+    "place": "서울특별시 영등포구 여의도동 22",
+    "description": "더현대서울은(는) 드라마 '눈물의여왕'의 촬영지예요. 홍해인(김지원)이 운영하는 퀸즈 백화점의 배경이 된 곳. 5층에 위치한 실내 정원 ‘사운즈 포레스트’는 13화에서 백현우(김수현)이 첫 눈을 함께 맞고 싶다는 홍해인(김지원)의 소원을 이루어 주기 위해 인공눈 이벤트를 했던 곳으로 등장한다.",
+    "isFilming": true,
+    "contentTitle": "눈물의여왕",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "눈물의여왕"
+    ],
+    "ragText": "[더현대서울 — 드라마 '눈물의여왕' 촬영지] · 서울특별시 영등포구 여의도동 22\n더현대서울은(는) 드라마 '눈물의여왕'의 촬영지예요. 홍해인(김지원)이 운영하는 퀸즈 백화점의 배경이 된 곳. 5층에 위치한 실내 정원 ‘사운즈 포레스트’는 13화에서 백현우(김수현)이 첫 눈을 함께 맞고 싶다는 홍해인(김지원)의 소원을 이루어 주기 위해 인공눈 이벤트를 했던 곳으로 등장한다.\n운영: 월~목요일 10:30~20:00, 토·일요일 10:30~20:30, 휴점일 변동(공식홈페이지 참고)"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "우리옛돌박물관",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 17
+    },
+    "operatingRaw": "평일 10:00~17:00, 주말·공휴일 10:00~18:00, 동절기(12월~2월) 10:00~17:00",
+    "lat": 37.6009,
+    "lng": 126.9902,
+    "place": "서울특별시 성북구 성북동 330-605",
+    "description": "우리옛돌박물관은(는) 드라마 '눈물의여왕'의 촬영지예요. 백현우(김수현)와 홍해인(김지원)이 사는 집이자, 퀸즈그룹 대저택으로 등장한 장소. 1화에서 백현우(김수현)이 저택 밖을 걸어 나오는 장면이 박물관 입구에서 촬영되었다.",
+    "isFilming": true,
+    "contentTitle": "눈물의여왕",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "눈물의여왕"
+    ],
+    "ragText": "[우리옛돌박물관 — 드라마 '눈물의여왕' 촬영지] · 서울특별시 성북구 성북동 330-605\n우리옛돌박물관은(는) 드라마 '눈물의여왕'의 촬영지예요. 백현우(김수현)와 홍해인(김지원)이 사는 집이자, 퀸즈그룹 대저택으로 등장한 장소. 1화에서 백현우(김수현)이 저택 밖을 걸어 나오는 장면이 박물관 입구에서 촬영되었다.\n운영: 평일 10:00~17:00, 주말·공휴일 10:00~18:00, 동절기(12월~2월) 10:00~17:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "노들섬",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5177,
+    "lng": 126.958,
+    "place": "서울특별시 용산구 이촌동 302-146",
+    "description": "노들섬은(는) 드라마 '내남편과결혼해줘'의 촬영지예요. 4화에서 강지원(박민영)이 남자친구 박민환(이이경)과 친구 정수민(송하윤)을 피하기 위해 유지혁(나인우)과 찾은 장소로 등장한 곳.",
+    "isFilming": true,
+    "contentTitle": "내남편과결혼해줘",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "내남편과결혼해줘"
+    ],
+    "ragText": "[노들섬 — 드라마 '내남편과결혼해줘' 촬영지] · 서울특별시 용산구 이촌동 302-146\n노들섬은(는) 드라마 '내남편과결혼해줘'의 촬영지예요. 4화에서 강지원(박민영)이 남자친구 박민환(이이경)과 친구 정수민(송하윤)을 피하기 위해 유지혁(나인우)과 찾은 장소로 등장한 곳.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "덕수궁 돌담길",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5646,
+    "lng": 126.9756,
+    "place": "서울특별시 중구 서소문동 37",
+    "description": "덕수궁 돌담길은(는) 드라마 '재벌집막내아들'의 촬영지예요. 10화에서 진도준(송중기)과 서민영(신현빈)이 만나 손을 맞잡고 뛴 장소. 서울미술관 앞 돌담길에서는 서로의 마음을 확인하는 키스신이 촬영되었다.",
+    "isFilming": true,
+    "contentTitle": "재벌집막내아들",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "재벌집막내아들"
+    ],
+    "ragText": "[덕수궁 돌담길 — 드라마 '재벌집막내아들' 촬영지] · 서울특별시 중구 서소문동 37\n덕수궁 돌담길은(는) 드라마 '재벌집막내아들'의 촬영지예요. 10화에서 진도준(송중기)과 서민영(신현빈)이 만나 손을 맞잡고 뛴 장소. 서울미술관 앞 돌담길에서는 서로의 마음을 확인하는 키스신이 촬영되었다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "DDP",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 20
+    },
+    "operatingRaw": "매일 10:00~20:00, 공간별 운영시간 상이(공식홈페이지 참고)",
+    "lat": 37.568,
+    "lng": 127.0109,
+    "place": "서울특별시 중구 을지로7가 143",
+    "description": "DDP은(는) 드라마 '빈센조'의 촬영지예요. 최종화에서 빈센조(송중기)와 홍차영(전여빈)이 재회해 서로의 마음을 확인하는 키스신이 DDP 야외 계단에서 촬영되었다.",
+    "isFilming": true,
+    "contentTitle": "빈센조",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "빈센조"
+    ],
+    "ragText": "[DDP — 드라마 '빈센조' 촬영지] · 서울특별시 중구 을지로7가 143\nDDP은(는) 드라마 '빈센조'의 촬영지예요. 최종화에서 빈센조(송중기)와 홍차영(전여빈)이 재회해 서로의 마음을 확인하는 키스신이 DDP 야외 계단에서 촬영되었다.\n운영: 매일 10:00~20:00, 공간별 운영시간 상이(공식홈페이지 참고)"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "세운교",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5686,
+    "lng": 126.9953,
+    "place": "서울특별시 종로구 장사동 156-8",
+    "description": "세운교은(는) 드라마 '빈센조'의 촬영지예요. 세운교와 인접한 세운상가는 스토리의 중심이 되는 곳이자, 주인공이 주로 활동하는 '금가프라자'로 등장한다. 1화 첫 장면에서 빈센조(송중기)가 세운상가를 바라보며 '나의 목표는 이 건물을 무너뜨리는 것이다.' 라는 대사를 시작으로 이야기가 시작된다.",
+    "isFilming": true,
+    "contentTitle": "빈센조",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "빈센조"
+    ],
+    "ragText": "[세운교 — 드라마 '빈센조' 촬영지] · 서울특별시 종로구 장사동 156-8\n세운교은(는) 드라마 '빈센조'의 촬영지예요. 세운교와 인접한 세운상가는 스토리의 중심이 되는 곳이자, 주인공이 주로 활동하는 '금가프라자'로 등장한다. 1화 첫 장면에서 빈센조(송중기)가 세운상가를 바라보며 '나의 목표는 이 건물을 무너뜨리는 것이다.' 라는 대사를 시작으로 이야기가 시작된다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "석촌호수 동호",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5115,
+    "lng": 127.1057,
+    "place": "서울특별시 송파구 신천동 32",
+    "description": "석촌호수 동호은(는) 드라마 '일타스캔들'의 촬영지예요. 5화에서 최치열(정경호)이 고민으로 뜬 눈을 지새우고 아침 일찍 러닝을 하던 장소로 석촌호수 동호가 등장했다. 수아 엄마(김선영)의 단골 카페 역시 석촌호수 근방의 카페에서 촬영이 되었다.",
+    "isFilming": true,
+    "contentTitle": "일타스캔들",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "일타스캔들"
+    ],
+    "ragText": "[석촌호수 동호 — 드라마 '일타스캔들' 촬영지] · 서울특별시 송파구 신천동 32\n석촌호수 동호은(는) 드라마 '일타스캔들'의 촬영지예요. 5화에서 최치열(정경호)이 고민으로 뜬 눈을 지새우고 아침 일찍 러닝을 하던 장소로 석촌호수 동호가 등장했다. 수아 엄마(김선영)의 단골 카페 역시 석촌호수 근방의 카페에서 촬영이 되었다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "가락시장",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "공간별 운영 상이(매장별 문의필요)",
+    "lat": 37.4916,
+    "lng": 127.115,
+    "place": "서울특별시 송파구 가락동 600",
+    "description": "가락시장은(는) 드라마 '일타스캔들'의 촬영지예요. 남행선(전도연)이 반찬가게 운영을 위해 장을 보는 곳으로 12화에서는 남행선(전도연)과 최치열(정경호)이 시장 데이트를 즐겼던 곳으로 등장한다.",
+    "isFilming": true,
+    "contentTitle": "일타스캔들",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "일타스캔들"
+    ],
+    "ragText": "[가락시장 — 드라마 '일타스캔들' 촬영지] · 서울특별시 송파구 가락동 600\n가락시장은(는) 드라마 '일타스캔들'의 촬영지예요. 남행선(전도연)이 반찬가게 운영을 위해 장을 보는 곳으로 12화에서는 남행선(전도연)과 최치열(정경호)이 시장 데이트를 즐겼던 곳으로 등장한다.\n운영: 공간별 운영 상이(매장별 문의필요)"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "이음더플레이스",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "전시 기간 외 미운영(홈페이지와 인스타그램 참고). 이음 더 플레이스는 전시 기간 외 공간 관람이 불가합니다. 전시 소식은 홈페이지와 인스타그램을 통해 안내되며, 대관 및 공간 관련 문의는 반드시 이메일 혹은 대표전화로 사전 문의 후 예약 방문 바랍니다.",
+    "lat": 37.5819,
+    "lng": 126.9823,
+    "place": "서울특별시 종로구 삼청동 35-231",
+    "description": "이음더플레이스은(는) 드라마 '호텔델루나'의 촬영지예요. 구찬성(여진구)의 절친한 친구인 산체스(조현철)의 집이자, 구찬성(여진구)이 임시로 거주하는 한옥집으로 드라마 여러 회차에 걸쳐 등장한다.",
+    "isFilming": true,
+    "contentTitle": "호텔델루나",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "호텔델루나"
+    ],
+    "ragText": "[이음더플레이스 — 드라마 '호텔델루나' 촬영지] · 서울특별시 종로구 삼청동 35-231\n이음더플레이스은(는) 드라마 '호텔델루나'의 촬영지예요. 구찬성(여진구)의 절친한 친구인 산체스(조현철)의 집이자, 구찬성(여진구)이 임시로 거주하는 한옥집으로 드라마 여러 회차에 걸쳐 등장한다.\n운영: 전시 기간 외 미운영(홈페이지와 인스타그램 참고). 이음 더 플레이스는 전시 기간 외 공간 관람이 불가합니다. 전시 소식은 홈페이지와 인스타그램을 통해 안내되며, 대관 및 공간 관련 문의는 반드시 이메일 혹은 대표전화로 사전 문의 후 예약 방문 바랍니다."
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "서울책보고",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 11,
+      "end": 20
+    },
+    "operatingRaw": "화,수,목,금 11:00~20:00, 토,일,공휴일 10:00~20:00 월요일, 새해 첫날, 설 연휴, 추석 연휴 휴무",
+    "lat": 37.5224,
+    "lng": 127.103,
+    "place": "서울특별시 송파구 신천동 14",
+    "description": "서울책보고은(는) 드라마 '호텔델루나'의 촬영지예요. 2화에서 장만월(아이유)이 구찬성(여진구)에게 호텔 델루나가 어떤 곳인지 설명하는 장면의 배경이 되는 곳. 둥근 모양의 시설물과 대형 책장들이 신비함을 불러 일으키며 특수효과로 생각하기 쉽지만, 실제로 존재하는 곳이다.",
+    "isFilming": true,
+    "contentTitle": "호텔델루나",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "호텔델루나"
+    ],
+    "ragText": "[서울책보고 — 드라마 '호텔델루나' 촬영지] · 서울특별시 송파구 신천동 14\n서울책보고은(는) 드라마 '호텔델루나'의 촬영지예요. 2화에서 장만월(아이유)이 구찬성(여진구)에게 호텔 델루나가 어떤 곳인지 설명하는 장면의 배경이 되는 곳. 둥근 모양의 시설물과 대형 책장들이 신비함을 불러 일으키며 특수효과로 생각하기 쉽지만, 실제로 존재하는 곳이다.\n운영: 화,수,목,금 11:00~20:00, 토,일,공휴일 10:00~20:00 월요일, 새해 첫날, 설 연휴, 추석 연휴 휴무"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "동아디지털미디어센터",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 18
+    },
+    "operatingRaw": "월,화,수,목,금,토 10:00~18:00",
+    "lat": 37.5785,
+    "lng": 126.893,
+    "place": "서울특별시 마포구 상암동 1610",
+    "description": "동아디지털미디어센터은(는) 드라마 '사랑의불시착'의 촬영지예요. 11화에서 윤세리(손예진)가 리정혁(현빈)과 함께 본인의 회사 세리스 초이스로 출근하는 장면이 동아디지털미디어센터 로비에서 촬영되었다. 북한 단원들이 윤세리(손예진)의 회사의 크기에 감탄하는 장면도 동아디지털미디어센터 건물 외관이 배경이다.",
+    "isFilming": true,
+    "contentTitle": "사랑의불시착",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "사랑의불시착"
+    ],
+    "ragText": "[동아디지털미디어센터 — 드라마 '사랑의불시착' 촬영지] · 서울특별시 마포구 상암동 1610\n동아디지털미디어센터은(는) 드라마 '사랑의불시착'의 촬영지예요. 11화에서 윤세리(손예진)가 리정혁(현빈)과 함께 본인의 회사 세리스 초이스로 출근하는 장면이 동아디지털미디어센터 로비에서 촬영되었다. 북한 단원들이 윤세리(손예진)의 회사의 크기에 감탄하는 장면도 동아디지털미디어센터 건물 외관이 배경이다.\n운영: 월,화,수,목,금,토 10:00~18:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "자하문터널",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5916,
+    "lng": 126.9649,
+    "place": "서울특별시 종로구 부암동 332-20",
+    "description": "자하문터널은(는) 영화 '기생충'의 촬영지예요. 기택(송강호)의 가족은 캠핑을 간 박사장(이선균) 집에서 몰래 파티를 연다. 그러나 박사장의 가족들은 거센 비로 캠핑을 취소하고 돌아오고, 기택네 가족은 그들을 피해 도망 나온다. 자하문 터널은 박사장의 집에서 도망쳐 나온 기택 가족이 집으로 가던 길 잔뜩 웅크리고 지나던 터널이다. 낮은 곳에 있는 기택의 집과 높은 곳에 있는 박사장의 집 사이에 존재하는 층을 상징하는 듯한 긴 계단이 있어 채택된 촬영지이다.",
+    "isFilming": true,
+    "contentTitle": "기생충",
+    "contentType": "movie",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "영화",
+      "기생충"
+    ],
+    "ragText": "[자하문터널 — 영화 '기생충' 촬영지] · 서울특별시 종로구 부암동 332-20\n자하문터널은(는) 영화 '기생충'의 촬영지예요. 기택(송강호)의 가족은 캠핑을 간 박사장(이선균) 집에서 몰래 파티를 연다. 그러나 박사장의 가족들은 거센 비로 캠핑을 취소하고 돌아오고, 기택네 가족은 그들을 피해 도망 나온다. 자하문 터널은 박사장의 집에서 도망쳐 나온 기택 가족이 집으로 가던 길 잔뜩 웅크리고 지나던 터널이다. 낮은 곳에 있는 기택의 집과 높은 곳에 있는 박사장의 집 사이에 존재하는 층을 상징하는 듯한 긴 계단이 있어 채택된 촬영지이다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "잠수교",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5151,
+    "lng": 126.9978,
+    "place": "서울특별시 서초구 반포동 647",
+    "description": "잠수교은(는) 드라마 '싱글인서울'의 촬영지예요. 혼자 걷고 혼자 쉬고 혼자 먹으며 혼자 사는, 한 마디로 혼자가 좋은 파워 인플루언서 영호(이동욱)는 서울 곳곳을 다니며 감성적인 사진을 찍어 SNS에 올리는 게 취미다. 잠수교는 영호의 여러 포토스팟 중 한 곳으로 등장한다.",
+    "isFilming": true,
+    "contentTitle": "싱글인서울",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "싱글인서울"
+    ],
+    "ragText": "[잠수교 — 드라마 '싱글인서울' 촬영지] · 서울특별시 서초구 반포동 647\n잠수교은(는) 드라마 '싱글인서울'의 촬영지예요. 혼자 걷고 혼자 쉬고 혼자 먹으며 혼자 사는, 한 마디로 혼자가 좋은 파워 인플루언서 영호(이동욱)는 서울 곳곳을 다니며 감성적인 사진을 찍어 SNS에 올리는 게 취미다. 잠수교는 영호의 여러 포토스팟 중 한 곳으로 등장한다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "이랜드크루즈",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 11,
+      "end": 22
+    },
+    "operatingRaw": "매일 11:30~22:00",
+    "lat": 37.525,
+    "lng": 126.939,
+    "place": "서울특별시 영등포구 여의도동 85-1",
+    "description": "이랜드크루즈은(는) 드라마 '김비서가왜그럴까'의 촬영지예요. 이영준(박서준)은 김미소(박민영)를 위한 특급 퇴직 선물로 김미소(박민영)가 보고 싶어 하던 불꽃놀이를 보여주기 위해 유람선을 통째로 빌린다. 이랜드크루즈는 선상 위 아름다운 서울의 야경을 배경으로 펼쳐지는 불꽃쇼를 보며 즐거워하는 둘의 모습의 배경이 되었다. <별에서 온 그대>, <어서와 한국은 처음이지> 등 다양한 콘텐츠의 배경지로 등장해 '서울의 10대 한류명소’로도 선정된 바 있다.",
+    "isFilming": true,
+    "contentTitle": "김비서가왜그럴까",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "김비서가왜그럴까"
+    ],
+    "ragText": "[이랜드크루즈 — 드라마 '김비서가왜그럴까' 촬영지] · 서울특별시 영등포구 여의도동 85-1\n이랜드크루즈은(는) 드라마 '김비서가왜그럴까'의 촬영지예요. 이영준(박서준)은 김미소(박민영)를 위한 특급 퇴직 선물로 김미소(박민영)가 보고 싶어 하던 불꽃놀이를 보여주기 위해 유람선을 통째로 빌린다. 이랜드크루즈는 선상 위 아름다운 서울의 야경을 배경으로 펼쳐지는 불꽃쇼를 보며 즐거워하는 둘의 모습의 배경이 되었다. <별에서 온 그대>, <어서와 한국은 처음이지> 등 다양한 콘텐츠의 배경지로 등장해 '서울의 10대 한류명소’로도 선정된 바 있다.\n운영: 매일 11:30~22:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "녹사평육교",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5348,
+    "lng": 126.987,
+    "place": "서울특별시 용산구 용산동4가 4",
+    "description": "녹사평육교은(는) 드라마 '이태원클라쓰'의 촬영지예요. 박새로이 육교'로 유명한 곳. N서울타워가 잘 보이는 촬영 명소로 입소문이 나며 이태원 필수 방문 코스로 자리매김했다. 육교를 지나 이태원역 방향으로 가다 보면 박새로이(박서준)가 운영하던 술집 ‘단밤’ 촬영지도 만날 수 있다.",
+    "isFilming": true,
+    "contentTitle": "이태원클라쓰",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "이태원클라쓰"
+    ],
+    "ragText": "[녹사평육교 — 드라마 '이태원클라쓰' 촬영지] · 서울특별시 용산구 용산동4가 4\n녹사평육교은(는) 드라마 '이태원클라쓰'의 촬영지예요. 박새로이 육교'로 유명한 곳. N서울타워가 잘 보이는 촬영 명소로 입소문이 나며 이태원 필수 방문 코스로 자리매김했다. 육교를 지나 이태원역 방향으로 가다 보면 박새로이(박서준)가 운영하던 술집 ‘단밤’ 촬영지도 만날 수 있다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "백범광장공원",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5538,
+    "lng": 126.9838,
+    "place": "서울특별시 중구 회현동1가 산 1-2",
+    "description": "백범광장공원은(는) 드라마 '이태원클라쓰'의 촬영지예요. 마지막회에서 박새로이(박서준)와 조이서(김다미)의 키스신이 촬영된 장소. 두 주인공 뒤로 남산타워와 성곽 야경이 돋보인 장소로, 남대문시장이나 회현역에서 남산공원을 올라가는 초입에 위치한다.",
+    "isFilming": true,
+    "contentTitle": "이태원클라쓰",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "이태원클라쓰"
+    ],
+    "ragText": "[백범광장공원 — 드라마 '이태원클라쓰' 촬영지] · 서울특별시 중구 회현동1가 산 1-2\n백범광장공원은(는) 드라마 '이태원클라쓰'의 촬영지예요. 마지막회에서 박새로이(박서준)와 조이서(김다미)의 키스신이 촬영된 장소. 두 주인공 뒤로 남산타워와 성곽 야경이 돋보인 장소로, 남대문시장이나 회현역에서 남산공원을 올라가는 초입에 위치한다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "양재시민의숲역",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 5,
+      "end": 1
+    },
+    "operatingRaw": "평일 05:30 ~ 01:30 주말 및 공휴일 05:30~24:00",
+    "lat": 37.47,
+    "lng": 127.0383,
+    "place": "서울특별시 서초구 양재동 233-2",
+    "description": "양재시민의숲역은(는) 드라마 '오징어게임'의 촬영지예요. 1화에서 양복남(공유)와 성기훈(이정재)이 만나 오징어게임의 시작을 알리는 딱지치기를 하는 장면이 역사 내 플랫폼에서 촬영되었다.",
+    "isFilming": true,
+    "contentTitle": "오징어게임",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "오징어게임"
+    ],
+    "ragText": "[양재시민의숲역 — 드라마 '오징어게임' 촬영지] · 서울특별시 서초구 양재동 233-2\n양재시민의숲역은(는) 드라마 '오징어게임'의 촬영지예요. 1화에서 양복남(공유)와 성기훈(이정재)이 만나 오징어게임의 시작을 알리는 딱지치기를 하는 장면이 역사 내 플랫폼에서 촬영되었다.\n운영: 평일 05:30 ~ 01:30 주말 및 공휴일 05:30~24:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "성북천 여울다리",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5908,
+    "lng": 127.016,
+    "place": "서울특별시 성북구 동소문동5가 118-2",
+    "description": "성북천 여울다리은(는) 드라마 '선재업고튀어'의 촬영지예요. 1화에서 솔(김혜윤)이 선재(변우석)의 시계를 떨어트려 주우러 들어갔다가 과거로 돌아가는 타임슬립을 하게되는 하천.",
+    "isFilming": true,
+    "contentTitle": "선재업고튀어",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "선재업고튀어"
+    ],
+    "ragText": "[성북천 여울다리 — 드라마 '선재업고튀어' 촬영지] · 서울특별시 성북구 동소문동5가 118-2\n성북천 여울다리은(는) 드라마 '선재업고튀어'의 촬영지예요. 1화에서 솔(김혜윤)이 선재(변우석)의 시계를 떨어트려 주우러 들어갔다가 과거로 돌아가는 타임슬립을 하게되는 하천.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "복정우물",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5821,
+    "lng": 126.982,
+    "place": "서울특별시 종로구 화동 35",
+    "description": "복정우물은(는) 드라마 '선재업고튀어'의 촬영지예요. 솔(김혜윤)이 스님 복장을 하고 선재(변우석)의 운명을 바꾸기 위해 예언을 하는 장면이 촬영된 장소. 조선 시대 양반들의 중심 거주지였던 북촌 한옥마을에 있는 우물로, 조선 시대 궁중에서만 사용하던 우물이다.",
+    "isFilming": true,
+    "contentTitle": "선재업고튀어",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "선재업고튀어"
+    ],
+    "ragText": "[복정우물 — 드라마 '선재업고튀어' 촬영지] · 서울특별시 종로구 화동 35\n복정우물은(는) 드라마 '선재업고튀어'의 촬영지예요. 솔(김혜윤)이 스님 복장을 하고 선재(변우석)의 운명을 바꾸기 위해 예언을 하는 장면이 촬영된 장소. 조선 시대 양반들의 중심 거주지였던 북촌 한옥마을에 있는 우물로, 조선 시대 궁중에서만 사용하던 우물이다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "N서울타워",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 22
+    },
+    "operatingRaw": "평일 10:30~22:30 주말 10:00~23:00",
+    "lat": 37.5511,
+    "lng": 126.9879,
+    "place": "서울특별시 용산구 용산동2가 산 1-3",
+    "description": "N서울타워은(는) 드라마 '싱글인서울'의 촬영지예요. 잘 나가는 논술 강사이자 파워 인플루언서인 영호(이동욱)이 N서울타워에 올라 자신과의 영원한 사랑을 약속하는 장면의 배경으로 등장한다.",
+    "isFilming": true,
+    "contentTitle": "싱글인서울",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "싱글인서울"
+    ],
+    "ragText": "[N서울타워 — 드라마 '싱글인서울' 촬영지] · 서울특별시 용산구 용산동2가 산 1-3\nN서울타워은(는) 드라마 '싱글인서울'의 촬영지예요. 잘 나가는 논술 강사이자 파워 인플루언서인 영호(이동욱)이 N서울타워에 올라 자신과의 영원한 사랑을 약속하는 장면의 배경으로 등장한다.\n운영: 평일 10:30~22:30 주말 10:00~23:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "롯데월드타워",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "공간별 운영 상이(공식홈페이지 참고)",
+    "lat": 37.5138,
+    "lng": 127.1044,
+    "place": "서울특별시 송파구 신천동 29",
+    "description": "롯데월드타워은(는) 영화 '신과함께-죄와벌'의 촬영지예요. 서울의 도시 야경을 배경으로 강림(하정우)이 원귀가 된 수홍(김동욱)이 공중전투를 벌이는 장면의 배경이 된 곳. 수홍(김동욱)을 제압하는 장면은 롯데월드타워 서울스카이 전망대 부근을 중심으로 촬영되었는데, 롯데월드타워가 원귀의 힘에 의해 강제 소등되며 서울이 암흑에 휩싸이는 장면이 특히 인상적이다.",
+    "isFilming": true,
+    "contentTitle": "신과함께-죄와벌",
+    "contentType": "movie",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "영화",
+      "신과함께-죄와벌"
+    ],
+    "ragText": "[롯데월드타워 — 영화 '신과함께-죄와벌' 촬영지] · 서울특별시 송파구 신천동 29\n롯데월드타워은(는) 영화 '신과함께-죄와벌'의 촬영지예요. 서울의 도시 야경을 배경으로 강림(하정우)이 원귀가 된 수홍(김동욱)이 공중전투를 벌이는 장면의 배경이 된 곳. 수홍(김동욱)을 제압하는 장면은 롯데월드타워 서울스카이 전망대 부근을 중심으로 촬영되었는데, 롯데월드타워가 원귀의 힘에 의해 강제 소등되며 서울이 암흑에 휩싸이는 장면이 특히 인상적이다.\n운영: 공간별 운영 상이(공식홈페이지 참고)"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "동작역 4-1 플랫폼",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 5,
+      "end": 1
+    },
+    "operatingRaw": "평일 05:30~01:30 주말 및 공휴일 05:30~24:00",
+    "lat": 37.4765,
+    "lng": 126.9814,
+    "place": "서울특별시 동작구 사당동 1129",
+    "description": "동작역 4-1 플랫폼은(는) 뮤직비디오 '세븐틴 '예쁘다' MV'의 촬영지예요. 세븐틴이 2016년도 발매한 곡 예쁘다의 뮤직비디오에 등장한 곳. 지하철 역을 달려가는 장면이 동작역 플랫폼 4-1에서 촬영되었다.",
+    "isFilming": true,
+    "contentTitle": "세븐틴 '예쁘다' MV",
+    "contentType": "mv",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "뮤직비디오",
+      "세븐틴 '예쁘다' MV"
+    ],
+    "ragText": "[동작역 4-1 플랫폼 — 뮤직비디오 '세븐틴 '예쁘다' MV' 촬영지] · 서울특별시 동작구 사당동 1129\n동작역 4-1 플랫폼은(는) 뮤직비디오 '세븐틴 '예쁘다' MV'의 촬영지예요. 세븐틴이 2016년도 발매한 곡 예쁘다의 뮤직비디오에 등장한 곳. 지하철 역을 달려가는 장면이 동작역 플랫폼 4-1에서 촬영되었다.\n운영: 평일 05:30~01:30 주말 및 공휴일 05:30~24:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "청계광장",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5689,
+    "lng": 126.9774,
+    "place": "서울특별시 중구 태평로1가 1",
+    "description": "청계광장은(는) 드라마 'K-Contents'의 촬영지예요. 청계광장은 수많은 한국 드라마와 영화가 촬영된 곳으로, 청계천의 시작점이다. 청계천은 서울 도심 한가운데 자리 잡고 있으며, 오늘날 22개의 다리가 놓여있다.",
+    "isFilming": true,
+    "contentTitle": "K-Contents",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "K-Contents"
+    ],
+    "ragText": "[청계광장 — 드라마 'K-Contents' 촬영지] · 서울특별시 중구 태평로1가 1\n청계광장은(는) 드라마 'K-Contents'의 촬영지예요. 청계광장은 수많은 한국 드라마와 영화가 촬영된 곳으로, 청계천의 시작점이다. 청계천은 서울 도심 한가운데 자리 잡고 있으며, 오늘날 22개의 다리가 놓여있다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "서울도서관",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 9,
+      "end": 21
+    },
+    "operatingRaw": "평일 09:00~21:00 주말 09:00~18:00",
+    "lat": 37.5663,
+    "lng": 126.9778,
+    "place": "서울특별시 중구 태평로1가 31",
+    "description": "서울도서관은(는) 뮤직비디오 '싸이 'GENTLEMAN' MV'의 촬영지예요. 싸이가 2013년도 발매한 곡 젠틀맨(GENTLEMAN)의 뮤직비디오 촬영지. 싸이가 백댄서들과 함께 춤을 추는 한 장면이 서울도서관 생각마루에서 촬영되었다.",
+    "isFilming": true,
+    "contentTitle": "싸이 'GENTLEMAN' MV",
+    "contentType": "mv",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "뮤직비디오",
+      "싸이 'GENTLEMAN' MV"
+    ],
+    "ragText": "[서울도서관 — 뮤직비디오 '싸이 'GENTLEMAN' MV' 촬영지] · 서울특별시 중구 태평로1가 31\n서울도서관은(는) 뮤직비디오 '싸이 'GENTLEMAN' MV'의 촬영지예요. 싸이가 2013년도 발매한 곡 젠틀맨(GENTLEMAN)의 뮤직비디오 촬영지. 싸이가 백댄서들과 함께 춤을 추는 한 장면이 서울도서관 생각마루에서 촬영되었다.\n운영: 평일 09:00~21:00 주말 09:00~18:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "서울어린이대공원",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 10,
+      "end": 18
+    },
+    "operatingRaw": "매일 10:00~18:30",
+    "lat": 37.552,
+    "lng": 127.0788,
+    "place": "서울특별시 광진구 능동 18",
+    "description": "서울어린이대공원은(는) 뮤직비디오 '싸이 '강남스타일' MV'의 촬영지예요. 싸이가 2012년도 발매한 곡 강남스타일의 뮤직비디오에 서울어린이대공원 놀이동산의 회전목마가 등장한다. 싸이가 회전목마에 앉아 노래를 부르고 회전목마 앞에서 말춤을 추는 장면이 촬영되었다",
+    "isFilming": true,
+    "contentTitle": "싸이 '강남스타일' MV",
+    "contentType": "mv",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "뮤직비디오",
+      "싸이 '강남스타일' MV"
+    ],
+    "ragText": "[서울어린이대공원 — 뮤직비디오 '싸이 '강남스타일' MV' 촬영지] · 서울특별시 광진구 능동 18\n서울어린이대공원은(는) 뮤직비디오 '싸이 '강남스타일' MV'의 촬영지예요. 싸이가 2012년도 발매한 곡 강남스타일의 뮤직비디오에 서울어린이대공원 놀이동산의 회전목마가 등장한다. 싸이가 회전목마에 앉아 노래를 부르고 회전목마 앞에서 말춤을 추는 장면이 촬영되었다\n운영: 매일 10:00~18:30"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "노들섬",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5177,
+    "lng": 126.958,
+    "place": "서울특별시 용산구 이촌동 302-146",
+    "description": "노들섬은(는) 뮤직비디오 'BTS 'RUN' MV'의 촬영지예요. 방탄소년단(BTS)이 2015년 발매한 곡 RUN의 뮤직비디오에는 멤버들이 어딘가로 달려나가는 모습이 나온다. 이 장면의 배경이 된 곳이 노들섬이다.",
+    "isFilming": true,
+    "contentTitle": "BTS 'RUN' MV",
+    "contentType": "mv",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "뮤직비디오",
+      "BTS 'RUN' MV"
+    ],
+    "ragText": "[노들섬 — 뮤직비디오 'BTS 'RUN' MV' 촬영지] · 서울특별시 용산구 이촌동 302-146\n노들섬은(는) 뮤직비디오 'BTS 'RUN' MV'의 촬영지예요. 방탄소년단(BTS)이 2015년 발매한 곡 RUN의 뮤직비디오에는 멤버들이 어딘가로 달려나가는 모습이 나온다. 이 장면의 배경이 된 곳이 노들섬이다.\n운영: 상시운영"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "국립중앙박물관 이촌역 연결통로 입구",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 5,
+      "end": 1
+    },
+    "operatingRaw": "평일 05:30~01:30 주말 및 공휴일 05:30~24:00",
+    "lat": 37.5221,
+    "lng": 126.9757,
+    "place": "서울특별시 용산구 용산동5가 17-12",
+    "description": "국립중앙박물관 이촌역 연결통로 입구은(는) 드라마 'BTS 'Your Seoul Goes On''의 촬영지예요. 2021년 서울시 명예 관광 홍보대사로 활동한 방탄소년단(BTS)의 홍보 영상 '2021 YOUR SEOUL GOES ON- EoGiYeongCha Seoul BTS'에서 멤버 RM이 국립중앙박물관의 선사·고대관을 배경으로 등장한다.",
+    "isFilming": true,
+    "contentTitle": "BTS 'Your Seoul Goes On'",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "BTS 'Your Seoul Goes On'"
+    ],
+    "ragText": "[국립중앙박물관 이촌역 연결통로 입구 — 드라마 'BTS 'Your Seoul Goes On'' 촬영지] · 서울특별시 용산구 용산동5가 17-12\n국립중앙박물관 이촌역 연결통로 입구은(는) 드라마 'BTS 'Your Seoul Goes On''의 촬영지예요. 2021년 서울시 명예 관광 홍보대사로 활동한 방탄소년단(BTS)의 홍보 영상 '2021 YOUR SEOUL GOES ON- EoGiYeongCha Seoul BTS'에서 멤버 RM이 국립중앙박물관의 선사·고대관을 배경으로 등장한다.\n운영: 평일 05:30~01:30 주말 및 공휴일 05:30~24:00"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "백인제가옥",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 9,
+      "end": 18
+    },
+    "operatingRaw": "화~일 09:00~18:00, 매주 월 정기휴무",
+    "lat": 37.5805,
+    "lng": 126.9841,
+    "place": "서울특별시 종로구 가회동 93-1",
+    "description": "백인제가옥은(는) 드라마 '재벌집막내아들'의 촬영지예요. 진도준(송중기)이 순양그룹 회장 진양철(이성민)을 만나 본인의 정체를 밝히는 장면의 배경이 된 곳.",
+    "isFilming": true,
+    "contentTitle": "재벌집막내아들",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "재벌집막내아들"
+    ],
+    "ragText": "[백인제가옥 — 드라마 '재벌집막내아들' 촬영지] · 서울특별시 종로구 가회동 93-1\n백인제가옥은(는) 드라마 '재벌집막내아들'의 촬영지예요. 진도준(송중기)이 순양그룹 회장 진양철(이성민)을 만나 본인의 정체를 밝히는 장면의 배경이 된 곳.\n운영: 화~일 09:00~18:00, 매주 월 정기휴무"
+  },
+  {
+    "source": "kcontent",
+    "aspect": "scene",
+    "areaName": "",
+    "displayName": "광통교",
+    "category": "K-콘텐츠 촬영지",
+    "zone": "",
+    "operatingHours": {
+      "start": 0,
+      "end": 24
+    },
+    "operatingRaw": "상시운영",
+    "lat": 37.5691,
+    "lng": 126.9812,
+    "place": "서울특별시 종로구 서린동 55-2",
+    "description": "광통교은(는) 드라마 '내남편과결혼해줘'의 촬영지예요. 3화에서 고등학교 동창회에 나간 강지원(박민영)이 첫사랑 백은호(이기광)에게 고백을 받는 장소로 청계천 광통교가 등장한다.",
+    "isFilming": true,
+    "contentTitle": "내남편과결혼해줘",
+    "contentType": "drama",
+    "tags": [
+      "K-콘텐츠",
+      "촬영지",
+      "드라마",
+      "내남편과결혼해줘"
+    ],
+    "ragText": "[광통교 — 드라마 '내남편과결혼해줘' 촬영지] · 서울특별시 종로구 서린동 55-2\n광통교은(는) 드라마 '내남편과결혼해줘'의 촬영지예요. 3화에서 고등학교 동창회에 나간 강지원(박민영)이 첫사랑 백은호(이기광)에게 고백을 받는 장소로 청계천 광통교가 등장한다.\n운영: 상시운영"
   }
 ]

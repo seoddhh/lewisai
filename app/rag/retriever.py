@@ -35,3 +35,14 @@ def search_diverse(query: str, k: int = 6, filters: dict | None = None) -> list[
     return vs.max_marginal_relevance_search(
         query, k=k, fetch_k=max(k * 4, 20), filter=_where(filters)
     )
+
+
+def search_with_score(
+    query: str, k: int = 40, filters: dict | None = None
+) -> list[tuple[Document, float]]:
+    """유사도 검색 + 점수. (doc, distance) 리스트, 거리가 작을수록 더 유사.
+
+    코스 후처리 재랭킹(지리 근접 가중)에서 의미 유사도 점수가 필요할 때 쓴다.
+    """
+    vs = get_vectorstore()
+    return vs.similarity_search_with_score(query, k=k, filter=_where(filters))

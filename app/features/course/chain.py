@@ -1,7 +1,6 @@
-"""course 체인(2차): LangGraph 통합 에이전트에 위임.
-
-동선 순서는 LLM 이 아니라 app/core/routing.py(결정론적 오픈-패스 TSP)가 결정한다.
-자연어 진입은 /agent/chat, 이 어댑터는 기존 타입 계약(CourseResponse)을 유지한다.
+"""
+장소 선정과 선정 이유는 AI 가, 방문 순서·지도 폴리라인은 strangemap 프론트
+(courseRouting.ts)가 결정한다 — 서버는 좌표만 실어 보내는 역할
 """
 from __future__ import annotations
 
@@ -13,7 +12,12 @@ from .schema import Course, CourseRequest, CourseResponse, CourseStop
 async def run(req: CourseRequest) -> CourseResponse:
     state = await run_agent(
         intent="course",
-        req={"note": req.note, "region": req.region, "time": req.time},
+        req={
+            "note": req.note,
+            "chips": req.chips.model_dump(),
+            "region": req.region,
+            "time": req.time,
+        },
     )
     result = state.get("result") or {}
     course_data = result.get("course")

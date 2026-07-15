@@ -7,17 +7,16 @@ from app.core.json_parse import parse_json_object
 from app.core.llm import extract_text, get_llm
 from app.graph.state import AgentState
 
-_INTENTS = ("place_intro", "recommend", "course", "chitchat")
+_INTENTS = ("course", "chitchat")
 
 _ROUTER_PROMPT = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "너는 서울 여행 에이전트의 라우터다. 사용자 메시지를 아래 4개 의도 중 하나로 분류해 "
-            'JSON 으로만 답하라: {{"intent":"..."}}\n'
-            "- course: 여러 곳을 잇는 코스/동선/일정/데이트 코스 요청\n"
-            "- recommend: 상황(동행·시간·목적)에 맞는 장소 추천\n"
-            "- place_intro: 특정 한 장소의 소개/정보\n"
+            "너는 서울 여행 코스 에이전트의 라우터다. 사용자 메시지를 아래 2개 의도 중 하나로 "
+            '분류해 JSON 으로만 답하라: {{"intent":"..."}}\n'
+            "- course: 장소·코스·동선·일정·데이트 코스·상황(동행·시간·목적) 맞춤 장소 추천 등 "
+            "'서울에서 어디를 갈지' 묻는 모든 요청\n"
             "- chitchat: 그 외 일반 대화",
         ),
         ("human", "{message}"),
@@ -62,12 +61,6 @@ async def parse_intent_node(state: AgentState) -> dict:
 
     if intent == "chitchat":
         return {"req": {"message": message}}
-    if intent == "place_intro":
-        # 장소명만 필요 — 원문을 place 로 넘기고 좌표는 downstream RAG 로 보완
-        return {"req": {"place": message}}
-    if intent == "recommend":
-        # 최소 요청 — note 를 purpose 로 사용(세부 추출은 2단계 고도화)
-        return {"req": {"purpose": message, "region": "상관없음", "congestion": "상관없음"}}
 
     # course: 구조화 추출
     try:

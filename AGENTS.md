@@ -6,23 +6,40 @@
 
 ## 단계
 - **1차(완료)**: RAG + LangChain, FastAPI REST. 기능별 결정론적 LCEL 체인.
-- **2차(진행 중)**: LangGraph StateGraph 통합 에이전트(`app/graph/`). 자연어 진입 `POST /agent/chat`
-  (router → parse_intent → 의도별 파이프라인). **동선 순서는 LLM 이 아니라 결정론적 오픈-패스
-  TSP(`app/core/routing.py`, strangemap `courseRouting.ts` 이식)가 정한다** — "어떤 장소"는 AI,
-  "어떤 순서"는 routing 모듈. 실시간 혼잡도를 동선에 반영(붐빔 시 대체·경고).
-  기존 타입 엔드포인트(place_intro/recommend/course/chitchat)는 계약 유지(course 는 그래프에 위임).
+- **2차(완료)**: LangGraph StateGraph 통합 에이전트(`app/graph/`). 자연어 진입 `POST /agent/chat`,
+  복합 요청은 Plan-and-Execute(`app/graph/plan_execute/`) + `POST /agent/chat/v2`.
+- **3차(진행 중)**: 칩 진입 + 역할 재분리. `POST /agent/chat/v2` 가 `chips`(경로 생성 칩)를 받으면
+  코스 그래프로 직행한다. 기존 타입 엔드포인트는 계약 유지(필드는 추가만).
+
+## 역할 분리 (가장 중요)
+- **AI 서버(이 레포)**: "어떤 장소를, 왜" — 장소 선정 + `reason`(선정 이유) + `activities`
+  (그곳에서 할 수 있는 일). 지금의 서울(오늘 날짜·시간대·실시간 혼잡도)에 맞춰 쓴다.
+- **strangemap 프론트(`src/lib/courseRouting.ts`)**: "어떤 순서로, 어떤 선으로" — 방문 순서,
+  지도 오버레이 폴리라인, 경로 거리. **라우팅 로직을 서버에 다시 만들지 말 것.**
+  서버는 stop 마다 `lat`/`lng` 만 실어 보낸다 (`distance_km` 은 항상 null — deprecated).
+  `app/core/geo.py` 의 haversine 은 라우팅용이 아니라 반경 필터·핫스팟 매칭 전용이다.
+- **Visit Seoul(`app/tools/visitseoul.py`)**: 확정된 장소의 **주변** 정보만 — 인근 식당,
+  주변 문화행사·관광정보. 코스에 넣을 장소를 Visit Seoul 로 고르지 않는다(그건 RAG 담당).
+
+## 경로 생성 칩 (프론트와 어휘 1:1)
+`app/features/course/schema.py:CourseChips` — companion(혼자/친구/커플/가족), age(10-20대…60대 이상),
+time(오전/오후/밤), purpose(힐링/놀거리/데이트/관광/문화생활), location(종로·중구/강북·성북/홍대·마포/
+용산·이태원/여의도·영등포/강남·서초/성수·건대/잠실·송파/관악·사당/상관없음), congestion(여유/보통/상관없음),
+place_count(3~5). 위치 칩 → 좌표·자치구 매핑은 `app/core/geo.py:LOCATION_CHIPS`.
 
 ## 핵심 규칙
 1. **기능마다 폴더 분리.** 새 AI 기능 = `app/features/<name>/{schema,prompt,chain}.py` + `app/api/routes/<name>.py` 한 쌍.
 2. **실시간 데이터는 `app/tools/` 에만.** 혼잡도(citydata_ppltn)·행사(culturalEventInfo)는 절대 벡터DB(`app/rag/ingest.py`)에 인제스트하지 말 것. 초단위로 변한다.
 3. **벡터DB에는 잘 안 변하는 컨텐츠만** (장소 서사, 코스 노하우, 큐레이션 글).
-4. **응답 JSON 계약 동결.** `AIPlaceInfo`, `Suggestion[]` 등 서울로 프론트 스키마를 깨지 말 것 (UI 재작업 0이 목표).
+4. **응답 JSON 계약 동결.** `AIPlaceInfo`, `Suggestion[]`, `CourseStop` 등 서울로 프론트 스키마를
+   깨지 말 것 — **필드 추가는 되고, 기존 필드 제거·의미 변경은 안 된다** (UI 재작업 0이 목표).
 5. **API 키는 `.env` 만.** 코드 하드코딩 금지.
 6. **화이트리스트 강제.** recommend/course 는 LLM 응답 장소가 RAG 후보 목록에 있을 때만 채택(환각 차단). 실패 시 mock 폴백.
+7. **라우팅 금지.** 방문 순서·폴리라인·경로 거리는 프론트 몫이다 (위 "역할 분리" 참고).
 
 ## 메타데이터 규약 (Chroma payload)
-`place_id`, `display_name`, `area_name`(실시간 API 매칭 키), `region`(강북/강남/강서/강동), `lat`, `lng`, `op_start`/`op_end`(운영시간 — routing 시간창 제약용, 기본 0/24), `category`, `aspect`(summary|history|photo|tip|access|course), `doc_type`(place|course).
-`region` 은 strangemap `getRegion()` 좌표 로직과 일치시킨다 (`app/rag/ingest.py:_region`).
+`place_id`, `display_name`, `area_name`(실시간 API 매칭 키), `region`(강북/강남/강서/강동), `lat`, `lng`, `op_start`/`op_end`(운영시간 — 프론트 라우팅 시간창·표시용, 기본 0/24), `category`, `aspect`(summary|history|photo|tip|access|course), `doc_type`(place|course). 코스 문서 한정: `tags`(콤마 문자열), `is_filming`(bool — K-컨텐츠 촬영지, `search_kcontent_filming_spots` 필터 키).
+`region` 은 strangemap `getRegion()` 좌표 로직과 일치시킨다 (`app/core/geo.py:region_of`).
 
 ## 데이터 출처
 strangemap `src/lib/seoulPlaces.ts`(71개), `src/data/themeCourses.ts`. `node scripts/export_data.mjs` 로 `data/raw/*.json` 생성 후 `uv run python -m scripts.run_ingest`.

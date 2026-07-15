@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>서울로 AI 챗봇</title>
+<style>
+  :root {
+    --bg: #f4f5f7; --panel: #ffffff; --ink: #1f2430; --sub: #6b7280;
+    --accent: #2563eb; --accent-soft: #eff4ff; --border: #e5e7eb;
+    --user: #2563eb; --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+    display: flex; justify-content: center; min-height: 100vh;
+  }
+  #app { width: 100%; max-width: 720px; display: flex; flex-direction: column; height: 100vh; }
+  header {
+    padding: 16px 20px; background: var(--panel); border-bottom: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  header h1 { font-size: 17px; }
+  header span { font-size: 12px; color: var(--sub); }
+  #log { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+
+  .msg { max-width: 86%; }
+  .msg.user { align-self: flex-end; }
+  .bubble {
+    padding: 10px 14px; border-radius: var(--radius); line-height: 1.55; font-size: 14px;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  .user .bubble { background: var(--user); color: #fff; border-bottom-right-radius: 4px; }
+  .bot .bubble { background: var(--panel); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+  .bot .bubble.thinking { color: var(--sub); font-style: italic; }
+  .progress {
+    color: var(--sub); font-size: 13px; padding: 6px 4px;
+    display: flex; align-items: center; gap: 6px; animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+
+  .cards { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 12px 14px; font-size: 13px;
+  }
+  .card .title { font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+  .card .num {
+    background: var(--accent); color: #fff; width: 20px; height: 20px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 11px; flex: none;
+  }
+  .card .meta { color: var(--sub); font-size: 12px; margin-top: 3px; }
+  .card .desc { margin-top: 6px; line-height: 1.5; }
+  .card .tip { margin-top: 6px; background: var(--accent-soft); border-radius: 8px; padding: 6px 9px; font-size: 12px; }
+  .badge {
+    display: inline-block; background: var(--accent-soft); color: var(--accent);
+    border-radius: 999px; padding: 2px 10px; font-size: 11px; font-weight: 600; margin: 6px 4px 0 0;
+  }
+  .course-head { font-weight: 800; font-size: 15px; }
+  .course-sub { color: var(--sub); font-size: 12px; margin-top: 2px; }
+
+  .card .reason { margin-top: 6px; background: var(--accent-soft); border-radius: 8px; padding: 6px 9px; font-size: 12px; }
+  .card .acts { margin-top: 6px; font-size: 12px; color: var(--sub); }
+  .nearby { margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 6px; font-size: 12px; }
+  .nearby .row { color: var(--sub); margin-top: 3px; }
+
+  details.steps { margin-top: 8px; font-size: 12px; color: var(--sub); }
+  details.steps summary { cursor: pointer; user-select: none; }
+  details.steps li { margin: 4px 0 0 16px; }
+  details.steps .why { margin: 2px 0 0 30px; color: var(--sub); }
+  .ok { color: #16a34a; } .fail { color: #dc2626; }
+
+  /* 경로 생성 칩 (strangemap 과 동일 어휘) */
+  #chips { background: var(--panel); border-top: 1px solid var(--border); padding: 10px 20px 2px; }
+  #chips .group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+  #chips .label { font-size: 11px; color: var(--sub); width: 54px; flex: none; }
+  .chip {
+    border: 1px solid var(--border); background: #fff; color: var(--ink);
+    border-radius: 999px; padding: 4px 11px; font-size: 12px; cursor: pointer; font-weight: 500;
+  }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  form {
+    display: flex; gap: 8px; padding: 14px 20px; background: var(--panel);
+    border-top: 1px solid var(--border);
+  }
+  input {
+    flex: 1; border: 1px solid var(--border); border-radius: 999px; padding: 11px 16px;
+    font-size: 14px; outline: none;
+  }
+  input:focus { border-color: var(--accent); }
+  button {
+    background: var(--accent); color: #fff; border: 0; border-radius: 999px;
+    padding: 0 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  }
+  button:disabled { opacity: .5; cursor: default; }
+  .hint { font-size: 12px; color: var(--sub); text-align: center; padding: 0 20px 10px; background: var(--panel); }
+</style>
+</head>
+<body>
+<div id="app">
+  <header><h1>서울로 AI</h1></header>
+  <div id="log"></div>
+  <div id="chips"></div>
+  <form id="form">
+    <input id="input" placeholder="예: 경복궁 주변 문화행사 알려주고 근처 맛집도 알려줘" autocomplete="off" />
+    <button id="send">전송</button>
+  </form>
+  <div class="hint">칩을 하나라도 고르면 코스 생성으로 갑니다. 칩 없이 보내면 자연어 에이전트가 처리해요.</div>
+</div>
+
+<script>
+const log = document.getElementById("log");
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const send = document.getElementById("send");
+const chipsBox = document.getElementById("chips");
+
+// strangemap 경로 생성 칩 — 서버 CourseChips 스키마와 어휘가 1:1 로 대응한다
+const CHIP_GROUPS = [
+  ["누구랑", "companion", ["혼자", "친구", "커플", "가족"]],
+  ["나이대", "age", ["10-20대", "20-30대", "30-40대", "40-50대", "60대 이상"]],
+  ["시간대", "time", ["오전", "오후", "밤"]],
+  ["목적", "purpose", ["힐링", "놀거리", "데이트", "관광", "문화생활"]],
+  ["위치", "location", ["종로·중구", "강북·성북", "홍대·마포", "용산·이태원", "여의도·영등포",
+                       "강남·서초", "성수·건대", "잠실·송파", "관악·사당", "상관없음"]],
+  ["혼잡도", "congestion", ["여유", "보통", "상관없음"]],
+  ["장소 수", "place_count", ["3곳", "4곳", "5곳"]],
+];
+const selected = {};   // key → 값 (한 그룹당 하나, 다시 누르면 해제)
+
+function buildChips() {
+  CHIP_GROUPS.forEach(([label, key, values]) => {
+    const row = el("div", "group");
+    row.appendChild(el("span", "label", label));
+    values.forEach((v) => {
+      const b = el("button", "chip", v);
+      b.type = "button";
+      b.addEventListener("click", () => {
+        const on = selected[key] === v;
+        if (on) delete selected[key]; else selected[key] = v;
+        row.querySelectorAll(".chip").forEach((c) => c.classList.remove("on"));
+        if (!on) b.classList.add("on");
+      });
+      row.appendChild(b);
+    });
+    chipsBox.appendChild(row);
+  });
+}
+
+/** 선택된 칩 → 서버 CourseChips payload (하나도 없으면 null → 자연어 에이전트) */
+function chipPayload() {
+  if (!Object.keys(selected).length) return null;
+  const out = {};
+  for (const [k, v] of Object.entries(selected)) {
+    out[k] = k === "place_count" ? parseInt(v, 10) : v;
+  }
+  return out;
+}
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function addMsg(role) {
+  const m = el("div", "msg " + role);
+  log.appendChild(m);
+  log.scrollTop = log.scrollHeight;
+  return m;
+}
+function bubble(m, text, extraCls) {
+  const b = el("div", "bubble" + (extraCls ? " " + extraCls : ""), text);
+  m.appendChild(b);
+  log.scrollTop = log.scrollHeight;
+  return b;
+}
+
+function renderCourse(m, data) {
+  const c = data.course || {};
+  const wrap = el("div", "cards");
+  const head = el("div", "card");
+  head.appendChild(el("div", "course-head", c.title || "추천 코스"));
+  if (c.subtitle) head.appendChild(el("div", "course-sub", c.subtitle));
+  if (c.description) head.appendChild(el("div", "desc", c.description));
+  (c.tags || []).forEach(t => head.appendChild(el("span", "badge", "#" + t)));
+  // 방문 순서/경로 거리는 앱(strangemap)이 좌표로 계산한다 — 서버는 장소만 준다
+  head.appendChild(el("div", "meta", "지도 경로는 앱에서 좌표로 계산됩니다."));
+  wrap.appendChild(head);
+
+  (c.stops || []).forEach((s, i) => {
+    const card = el("div", "card");
+    const title = el("div", "title");
+    title.appendChild(el("span", "num", String(i + 1)));
+    title.appendChild(document.createTextNode(s.name || ""));
+    card.appendChild(title);
+    const meta = [s.preview, s.lat != null ? s.lat + ", " + s.lng : null].filter(Boolean).join(" · ");
+    if (meta) card.appendChild(el("div", "meta", meta));
+    if (s.description) card.appendChild(el("div", "desc", s.description));
+    if (s.reason) card.appendChild(el("div", "reason", "🤖 이 장소를 고른 이유: " + s.reason));
+    if ((s.activities || []).length)
+      card.appendChild(el("div", "acts", "여기서 할 수 있는 것 · " + s.activities.join(" / ")));
+    if (s.duration) card.appendChild(el("span", "badge", "⏱ " + s.duration));
+    if (s.congestion) card.appendChild(el("span", "badge", "지금 " + s.congestion));
+    if (s.tip) card.appendChild(el("div", "tip", "💡 " + s.tip));
+    renderNearby(card, s.nearby);
+    wrap.appendChild(card);
+  });
+  m.appendChild(wrap);
+}
+
+/** Visit Seoul: 이 장소 주변의 식당 / 문화행사·관광정보 */
+function renderNearby(card, nearby) {
+  if (!nearby) return;
+  const rows = [];
+  (nearby.restaurants || []).forEach(r =>
+    rows.push("🍽 " + r.title + (r.dist_km != null ? " · " + r.dist_km + "km" : "")));
+  (nearby.attractions || []).forEach(a =>
+    rows.push((a.kind === "event" ? "🎪 " : "🏛 ") + a.title
+      + (a.period ? " · " + a.period : "") + (a.dist_km != null ? " · " + a.dist_km + "km" : "")));
+  if (!rows.length) return;
+  const box = el("div", "nearby");
+  box.appendChild(el("div", "meta", "주변 정보 (Visit Seoul)"));
+  rows.forEach(r => box.appendChild(el("div", "row", r)));
+  card.appendChild(box);
+}
+
+function renderItems(m, items) {
+  if (!items || !items.length) return;
+  const wrap = el("div", "cards");
+  const icon = { event: "🎪", restaurant: "🍽", filming_course: "🎬" };
+  items.forEach(it => {
+    const card = el("div", "card");
+    card.appendChild(el("div", "title", (icon[it.type] || "📍") + " " + (it.title || "")));
+    const meta = [it.address, it.period, it.use_time, it.dist_km != null ? it.dist_km + "km" : null]
+      .filter(Boolean).join(" · ");
+    if (meta) card.appendChild(el("div", "meta", meta));
+    if (it.summary) card.appendChild(el("div", "desc", it.summary));
+    if (Array.isArray(it.stops) && it.stops.length && typeof it.stops[0] === "string")
+      card.appendChild(el("div", "meta", "동선: " + it.stops.join(" → ")));
+    (it.tags || []).slice(0, 5).forEach(t => card.appendChild(el("span", "badge", "#" + t)));
+    wrap.appendChild(card);
+  });
+  m.appendChild(wrap);
+}
+
+function renderSuggestions(m, items) {
+  const wrap = el("div", "cards");
+  (items || []).forEach(s => {
+    const card = el("div", "card");
+    card.appendChild(el("div", "title", "📍 " + (s.title || s.place || "")));
+    const meta = [s.place, s.duration].filter(Boolean).join(" · ");
+    if (meta) card.appendChild(el("div", "meta", meta));
+    if (s.description) card.appendChild(el("div", "desc", s.description));
+    if (s.reason) card.appendChild(el("div", "tip", "💡 " + s.reason));
+    (s.tags || []).forEach(t => card.appendChild(el("span", "badge", "#" + t)));
+    wrap.appendChild(card);
+  });
+  m.appendChild(wrap);
+}
+
+function renderPlace(m, p) {
+  if (!p) return;
+  const wrap = el("div", "cards");
+  const card = el("div", "card");
+  card.appendChild(el("div", "title", "📍 " + (p.placeName || "")));
+  if (p.summary) card.appendChild(el("div", "desc", p.summary));
+  (p.highlights || []).forEach(h => card.appendChild(el("div", "meta", "· " + h)));
+  if (p.right_now) card.appendChild(el("span", "badge", "지금: " + p.right_now));
+  if (p.best_time) card.appendChild(el("span", "badge", "추천 시간: " + p.best_time));
+  if (p.tip) card.appendChild(el("div", "tip", "💡 " + p.tip));
+  wrap.appendChild(card);
+  m.appendChild(wrap);
+}
+
+/** 생성 과정 노출 — 칩/자연어가 어떻게 실제 장소로 이어졌는지 */
+function renderSteps(m, steps) {
+  if (!steps || !steps.length) return;
+  const d = el("details", "steps");
+  d.appendChild(el("summary", null, "장소가 만들어진 과정 " + steps.length + "단계"));
+  const ul = el("ul");
+  steps.forEach(s => {
+    const li = el("li");
+    li.appendChild(el("span", s.ok ? "ok" : "fail", s.ok ? "✓ " : "✗ "));
+    const head = s.label || s.tool;
+    const detail = s.detail || (s.args ? JSON.stringify(s.args) : "");
+    li.appendChild(document.createTextNode(head + (detail ? " — " + detail : "")));
+    ul.appendChild(li);
+    // AI 선정 단계면 장소별 선정 이유를 그대로 펼쳐 보여준다
+    (s.picks || []).forEach(p => {
+      if (p.reason) ul.appendChild(el("li", "why", "· " + p.name + ": " + p.reason));
+    });
+  });
+  d.appendChild(ul);
+  m.appendChild(d);
+}
+
+function renderFinal(m, data, answerBubble) {
+  // 토큰으로 이미 타이핑된 답변 말풍선이 있으면 재사용, 없으면 생성
+  const ensureText = (fallback) => {
+    if (answerBubble && answerBubble.textContent.trim()) return answerBubble;
+    const b = answerBubble || bubble(m, "");
+    if (!b.textContent.trim()) b.textContent = fallback;
+    return b;
+  };
+  if (data.kind === "course") {
+    ensureText(data.text || "요청하신 코스를 준비했어요!");
+    renderCourse(m, data);
+  } else if (data.kind === "suggestions") {
+    ensureText(data.text || "이런 곳들을 추천해요!");
+    renderSuggestions(m, data.items);
+  } else if (data.kind === "place") {
+    if (answerBubble) answerBubble.remove();
+    renderPlace(m, data.place);
+  } else {
+    ensureText(data.text || "…");
+    renderItems(m, data.items);
+  }
+  renderSteps(m, data.steps);
+}
+
+async function ask(message, chips) {
+  const m = addMsg("bot");
+  const prog = el("div", "progress");
+  m.appendChild(prog);
+  const setProgress = (t) => { prog.textContent = "⏳ " + t; log.scrollTop = log.scrollHeight; };
+  setProgress("연결 중…");
+
+  let answerBubble = null;   // 토큰 스트림이 들어오면 생성되는 답변 말풍선
+
+  try {
+    const res = await fetch("/agent/chat/stream", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(chips ? { message, chips } : { message }),
+    });
+    if (!res.ok || !res.body) throw new Error("HTTP " + res.status);
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = "";
+
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      const frames = buf.split("\n\n");
+      buf = frames.pop();  // 마지막 미완성 프레임 보관
+      for (const frame of frames) {
+        const line = frame.split("\n").find((l) => l.startsWith("data:"));
+        if (!line) continue;
+        const evt = JSON.parse(line.slice(5).trim());
+
+        if (evt.event === "progress") {
+          let msg = evt.message;
+          if (evt.tasks && evt.tasks.length)
+            msg += " (" + evt.tasks.map((t) => t.label).join(", ") + ")";
+          setProgress(msg);
+        } else if (evt.event === "token") {
+          if (!answerBubble) { answerBubble = bubble(m, ""); }
+          answerBubble.textContent += evt.text;
+          log.scrollTop = log.scrollHeight;
+        } else if (evt.event === "final") {
+          prog.remove();
+          renderFinal(m, evt.payload, answerBubble);
+        } else if (evt.event === "error") {
+          throw new Error(evt.message);
+        }
+      }
+    }
+  } catch (err) {
+    prog.remove();
+    if (answerBubble) answerBubble.remove();
+    bubble(m, "오류가 발생했어요: " + err.message);
+  }
+  log.scrollTop = log.scrollHeight;
+}
+
+buildChips();
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const message = input.value.trim();
+  const chips = chipPayload();
+  if (!message && !chips) return;   // 칩만 골라도 코스 생성은 된다
+
+  const shown = [message, chips ? "[" + Object.values(selected).join(" · ") + "]" : ""]
+    .filter(Boolean).join(" ");
+  bubble(addMsg("user"), shown);
+  input.value = "";
+  send.disabled = true;
+  await ask(message, chips);
+  send.disabled = false;
+  input.focus();
+});
+</script>
+</body>
+</html>
