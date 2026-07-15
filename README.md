@@ -1,5 +1,7 @@
 # lewisai — 서울로 AI (Python · LangGraph · RAG)
 
+## 사이트 주소: https://seoulro.site/
+
 서울로(strangemap)의 AI 기능을 **파이썬 LangGraph RAG 에이전트**로 재구현한 프로젝트.
 서울로를 3-tier(프론트 Next.js / **AI 서버** / DB)로 분리하기 위한 AI 백엔드다.
 
