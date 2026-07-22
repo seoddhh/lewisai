@@ -29,6 +29,9 @@ async def run(req: CourseRequest) -> CourseResponse:
             description=course_data.get("description", ""),
             stops=stops,
             tags=course_data.get("tags", []),
+            scheduled=course_data.get("scheduled", False),
+            days=course_data.get("days", 1),
+            day_areas=course_data.get("day_areas", {}),
         )
         return CourseResponse(course=course, source=result.get("source", "ai"))
 

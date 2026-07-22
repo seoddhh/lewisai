@@ -25,6 +25,7 @@ from app.graph.nodes.course import (
     select_places_node,
 )
 from app.graph.nodes.passthrough import chitchat_node
+from app.graph.nodes.schedule import schedule_node
 from app.graph.state import AgentState
 
 
@@ -38,6 +39,7 @@ def get_agent_graph():
     g.add_node("select_places", select_places_node)
     g.add_node("enrich", enrich_node)
     g.add_node("nearby", nearby_node)
+    g.add_node("schedule", schedule_node)
     g.add_node("compose", compose_node)
     g.add_node("chitchat", chitchat_node)
 
@@ -52,7 +54,8 @@ def get_agent_graph():
     g.add_edge("retrieve", "select_places")
     g.add_edge("select_places", "enrich")
     g.add_edge("enrich", "nearby")
-    g.add_edge("nearby", "compose")
+    g.add_edge("nearby", "schedule")
+    g.add_edge("schedule", "compose")
     g.add_edge("compose", END)
     # 코스 외 폴백
     g.add_edge("chitchat", END)
@@ -81,6 +84,7 @@ COURSE_STEP_LABELS: dict[str, str] = {
     "select_places": "AI 장소 선정",
     "enrich": "실시간 혼잡도 확인",
     "nearby": "주변 식당·문화행사 조회 (Visit Seoul)",
+    "schedule": "시간표 구성",
     "compose": "코스 서사 작성",
 }
 
@@ -102,13 +106,28 @@ def course_steps(state: dict[str, Any]) -> list[dict[str, Any]]:
                     "activities": s.get("activities", [])} for s in selected]},
         {"id": "s3", "tool": "enrich", "label": COURSE_STEP_LABELS["enrich"], "ok": True,
          "detail": ", ".join(f"{k} {v}" for k, v in state.get("congestion", {}).items())
-                   or "실시간 측정 지점 없음"},
+                   or ("실시간 측정 지점 없음"
+                       if (state.get("chips") or {}).get("congestion") in ("여유", "보통")
+                       else "혼잡도 요청 없음 — 건너뜀")},
         {"id": "s4", "tool": "nearby", "label": COURSE_STEP_LABELS["nearby"], "ok": n_nearby > 0,
          "detail": f"주변 정보 {n_nearby}건"},
-        {"id": "s5", "tool": "compose", "label": COURSE_STEP_LABELS["compose"],
+        {"id": "s5", "tool": "schedule", "label": COURSE_STEP_LABELS["schedule"], "ok": True,
+         "detail": _schedule_detail(state.get("schedule", []))},
+        {"id": "s6", "tool": "compose", "label": COURSE_STEP_LABELS["compose"],
          "ok": state.get("source") == "ai", "detail": (state.get("result") or {})
              .get("course", {}).get("title", "")},
     ]
+
+
+def _schedule_detail(schedule: list[dict]) -> str:
+    timed = [s for s in schedule if s.get("start_time")]
+    if not timed:
+        return "시간 범위 없음 — 건너뜀"
+    meals = sum(1 for s in schedule if s.get("slot_type") == "meal")
+    n_days = len({s.get("day") or 1 for s in schedule})
+    day_label = f"{n_days}일 · " if n_days > 1 else ""
+    return (f"{day_label}{timed[0]['start_time']}~{timed[-1]['end_time']} · "
+            f"장소 {len(timed) - meals}곳 · 식사 {meals}회")
 
 
 def _payload(state: dict[str, Any]) -> dict[str, Any]:
