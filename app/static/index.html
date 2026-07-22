@@ -3,161 +3,259 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>서울로 AI 챗봇</title>
+<title>서울로 AI — 나만의 코스</title>
 <style>
+  /* 애플 톤 — 밝은 배경, 짙은 잉크, 파란 포인트, 큰 타이포, 부드러운 전환 */
   :root {
-    --bg: #f4f5f7; --panel: #ffffff; --ink: #1f2430; --sub: #6b7280;
-    --accent: #2563eb; --accent-soft: #eff4ff; --border: #e5e7eb;
-    --user: #2563eb; --radius: 14px;
+    --bg: #f5f5f7; --card: #ffffff; --ink: #1d1d1f; --sub: #86868b;
+    --line: #d2d2d7; --accent: #0071e3; --accent-soft: #eef4fe;
+    --place: #6e5ef6; --meal: #ff5a5f; --ok: #16a34a;
+    --radius: 18px;
   }
-  * { box-sizing: border-box; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
   body {
     background: var(--bg); color: var(--ink);
-    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
-    display: flex; justify-content: center; min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Pretendard", "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex; justify-content: center;
   }
-  #app { width: 100%; max-width: 720px; display: flex; flex-direction: column; height: 100vh; }
-  header {
-    padding: 16px 20px; background: var(--panel); border-bottom: 1px solid var(--border);
-    display: flex; align-items: baseline; gap: 10px;
-  }
-  header h1 { font-size: 17px; }
-  header span { font-size: 12px; color: var(--sub); }
-  #log { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  #app { width: 100%; max-width: 560px; min-height: 100vh; display: flex; flex-direction: column; }
 
-  .msg { max-width: 86%; }
-  .msg.user { align-self: flex-end; }
-  .bubble {
-    padding: 10px 14px; border-radius: var(--radius); line-height: 1.55; font-size: 14px;
-    white-space: pre-wrap; word-break: break-word;
+  /* ── 상단 바: 뒤로 + 진행도 ── */
+  #topbar { display: flex; align-items: center; gap: 12px; padding: 18px 22px 6px; min-height: 58px; }
+  #back {
+    width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line);
+    background: var(--card); color: var(--ink); font-size: 17px; cursor: pointer;
+    display: none; align-items: center; justify-content: center; flex: none;
   }
-  .user .bubble { background: var(--user); color: #fff; border-bottom-right-radius: 4px; }
-  .bot .bubble { background: var(--panel); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
-  .bot .bubble.thinking { color: var(--sub); font-style: italic; }
-  .progress {
-    color: var(--sub); font-size: 13px; padding: 6px 4px;
-    display: flex; align-items: center; gap: 6px; animation: pulse 1.4s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+  #back.show { display: inline-flex; }
+  #bar { flex: 1; height: 4px; border-radius: 4px; background: #e3e3e8; overflow: hidden; }
+  #bar > i { display: block; height: 100%; width: 0; background: var(--ink); border-radius: 4px;
+             transition: width .35s cubic-bezier(.4,0,.2,1); }
+  #stepno { font-size: 12px; color: var(--sub); font-variant-numeric: tabular-nums; flex: none; }
 
-  .cards { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-  .card {
-    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 12px 14px; font-size: 13px;
-  }
-  .card .title { font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 6px; }
-  .card .num {
-    background: var(--accent); color: #fff; width: 20px; height: 20px; border-radius: 50%;
-    display: inline-flex; align-items: center; justify-content: center; font-size: 11px; flex: none;
-  }
-  .card .meta { color: var(--sub); font-size: 12px; margin-top: 3px; }
-  .card .desc { margin-top: 6px; line-height: 1.5; }
-  .card .tip { margin-top: 6px; background: var(--accent-soft); border-radius: 8px; padding: 6px 9px; font-size: 12px; }
-  .badge {
-    display: inline-block; background: var(--accent-soft); color: var(--accent);
-    border-radius: 999px; padding: 2px 10px; font-size: 11px; font-weight: 600; margin: 6px 4px 0 0;
-  }
-  .course-head { font-weight: 800; font-size: 15px; }
-  .course-sub { color: var(--sub); font-size: 12px; margin-top: 2px; }
+  /* ── 질문 화면 ── */
+  #stage { flex: 1; padding: 26px 26px 40px; display: flex; flex-direction: column; }
+  .screen { animation: rise .32s cubic-bezier(.3,.7,.3,1) both; }
+  .screen.leave { animation: sink .18s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes sink { to { opacity: 0; transform: translateY(-8px); } }
 
-  .card .reason { margin-top: 6px; background: var(--accent-soft); border-radius: 8px; padding: 6px 9px; font-size: 12px; }
-  .card .acts { margin-top: 6px; font-size: 12px; color: var(--sub); }
-  .nearby { margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 6px; font-size: 12px; }
-  .nearby .row { color: var(--sub); margin-top: 3px; }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .08em; color: var(--accent);
+             text-transform: uppercase; margin-bottom: 10px; }
+  h1.q { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; font-weight: 800; }
+  .sub { margin-top: 8px; font-size: 14px; color: var(--sub); line-height: 1.55; }
 
-  details.steps { margin-top: 8px; font-size: 12px; color: var(--sub); }
-  details.steps summary { cursor: pointer; user-select: none; }
-  details.steps li { margin: 4px 0 0 16px; }
-  details.steps .why { margin: 2px 0 0 30px; color: var(--sub); }
-  .ok { color: #16a34a; } .fail { color: #dc2626; }
-
-  /* 경로 생성 칩 (strangemap 과 동일 어휘) */
-  #chips { background: var(--panel); border-top: 1px solid var(--border); padding: 10px 20px 2px; }
-  #chips .group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
-  #chips .label { font-size: 11px; color: var(--sub); width: 54px; flex: none; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
   .chip {
-    border: 1px solid var(--border); background: #fff; color: var(--ink);
-    border-radius: 999px; padding: 4px 11px; font-size: 12px; cursor: pointer; font-weight: 500;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+    border-radius: 999px; padding: 12px 20px; font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: all .16s ease;
   }
-  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip:hover { border-color: var(--ink); }
+  .chip.on { background: var(--ink); border-color: var(--ink); color: #fff; transform: scale(1.03); }
+  .chip .d { display: block; font-size: 12px; font-weight: 500; margin-top: 2px; }
+  .chip .d { color: var(--sub); }
+  .chip.on .d { color: rgba(255,255,255,.72); }
+  .chip.big { padding: 18px 24px; border-radius: 20px; min-width: 150px; text-align: left; }
 
-  form {
-    display: flex; gap: 8px; padding: 14px 20px; background: var(--panel);
-    border-top: 1px solid var(--border);
-  }
-  input {
-    flex: 1; border: 1px solid var(--border); border-radius: 999px; padding: 11px 16px;
-    font-size: 14px; outline: none;
-  }
-  input:focus { border-color: var(--accent); }
-  button {
+  .grouplabel { margin: 26px 0 -16px; font-size: 13px; font-weight: 700; color: var(--sub); }
+
+  .next {
+    margin-top: 34px; align-self: flex-start;
     background: var(--accent); color: #fff; border: 0; border-radius: 999px;
-    padding: 0 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+    padding: 14px 30px; font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: opacity .15s ease, transform .15s ease;
   }
-  button:disabled { opacity: .5; cursor: default; }
-  .hint { font-size: 12px; color: var(--sub); text-align: center; padding: 0 20px 10px; background: var(--panel); }
+  .next:disabled { opacity: .35; cursor: default; }
+  .next:not(:disabled):hover { transform: scale(1.02); }
+
+  textarea#note {
+    margin-top: 24px; width: 100%; min-height: 84px; resize: vertical;
+    border: 1px solid var(--line); border-radius: 14px; padding: 13px 15px;
+    font: inherit; font-size: 14px; outline: none; background: var(--card);
+  }
+  textarea#note:focus { border-color: var(--accent); }
+
+  .summary { margin-top: 24px; background: var(--card); border-radius: var(--radius);
+             padding: 6px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .summary .row { display: flex; justify-content: space-between; gap: 14px;
+                  padding: 13px 0; border-bottom: 1px solid #f0f0f2; font-size: 14px; }
+  .summary .row:last-child { border-bottom: 0; }
+  .summary .k { color: var(--sub); flex: none; }
+  .summary .v { font-weight: 600; text-align: right; }
+
+  /* ── 로딩 ── */
+  #loading { text-align: center; padding-top: 16vh; }
+  .spinner { width: 34px; height: 34px; margin: 0 auto 22px; border-radius: 50%;
+             border: 3px solid #e3e3e8; border-top-color: var(--accent);
+             animation: spin .9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #loadmsg { font-size: 15px; font-weight: 600; }
+  #loadsub { margin-top: 8px; font-size: 13px; color: var(--sub); }
+
+  /* ── 결과: 타임라인 코스 ── */
+  .course-head h2 { font-size: 25px; letter-spacing: -0.02em; line-height: 1.3; }
+  .course-head .st { margin-top: 6px; color: var(--sub); font-size: 14px; }
+  .course-head .desc { margin-top: 12px; font-size: 14px; line-height: 1.6; }
+  .badge { display: inline-block; background: var(--accent-soft); color: var(--accent);
+           border-radius: 999px; padding: 3px 11px; font-size: 12px; font-weight: 600;
+           margin: 10px 6px 0 0; }
+  .dayhead { margin: 34px 0 6px; font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+
+  .tl { position: relative; margin-top: 10px; }
+  .tl::before { content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px;
+                width: 2px; background: #e3e3e8; }
+  .item { position: relative; padding: 14px 0 14px 52px; }
+  .num { position: absolute; left: 0; top: 16px; width: 32px; height: 32px; border-radius: 50%;
+         background: var(--place); color: #fff; font-size: 14px; font-weight: 700;
+         display: flex; align-items: center; justify-content: center;
+         box-shadow: 0 0 0 4px var(--bg); }
+  .item.meal .num { background: var(--meal); }
+  .sect { font-size: 14px; font-weight: 800; margin: 4px 0 8px; letter-spacing: -0.01em; }
+  .travel { font-size: 12px; color: var(--sub); margin: 0 0 8px; }
+
+  .card { background: var(--card); border-radius: var(--radius); padding: 16px 18px;
+          box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .card .name { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+  .card .meta { margin-top: 3px; font-size: 12.5px; color: var(--sub); }
+  .card .desc { margin-top: 9px; font-size: 13.5px; line-height: 1.6; }
+  .pill { display: inline-block; border: 1px solid var(--line); border-radius: 999px;
+          padding: 2px 10px; font-size: 11.5px; font-weight: 600; color: var(--sub);
+          margin: 9px 5px 0 0; }
+  .pill.time { border-color: var(--accent); color: var(--accent); }
+  .pill.crowd { border-color: var(--meal); color: var(--meal); }
+  .reco { margin-top: 10px; font-size: 13px; line-height: 1.55; display: flex; gap: 8px; }
+  .reco b { color: var(--accent); flex: none; font-weight: 700; }
+  .acts { margin-top: 8px; font-size: 12.5px; color: var(--sub); }
+  .tip { margin-top: 9px; background: var(--accent-soft); border-radius: 10px;
+         padding: 8px 11px; font-size: 12.5px; line-height: 1.5; }
+
+  .meals { display: flex; flex-direction: column; gap: 8px; }
+  .mealcard { background: var(--card); border-radius: 14px; padding: 13px 15px;
+              box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .mealcard .name { font-size: 14px; font-weight: 700; }
+  .mealcard .meta { margin-top: 2px; font-size: 12px; color: var(--sub); }
+  .mealcard .sum { margin-top: 5px; font-size: 12.5px; line-height: 1.5; }
+  .meal-empty { font-size: 13px; color: var(--sub); background: var(--card);
+                border-radius: 14px; padding: 13px 15px; }
+
+  details.steps { margin: 30px 0 8px; font-size: 12.5px; color: var(--sub); }
+  details.steps summary { cursor: pointer; user-select: none; font-weight: 600; }
+  details.steps li { margin: 6px 0 0 18px; line-height: 1.5; }
+  details.steps .why { margin: 2px 0 0 34px; }
+  .ok { color: var(--ok); } .fail { color: var(--meal); }
+
+  .restart { margin: 26px 0 50px; width: 100%; background: var(--ink); color: #fff;
+             border: 0; border-radius: 999px; padding: 15px; font-size: 15px;
+             font-weight: 700; cursor: pointer; }
+  .errbox { margin-top: 24px; background: #fff2f2; color: #b91c1c; border-radius: 14px;
+            padding: 14px 16px; font-size: 13.5px; line-height: 1.5; }
 </style>
 </head>
 <body>
 <div id="app">
-  <header><h1>서울로 AI</h1></header>
-  <div id="log"></div>
-  <div id="chips"></div>
-  <form id="form">
-    <input id="input" placeholder="예: 경복궁 주변 문화행사 알려주고 근처 맛집도 알려줘" autocomplete="off" />
-    <button id="send">전송</button>
-  </form>
-  <div class="hint">칩을 하나라도 고르면 코스 생성으로 갑니다. 칩 없이 보내면 자연어 에이전트가 처리해요.</div>
+  <div id="topbar">
+    <button id="back" aria-label="이전">‹</button>
+    <div id="bar"><i></i></div>
+    <span id="stepno"></span>
+  </div>
+  <div id="stage"></div>
 </div>
 
 <script>
-const log = document.getElementById("log");
-const form = document.getElementById("form");
-const input = document.getElementById("input");
-const send = document.getElementById("send");
-const chipsBox = document.getElementById("chips");
+"use strict";
+/* 트리플식 단계별 칩 위저드 — 한 화면 = 질문 하나. 선택하면 다음 질문으로 넘어가고,
+   마지막에 선택 요약 + 자연어 추가 요청(선택)을 모아 코스 생성 API 로 보낸다.
+   칩 payload 는 서버 CourseChips 스키마와 어휘가 1:1 로 대응한다. */
 
-// strangemap 경로 생성 칩 — 서버 CourseChips 스키마와 어휘가 1:1 로 대응한다
-const CHIP_GROUPS = [
-  ["누구랑", "companion", ["혼자", "친구", "커플", "가족"]],
-  ["나이대", "age", ["10-20대", "20-30대", "30-40대", "40-50대", "60대 이상"]],
-  ["시간대", "time", ["오전", "오후", "밤"]],
-  ["목적", "purpose", ["힐링", "놀거리", "데이트", "관광", "문화생활"]],
-  ["위치", "location", ["종로·중구", "강북·성북", "홍대·마포", "용산·이태원", "여의도·영등포",
-                       "강남·서초", "성수·건대", "잠실·송파", "관악·사당", "상관없음"]],
-  ["혼잡도", "congestion", ["여유", "보통", "상관없음"]],
-  ["장소 수", "place_count", ["3곳", "4곳", "5곳"]],
-];
-const selected = {};   // key → 값 (한 그룹당 하나, 다시 누르면 해제)
+const stage = document.getElementById("stage");
+const backBtn = document.getElementById("back");
+const barFill = document.querySelector("#bar > i");
+const stepNo = document.getElementById("stepno");
 
-function buildChips() {
-  CHIP_GROUPS.forEach(([label, key, values]) => {
-    const row = el("div", "group");
-    row.appendChild(el("span", "label", label));
-    values.forEach((v) => {
-      const b = el("button", "chip", v);
-      b.type = "button";
-      b.addEventListener("click", () => {
-        const on = selected[key] === v;
-        if (on) delete selected[key]; else selected[key] = v;
-        row.querySelectorAll(".chip").forEach((c) => c.classList.remove("on"));
-        if (!on) b.classList.add("on");
-      });
-      row.appendChild(b);
-    });
-    chipsBox.appendChild(row);
-  });
-}
+const HOURS_START = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+const HOURS_END = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+const hh = (h) => String(h).padStart(2, "0") + ":00";
 
-/** 선택된 칩 → 서버 CourseChips payload (하나도 없으면 null → 자연어 에이전트) */
-function chipPayload() {
-  if (!Object.keys(selected).length) return null;
-  const out = {};
-  for (const [k, v] of Object.entries(selected)) {
-    out[k] = k === "place_count" ? parseInt(v, 10) : v;
-  }
-  return out;
-}
+const answers = {};   // audience/start/end/days/companion/purpose/location/congestion/pace/note
+                      // companion/purpose 는 배열(중복 선택). location 은 관광객만 배열(여행 일수만큼).
+
+/* 질문 정의 — audience 선택에 따라 문구·선택지가 달라진다 */
+const steps = () => {
+  const local = answers.audience === "local";
+  return [
+    {
+      id: "audience", title: "어떤 분이신가요?",
+      sub: "서울에서의 하루인지, 서울로 떠나온 여행인지에 따라 코스를 다르게 준비해요.",
+      chips: [
+        { v: "local", label: "현지인", d: "서울이 일상인 당신" },
+        { v: "tourist", label: "관광객", d: "서울이 여행지인 당신" },
+      ], big: true,
+    },
+    local
+      ? {
+          id: "window", title: "몇 시부터 몇 시까지 보낼까요?",
+          sub: "13·19시가 포함되면 점심·저녁 맛집도 함께 추천해 드려요.",
+          render: renderWindow,
+        }
+      : {
+          id: "days", title: "여행 기간은 어떻게 되나요?",
+          chips: [
+            { v: 1, label: "당일치기" }, { v: 2, label: "1박 2일" }, { v: 3, label: "2박 3일" },
+            { v: 4, label: "3박 4일" }, { v: 5, label: "4박 5일" }, { v: 6, label: "5박 6일" },
+          ],
+        },
+    {
+      id: "companion", title: local ? "누구와 함께하나요?" : "누구와 떠나나요?",
+      sub: "여러 명 같이 간다면 중복으로 골라도 돼요.",
+      multi: true,
+      chips: ["혼자", "친구와", "연인과", "배우자와", "아이와", "부모님과"].map((v) => ({ v, label: v })),
+    },
+    {
+      id: "purpose", title: local ? "오늘의 목적은 무엇인가요?" : "이번 여행의 목적은 무엇인가요?",
+      sub: "해당하는 목적을 모두 골라주세요.",
+      multi: true,
+      chips: (local
+        ? ["힐링", "놀거리", "데이트", "관광", "문화생활"]
+        : ["체험·액티비티", "핫플레이스", "자연 힐링", "유명 관광지", "문화·예술·역사", "쇼핑", "맛집 탐방"]
+      ).map((v) => ({ v, label: v })),
+    },
+    {
+      id: "location", title: "어느 동네로 갈까요?",
+      sub: local
+        ? undefined
+        : answers.days > 1
+          ? `여행 일정(${answers.days}일)에 맞춰 최대 ${answers.days}곳까지 고를 수 있어요. ‘상관없음’을 고르면 여행 목적에 맞춰 날마다 다른 동네로 코스를 이어드려요.`
+          : "‘상관없음’을 고르면 여행 목적에 맞춰 동네를 정해드려요.",
+      multi: !local,
+      max: local ? undefined : () => answers.days,
+      chips: ["종로·중구", "강북·성북", "홍대·마포", "용산·이태원", "여의도·영등포",
+              "강남·서초", "성수·건대", "잠실·송파", "관악·사당", "상관없음"].map((v) => ({ v, label: v })),
+    },
+    {
+      id: "congestion", title: "붐비는 정도, 얼마나 신경 쓸까요?",
+      sub: "‘상관없음’을 고르면 실시간 혼잡도를 반영하지 않고 코스를 만들어요.",
+      chips: [
+        { v: "여유", label: "여유", d: "한적한 곳 위주로" },
+        { v: "보통", label: "보통", d: "적당히 붐벼도 괜찮아요" },
+        { v: "상관없음", label: "상관없음", d: "혼잡도는 신경 안 써요" },
+      ], big: true,
+    },
+    {
+      id: "pace", title: local ? "오늘 일정, 어떻게 채울까요?" : "여행 일정, 어떻게 채울까요?",
+      chips: local
+        ? [{ v: "packed", label: "알찬 일정", d: "하루 5곳" }, { v: "relaxed", label: "여유로운 일정", d: "하루 3곳" }]
+        : [{ v: "packed", label: "빼곡한 여행", d: "하루 5곳" }, { v: "relaxed", label: "널널한 여행", d: "하루 3곳" }],
+      big: true,
+    },
+    { id: "confirm", title: "이렇게 준비할까요?", render: renderConfirm },
+  ];
+};
+
+let idx = 0;
 
 function el(tag, cls, text) {
   const e = document.createElement(tag);
@@ -165,236 +263,382 @@ function el(tag, cls, text) {
   if (text != null) e.textContent = text;
   return e;
 }
-function addMsg(role) {
-  const m = el("div", "msg " + role);
-  log.appendChild(m);
-  log.scrollTop = log.scrollHeight;
-  return m;
-}
-function bubble(m, text, extraCls) {
-  const b = el("div", "bubble" + (extraCls ? " " + extraCls : ""), text);
-  m.appendChild(b);
-  log.scrollTop = log.scrollHeight;
-  return b;
-}
 
-function renderCourse(m, data) {
-  const c = data.course || {};
-  const wrap = el("div", "cards");
-  const head = el("div", "card");
-  head.appendChild(el("div", "course-head", c.title || "추천 코스"));
-  if (c.subtitle) head.appendChild(el("div", "course-sub", c.subtitle));
-  if (c.description) head.appendChild(el("div", "desc", c.description));
-  (c.tags || []).forEach(t => head.appendChild(el("span", "badge", "#" + t)));
-  // 방문 순서/경로 거리는 앱(strangemap)이 좌표로 계산한다 — 서버는 장소만 준다
-  head.appendChild(el("div", "meta", "지도 경로는 앱에서 좌표로 계산됩니다."));
-  wrap.appendChild(head);
+function show(i) {
+  idx = i;
+  const list = steps();
+  const step = list[idx];
+  backBtn.classList.toggle("show", idx > 0);
+  barFill.style.width = ((idx + 1) / list.length) * 100 + "%";
+  stepNo.textContent = `${idx + 1} / ${list.length}`;
 
-  (c.stops || []).forEach((s, i) => {
-    const card = el("div", "card");
-    const title = el("div", "title");
-    title.appendChild(el("span", "num", String(i + 1)));
-    title.appendChild(document.createTextNode(s.name || ""));
-    card.appendChild(title);
-    const meta = [s.preview, s.lat != null ? s.lat + ", " + s.lng : null].filter(Boolean).join(" · ");
-    if (meta) card.appendChild(el("div", "meta", meta));
-    if (s.description) card.appendChild(el("div", "desc", s.description));
-    if (s.reason) card.appendChild(el("div", "reason", "🤖 이 장소를 고른 이유: " + s.reason));
-    if ((s.activities || []).length)
-      card.appendChild(el("div", "acts", "여기서 할 수 있는 것 · " + s.activities.join(" / ")));
-    if (s.duration) card.appendChild(el("span", "badge", "⏱ " + s.duration));
-    if (s.congestion) card.appendChild(el("span", "badge", "지금 " + s.congestion));
-    if (s.tip) card.appendChild(el("div", "tip", "💡 " + s.tip));
-    renderNearby(card, s.nearby);
-    wrap.appendChild(card);
-  });
-  m.appendChild(wrap);
-}
+  const scr = el("div", "screen");
+  scr.appendChild(el("div", "eyebrow", "나만의 코스"));
+  scr.appendChild(el("h1", "q", step.title));
+  if (step.sub) scr.appendChild(el("p", "sub", step.sub));
 
-/** Visit Seoul: 이 장소 주변의 식당 / 문화행사·관광정보 */
-function renderNearby(card, nearby) {
-  if (!nearby) return;
-  const rows = [];
-  (nearby.restaurants || []).forEach(r =>
-    rows.push("🍽 " + r.title + (r.dist_km != null ? " · " + r.dist_km + "km" : "")));
-  (nearby.attractions || []).forEach(a =>
-    rows.push((a.kind === "event" ? "🎪 " : "🏛 ") + a.title
-      + (a.period ? " · " + a.period : "") + (a.dist_km != null ? " · " + a.dist_km + "km" : "")));
-  if (!rows.length) return;
-  const box = el("div", "nearby");
-  box.appendChild(el("div", "meta", "주변 정보 (Visit Seoul)"));
-  rows.forEach(r => box.appendChild(el("div", "row", r)));
-  card.appendChild(box);
-}
-
-function renderItems(m, items) {
-  if (!items || !items.length) return;
-  const wrap = el("div", "cards");
-  const icon = { event: "🎪", restaurant: "🍽", filming_course: "🎬" };
-  items.forEach(it => {
-    const card = el("div", "card");
-    card.appendChild(el("div", "title", (icon[it.type] || "📍") + " " + (it.title || "")));
-    const meta = [it.address, it.period, it.use_time, it.dist_km != null ? it.dist_km + "km" : null]
-      .filter(Boolean).join(" · ");
-    if (meta) card.appendChild(el("div", "meta", meta));
-    if (it.summary) card.appendChild(el("div", "desc", it.summary));
-    if (Array.isArray(it.stops) && it.stops.length && typeof it.stops[0] === "string")
-      card.appendChild(el("div", "meta", "동선: " + it.stops.join(" → ")));
-    (it.tags || []).slice(0, 5).forEach(t => card.appendChild(el("span", "badge", "#" + t)));
-    wrap.appendChild(card);
-  });
-  m.appendChild(wrap);
-}
-
-function renderSuggestions(m, items) {
-  const wrap = el("div", "cards");
-  (items || []).forEach(s => {
-    const card = el("div", "card");
-    card.appendChild(el("div", "title", "📍 " + (s.title || s.place || "")));
-    const meta = [s.place, s.duration].filter(Boolean).join(" · ");
-    if (meta) card.appendChild(el("div", "meta", meta));
-    if (s.description) card.appendChild(el("div", "desc", s.description));
-    if (s.reason) card.appendChild(el("div", "tip", "💡 " + s.reason));
-    (s.tags || []).forEach(t => card.appendChild(el("span", "badge", "#" + t)));
-    wrap.appendChild(card);
-  });
-  m.appendChild(wrap);
-}
-
-function renderPlace(m, p) {
-  if (!p) return;
-  const wrap = el("div", "cards");
-  const card = el("div", "card");
-  card.appendChild(el("div", "title", "📍 " + (p.placeName || "")));
-  if (p.summary) card.appendChild(el("div", "desc", p.summary));
-  (p.highlights || []).forEach(h => card.appendChild(el("div", "meta", "· " + h)));
-  if (p.right_now) card.appendChild(el("span", "badge", "지금: " + p.right_now));
-  if (p.best_time) card.appendChild(el("span", "badge", "추천 시간: " + p.best_time));
-  if (p.tip) card.appendChild(el("div", "tip", "💡 " + p.tip));
-  wrap.appendChild(card);
-  m.appendChild(wrap);
-}
-
-/** 생성 과정 노출 — 칩/자연어가 어떻게 실제 장소로 이어졌는지 */
-function renderSteps(m, steps) {
-  if (!steps || !steps.length) return;
-  const d = el("details", "steps");
-  d.appendChild(el("summary", null, "장소가 만들어진 과정 " + steps.length + "단계"));
-  const ul = el("ul");
-  steps.forEach(s => {
-    const li = el("li");
-    li.appendChild(el("span", s.ok ? "ok" : "fail", s.ok ? "✓ " : "✗ "));
-    const head = s.label || s.tool;
-    const detail = s.detail || (s.args ? JSON.stringify(s.args) : "");
-    li.appendChild(document.createTextNode(head + (detail ? " — " + detail : "")));
-    ul.appendChild(li);
-    // AI 선정 단계면 장소별 선정 이유를 그대로 펼쳐 보여준다
-    (s.picks || []).forEach(p => {
-      if (p.reason) ul.appendChild(el("li", "why", "· " + p.name + ": " + p.reason));
-    });
-  });
-  d.appendChild(ul);
-  m.appendChild(d);
-}
-
-function renderFinal(m, data, answerBubble) {
-  // 토큰으로 이미 타이핑된 답변 말풍선이 있으면 재사용, 없으면 생성
-  const ensureText = (fallback) => {
-    if (answerBubble && answerBubble.textContent.trim()) return answerBubble;
-    const b = answerBubble || bubble(m, "");
-    if (!b.textContent.trim()) b.textContent = fallback;
-    return b;
-  };
-  if (data.kind === "course") {
-    ensureText(data.text || "요청하신 코스를 준비했어요!");
-    renderCourse(m, data);
-  } else if (data.kind === "suggestions") {
-    ensureText(data.text || "이런 곳들을 추천해요!");
-    renderSuggestions(m, data.items);
-  } else if (data.kind === "place") {
-    if (answerBubble) answerBubble.remove();
-    renderPlace(m, data.place);
+  if (step.render) {
+    step.render(scr);
+  } else if (step.multi) {
+    const next = el("button", "next", "다음");
+    next.type = "button";
+    const refreshNext = () => { next.disabled = (answers[step.id] || []).length < 1; };
+    scr.appendChild(chipGrid(step, refreshNext));
+    refreshNext();
+    next.addEventListener("click", () => show(idx + 1));
+    scr.appendChild(next);
   } else {
-    ensureText(data.text || "…");
-    renderItems(m, data.items);
+    scr.appendChild(chipGrid(step));
   }
-  renderSteps(m, data.steps);
+
+  stage.replaceChildren(scr);
+  window.scrollTo({ top: 0 });
 }
 
-async function ask(message, chips) {
-  const m = addMsg("bot");
-  const prog = el("div", "progress");
-  m.appendChild(prog);
-  const setProgress = (t) => { prog.textContent = "⏳ " + t; log.scrollTop = log.scrollHeight; };
-  setProgress("연결 중…");
+// 단독 선택으로 취급하는 값 — 다른 항목과 함께 고르면 모순되는 칩 (예: "혼자"+"친구와")
+const EXCLUSIVE_CHIPS = new Set(["혼자", "상관없음"]);
 
-  let answerBubble = null;   // 토큰 스트림이 들어오면 생성되는 답변 말풍선
+function chipGrid(step, onChange) {
+  const wrap = el("div", "chips");
+  const multi = !!step.multi;
+  if (multi && !Array.isArray(answers[step.id])) answers[step.id] = [];
+  const maxN = multi && step.max ? step.max() : null;
+
+  function refresh() {
+    const sel = multi ? answers[step.id] : null;
+    wrap.querySelectorAll(".chip").forEach((b, i) => {
+      const c = step.chips[i];
+      const on = multi ? sel.includes(c.v) : answers[step.id] === c.v;
+      b.classList.toggle("on", on);
+      const capped = multi && maxN != null && !on && sel.length >= maxN;
+      b.disabled = capped;
+      b.style.opacity = capped ? .35 : 1;
+    });
+  }
+
+  step.chips.forEach((c) => {
+    const b = el("button", "chip" + (step.big ? " big" : ""));
+    b.type = "button";
+    b.appendChild(document.createTextNode(c.label));
+    if (c.d) b.appendChild(el("span", "d", c.d));
+    b.addEventListener("click", () => {
+      if (!multi) {
+        answers[step.id] = c.v;
+        if (step.id === "audience") {        // 갈래가 바뀌면 이후 답은 초기화
+          delete answers.start; delete answers.end; delete answers.days;
+          delete answers.purpose; delete answers.pace;
+        }
+        wrap.querySelectorAll(".chip").forEach((x) => x.classList.remove("on"));
+        b.classList.add("on");
+        setTimeout(() => show(idx + 1), 240);   // 잠깐 선택감을 보여주고 다음 질문으로
+        return;
+      }
+      const sel = answers[step.id];
+      if (sel.includes(c.v)) {
+        answers[step.id] = sel.filter((x) => x !== c.v);
+      } else if (EXCLUSIVE_CHIPS.has(c.v)) {
+        answers[step.id] = [c.v];                       // 단독 선택 칩 — 나머지 선택 해제
+      } else {
+        const rest = sel.filter((x) => !EXCLUSIVE_CHIPS.has(x));  // 다른 걸 고르면 단독 칩 해제
+        if (maxN != null && rest.length >= maxN) return;          // 최대 개수 도달 — 무시
+        answers[step.id] = [...rest, c.v];
+      }
+      refresh();
+      if (onChange) onChange();
+    });
+    wrap.appendChild(b);
+  });
+  refresh();
+  return wrap;
+}
+
+/* 시간 범위 선택 (로컬) — 시작·종료 시각을 각각 고른다 */
+function renderWindow(scr) {
+  const next = el("button", "next", "다음");
+  next.type = "button";
+  next.disabled = !(answers.start != null && answers.end != null);
+
+  const row = (label, hours, key) => {
+    scr.appendChild(el("div", "grouplabel", label));
+    const wrap = el("div", "chips");
+    hours.forEach((h) => {
+      const b = el("button", "chip", hh(h));
+      b.type = "button";
+      b.dataset.h = h;
+      if (answers[key] === h) b.classList.add("on");
+      b.addEventListener("click", () => {
+        answers[key] = h;
+        if (answers.start != null && answers.end != null && answers.end <= answers.start)
+          delete answers[key === "start" ? "end" : "start"];  // 역전되면 반대쪽을 비운다
+        refresh();
+      });
+      wrap.appendChild(b);
+    });
+    scr.appendChild(wrap);
+    return wrap;
+  };
+  const startRow = row("시작", HOURS_START, "start");
+  const endRow = row("종료", HOURS_END, "end");
+
+  function refresh() {
+    [[startRow, "start"], [endRow, "end"]].forEach(([wrap, key]) => {
+      wrap.querySelectorAll(".chip").forEach((b) => {
+        const h = Number(b.dataset.h);
+        b.classList.toggle("on", answers[key] === h);
+        b.disabled = key === "end" ? answers.start != null && h <= answers.start
+                                   : answers.end != null && h >= answers.end;
+        b.style.opacity = b.disabled ? .3 : 1;
+      });
+    });
+    next.disabled = !(answers.start != null && answers.end != null);
+  }
+  refresh();
+
+  next.addEventListener("click", () => show(idx + 1));
+  scr.appendChild(next);
+}
+
+/* 마지막 화면 — 선택 요약 + 자연어 추가 요청(선택) + 생성 */
+const joinAns = (v) => Array.isArray(v) ? v.join(" · ") : v;
+
+function renderConfirm(scr) {
+  const local = answers.audience === "local";
+  const rows = [
+    ["여행 스타일", local ? "현지인" : "관광객"],
+    local ? ["시간", `${hh(answers.start)} ~ ${hh(answers.end)}`]
+          : ["기간", answers.days === 1 ? "당일치기" : `${answers.days - 1}박 ${answers.days}일`],
+    ["함께", joinAns(answers.companion)],
+    ["목적", joinAns(answers.purpose)],
+    ["동네", joinAns(answers.location)],
+    ["혼잡도", answers.congestion],
+    ["일정", answers.pace === "packed" ? (local ? "알찬 일정" : "빼곡한 여행") : (local ? "여유로운 일정" : "널널한 여행")],
+  ];
+  const box = el("div", "summary");
+  rows.forEach(([k, v]) => {
+    const r = el("div", "row");
+    r.appendChild(el("span", "k", k));
+    r.appendChild(el("span", "v", String(v)));
+    box.appendChild(r);
+  });
+  scr.appendChild(box);
+
+  const note = el("textarea");
+  note.id = "note";
+  note.placeholder = "더 바라는 점이 있다면 적어주세요 (선택) — 예: 야경 보면서 마무리하고 싶어요";
+  note.value = answers.note || "";
+  note.addEventListener("input", () => (answers.note = note.value));
+  scr.appendChild(note);
+
+  const go = el("button", "next", "코스 만들기");
+  go.type = "button";
+  go.addEventListener("click", createCourse);
+  scr.appendChild(go);
+}
+
+/* ── 생성: SSE 스트림으로 진행 상황 → 최종 코스 ── */
+
+const toList = (v) => (v == null ? [] : Array.isArray(v) ? v : [v]);
+
+function chipPayload() {
+  const p = {
+    audience: answers.audience,
+    companions: toList(answers.companion),
+    purposes: toList(answers.purpose),
+    locations: toList(answers.location),
+    congestion: answers.congestion,
+    pace: answers.pace,
+  };
+  if (answers.audience === "local") p.time_window = { start: answers.start, end: answers.end };
+  else p.days = answers.days;
+  return p;
+}
+
+async function createCourse() {
+  backBtn.classList.remove("show");
+  barFill.style.width = "100%";
+  stepNo.textContent = "";
+  const scr = el("div", "screen");
+  scr.id = "loading";
+  scr.appendChild(el("div", "spinner"));
+  const msg = el("div", null, "코스를 준비하고 있어요…");
+  msg.id = "loadmsg";
+  scr.appendChild(msg);
+  scr.appendChild(el("div", null, "실제 서울 데이터를 확인하는 중")).id = "loadsub";
+  stage.replaceChildren(scr);
 
   try {
     const res = await fetch("/agent/chat/stream", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(chips ? { message, chips } : { message }),
+      body: JSON.stringify({ message: answers.note || "", chips: chipPayload() }),
     });
     if (!res.ok || !res.body) throw new Error("HTTP " + res.status);
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
     let buf = "";
-
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
       buf += decoder.decode(value, { stream: true });
       const frames = buf.split("\n\n");
-      buf = frames.pop();  // 마지막 미완성 프레임 보관
+      buf = frames.pop();
       for (const frame of frames) {
         const line = frame.split("\n").find((l) => l.startsWith("data:"));
         if (!line) continue;
         const evt = JSON.parse(line.slice(5).trim());
-
-        if (evt.event === "progress") {
-          let msg = evt.message;
-          if (evt.tasks && evt.tasks.length)
-            msg += " (" + evt.tasks.map((t) => t.label).join(", ") + ")";
-          setProgress(msg);
-        } else if (evt.event === "token") {
-          if (!answerBubble) { answerBubble = bubble(m, ""); }
-          answerBubble.textContent += evt.text;
-          log.scrollTop = log.scrollHeight;
-        } else if (evt.event === "final") {
-          prog.remove();
-          renderFinal(m, evt.payload, answerBubble);
-        } else if (evt.event === "error") {
-          throw new Error(evt.message);
-        }
+        if (evt.event === "progress") msg.textContent = evt.message;
+        else if (evt.event === "final") return renderResult(evt.payload);
+        else if (evt.event === "error") throw new Error(evt.message);
       }
     }
+    throw new Error("응답이 끝났지만 코스를 받지 못했어요.");
   } catch (err) {
-    prog.remove();
-    if (answerBubble) answerBubble.remove();
-    bubble(m, "오류가 발생했어요: " + err.message);
+    const box = el("div", "errbox", "코스를 만들지 못했어요: " + err.message);
+    const retry = el("button", "restart", "다시 시도");
+    retry.addEventListener("click", createCourse);
+    scr.appendChild(box);
+    scr.appendChild(retry);
   }
-  log.scrollTop = log.scrollHeight;
 }
 
-buildChips();
+/* ── 결과: 트리플식 번호 타임라인 (일자별 섹션 + 식사 장소 추천) ── */
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const message = input.value.trim();
-  const chips = chipPayload();
-  if (!message && !chips) return;   // 칩만 골라도 코스 생성은 된다
+function renderResult(data) {
+  const scr = el("div", "screen");
+  if (data.kind !== "course" || !data.course || !(data.course.stops || []).length) {
+    scr.appendChild(el("h1", "q", "코스를 만들지 못했어요"));
+    scr.appendChild(el("p", "sub", data.text || "조건을 바꿔 다시 시도해 주세요."));
+    scr.appendChild(restartBtn());
+    stage.replaceChildren(scr);
+    return;
+  }
+  const c = data.course;
 
-  const shown = [message, chips ? "[" + Object.values(selected).join(" · ") + "]" : ""]
-    .filter(Boolean).join(" ");
-  bubble(addMsg("user"), shown);
-  input.value = "";
-  send.disabled = true;
-  await ask(message, chips);
-  send.disabled = false;
-  input.focus();
-});
+  const head = el("div", "course-head");
+  head.appendChild(el("h2", null, c.title || "서울 추천 코스"));
+  if (c.subtitle) head.appendChild(el("div", "st", c.subtitle));
+  if (c.description) head.appendChild(el("div", "desc", c.description));
+  (c.tags || []).forEach((t) => head.appendChild(el("span", "badge", "#" + t)));
+  scr.appendChild(head);
+
+  // 일자별 그룹 (하루 코스는 day 가 비어 있어 한 그룹)
+  const groups = new Map();
+  (c.stops || []).forEach((s) => {
+    const d = s.day || 1;
+    if (!groups.has(d)) groups.set(d, []);
+    groups.get(d).push(s);
+  });
+
+  let n = 0;
+  [...groups.keys()].sort((a, b) => a - b).forEach((d) => {
+    const area = (c.day_areas || {})[d];
+    if ((c.days || 1) > 1) scr.appendChild(el("div", "dayhead", d + "일차" + (area ? " · " + area : "")));
+    const tl = el("div", "tl");
+    groups.get(d).forEach((s, i) => tl.appendChild(stopItem(s, ++n, i === 0)));
+    scr.appendChild(tl);
+  });
+
+  renderSteps(scr, data.steps);
+  scr.appendChild(restartBtn());
+  stage.replaceChildren(scr);
+  window.scrollTo({ top: 0 });
+}
+
+function stopItem(s, n, first) {
+  const item = el("div", "item" + (s.slot_type === "meal" ? " meal" : ""));
+  item.appendChild(el("div", "num", String(n)));
+
+  if (s.slot_type === "meal") item.appendChild(el("div", "sect", "식사 장소 추천"));
+  else if (first) item.appendChild(el("div", "sect", "시작"));
+  else if (s.slot_type === "flex") item.appendChild(el("div", "sect", "자유 방문 제안"));
+
+  // 직전 스톱에서의 이동 — 도보권을 넘으면 대중교통 추정으로 표시
+  if (s.slot_type !== "meal" && s.travel_min)
+    item.appendChild(el("div", "travel",
+      (s.travel_mode === "transit" ? "대중교통 약 " : "🚶 도보 약 ") + s.travel_min + "분"));
+
+  if (s.slot_type === "meal") {
+    const wrap = el("div", "meals");
+    const label = el("div", "card");
+    label.appendChild(el("div", "name", s.name || "식사"));
+    if (s.start_time) label.appendChild(el("span", "pill time", s.start_time + " ~ " + s.end_time));
+    wrap.appendChild(label);
+    if ((s.meal_options || []).length) {
+      s.meal_options.forEach((r) => {
+        const m = el("div", "mealcard");
+        m.appendChild(el("div", "name", r.title));
+        const meta = [r.dist_km != null ? r.dist_km + "km" : null, r.use_time, r.address]
+          .filter(Boolean).join(" · ");
+        if (meta) m.appendChild(el("div", "meta", meta));
+        if (r.summary) m.appendChild(el("div", "sum", r.summary));
+        wrap.appendChild(m);
+      });
+    } else {
+      wrap.appendChild(el("div", "meal-empty",
+        "3km 안에서 확인된 식당 데이터가 없어요 — 주변에서 자유롭게 즐겨보세요."));
+    }
+    item.appendChild(wrap);
+    return item;
+  }
+
+  const card = el("div", "card");
+  card.appendChild(el("div", "name", s.name || ""));
+  const meta = [s.preview].filter(Boolean).join(" · ");
+  if (meta) card.appendChild(el("div", "meta", meta));
+  if (s.start_time) card.appendChild(el("span", "pill time", s.start_time + " ~ " + s.end_time));
+  if (s.duration) card.appendChild(el("span", "pill", "머무르기 " + s.duration));
+  if (s.congestion) card.appendChild(el("span", "pill crowd", "지금 " + s.congestion));
+  if (s.description) card.appendChild(el("div", "desc", s.description));
+  if (s.reason) {
+    const r = el("div", "reco");
+    r.appendChild(el("b", null, "추천"));
+    r.appendChild(el("span", null, s.reason));
+    card.appendChild(r);
+  }
+  if ((s.activities || []).length)
+    card.appendChild(el("div", "acts", "여기서: " + s.activities.join(" · ")));
+  if (s.tip) card.appendChild(el("div", "tip", "💡 " + s.tip));
+
+  // 주변 문화행사·관광 (Visit Seoul) — 식당은 식사 슬롯이 담당
+  const attrs = (s.nearby && s.nearby.attractions) || [];
+  if (attrs.length)
+    card.appendChild(el("div", "acts", "주변: " + attrs.map((a) =>
+      a.title + (a.dist_km != null ? ` (${a.dist_km}km)` : "")).join(" · ")));
+
+  item.appendChild(card);
+  return item;
+}
+
+function renderSteps(scr, steps) {
+  if (!steps || !steps.length) return;
+  const d = el("details", "steps");
+  d.appendChild(el("summary", null, "이 코스가 만들어진 과정 " + steps.length + "단계"));
+  const ul = el("ul");
+  steps.forEach((s) => {
+    const li = el("li");
+    li.appendChild(el("span", s.ok ? "ok" : "fail", s.ok ? "✓ " : "✗ "));
+    li.appendChild(document.createTextNode((s.label || s.tool) + (s.detail ? " — " + s.detail : "")));
+    ul.appendChild(li);
+    (s.picks || []).forEach((p) => {
+      if (p.reason) ul.appendChild(el("li", "why", "· " + p.name + ": " + p.reason));
+    });
+  });
+  d.appendChild(ul);
+  scr.appendChild(d);
+}
+
+function restartBtn() {
+  const b = el("button", "restart", "새 코스 만들기");
+  b.addEventListener("click", () => {
+    Object.keys(answers).forEach((k) => delete answers[k]);
+    show(0);
+  });
+  return b;
+}
+
+backBtn.addEventListener("click", () => show(Math.max(0, idx - 1)));
+show(0);
 </script>
 </body>
 </html>
