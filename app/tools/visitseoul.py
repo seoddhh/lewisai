@@ -51,11 +51,15 @@ CAT_FOOD = CATEGORY["음식"]
 
 # cate_depth(" 음식 > 카페/찻집") 앞부분 → 우리가 쓰는 종류
 KIND_RESTAURANT = "restaurant"
+KIND_CAFE = "cafe"
+KIND_BAR = "bar"
 KIND_EVENT = "event"
 KIND_ATTRACTION = "attraction"
 
+# 식사 슬롯이 쓰는 종류 — 끼니마다 구성이 다르다 (점심 식당2+카페1 / 저녁 식당2+주점1)
+MEAL_KINDS = (KIND_RESTAURANT, KIND_CAFE, KIND_BAR)
+
 _DEPTH_TO_KIND: dict[str, str] = {
-    "음식": KIND_RESTAURANT,
     "축제/공연/행사": KIND_EVENT,
     "문화관광": KIND_ATTRACTION,
     "역사관광": KIND_ATTRACTION,
@@ -64,15 +68,33 @@ _DEPTH_TO_KIND: dict[str, str] = {
     # 쇼핑·숙박은 주변 정보 대상이 아니다 → "" (제외)
 }
 
+# "음식" 은 한 종류로 뭉치지 않는다 — 카페·주점을 점심 식당으로 추천하면 안 되고,
+# 끼니별 구성도 다르기 때문. cate_depth 2번째 마디로 가른다.
+#   " 음식 > 한식" / " 음식 > 외국식 > 서양식" → 식당
+#   " 음식 > 카페/찻집" → 카페,  " 음식 > 주점" → 주점
+_FOOD_TO_KIND: dict[str, str] = {
+    "한식": KIND_RESTAURANT,
+    "외국식": KIND_RESTAURANT,
+    "카페/찻집": KIND_CAFE,
+    "주점": KIND_BAR,
+}
+
 _LIST_TTL = 10 * 60  # 목록 10분
 _DETAIL_TTL = 24 * 60 * 60  # 상세 24시간
 _MOCK_JSON = Path(__file__).resolve().parents[2] / "data" / "mock" / "visitseoul_sample.json"
 
 
 def classify(cate_depth: str) -> str:
-    """" 음식 > 카페/찻집" → "restaurant". 대상이 아니면 빈 문자열."""
-    head = (cate_depth or "").split(">")[0].strip()
-    return _DEPTH_TO_KIND.get(head, "")
+    """" 음식 > 카페/찻집" → "cafe". 대상이 아니면 빈 문자열.
+
+    " 음식"(하위분류 없음, 실측 전체의 약 14%)은 카페·주점이 아닌 일반 식당으로 본다.
+    """
+    parts = [p.strip() for p in (cate_depth or "").split(">")]
+    if parts and parts[0] == "음식":
+        if len(parts) == 1:
+            return KIND_RESTAURANT
+        return _FOOD_TO_KIND.get(parts[1], "")
+    return _DEPTH_TO_KIND.get(parts[0] if parts else "", "")
 
 
 # 우리 장소명(seoul_places)을 Visit Seoul 검색어로 바꾸는 규칙.

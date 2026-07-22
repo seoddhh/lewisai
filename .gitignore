@@ -3,6 +3,11 @@ __pycache__/
 *.pyc
 .env
 data/chroma/
+data/meal_cache/
 .DS_Store
 tests/
 scripts/build_dataset.mjs
+scripts/build_meal_cache.py
+scripts/check_upstage.py
+docs/diff-explain.md
+visitseouldocs.json

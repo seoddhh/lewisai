@@ -43,12 +43,18 @@ class Settings(BaseSettings):
     # 서울 실시간 API
     seoul_api_key: str = ""
 
-    # Visit Seoul API (키 없으면 Mock 클라이언트로 동작)
+    # Visit Seoul API (키 없으면 Mock 클라이언트로 동작) — 이제 "식당(음식)" 전용.
+    # 문화/역사/자연 관광은 임베딩 세트(seoul_places)로, 행사는 서울시 citydata 로 간다.
     visitseoul_api_key: str = ""
     visitseoul_base_url: str = "https://api-call.visitseoul.net"
     visitseoul_timeout: float = 5.0
     visitseoul_detail_limit: int = 6          # 상세 조회 상한 (rate limit·지연 균형)
     visitseoul_min_interval: float = 0.7      # 요청 시작 최소 간격(초) — 키당 rate limit 회피
+
+    # 식당 권역 캐시 — scripts/build_meal_cache.py 가 권역별로 미리 구워둔 식당 풀.
+    # 런타임 nearby 는 이 캐시를 먼저 읽어 Visit Seoul 상세 fan-out(=지연)을 0으로 만든다.
+    meal_cache_dir: str = "./data/meal_cache"
+    meal_pool_min: int = 8                    # 캐시 풀이 이보다 얇으면 라이브 조회로 폴백
 
     # 데이터
     places_json: str = "./data/raw/seoul_places.json"

@@ -83,3 +83,17 @@ def address_terms(location: str | None) -> tuple[str, ...]:
     if not chip:
         return ()
     return (*chip.terms,)
+
+
+def nearest_chip(lat: float, lng: float) -> str:
+    """좌표에서 가장 가까운 위치 칩(권역)의 이름. 식당 권역 캐시 키로 쓴다."""
+    return min(LOCATION_CHIPS, key=lambda k: haversine_km(lat, lng, LOCATION_CHIPS[k].lat, LOCATION_CHIPS[k].lng))
+
+
+def nearest_terms(lat: float, lng: float, n: int = 2) -> tuple[str, ...]:
+    """좌표에서 가장 가까운 권역 칩의 동네 매칭어 앞 n개.
+
+    장소 데이터에 주소가 없어서, Visit Seoul 키워드 검색을 그 장소의 동네로
+    넓힐 때 쓴다 (예: DDP 좌표 → 종로·중구 → "종로", "중구").
+    """
+    return LOCATION_CHIPS[nearest_chip(lat, lng)].terms[:n]
