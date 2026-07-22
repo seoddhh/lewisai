@@ -15,11 +15,13 @@ dependencies = [
     "langchain>=0.3",
     "langchain-core>=0.3",
     "langgraph>=0.2", # 통합 에이전트 StateGraph (2차)
-    "langchain-google-genai>=2.0", # Gemini 챗 모델 + 임베딩
+    "langchain-upstage>=0.7.7", # Solar 챗 모델 (현행 LLM 프로바이더)
+    "langchain-google-genai>=2.0", # 임베딩 전용 (챗은 Solar 로 전환)
     "langchain-chroma>=0.1",
     # --- Vector DB (Chroma = sqlite 백엔드) ---
     "chromadb>=0.5",
-    "langchain-anthropic>=1.4.8",
+    # 클로드 폴백용 — 솔라 전환으로 미사용 (복구 대비 주석 유지)
+    # "langchain-anthropic>=1.4.8",
 ]
 
 [tool.uv]
