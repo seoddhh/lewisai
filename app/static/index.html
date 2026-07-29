@@ -180,8 +180,13 @@ const HOURS_START = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 const HOURS_END = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
 const hh = (h) => String(h).padStart(2, "0") + ":00";
 
-const answers = {};   // audience/start/end/days/companion/purpose/location/congestion/pace/note
-                      // companion/purpose 는 배열(중복 선택). location 은 관광객만 배열(여행 일수만큼).
+const answers = {};   // audience/start/end/days/companion/purpose/meals/location/congestion/pace/note
+                      // companion/purpose/meals 는 배열(중복 선택). location 은 관광객만 배열(여행 일수만큼).
+
+// 식사 고정 시각 — 서버 schema.MEAL_TIMES 와 값이 1:1 이어야 한다.
+// 고정한 이유: 밀캐시 실측 재고가 이 시각에 충분하고(아침 367 · 점심 1075 · 저녁 997곳),
+// 시각이 미리 정해져야 사용자가 고르는 시점에 "언제 먹는지"를 알려줄 수 있다.
+const MEAL_TIMES = { "아침": "10:00", "점심": "13:00", "저녁": "19:00" };
 
 /* 질문 정의 — audience 선택에 따라 문구·선택지가 달라진다 */
 const steps = () => {
@@ -218,10 +223,24 @@ const steps = () => {
       id: "purpose", title: local ? "오늘의 목적은 무엇인가요?" : "이번 여행의 목적은 무엇인가요?",
       sub: "해당하는 목적을 모두 골라주세요.",
       multi: true,
-      chips: (local
-        ? ["힐링", "놀거리", "데이트", "관광", "문화생활"]
-        : ["체험·액티비티", "핫플레이스", "자연 힐링", "유명 관광지", "문화·예술·역사", "쇼핑", "맛집 탐방"]
-      ).map((v) => ({ v, label: v })),
+      // 목적 어휘는 현지인·여행자 공통 7칩 — 질문 문구만 갈린다.
+      // (구 12칩은 관광↔유명 관광지처럼 쌍둥이라 서버 검색 결과가 75%까지 겹쳤다.
+      //  "맛집 탐방"은 목적이 아니라 끼니 칩으로 분리됐다 — 아래 meals 단계 참고)
+      chips: ["자연·힐링", "문화·예술", "관광 명소", "체험·놀거리",
+              "데이트", "핫플레이스", "쇼핑"].map((v) => ({ v, label: v })),
+    },
+    {
+      // 식사 — 고른 끼니만 고정 시각에 들어간다. 아무것도 안 고르면 식사 슬롯이 없다.
+      // 시각을 고정한 이유: 예전엔 시간창에 따라 자동 삽입돼서 오후 코스가 시작하자마자
+      // 점심부터 시작하거나, 일정이 일찍 끝나도 2시간 비우고 저녁이 억지로 붙었다.
+      id: "meals", title: "식사도 코스에 넣을까요?",
+      sub: "고른 끼니만 정해진 시각에 들어가요. 안 고르면 식사 없이 장소만 담아요.",
+      multi: true, optional: true, big: true,
+      chips: [
+        { v: "아침", label: "아침", d: "10:00" },
+        { v: "점심", label: "점심", d: "13:00" },
+        { v: "저녁", label: "저녁", d: "19:00" },
+      ],
     },
     {
       id: "location", title: "어느 동네로 갈까요?",
@@ -282,7 +301,12 @@ function show(i) {
   } else if (step.multi) {
     const next = el("button", "next", "다음");
     next.type = "button";
-    const refreshNext = () => { next.disabled = (answers[step.id] || []).length < 1; };
+    // optional 단계는 0개 선택도 허용한다 (식사처럼 "안 넣음"이 유효한 답인 경우)
+    const refreshNext = () => {
+      const n = (answers[step.id] || []).length;
+      next.disabled = step.optional ? false : n < 1;
+      if (step.optional) next.textContent = n ? "다음" : "식사 없이 진행";
+    };
     scr.appendChild(chipGrid(step, refreshNext));
     refreshNext();
     next.addEventListener("click", () => show(idx + 1));
@@ -326,7 +350,7 @@ function chipGrid(step, onChange) {
         answers[step.id] = c.v;
         if (step.id === "audience") {        // 갈래가 바뀌면 이후 답은 초기화
           delete answers.start; delete answers.end; delete answers.days;
-          delete answers.purpose; delete answers.pace;
+          delete answers.purpose; delete answers.pace; delete answers.meals;
         }
         wrap.querySelectorAll(".chip").forEach((x) => x.classList.remove("on"));
         b.classList.add("on");
@@ -409,6 +433,9 @@ function renderConfirm(scr) {
           : ["기간", answers.days === 1 ? "당일치기" : `${answers.days - 1}박 ${answers.days}일`],
     ["함께", joinAns(answers.companion)],
     ["목적", joinAns(answers.purpose)],
+    ["식사", (answers.meals || []).length
+        ? answers.meals.map((m) => `${m} ${MEAL_TIMES[m]}`).join(", ")
+        : "없음"],
     ["동네", joinAns(answers.location)],
     ["혼잡도", answers.congestion],
     ["일정", answers.pace === "packed" ? (local ? "알찬 일정" : "빼곡한 여행") : (local ? "여유로운 일정" : "널널한 여행")],
@@ -447,6 +474,7 @@ function chipPayload() {
     locations: toList(answers.location),
     congestion: answers.congestion,
     pace: answers.pace,
+    meals: toList(answers.meals),   // 빈 배열이면 식사 슬롯 없음
   };
   if (answers.audience === "local") p.time_window = { start: answers.start, end: answers.end };
   else p.days = answers.days;
@@ -588,7 +616,10 @@ function stopItem(s, n, first) {
   if (meta) card.appendChild(el("div", "meta", meta));
   if (s.start_time) card.appendChild(el("span", "pill time", s.start_time + " ~ " + s.end_time));
   if (s.duration) card.appendChild(el("span", "pill", "머무르기 " + s.duration));
-  if (s.congestion) card.appendChild(el("span", "pill crowd", "지금 " + s.congestion));
+  if (s.congestion) {
+    const hh = s.start_time ? (parseInt(s.start_time, 10) + "시 ") : "";
+    card.appendChild(el("span", "pill crowd", hh + "예상 혼잡도 " + s.congestion));
+  }
   if (s.description) card.appendChild(el("div", "desc", s.description));
   if (s.reason) {
     const r = el("div", "reco");
