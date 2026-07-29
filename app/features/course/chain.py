@@ -1,6 +1,5 @@
-"""
-장소 선정과 선정 이유는 AI 가, 방문 순서·지도 폴리라인은 strangemap 프론트
-(courseRouting.ts)가 결정한다 — 서버는 좌표만 실어 보내는 역할
+"""장소 선정·선정 이유·방문 순서는 AI 가 확정한다 — strangemap 프론트는 그 순서 위에서
+실제 도로 경로(폴리라인)만 그린다.
 """
 from __future__ import annotations
 
@@ -12,12 +11,7 @@ from .schema import Course, CourseRequest, CourseResponse, CourseStop
 async def run(req: CourseRequest) -> CourseResponse:
     state = await run_agent(
         intent="course",
-        req={
-            "note": req.note,
-            "chips": req.chips.model_dump(),
-            "region": req.region,
-            "time": req.time,
-        },
+        req={"note": req.note, "chips": req.chips.model_dump()},
     )
     result = state.get("result") or {}
     course_data = result.get("course")
