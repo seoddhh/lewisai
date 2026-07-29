@@ -171,8 +171,14 @@ class BaseVisitSeoulClient(Protocol):
     async def get_content(self, cid: str) -> VsDetail | None: ...
 
 
+# 네이버 SmartEditor 본문(post_desc)은 <style>…</style> 블록을 품고 온다. 태그만 지우면
+# 그 안의 CSS 규칙(.se-contents{…})이 텍스트로 남아 RAG 본문을 오염시킨다 → 블록째 제거.
+_STYLE_SCRIPT = re.compile(r"<(style|script)\b[^>]*>.*?</\1>", re.IGNORECASE | re.DOTALL)
+
+
 def _strip_html(html: str, max_len: int = 500) -> str:
-    text = re.sub(r"<[^>]+>", " ", html or "")
+    text = _STYLE_SCRIPT.sub(" ", html or "")
+    text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text[:max_len]
 
