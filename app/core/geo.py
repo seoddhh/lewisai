@@ -1,15 +1,14 @@
 """좌표 유틸 + 서울로 위치 칩 ↔ 지리 정보 매핑.
 
-**라우팅 로직은 여기에 없다.** 방문 순서·지도 폴리라인·실경로 거리는 전부
-strangemap 프론트(`src/lib/courseRouting.ts`)가 계산해 지도에 오버레이한다.
-AI 서버는 "어떤 장소를, 왜" 만 정하고 좌표를 실어 보낸다.
-
-거리 계산(haversine)이 남아 있는 이유는 하나뿐이다:
+**실경로 폴리라인 로직은 여기에 없다.** 방문 순서는 AI 서버(스케줄러·장소 선정)가 확정하고,
+strangemap 프론트(`src/lib/courseRouting.ts`)는 그 순서 위에서 실제 도로 경로(폴리라인)만
+그린다. 여기 남은 haversine 거리 계산은 반경 필터·최근접 매칭(직선거리 근사) 용도다:
  - Visit Seoul 주변 검색의 반경 필터 (목록 API 에 지리 필터가 없다)
 """
 from __future__ import annotations
 
 import math
+import re
 from dataclasses import dataclass
 
 
@@ -26,7 +25,8 @@ def haversine_km(a_lat: float, a_lng: float, b_lat: float, b_lng: float) -> floa
 
 
 def region_of(lat: float, lng: float) -> str:
-    """좌표 → 권역(강북/강남/강서/강동). strangemap getRegion() 과 동일 로직."""
+    """좌표 → 4분면 권역(강북/강남/강서/강동). scripts/build_culture_rag.py 표시용 태그 전용 —
+    코스 파이프라인은 9권역 칩(area, 아래 LOCATION_CHIPS)을 쓴다."""
     if lng >= 127.05:
         return "강동"
     if lng < 126.94:
@@ -64,17 +64,50 @@ LOCATION_CHIPS: dict[str, LocationChip] = {
 
 ANY = "상관없음"
 
+# 서울 25개 자치구 → 9권역 칩 (권위 매핑 — 주소의 자치구가 area 의 정답이다).
+# 좌표 nearest_chip 은 한강·칩경계에서 강 건너로 튀므로(예: 압구정 좌표가 성수 칩에 붙음),
+# 주소에 자치구가 있으면 항상 이 표를 우선한다. nearest_chip 은 주소가 없을 때만 폴백.
+#  - 중앙 14구: 칩과 1:1
+#  - 9칩 밖 11구: 인접 자치구 기준 흡수 (사용자 확정 정책)
+DISTRICT_TO_CHIP: dict[str, str] = {
+    # 중앙 14구 (칩 직속)
+    "종로구": "종로·중구", "중구": "종로·중구",
+    "강북구": "강북·성북", "성북구": "강북·성북",
+    "마포구": "홍대·마포",
+    "용산구": "용산·이태원",
+    "영등포구": "여의도·영등포",
+    "강남구": "강남·서초", "서초구": "강남·서초",
+    "성동구": "성수·건대", "광진구": "성수·건대",
+    "송파구": "잠실·송파",
+    "관악구": "관악·사당", "동작구": "관악·사당",
+    # 9칩 밖 11구 → 인접 칩 흡수
+    "서대문구": "홍대·마포", "은평구": "홍대·마포",
+    "동대문구": "종로·중구",
+    "중랑구": "성수·건대",
+    "노원구": "강북·성북", "도봉구": "강북·성북",
+    "강동구": "잠실·송파",
+    "강서구": "여의도·영등포", "양천구": "여의도·영등포", "구로구": "여의도·영등포",
+    "금천구": "관악·사당",
+}
+
+_DISTRICT_RE = re.compile(r"([가-힣]+구)")
+
+
+def chip_of_address(address: str | None) -> str | None:
+    """주소 문자열의 자치구 → 9권역 칩 이름. 자치구가 없거나 미등록이면 None.
+
+    이게 area 의 1차 정답이다 — 좌표 nearest_chip 보다 우선한다.
+    """
+    if not address:
+        return None
+    m = _DISTRICT_RE.search(address)
+    return DISTRICT_TO_CHIP.get(m.group(1)) if m else None
+
 
 def chip_of(location: str | None) -> LocationChip | None:
     if not location or location == ANY:
         return None
     return LOCATION_CHIPS.get(location)
-
-
-def chip_region(location: str | None) -> str:
-    """위치 칩 → RAG 메타데이터 필터용 권역. 칩이 없으면 '상관없음'."""
-    chip = chip_of(location)
-    return region_of(chip.lat, chip.lng) if chip else ANY
 
 
 def address_terms(location: str | None) -> tuple[str, ...]:

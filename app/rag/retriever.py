@@ -7,14 +7,20 @@ from app.core.vectorstore import get_vectorstore
 
 
 def _where(filters: dict | None) -> dict | None:
-    """{key: value} 또는 {key: [v1, v2]} → Chroma where 절."""
+    """{key: value} 또는 {key: [v1, v2]} → Chroma where 절 ($and 결합).
+
+    "$or"/"$and" 로 시작하는 키는 이미 Chroma 문법인 절로 보고 그대로 통과시킨다
+    (목적 필터처럼 "선택한 목적 중 하나라도" 조건을 걸 때 쓴다).
+    """
     if not filters:
         return None
     clauses = []
     for key, val in filters.items():
         if val is None:
             continue
-        if isinstance(val, (list, tuple)):
+        if key.startswith("$"):
+            clauses.append({key: val})
+        elif isinstance(val, (list, tuple)):
             clauses.append({key: {"$in": list(val)}})
         else:
             clauses.append({key: {"$eq": val}})

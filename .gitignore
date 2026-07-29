@@ -11,3 +11,13 @@ scripts/build_meal_cache.py
 scripts/check_upstage.py
 docs/diff-explain.md
 visitseouldocs.json
+poi_cache
+
+# 빌드 산출물 백업
+data/embed/*.bak
+
+# 임베딩 검수 아티팩트 생성기 (오프라인 도구)
+scripts/build_embed_review.py
+scripts/embed_review.template.html
+
+ab_artifacts/

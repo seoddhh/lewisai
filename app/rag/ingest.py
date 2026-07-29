@@ -8,8 +8,8 @@ from pathlib import Path
 from langchain_core.documents import Document
 
 from app.config import get_settings
-from app.core.geo import region_of
 from app.core.vectorstore import get_vectorstore
+from app.features.course.schema import PURPOSE_SLUGS
 
 
 def _place_docs(places: list[dict]) -> list[Document]:
@@ -21,11 +21,14 @@ def _place_docs(places: list[dict]) -> list[Document]:
       - kcontent     → scene    (드라마/영화/MV 촬영 장면 서사)
     임베딩 본문은 빌드 단계에서 만든 ragText 를 우선 사용한다.
     lat/lng 는 코스 검색의 앵커 반경 클러스터링에 쓰인다 (retrieve_node).
-    region 메타는 표시/디버깅용으로 남겨둔다 (지리 필터는 반경 방식으로 대체됨).
+    area(9권역 칩)는 주소 자치구 기준으로 빌드 단계에서 확정된다.
     """
     docs: list[Document] = []
     for i, p in enumerate(places):
-        place_id = p.get("areaName") or p["displayName"]
+        # 이름은 색인 진입점에서 정규화 — 원천에 앞뒤 공백(일반/탭/전각 U+3000)이 섞여 들어온다.
+        # 오염된 이름이 색인되면 select 의 화이트리스트 매칭이 실패해 장소가 조용히 유실된다.
+        display_name = p["displayName"].strip()
+        place_id = (p.get("areaName") or display_name).strip()
         lat, lng = float(p["lat"]), float(p["lng"])
         # 운영시간 — 프론트 라우팅의 시간창 제약·표시용. 기본 상시(0~24).
         hours = p.get("operatingHours") or {}
@@ -36,51 +39,40 @@ def _place_docs(places: list[dict]) -> list[Document]:
             "doc_type": "place",
             "source": p.get("source", "seoul_places"),
             "place_id": place_id,
-            "display_name": p["displayName"],
-            "area_name": p.get("areaName", ""),  # 혼잡도 매칭 (kcontent/spots 는 "")
+            "display_name": display_name,
+            "area_name": p.get("areaName", ""),  # 혼잡도 매칭 (없으면 "")
             "category": p.get("category", ""),
-            "region": region_of(lat, lng),
+            # 코스 다양성·권역 분산 축 (embed 세트가 주소 자치구 기준으로 실어 보낸다)
+            "coarse_category": p.get("coarse_category", ""),
+            "area": p.get("area", ""),
             "lat": lat,
             "lng": lng,
             "op_start": op_start,
             "op_end": op_end,
+            # 운영시간을 실제로 아는지. False 면 (0,24)로 채워져 있을 뿐 "상시개방"이 아니다 —
+            # 시간창 필터가 (0,24)를 무조건 통과시키므로, 아는 시간이 안 맞는 곳만 걸러내려면
+            # 이 플래그로 "미확인"과 "진짜 상시"를 구분해야 한다.
+            "hours_known": bool(p.get("hours_known", False)),
+            # 좌표가 동일한(=사실상 같은 자리) 장소 묶음. 한 코스에 하나만 넣기 위한 근거.
+            # 예: 광화문광장 ⟷ 해치마당. 빈 문자열이면 그룹 없음.
+            "same_place_group": p.get("same_place_group", ""),
             "aspect": aspect,
             # K-콘텐츠 촬영지 필터 (search_kcontent_filming_spots 와 동일 키)
             "is_filming": bool(p.get("isFilming", False)),
             "content_title": p.get("contentTitle", ""),
             "tags": ",".join(p.get("tags", [])),
+            "purpose_tags": ",".join(p.get("purpose_tags", [])),
         }
+        # 목적 축을 불리언 메타로 편다 — Chroma where 는 콤마 문자열 부분일치를 못 하므로
+        # 목적당 pt_<slug> 필드를 둔다. 해당 없는 목적은 키 자체를 넣지 않아
+        # {"pt_x": True} 필터에 걸리지 않는다 (retrieve_node 의 목적 필터).
+        for tag in p.get("purpose_tags", []):
+            if slug := PURPOSE_SLUGS.get(tag):
+                meta[f"pt_{slug}"] = True
         text = p.get("ragText") or (
             f"[{p['displayName']}] ({p.get('category','')}) {p.get('description','')}"
         )
         docs.append(Document(page_content=text, metadata=meta, id=f"{place_id}::{aspect}::{i}"))
-    return docs
-
-
-def _course_docs(courses: list[dict]) -> list[Document]:
-    docs: list[Document] = []
-    for c in courses:
-        stops = "; ".join(
-            f"{s['name']}({s.get('preview','')})" for s in c.get("stops", [])
-        )
-        text = (
-            f"[코스: {c['title']}] {c.get('subtitle','')}. {c.get('description','')} "
-            f"동선: {stops}"
-        )
-        tags = c.get("tags", [])
-        meta = {
-            "doc_type": "course",
-            "place_id": c["id"],
-            "display_name": c["title"],
-            "category": c.get("category", ""),
-            "aspect": "course",
-            # Chroma 메타데이터는 스칼라만 허용 → 태그는 콤마 문자열로
-            "tags": ",".join(tags),
-            # K-컨텐츠 촬영지 여부 (search_kcontent_filming_spots 필터 키)
-            "is_filming": c.get("category") == "서울배경 컨텐츠"
-            or any("촬영지" in t or "성지순례" in t for t in tags),
-        }
-        docs.append(Document(page_content=text, metadata=meta, id=f"course::{c['id']}"))
     return docs
 
 
@@ -93,11 +85,13 @@ def _load(path: str) -> list[dict]:
 
 
 def _build_docs() -> list[Document]:
-    """항상 같은 순서(장소 → 코스)로 문서를 만든다 — 배치 인덱스가 실행마다 동일하도록."""
+    """정제된 임베딩 장소 세트만 인제스트한다 (배치 인덱스가 실행마다 동일하도록 순서 고정).
+
+    테마 코스(theme_courses)는 서울로(strangemap) 정적 데이터라 RAG 에 넣지 않는다 —
+    코스 문서는 조회하는 곳도 없었다(retrieve_node 는 doc_type=place 만 쓴다).
+    """
     s = get_settings()
-    places = _load(s.places_json)
-    courses = _load(s.courses_json)
-    return _place_docs(places) + _course_docs(courses)
+    return _place_docs(_load(s.places_json))
 
 
 def _reset_store() -> None:
