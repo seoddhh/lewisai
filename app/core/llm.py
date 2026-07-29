@@ -116,6 +116,7 @@ def _solar() -> BaseChatModel:
         api_key=s.upstage_api_key,
         base_url=s.upstage_base_url,
         temperature=s.llm_temperature,
+        max_tokens=s.llm_max_tokens,  # 명시하지 않으면 프로바이더 기본값이 짧아 3일치 JSON이 중간에 잘린다
         reasoning_effort=s.llm_reasoning_effort,
         streaming=True,  # ainvoke도 내부 스트리밍 경로 → LangGraph messages 모드가 토큰 조각을 잡음
     )

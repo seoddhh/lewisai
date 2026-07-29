@@ -63,3 +63,29 @@ def parse_json_array(text: str) -> list[Any]:
     if arr is None:
         raise ValueError(f"JSON 배열을 찾지 못함: {text[:200]!r}")
     return json.loads(arr)
+
+
+def salvage_objects(text: str) -> list[dict[str, Any]]:
+    """잘린(truncated) JSON 에서 **완결된 `{...}` 객체만** 최대한 건져낸다.
+
+    LLM 이 토큰 한도로 응답을 중간에 끊으면 전체 JSON 은 깨지지만, 그 앞에 이미
+    완성된 객체(예: stop 하나)는 온전하다. 중첩된 미완결 객체는 건너뛰고 balanced 한
+    조각만 순차로 파싱해, 마지막 잘린 객체 하나만 잃고 나머지는 이유·행동까지 보존한다.
+    """
+    text = _strip_fences(text)
+    out: list[dict[str, Any]] = []
+    i, n = 0, len(text)
+    while i < n:
+        if text[i] == "{":
+            obj = _extract_balanced(text[i:], "{", "}")
+            if obj is not None:
+                try:
+                    parsed = json.loads(obj)
+                except json.JSONDecodeError:
+                    parsed = None
+                if isinstance(parsed, dict):
+                    out.append(parsed)
+                    i += len(obj)
+                    continue
+        i += 1
+    return out
