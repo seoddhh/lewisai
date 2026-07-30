@@ -1,23 +1,27 @@
+# ── 로컬 환경 ─────────────────────────────────────────────────────────────
 .venv/
 __pycache__/
 *.pyc
-.env
-data/chroma/
-data/meal_cache/
+.pytest_cache/
+.ruff_cache/
 .DS_Store
-tests/
-scripts/build_dataset.mjs
-scripts/build_meal_cache.py
-scripts/check_upstage.py
-docs/diff-explain.md
-visitseouldocs.json
-poi_cache
+.env
 
-# 빌드 산출물 백업
+# ── 재생성 가능한 대용량 산출물 ───────────────────────────────────────────
+# Chroma 인덱스(28MB 단일 sqlite 바이너리)는 커밋하지 않는다 —
+# data/embed/places.json + `python -m scripts.run_ingest` 로 언제든 복원되고,
+# 바이너리라 재인제스트마다 히스토리에 28MB가 통째로 쌓인다.
+# 배포 이미지에는 .dockerignore 에서 제외하지 않아 그대로 들어간다.
+data/chroma/
 data/embed/*.bak
 
-# 임베딩 검수 아티팩트 생성기 (오프라인 도구)
-scripts/build_embed_review.py
-scripts/embed_review.template.html
-
+# ── 작업 기록·실험 산출물 (배포·재현에 불필요) ────────────────────────────
 ab_artifacts/
+visitseouldocs.json
+docs/diff-explain.md
+
+
+# markdown 문서·작업 기록 (저장소에 두지 않는다)
+AGENTS.md
+conversation.md
+
