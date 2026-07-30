@@ -84,8 +84,11 @@ def _load(path: str) -> list[dict]:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
-def _build_docs() -> list[Document]:
+def build_docs() -> list[Document]:
     """정제된 임베딩 장소 세트만 인제스트한다 (배치 인덱스가 실행마다 동일하도록 순서 고정).
+
+    id·메타데이터 계산의 단일 출처다 — scripts/patch_metadata.py 도 이 함수를 써서
+    "파일이 기대하는 상태"를 만든다(규칙이 갈라지면 패치가 엉뚱한 문서를 건드린다).
 
     테마 코스(theme_courses)는 서울로(strangemap) 정적 데이터라 RAG 에 넣지 않는다 —
     코스 문서는 조회하는 곳도 없었다(retrieve_node 는 doc_type=place 만 쓴다).
@@ -119,9 +122,9 @@ def _add_batch(vs, batch: list[Document], idx: int, total: int) -> int:
 
 def run(*, reset: bool = False, size: int = 70, sleep: float = 60.0,
         batch: int | None = None) -> None:
-    docs = _build_docs()
+    docs = build_docs()
     if not docs:
-        print("인제스트할 문서가 없습니다. data/raw/*.json 을 먼저 준비하세요.")
+        print(f"인제스트할 문서가 없습니다. {get_settings().places_json} 를 먼저 준비하세요.")
         return
 
     if reset:
