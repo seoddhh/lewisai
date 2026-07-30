@@ -2,7 +2,7 @@
 
 ## 사이트 주소: https://seoulro.site/
 
-서울로(strangemap)의 코스 생성 기능을 **파이썬 LangGraph RAG 에이전트**로 재구현한 프로젝트.
+서울로([strangemap 레포](https://github.com/seoulbidata/strangemap))의 코스 생성 기능을 **파이썬 LangGraph RAG 에이전트**로 재구현한 프로젝트.
 서울로를 3-tier(프론트 Next.js BFF / **AI 서버** / 데이터)로 분리하기 위한 AI 백엔드다.
 
 **역할 분리 원칙**
