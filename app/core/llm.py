@@ -1,10 +1,12 @@
-"""LLM 프로바이더 레이어 — 업스테이지 솔라(단일 프로바이더).
+"""LLM 프로바이더 레이어. 모든 체인은 `PROMPT | get_llm()` 형태로 쓴다.
 
-모든 체인은 기존처럼 `PROMPT | get_llm()` 형태로 사용한다.
+프로바이더는 `LLM_PROVIDER`(upstage|gemini)로 고른다 — 기본 솔라, 값만 바꾸면 제미나이.
+솔라가 Private Beta 라 기간·크레딧이 끊길 수 있어 전환은 env 한 줄로 끝나야 한다.
 
-이력: 이전에는 제미나이 우선 + 쿼터 소진 시 클로드 폴백(FallbackLLM) 구조였으나
-솔라로 전환하면서 폴백 경로를 비활성화했다. 관련 코드는 삭제하지 않고
-주석/미사용 상태로 남겨둔다(복구 가능하도록).
+이력: 이전에는 제미나이 우선 + 쿼터 소진 시 클로드 폴백(FallbackLLM) 구조였다. 솔라로
+전환하며 폴백을 비활성화했고, 멀티 프로바이더 폴백을 다시 붙일 계획이라 FallbackLLM ·
+is_quota_error 는 **의도적으로 남겨둔다**(현재 미사용 — 어느 체인도 감싸지 않는다).
+클로드를 secondary 로 되살리려면 `langchain-anthropic` 을 의존성에 다시 넣어야 한다.
 """
 from __future__ import annotations
 
@@ -124,7 +126,7 @@ def _solar() -> BaseChatModel:
 
 @lru_cache
 def _gemini() -> BaseChatModel:
-    """제미나이 챗 모델. 솔라 크레딧 소진 동안 임시로 이 경로를 사용."""
+    """제미나이 챗 모델. LLM_PROVIDER=gemini 일 때 get_llm() 이 이 경로를 쓴다."""
     from langchain_google_genai import ChatGoogleGenerativeAI
 
     s = get_settings()
@@ -141,6 +143,13 @@ def _gemini() -> BaseChatModel:
 
 @lru_cache
 def get_llm() -> BaseChatModel:
+    """설정된 프로바이더의 챗 모델. LLM_PROVIDER=gemini 면 제미나이 경로로 넘어간다.
+
+    프로바이더 전환이 env 한 줄로 끝나야 한다 — 솔라는 Private Beta 라 기간·크레딧이
+    끊길 수 있고, 그때 코드를 고치는 건 위험하다.
+    """
+    if get_settings().llm_provider.lower() == "gemini":
+        return _gemini()
     return _solar()
 
 

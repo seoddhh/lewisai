@@ -1,4 +1,8 @@
-"""Chroma 메타데이터 필터 리트리버. 권역/카테고리/place_id 필터를 벡터검색 단계에서 적용."""
+"""Chroma 메타데이터 필터 리트리버 — 권역·목적 필터를 벡터검색 단계에서 적용한다.
+
+진입점은 `search_with_score` 하나다. 점수 없는 `search()`·MMR `search_diverse()` 도
+있었지만 코스 파이프라인이 지리 재랭킹을 하려면 의미 거리가 필요해 쓰이지 않았다.
+"""
 from __future__ import annotations
 
 from langchain_core.documents import Document
@@ -27,20 +31,6 @@ def _where(filters: dict | None) -> dict | None:
     if not clauses:
         return None
     return clauses[0] if len(clauses) == 1 else {"$and": clauses}
-
-
-def search(query: str, k: int = 6, filters: dict | None = None) -> list[Document]:
-    """유사도 검색 + 메타필터."""
-    vs = get_vectorstore()
-    return vs.similarity_search(query, k=k, filter=_where(filters))
-
-
-def search_diverse(query: str, k: int = 6, filters: dict | None = None) -> list[Document]:
-    """MMR 검색 — 추천처럼 다양성이 필요한 의도용."""
-    vs = get_vectorstore()
-    return vs.max_marginal_relevance_search(
-        query, k=k, fetch_k=max(k * 4, 20), filter=_where(filters)
-    )
 
 
 def search_with_score(

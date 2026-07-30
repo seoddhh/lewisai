@@ -24,18 +24,6 @@ def haversine_km(a_lat: float, a_lng: float, b_lat: float, b_lng: float) -> floa
     return R * 2 * math.atan2(math.sqrt(x), math.sqrt(1 - x))
 
 
-def region_of(lat: float, lng: float) -> str:
-    """좌표 → 4분면 권역(강북/강남/강서/강동). scripts/build_culture_rag.py 표시용 태그 전용 —
-    코스 파이프라인은 9권역 칩(area, 아래 LOCATION_CHIPS)을 쓴다."""
-    if lng >= 127.05:
-        return "강동"
-    if lng < 126.94:
-        return "강서"
-    if lat < 37.52:
-        return "강남"
-    return "강북"
-
-
 @dataclass(frozen=True)
 class LocationChip:
     """위치 칩 하나 — 중심 좌표(검색 앵커)와 주소 매칭어.
@@ -97,6 +85,10 @@ def chip_of_address(address: str | None) -> str | None:
     """주소 문자열의 자치구 → 9권역 칩 이름. 자치구가 없거나 미등록이면 None.
 
     이게 area 의 1차 정답이다 — 좌표 nearest_chip 보다 우선한다.
+
+    **런타임 호출부는 없다(참조용).** 임베딩 빌드 파이프라인을 폐기한 뒤
+    `data/embed/places.json` 이 소스오브트루스가 됐으므로, 장소를 손으로 추가할 때
+    그 레코드의 `area` 를 무엇으로 둘지 정하는 기준이 위 DISTRICT_TO_CHIP 표와 이 함수다.
     """
     if not address:
         return None

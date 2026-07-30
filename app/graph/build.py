@@ -69,14 +69,16 @@ def get_agent_graph():
 
 
 async def run_agent(
-    *, message: str | None = None, intent: str | None = None, req: dict | None = None
+    *, message: str | None = None, req: dict | None = None
 ) -> dict[str, Any]:
-    """그래프 1회 실행. 자연어(message) 또는 어댑터(intent+req) 진입 모두 지원."""
+    """그래프 1회 실행. 자연어(message) 또는 어댑터(req) 진입 모두 지원.
+
+    의도(intent) 인자는 없앴다 — 라우터를 제거한 뒤 읽는 곳이 없었고, 칩/자연어 분기는
+    parse_intent 가 `req` 유무로 판정한다.
+    """
     state: dict[str, Any] = {}
     if message is not None:
         state["message"] = message
-    if intent is not None:
-        state["intent"] = intent
     if req is not None:
         state["req"] = req
     return await get_agent_graph().ainvoke(state)
@@ -169,12 +171,12 @@ def _payload(state: dict[str, Any]) -> dict[str, Any]:
 
 async def run_course(note: str, chips: dict[str, Any]) -> dict[str, Any]:
     """칩(+자연어) → 코스 (결정적 진입)."""
-    return _payload(await run_agent(intent="course", req={"note": note, "chips": chips}))
+    return _payload(await run_agent(req={"note": note, "chips": chips}))
 
 
 async def run_chat(message: str) -> dict[str, Any]:
     """자연어 → 코스. parse_intent 가 칩 형태로 구조화한 뒤 같은 파이프라인을 탄다."""
-    return _payload(await run_agent(message=message, intent="course"))
+    return _payload(await run_agent(message=message))
 
 
 async def _stream(initial: dict[str, Any]) -> AsyncIterator[dict[str, Any]]:
@@ -208,11 +210,11 @@ async def _updates(graph, initial: dict[str, Any]):
 
 async def stream_course(note: str, chips: dict[str, Any]) -> AsyncIterator[dict[str, Any]]:
     """칩 → 코스 스트리밍."""
-    async for evt in _stream({"intent": "course", "req": {"note": note, "chips": chips}}):
+    async for evt in _stream({"req": {"note": note, "chips": chips}}):
         yield evt
 
 
 async def stream_chat(message: str) -> AsyncIterator[dict[str, Any]]:
     """자연어 → 코스 스트리밍."""
-    async for evt in _stream({"message": message, "intent": "course"}):
+    async for evt in _stream({"message": message}):
         yield evt

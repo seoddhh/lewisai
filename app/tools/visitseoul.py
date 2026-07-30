@@ -47,7 +47,6 @@ CATEGORY = {
     "축제공연행사": "Cv7s8m5",
 }
 CAT_EVENTS = CATEGORY["축제공연행사"]
-CAT_FOOD = CATEGORY["음식"]
 
 # cate_depth(" 음식 > 카페/찻집") 앞부분 → 우리가 쓰는 종류
 KIND_RESTAURANT = "restaurant"

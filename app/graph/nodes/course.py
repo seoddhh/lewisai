@@ -50,10 +50,8 @@ _GEO_ALPHA = 0.3                 # 최종 점수 = α·의미유사도 + (1−α
 # 거리 min-max 정규화 스케일 하한 — 후보가 좁게 모여 있을 때(수백 m) 미세한 거리 차이가
 # 0~1 로 뻥튀기되어 다른 신호(유사도)를 눌러버리는 것을 막는다. 이 안은 다 도보권.
 _DIST_SCALE_FLOOR_KM = 2.0
-# 식사 추천 반경 — 앵커 장소 기준. 걸어갈 만한 1.5km 를 우선 보고, 3곳을 못 채울 때만
-# 3km 로 넓힌다. Visit Seoul 음식 데이터가 자치구별로 크게 편중돼 있어서다
-# (표본 실측: 종로 65 · 용산 51 · 마포 49 vs 관악 3 · 성북 5 — 관악·사당은 1.5km 로 못 채움).
-MEAL_RADIUS_NEAR_KM = 1.5
+# 라이브 폴백으로 식당 풀을 만들 때의 최대 반경. 끼니 선택 자체의 반경(1.5→3km 완화)은
+# meals 노드(RADIUS_NEAR_KM/RADIUS_FAR_KM)가 갖는다 — 여기 값은 풀을 얼마나 넓게 받아올지만 정한다.
 MEAL_RADIUS_KM = 3.0
 
 # 여행자 멀티데이 + 위치 "상관없음" → 날마다 다른 권역을 배정한다 (실제 여행 패턴).
@@ -428,12 +426,12 @@ async def retrieve_node(state: AgentState) -> dict:
                 _geo_rerank(pool_d, (area_chip.lat, area_chip.lng), per))[:per]
             taken.update(c["name"] for c in picks)
             cands.extend({**c, "day_hint": d} for c in picks)
-        return {"candidates": cands, "chips": chips.model_dump(), "day_areas": day_areas}
+        return {"candidates": cands, "day_areas": day_areas}
 
     area = next((loc for loc in chips.locations if chip_of(loc)), None)
     pool = _search_pool(query, area=area, slugs=slugs, window=window)
     if not pool:
-        return {"candidates": [], "chips": chips.model_dump()}
+        return {"candidates": []}
 
     chip = chip_of(area) if area else None
     anchor = (chip.lat, chip.lng) if chip else (pool[0][0]["lat"], pool[0][0]["lng"])
@@ -441,7 +439,7 @@ async def retrieve_node(state: AgentState) -> dict:
     want = chips.days * chips.stops_per_day() + 6
     cands = _dedupe_same_place(_geo_rerank(pool, anchor, want))
 
-    return {"candidates": cands[:want], "chips": chips.model_dump()}
+    return {"candidates": cands[:want]}
 
 
 async def _llm_call(tag: str, chain, prompt_vars: dict) -> str:

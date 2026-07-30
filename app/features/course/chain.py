@@ -9,10 +9,7 @@ from .schema import Course, CourseRequest, CourseResponse, CourseStop
 
 
 async def run(req: CourseRequest) -> CourseResponse:
-    state = await run_agent(
-        intent="course",
-        req={"note": req.note, "chips": req.chips.model_dump()},
-    )
+    state = await run_agent(req={"note": req.note, "chips": req.chips.model_dump()})
     result = state.get("result") or {}
     course_data = result.get("course")
     if course_data and course_data.get("stops"):
@@ -26,6 +23,9 @@ async def run(req: CourseRequest) -> CourseResponse:
             scheduled=course_data.get("scheduled", False),
             days=course_data.get("days", 1),
             day_areas=course_data.get("day_areas", {}),
+            # 멀티데이 일차별 설명 — compose 가 만들어 두는데 여기서 흘려버리고 있었다
+            # (그래프 payload/`/agent/chat` 에는 실려 나가고 이 라우트만 빈 객체였다)
+            day_descriptions=course_data.get("day_descriptions", {}),
         )
         return CourseResponse(course=course, source=result.get("source", "ai"))
 

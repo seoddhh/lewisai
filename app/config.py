@@ -9,6 +9,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
+    # 챗 LLM 프로바이더 선택 — upstage | gemini.
+    # 솔라 Private Beta 가 끝나거나 크레딧이 소진되면 코드를 고치지 않고 이 값만 gemini 로
+    # 바꿔 제미나이 챗 경로(_gemini)로 넘어간다. 임베딩은 이 값과 무관하게 항상 제미나이다.
+    llm_provider: str = "upstage"
+
     # 업스테이지 솔라 (챗 LLM — 현행 프로바이더)
     upstage_api_key: str = ""
     # Solar Open 2 (Private Beta, Solar Agent Partner Stage 1 — 2026-07-17~07-31)

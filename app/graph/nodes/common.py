@@ -100,4 +100,4 @@ async def parse_intent_node(state: AgentState) -> dict:
         }
     except Exception:  # noqa: BLE001
         req = {"note": message, "chips": {}}
-    return {"req": req, "intent": "course"}
+    return {"req": req}

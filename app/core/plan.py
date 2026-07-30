@@ -18,6 +18,7 @@
 """
 from __future__ import annotations
 
+from app.core.scheduler import hhmm
 from app.features.course.schema import CourseChips
 
 # 세그먼트가 이보다 짧으면 장소를 못 넣는다 (이동 + 최소 체류)
@@ -25,10 +26,6 @@ MIN_SEGMENT_MIN = 40
 # 수용 한계 계산용 — 장소 하나의 최소 체류시간과 구간 내 이동 추정치
 MIN_DWELL_MIN = 30
 TRAVEL_EST_MIN = 15
-
-
-def hhmm(minutes: int) -> str:
-    return f"{(minutes // 60) % 24:02d}:{minutes % 60:02d}"
 
 
 def build_skeleton(chips: CourseChips) -> dict:

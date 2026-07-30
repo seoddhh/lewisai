@@ -53,18 +53,6 @@ def parse_json_object(text: str) -> dict[str, Any]:
     return json.loads(obj)
 
 
-def parse_json_array(text: str) -> list[Any]:
-    candidate = _strip_fences(text)
-    try:
-        return json.loads(candidate)
-    except json.JSONDecodeError:
-        pass
-    arr = _extract_balanced(candidate, "[", "]")
-    if arr is None:
-        raise ValueError(f"JSON 배열을 찾지 못함: {text[:200]!r}")
-    return json.loads(arr)
-
-
 def salvage_objects(text: str) -> list[dict[str, Any]]:
     """잘린(truncated) JSON 에서 **완결된 `{...}` 객체만** 최대한 건져낸다.
 

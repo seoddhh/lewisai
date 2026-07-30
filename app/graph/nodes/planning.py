@@ -26,4 +26,4 @@ async def plan_node(state: AgentState) -> dict:
         "시간 골격: 창=%s 끼니=%d 구간=%d 배정=%s flex=%d",
         skeleton["window"], len(skeleton["meals"]), len(skeleton["segments"]), quota, flex_n,
     )
-    return {"skeleton": skeleton, "chips": chips.model_dump()}
+    return {"skeleton": skeleton}
