@@ -12,9 +12,10 @@
 | **AI 서버 (이 저장소)** | 어떤 장소를 **왜** 골랐는지(`reason`/`activities`), 실시간 정보(예상 혼잡도·주변 식당·문화행사), 그리고 시간 창이 있는 요청의 **방문 순서·방문 시각·이동수단·식사 슬롯**(`plan` → `fit_schedule` → `meals`). |
 | **strangemap 프론트(`courseRouting.ts`)** | 지도 폴리라인·실제 도로 경로 거리. 서버가 확정한 순서 위에 그린다 — 서버는 stop 좌표(`lat`/`lng`)를 시간표 순서로 실어 보낸다. |
 
-에이전트의 임무는 **코스 생성 하나**다. 그래프에서 의도 분류(router)와 잡담(chitchat) 분기는 제거했다 —
-클라이언트에 잡담 입력창이 없고 칩 경로에서는 라우터가 어차피 무동작이었다.
-잡담은 그래프 밖 `/agent/chitchat` 라우트가 단발 LLM 콜로 따로 처리한다.
+에이전트의 임무는 **코스 생성 하나**다. 그래프에서 의도 분류(router)와 잡담(chitchat) 분기는 제거했고,
+그래프 밖에 남겨뒀던 `/agent/chitchat` 라우트도 **삭제했다(2026-07-30)** — 클라이언트에 잡담 입력창이 없고
+칩 경로에서는 라우터가 어차피 무동작이었다. 단순 대화 응답은 이 서버의 기능이 아니다.
+엔드포인트는 `/health` · `/agent/course` · `/agent/chat`(+`/stream`) 뿐이다.
 
 ## 시스템 구조
 
@@ -29,9 +30,7 @@ flowchart LR
         MW["verify_internal_token<br/>미들웨어 (/agent/*)"]
         R1["POST /agent/chat<br/>· /agent/chat/stream (SSE)"]
         R2["POST /agent/course"]
-        R3["POST /agent/chitchat"]
         G["LangGraph StateGraph<br/>코스 파이프라인 9노드"]
-        CC["chitchat chain<br/>단발 LLM 콜"]
     end
 
     subgraph data["데이터 계층"]
@@ -46,14 +45,12 @@ flowchart LR
     BR --> BFF --> MW
     MW --> R1 --> G
     MW --> R2 --> G
-    MW --> R3 --> CC
     G -. 임베딩 검색 .-> CH
     CH -. 쿼리 임베딩 .-> GEM
     G -. 식당 풀 .-> MC
     G -. 혼잡도·행사 .-> SEO
     G -. 캐시가 얇을 때만 .-> VS
     G -. select·compose 콜 .-> SOL
-    CC -.-> SOL
 ```
 
 ## 사용자 입력 → 그래프 → 출력
@@ -247,8 +244,7 @@ app/
                        · schedule(fit_schedule) · meals(meals)
   features/
     course/            schema.py (칩·응답 계약) · chain.py (/agent/course 어댑터)
-    chitchat/          chain.py (그래프 밖 단발 LLM 콜)
-  api/routes/          health · course · chitchat · chat(+SSE)
+  api/routes/          health · course · chat(+SSE)
   static/              index.html (검증용 챗봇 UI)
 data/embed/places.json   임베딩 세트 807곳 — 인제스트 소스이자 소스오브트루스
 data/meal_cache/         권역별 식당 캐시 9파일 1,234곳 (런타임이 직접 읽음)
@@ -296,7 +292,10 @@ uv run python -m scripts.profile_course                  # 노드별 레이턴�
 | `POST /agent/chat` | **통합 진입점** — `chips` 있으면 칩 진입, 없으면 `message` 자연어 진입. 응답에 `steps[]` 트레이스 포함 |
 | `POST /agent/chat/stream` | 위와 동일 입력의 SSE 스트리밍. 이벤트: `progress`(노드 완료) → `final`(payload). 코스 출력은 JSON 이라 토큰은 흘리지 않는다 |
 | `POST /agent/course` | 코스 생성 단일 기능(`CourseResponse` 스키마 — `steps` 없음) |
-| `POST /agent/chitchat` | 그래프 밖 단발 대화 응답 |
+
+> `POST /agent/chitchat`(단발 대화 응답)은 **2026-07-30 삭제했다.** 라우트·체인(`app/features/chitchat/`)·
+> 계약 테스트까지 모두 제거 — 이 서버는 코스만 만든다. 잡담 응답이 다시 필요해지면 클라이언트나
+> 별도 서비스에서 처리한다.
 
 ## LLM / 임베딩
 

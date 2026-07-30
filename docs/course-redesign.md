@@ -470,9 +470,6 @@ START → plan → retrieve → select_places → fit_schedule → meals → enr
 칩 경로에서 이미 무동작이다 (`intent`·`req` 가 주입돼 있어 즉시 리턴 — 프로파일에서
 LLM 호출이 select·compose 2회뿐인 것이 증거). **레이턴시 이득은 0이고 순수하게 구조가 단순해진다.**
 
-주의: `/agent/chitchat` 은 `app/api/routes/chitchat.py` 에 **별도 라우트로 살아 있다.**
-그래프에서 빼는 것과 라우트를 지우는 것은 별개 결정이다.
-
 `parse_intent` 는 자연어 입력 처리를 위해 `refine` 형태로 `plan` 앞에 남긴다 — 별도 과제(6장).
 
 ---

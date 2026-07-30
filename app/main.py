@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.api.routes import chat, chitchat, course, health
+from app.api.routes import chat, course, health
 from app.config import get_settings
 
 app = FastAPI(title="서울로 AI (lewisai) — LangGraph RAG 에이전트", version="0.2.0")
@@ -37,7 +37,6 @@ async def verify_internal_token(request: Request, call_next):
 
 app.include_router(health.router)
 app.include_router(course.router)
-app.include_router(chitchat.router)
 app.include_router(chat.router)
 
 # 검증용 챗봇 UI (정적 페이지) — GET /

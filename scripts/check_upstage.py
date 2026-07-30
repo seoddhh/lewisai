@@ -70,7 +70,9 @@ async def main() -> int:
         return _fail(f"ainvoke 실패: {err}")
     print(f"{OK} ainvoke 응답: {extract_text(msg.content).strip()[:120]}")
 
-    # 5) 스트리밍 (chitchat 실시간 타이핑 경로)
+    # 5) 스트리밍 — 프로바이더 SSE 연결 자체를 확인한다. 코스 출력은 JSON 이라
+    #    토큰을 흘리지 않으므로(/agent/chat/stream 은 노드 progress 만 흘린다)
+    #    런타임에 쓰이는 경로는 아니다.
     try:
         chunks = [c async for c in llm.astream("서울로 여행 팁 한 줄만.")]
     except Exception as err:

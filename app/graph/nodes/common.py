@@ -8,8 +8,6 @@ from app.core.llm import extract_text, get_llm
 from app.features.course.schema import COMPANIONS, MEALS, PURPOSE_RULES
 from app.graph.state import AgentState
 
-# 의도 분류(router)는 제거했다 — 이 에이전트는 코스만 만들고, 칩 경로에서는 라우터가
-# 어차피 무동작이었다. 잡담이 필요하면 /agent/chitchat 라우트가 별도로 살아 있다.
 
 _PARSE_PROMPT = ChatPromptTemplate.from_messages(
     [

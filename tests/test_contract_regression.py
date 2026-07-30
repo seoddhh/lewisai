@@ -4,7 +4,7 @@ LLM 은 실패하는 스텁으로 대체 → 각 체인의 mock 폴백 경로가
 프론트 스키마(AGENTS.md 규칙 4)를 그대로 지키는지 확인한다.
 retriever 는 픽스처 문서로 대체 (임베딩/네트워크 없음).
 
-대상: /health · /agent/course · /agent/chat(+chips) · /agent/chitchat · /
+대상: /health · /agent/course · /agent/chat(+chips)
 """
 from __future__ import annotations
 
@@ -216,17 +216,11 @@ def test_course_multi_location_contract(client):
     assert course["day_areas"] == {"1": "홍대·마포", "2": "강남·서초", "3": "성수·건대"}
 
 
-def test_chitchat_contract(client):
-    res = client.post("/agent/chitchat", json={"message": "안녕!"})
-    assert res.status_code == 200
-    assert set(res.json()) == {"reply"}
-
-
 def test_chat_nl_returns_course(client):
     """자연어 진입도 코스로 흐른다.
 
-    의도 분류(router)와 chitchat 분기는 제거했다 — 이 에이전트는 코스만 만들고,
-    잡담이 필요하면 /agent/chitchat 라우트가 별도로 살아 있다.
+    이 서버는 코스만 만든다 — 의도 분류(router)·잡담(chitchat) 분기는 그래프에서
+    제거했고, 그래프 밖 `/agent/chitchat` 라우트도 삭제했다(2026-07-30).
     """
     res = client.post("/agent/chat", json={"message": "연인이랑 종로에서 오후에 갈 만한 곳"})
     assert res.status_code == 200
