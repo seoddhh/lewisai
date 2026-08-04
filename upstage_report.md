@@ -119,7 +119,7 @@ START → parse_intent → plan → retrieve → select_places
 | 화이트리스트 준수(환각) | | | |
 | 비용 | | | |
 
-**측정 방법** — 설계는 [`docs/llm-provider-eval.md`](docs/llm-provider-eval.md) 에 정리했다.
+**측정 방법** — 설계는 [`docs/LLM-eval.md`](docs/LLM-eval.md) 에 정리했다.
 
 `.env` 의 `LLM_PROVIDER`(`upstage | gemini | claude`) 한 줄만 바꿔가며 동일 페르소나 세트를 돌린다.
 세 프로바이더 모두 같은 파이프라인·같은 벡터 컬렉션·같은 프롬프트를 쓴다.
