@@ -1,0 +1,207 @@
+{
+  "_readme": [
+    "docs/LLM-eval.md 3절 페르소나 세트. 네 모델이 완전히 같은 15개 요청을 처리한다.",
+    "request 는 POST /agent/chat 의 본문 그대로다. chips 가 있으면 message 는 자유입력(note),",
+    "chips 가 null 이면 message 가 자연어 요청 문장이다.",
+    "seed 는 하네스가 실행할 때 [11, 22, 33] 세 값을 넣는다."
+  ],
+  "seeds": [11, 22, 33],
+  "personas": [
+    {
+      "id": "P01",
+      "name": "종로 연인 오후 데이트",
+      "covers": "가장 흔한 기본 경로. 데이터가 가장 많은 권역(531곳)이라 후보가 넉넉해 조건 완화가 일어나지 않는다. 다른 페르소나의 비교 기준이 된다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "local", "days": 1, "place_count": 4,
+          "locations": ["종로·중구"], "purposes": ["문화·예술", "데이트"],
+          "companions": ["연인과"], "time": "오후", "meals": ["점심", "저녁"],
+          "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P02",
+      "name": "관악 혼자 오전 산책",
+      "covers": "장소가 가장 적은 권역(89곳) + 여행자 1일. 후보가 모자라 조건을 단계적으로 푸는 경로를 탄다. 후보가 얇을 때 모델이 무리하게 채우는지 본다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "tourist", "days": 1, "place_count": 3,
+          "locations": ["관악·사당"], "purposes": ["자연·힐링"],
+          "companions": ["혼자"], "time": "오전", "meals": [],
+          "congestion": "여유"
+        }
+      }
+    },
+    {
+      "id": "P03",
+      "name": "홍대 친구 밤 핫플",
+      "covers": "밤 시간대(18~23시). 밤에 문 여는 장소만 남기는 필터가 걸린다. 일정 밀도를 '빼곡'으로 두어 하루 5곳을 요구한다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "local", "days": 1, "place_count": 5,
+          "locations": ["홍대·마포"], "purposes": ["핫플레이스"],
+          "companions": ["친구와"], "time": "밤", "meals": ["저녁"],
+          "pace": "packed", "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P04",
+      "name": "성수 부부 시간 미정",
+      "covers": "★ 시간대를 안 고른 현지인. 시간 범위가 아예 안 만들어져 방문 시각 없는 코스가 나온다. 시간표가 없을 때 글쓰기 단계가 시각을 지어내지 않는지 확인하는 유일한 페르소나다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "local", "days": 1, "place_count": 4,
+          "locations": ["성수·건대"], "purposes": ["데이트"],
+          "companions": ["배우자와"], "meals": [],
+          "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P05",
+      "name": "강남 부모님 쇼핑",
+      "covers": "부모님 동반 + 여유로운 일정. 이동을 줄이고 체류시간이 긴 장소를 위로 올리는 개인화 가중치가 실제로 작동하는지 본다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "local", "days": 1, "place_count": 3,
+          "locations": ["강남·서초"], "purposes": ["쇼핑"],
+          "companions": ["부모님과"], "time": "오후", "meals": ["점심"],
+          "pace": "relaxed", "congestion": "여유"
+        }
+      }
+    },
+    {
+      "id": "P06",
+      "name": "잠실 아이와 체험",
+      "covers": "장소가 적은 권역(92곳) + 장소가 적은 목적(체험·놀거리 164곳)이 겹친다. 가장 후보가 마르는 조합이다. 아이 동반이라 실내 장소를 올리는 가중치도 함께 확인한다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "local", "days": 1, "place_count": 3,
+          "locations": ["잠실·송파"], "purposes": ["체험·놀거리"],
+          "companions": ["아이와"], "time": "오전", "meals": ["점심"],
+          "congestion": "여유"
+        }
+      }
+    },
+    {
+      "id": "P07",
+      "name": "종로 연인 + 들어줄 수 없는 요구",
+      "covers": "★ 조건상 불가능한 자유입력 ①. 위치는 종로인데 한강 자전거를 요구한다. 못 들어준 요구를 제목이나 설명에 그대로 노출하는지, 아니면 조용히 가장 가까운 대안을 고르는지 본다.",
+      "request": {
+        "message": "한강에서 자전거 타면서 노을 보고 싶어",
+        "chips": {
+          "audience": "local", "days": 1, "place_count": 4,
+          "locations": ["종로·중구"], "purposes": ["문화·예술"],
+          "companions": ["연인과"], "time": "오후", "meals": [],
+          "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P08",
+      "name": "이태원 연인 1박 2일",
+      "covers": "★ 현지인의 여러 날 요청. 현지인은 여러 날이어도 권역을 나누지 않고 한 동네에 머문다. 여행자 여러 날(P10)과 대조하는 짝이다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "local", "days": 2, "place_count": 4,
+          "locations": ["용산·이태원"], "purposes": ["관광 명소", "데이트"],
+          "companions": ["연인과"], "time": "오후", "meals": ["점심", "저녁"],
+          "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P09",
+      "name": "여행자 3일 · 권역 미지정",
+      "covers": "★ 여행자 + 3일 + 위치를 안 고름. 목적에 맞는 권역에서 시작해 날마다 다른 동네로 옮기는 순회 경로를 탄다. 시간대도 안 골라서 여행자 기본 시간(9~21시)이 적용된다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "tourist", "days": 3, "place_count": 4,
+          "locations": [], "purposes": ["문화·예술"],
+          "companions": ["혼자"], "meals": ["점심", "저녁"],
+          "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P10",
+      "name": "여행자 3일 · 권역 3개 지정",
+      "covers": "★ 여행자 + 3일 + 위치 3개. 고른 순서대로 하루씩 배정된다. 하루 5곳 빼곡 일정에 세 끼를 다 넣어 호출 수가 가장 많은 페르소나다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "tourist", "days": 3, "place_count": 5,
+          "locations": ["종로·중구", "홍대·마포", "강남·서초"],
+          "purposes": ["관광 명소"], "companions": ["친구와"],
+          "meals": ["아침", "점심", "저녁"], "pace": "packed",
+          "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P11",
+      "name": "여행자 2일 · 권역 1개만",
+      "covers": "★ 여행자 여러 날인데 위치를 하나만 골랐다. 이때는 권역을 나누지 않고 현지인과 같은 단일 권역 경로로 합류한다. 갈래를 늘리지 않으려고 의도적으로 합쳐 둔 지점이라 실제로 그렇게 도는지 확인한다.",
+      "request": {
+        "message": "",
+        "chips": {
+          "audience": "tourist", "days": 2, "place_count": 3,
+          "locations": ["여의도·영등포"], "purposes": ["자연·힐링"],
+          "companions": ["배우자와"], "time": "오후", "meals": ["점심"],
+          "pace": "relaxed", "congestion": "여유"
+        }
+      }
+    },
+    {
+      "id": "P12",
+      "name": "여행자 2일 · 서울에 없는 것 요구",
+      "covers": "★ 조건상 불가능한 자유입력 ②. 서울에는 바다가 없다. P07 과 함께 '못 들어주는 요구'를 어떻게 처리하는지 두 번 확인한다. 권역 2개 = 일수 2일이라 하루씩 정확히 배정된다.",
+      "request": {
+        "message": "바다 보이는 카페에서 노을 보면 좋겠어",
+        "chips": {
+          "audience": "tourist", "days": 2, "place_count": 4,
+          "locations": ["강북·성북", "성수·건대"],
+          "purposes": ["핫플레이스", "쇼핑"], "companions": ["친구와"],
+          "time": "오후", "meals": ["저녁"], "congestion": "상관없음"
+        }
+      }
+    },
+    {
+      "id": "P13",
+      "name": "자연어 · 부모님과 고궁",
+      "covers": "자연어 요청 ①. 문장에서 동반자·시간대·목적·식사를 뽑아내야 한다. 시간대(오전)와 식사(점심)가 문장에 자연스럽게 섞여 있어, 조건 추출이 정확한지 보는 데 적합하다.",
+      "request": {
+        "message": "부모님이랑 서울 구경 왔는데 오전에 고궁이랑 박물관 보고 점심 먹는 코스 짜줘",
+        "chips": null
+      }
+    },
+    {
+      "id": "P14",
+      "name": "자연어 · 2박 3일 데이트",
+      "covers": "자연어 요청 ②. 문장에서 일수(2박 3일 = 3일)와 여행자 여부까지 뽑아내야 한다. 일수를 잘못 뽑으면 코스 구조 자체가 어긋나므로 조건 추출 오류가 가장 크게 드러난다.",
+      "request": {
+        "message": "여자친구랑 2박 3일 서울 여행 가는데 데이트하기 좋고 자연도 느낄 수 있는 코스 만들어줘",
+        "chips": null
+      }
+    },
+    {
+      "id": "P15",
+      "name": "자연어 · 혼자 밤 산책",
+      "covers": "자연어 요청 ③. 시간대(밤)만 있고 위치가 없다. 위치 조건이 없을 때 검색 결과 상위 장소를 기준점으로 삼는 경로를 탄다. 식사도 없어 시간 골격이 가장 단순하다.",
+      "request": {
+        "message": "혼자 밤에 조용히 걸으면서 사진 찍기 좋은 곳으로 코스 만들어줘",
+        "chips": null
+      }
+    }
+  ]
+}
