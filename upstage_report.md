@@ -8,7 +8,7 @@
 
 > **기간** 2026-07-17 ~ 2026-07-31
 
-> **서비스** https://seoulro.site/
+> **사이트 주소** https://seoulro.site/
 
 > **client 백엔드 저장소** https://github.com/seoulbidata/strangemap
 > **AI 서버(에이전트기능)저장소** https://github.com/seoddhh/lewisai
@@ -16,7 +16,6 @@
 
 
 ---
-우선 
 
 ## 1. 프로젝트 소개 — 서울로는 어떤 서비스인가
 
@@ -97,7 +96,6 @@ START → parse_intent → plan → retrieve → select_places
 
 ## 4. solar-open2를 쓰면서 좋았던 점
 
-추후작성
 
 ---
 
@@ -107,9 +105,8 @@ START → parse_intent → plan → retrieve → select_places
 
 ---
 
-## 6. 모델 비교 — solar-open2 / Gemini / Claude(08/01 실험 후 작성예정) 
+## 6. 모델 비교 — solar-open2 / solar-pro4 / Gemini / Claude /     
 
-> ✍️ **직접 작성** — 동일 프롬프트로 세 모델의 출력·레이턴시를 측정해 채울 것.
 > 프로바이더 전환이 `.env` 한 줄(`LLM_PROVIDER`)이라 같은 파이프라인에서 바로 비교 가능하다.
 
 | 항목 | solar-open2 | Gemini 3.1 Flash Lite | Claude Haiku 4.5 |
@@ -122,25 +119,23 @@ START → parse_intent → plan → retrieve → select_places
 | 화이트리스트 준수(환각) | | | |
 | 비용 | | | |
 
-**측정 방법**
-```bash
-# .env 의 LLM_PROVIDER 만 바꿔가며 동일 페르소나 10개 실행
-LLM_PROVIDER=upstage .venv/bin/python ab_artifacts/run_arm.py arm_solar.json
-LLM_PROVIDER=gemini  .venv/bin/python ab_artifacts/run_arm.py arm_gemini.json
-```
+**측정 방법** — 설계는 [`docs/llm-provider-eval.md`](docs/llm-provider-eval.md) 에 정리했다.
+
+`.env` 의 `LLM_PROVIDER`(`upstage | gemini | claude`) 한 줄만 바꿔가며 동일 페르소나 세트를 돌린다.
+세 프로바이더 모두 같은 파이프라인·같은 벡터 컬렉션·같은 프롬프트를 쓴다.
+
+- **연결 확인** — `scripts/check_upstage.py` / `scripts/check_claude.py` 로 arm 별 사전 점검.
+  클로드 경로는 2026-08-04 에 복구해 코스 1건 E2E(13.5s, 폴백 없이 `source=ai`)까지 확인했다
+- **제미나이 arm** — 15 RPM 계정이라 `compose` 의 동시 호출(`asyncio.gather`)이 즉시 429 를 낸다.
+  평가 하네스에서 직렬화·스로틀이 필요하고, 지연 지표는 별도로 측정한다
+- **지표 정의** — 위 표의 각 칸이 어떤 규칙으로 채워지는지는 평가 문서 3절 참조
 
 ---
 
-## 7. 업스테이지에 대한 관심(?)
+## 7. Stage 2에 선정 된다면 develop하고 싶은점
 
 추후작성
 
 ---
 
-## 8. Stage 2에 선정 된다면 develop하고 싶은점
-
-추후작성
-
----
-
-### 실행 방법과 주요 파일 디렉토리 구조와 실행 방법에 대한 내용은 README.md에 작성해 놓았습니다 추후 도커 이미지를 빌드할 계획입니다
+### 실행 방법과 주요 파일 디렉토리 구조와 실행 방법에 대한 내용은 README.md에 작성해 놓았습니다 추후 도커 이미지를 빌드할 계획입니다 (현재는 서버 비용 문제로 실제 사이트에선 나만의 코스 기능을 사용할수 없습니다.)
