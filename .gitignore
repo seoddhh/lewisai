@@ -16,10 +16,7 @@ data/chroma/
 data/embed/*.bak
 
 # ── 작업 기록·실험 산출물 (배포·재현에 불필요) ────────────────────────────
-ab_artifacts/
 visitseouldocs.json
-docs/diff-explain.md
-
 
 # markdown 문서·작업 기록 (저장소에 두지 않는다)
 AGENTS.md
