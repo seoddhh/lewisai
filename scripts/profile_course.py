@@ -1,6 +1,6 @@
 """코스 생성 레이턴시 계측 — 노드별 벽시계 시간 + 임베딩/검색 호출 수.
 
-레이턴시 최적화(docs/next-tasks.md 2-1)의 전후 비교용. 개선을 넣기 전에 이 스크립트로
+레이턴시 전후 비교용. 개선을 넣기 전에 이 스크립트로
 기준선을 남기고, 넣은 뒤 같은 명령을 다시 돌려 비교한다.
 
     .venv/bin/python -m scripts.profile_course              # 기본 3개 시나리오
@@ -71,12 +71,18 @@ COUNTERS = Counters()
 
 
 def _instrument() -> None:
-    """임베딩·벡터검색 호출을 감싸 카운트한다 (프로세스 전역, 1회만)."""
-    from langchain_google_genai import GoogleGenerativeAIEmbeddings
+    """임베딩·벡터검색 호출을 감싸 카운트한다 (프로세스 전역, 1회만).
 
+    임베딩은 **활성 인스턴스의 클래스**를 감싼다. 예전엔 `GoogleGenerativeAIEmbeddings`
+    를 이름으로 박아 몽키패치했는데, EMBEDDING_PROVIDER 를 ollama 로 바꾸면 그 클래스가
+    아예 안 쓰여서 임베딩 카운트가 조용히 0 으로 찍혔다. 인스턴스 속성에 직접 대입하는 건
+    안 된다 — 임베딩 클래스가 pydantic 모델이라 필드에 없는 속성을 거부한다.
+    """
+    from app.core.embeddings import get_embeddings
     from app.rag import retriever
 
-    orig_embed = GoogleGenerativeAIEmbeddings.embed_query
+    cls = type(get_embeddings())
+    orig_embed = cls.embed_query
 
     def counted_embed(self, text: str):
         t0 = time.perf_counter()
@@ -86,7 +92,7 @@ def _instrument() -> None:
             COUNTERS.embed_calls += 1
             COUNTERS.embed_sec += time.perf_counter() - t0
 
-    GoogleGenerativeAIEmbeddings.embed_query = counted_embed
+    cls.embed_query = counted_embed
 
     orig_search = retriever.search_with_score
 
