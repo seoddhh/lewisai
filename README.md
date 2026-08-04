@@ -3,16 +3,18 @@
 > 선택 몇 번으로 **시간표까지 완성된 코스**를 만들어 주는 LangGraph RAG 에이전트 서버.
 > 실제 서울속 장소 1,651곳을 임베딩해 두고, 검색 → 선정 → 시간표 → 실시간 정보 → 서사를 9개 노드로 나눠 처리한다.
 
-**서비스주소**: https://seoulro.site/ · **프론트 레포**: [seoulbidata/strangemap](https://github.com/seoulbidata/strangemap)
+**서비스 주소**: https://seoulro.site/ 
+
+**프론트 레포**: [seoulbidata/strangemap](https://github.com/seoulbidata/strangemap)
 
 ---
 
-## 데모GIF
+## 데모영상
 
 
-서울로 나만의코스 기능 (3배속)
+[![서울로 AI 시연영상](https://img.youtube.com/vi/RV52gQDhmHY/maxresdefault.jpg)](https://youtu.be/RV52gQDhmHY?si=HnIQZoENgQ7e65H2)
 
- ![코스 생성 데모](docs/assets/demo-course.gif) 
+
 
 ---
 
@@ -271,8 +273,6 @@ uv run python -m scripts.profile_diversity --stage retrieve    # 다양성·개�
 uv run python -m scripts.normalize_places --check              # 장소 데이터 스키마 검증
 ```
 
-> **임베딩 프로바이더를 바꾸면 새 컬렉션에 전체 재인제스트가 필수다.** 모델이 다르면 벡터 공간이
-> 달라 거리가 의미를 잃고, 차원부터 어긋나 Chroma 가 에러를 낸다. 임베딩 모델과 컬렉션은 1:1.
 
 ---
 
