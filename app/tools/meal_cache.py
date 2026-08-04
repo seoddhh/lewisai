@@ -1,6 +1,8 @@
-"""식당 권역 캐시 — Visit Seoul 식당 api를 권역별로 미리 받아 필요한 스키마만 저장해놓았
-이유: Visit Seoul 상세 API 로 조회하면 rate limit(~1.4 req/s) 때문에 최대 수십 초가 걸리기 때문에
-레이턴시가 20초~40초 가량 늘어난다
+"""동네별로 미리 받아둔 식당 목록을 읽는다.
+
+코스를 만들 때마다 Visit Seoul 을 부르면, 호출 제한 때문에 20~40초가 더 걸린다.
+그래서 미리 받아 파일로 구워두고 실행 중에는 그 파일만 읽는다.
+캐시를 굽는 건 scripts/build_meal_cache.py 가 한다.
 """
 from __future__ import annotations
 
@@ -17,7 +19,7 @@ logger = logging.getLogger("lewisai.meal_cache")
 
 
 def meal_card(detail: VsDetail, kind: str) -> dict:
-    """식당 스키마"""
+    """Visit Seoul 응답에서 필요한 값만 뽑아 식당 카드 하나로 만든다."""
     return {
         "title": detail.title,
         "summary": detail.summary or detail.description[:100],
@@ -35,9 +37,9 @@ def _cache_dir() -> Path:
 
 @lru_cache(maxsize=None)
 def load_area_pool(area: str) -> tuple[dict, ...]:
-    """권역 이름 → 캐시된 식당 카드들. 파일이 없으면 빈 튜플.
+    """그 동네의 캐시 파일을 읽는다. 파일이 없으면 빈 값을 준다.
 
-    lru_cache 로 프로세스당 파일을 한 번만 읽는다. 반환은 읽기 전용으로 다룰 것.
+    한 번 읽으면 계속 재사용하므로, 돌려받은 값을 고치면 안 된다.
     """
     path = _cache_dir() / f"{area}.json"
     if not path.exists():
@@ -51,9 +53,9 @@ def load_area_pool(area: str) -> tuple[dict, ...]:
 
 
 def pool_for_stops(stops: list[dict]) -> list[dict]:
-    """스톱들의 최근접 권역 캐시를 합친 식당 풀 (제목 기준 중복 제거).
+    """장소들이 속한 동네의 캐시를 합쳐 식당 목록을 만든다. 이름이 겹치면 하나만 남긴다.
 
-    각 스톱이 속한 권역만 읽으므로, 코스가 여러 권역에 걸쳐도 필요한 만큼만 로드한다.
+    코스가 여러 동네에 걸쳐 있어도 실제로 쓰이는 동네만 읽는다.
     """
     areas = {
         nearest_chip(s["lat"], s["lng"])

@@ -1,31 +1,25 @@
-"""AgentState — LangGraph 노드 간 공유 상태."""
+"""노드들이 주고받는 공유 상태. 각 노드가 여기에 자기 결과를 채워 넣는다."""
 from __future__ import annotations
 
 from typing import Any, TypedDict
 
 
 class AgentState(TypedDict, total=False):
-    # 진입 — 둘 중 하나로 들어온다. req 가 있으면 칩 진입(parse_intent 무동작),
-    # message 만 있으면 자연어 진입(parse_intent 가 req 를 만든다).
-    message: str            # 자연어 입력 (/agent/chat)
-    req: dict[str, Any]     # 구조화된 요청 (parse_intent 결과 또는 어댑터 주입)
+    # ── 들어올 때 ── 둘 중 하나로 들어온다
+    message: str            # 사용자가 쓴 문장
+    req: dict[str, Any]     # 칩으로 들어온 요청. 없으면 parse_intent 가 문장을 보고 만든다
 
-    # course 파이프라인 중간 상태
-    # 칩은 상태로 들고 다니지 않는다 — 각 노드가 필요할 때 req["chips"] 를 _chips() 로
-    # 파싱한다(단일 출처). 예전엔 plan/retrieve 가 chips 를 상태에도 썼는데 읽는 곳이 없었다.
-    # 시간 골격 — 칩만으로 만든 하루의 뼈대 (식사 앵커 + 장소 구간). plan 노드 산출물.
-    # retrieve 보다 먼저 확정되므로 select 프롬프트에 실어 LLM 이 구간을 알고 고르게 한다.
-    skeleton: dict[str, Any]
-    candidates: list[dict]      # RAG 후보 장소 (정규화된 dict[], 권역 분산 시 day_hint 포함)
-    day_areas: dict[int, str]   # 일차 → 권역 (여행자 멀티데이 + 위치 상관없음일 때만)
-    selected: list[dict]        # AI 가 고른 장소 dict[] (+reason/activities)
-    congestion: dict[str, str]  # name → 방문 시각 예상 혼잡도 레벨(예보)
-    nearby: dict[str, dict]     # name → {restaurants:[], attractions:[]} (Visit Seoul)
-    meal_pool: list[dict]       # 식사 후보 풀 (meal_cache 권역 캐시 — meals 노드가 채움)
-    schedule: list[dict]        # 시간표 슬롯 (place|meal|flex) — 시간 범위 요청일 때만 채워짐
-    # 폴리라인·실경로 거리는 서버가 만들지 않는다 (strangemap courseRouting.ts 담당).
-    # 단, 시간 범위 요청(schedule)에선 방문 순서·시각을 서버가 확정한다.
+    # ── 만들어지는 중간 결과 ──
+    # 칩은 여기 담아 두지 않는다. 필요한 노드가 그때그때 req["chips"] 를 읽는다.
+    skeleton: dict[str, Any]    # 하루의 시간 뼈대(식사 시각 + 장소가 들어갈 구간). plan 이 만든다
+    candidates: list[dict]      # 검색으로 찾은 후보 장소들
+    day_areas: dict[int, str]   # 며칠째에 어느 동네인지. 날짜별로 동네를 나눴을 때만 채워진다
+    selected: list[dict]        # AI 가 고른 장소들. 고른 이유와 할 일이 같이 들어 있다
+    congestion: dict[str, str]  # 장소 이름 → 방문 시각의 예상 혼잡도
+    nearby: dict[str, dict]     # 장소 이름 → 주변 식당·행사
+    meal_pool: list[dict]       # 식사 슬롯에 넣을 식당 후보들
+    schedule: list[dict]        # 시간표. 시간 범위가 정해진 요청에서만 채워진다
 
-    # 출력
-    result: dict[str, Any]  # 최종 응답 payload (기능별 스키마로 직렬화 가능)
-    source: str             # ai | mock
+    # ── 나갈 때 ──
+    result: dict[str, Any]  # 프론트에 보낼 최종 응답
+    source: str             # ai | mock — AI 가 만든 것인지 임시 데이터인지

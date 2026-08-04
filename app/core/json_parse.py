@@ -1,4 +1,7 @@
-"""LLM 텍스트 출력에서 JSON을 안전하게 파싱하는 코드
+"""AI 가 답한 텍스트에서 JSON 을 꺼낸다.
+
+"JSON 으로만 답하라"고 해도 앞뒤에 설명을 붙이거나 ```json 으로 감싸서 답할 때가 있어서,
+그냥 json.loads 만으로는 안 된다.
 """
 from __future__ import annotations
 
@@ -8,12 +11,17 @@ from typing import Any
 
 
 def _strip_fences(text: str) -> str:
+    """```json ... ``` 으로 감싼 코드블록이면 껍데기를 벗긴다."""
     text = text.strip()
     fence = re.match(r"^```[a-zA-Z]*\s*(.*?)\s*```$", text, re.DOTALL)
     return fence.group(1).strip() if fence else text
 
 
 def _extract_balanced(text: str, open_ch: str, close_ch: str) -> str | None:
+    """첫 여는 괄호부터 짝이 맞는 닫는 괄호까지를 잘라낸다.
+
+    문자열 안에 든 괄호는 세지 않는다(따옴표 안이면 건너뛴다).
+    """
     start = text.find(open_ch)
     if start == -1:
         return None
@@ -42,6 +50,7 @@ def _extract_balanced(text: str, open_ch: str, close_ch: str) -> str | None:
 
 
 def parse_json_object(text: str) -> dict[str, Any]:
+    """텍스트에서 JSON 객체 하나를 꺼낸다. 그대로 안 되면 `{...}` 부분만 잘라 다시 시도한다."""
     candidate = _strip_fences(text)
     try:
         return json.loads(candidate)
@@ -54,11 +63,10 @@ def parse_json_object(text: str) -> dict[str, Any]:
 
 
 def salvage_objects(text: str) -> list[dict[str, Any]]:
-    """잘린(truncated) JSON 에서 **완결된 `{...}` 객체만** 최대한 건져낸다.
+    """중간에 잘린 JSON 에서 온전한 객체만 골라 건진다.
 
-    LLM 이 토큰 한도로 응답을 중간에 끊으면 전체 JSON 은 깨지지만, 그 앞에 이미
-    완성된 객체(예: stop 하나)는 온전하다. 중첩된 미완결 객체는 건너뛰고 balanced 한
-    조각만 순차로 파싱해, 마지막 잘린 객체 하나만 잃고 나머지는 이유·행동까지 보존한다.
+    AI 답변이 길이 제한으로 끊기면 JSON 전체는 깨지지만, 그 앞쪽 객체들은 멀쩡하다.
+    이걸 건지면 마지막 하나만 잃고 나머지 장소는 살릴 수 있다.
     """
     text = _strip_fences(text)
     out: list[dict[str, Any]] = []

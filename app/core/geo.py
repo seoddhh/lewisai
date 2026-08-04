@@ -1,9 +1,7 @@
-"""좌표 유틸 + 서울로 위치 칩 ↔ 지리 정보 매핑.
+"""좌표 계산과 지역 칩(동네) 관련 도구 모음.
 
-**실경로 폴리라인 로직은 여기에 없다.** 방문 순서는 AI 서버(스케줄러·장소 선정)가 확정하고,
-strangemap 프론트(`src/lib/courseRouting.ts`)는 그 순서 위에서 실제 도로 경로(폴리라인)만
-그린다. 여기 남은 haversine 거리 계산은 반경 필터·최근접 매칭(직선거리 근사) 용도다:
- - Visit Seoul 주변 검색의 반경 필터 (목록 API 에 지리 필터가 없다)
+여기 있는 거리 계산은 전부 직선거리다. "이 반경 안에 있나", "어느 동네에 가까운가"를
+따지는 용도라 그걸로 충분하다. 실제 도로 경로는 프론트가 그린다.
 """
 from __future__ import annotations
 
@@ -13,7 +11,7 @@ from dataclasses import dataclass
 
 
 def haversine_km(a_lat: float, a_lng: float, b_lat: float, b_lng: float) -> float:
-    """두 좌표 사이 직선거리(km). 반경 필터·최근접 매칭 전용 (경로 거리가 아니다)."""
+    """두 좌표 사이의 직선거리(km). 실제로 걸어가는 거리가 아니라 지도 위 직선거리다."""
     R = 6371.0
     d_lat = math.radians(b_lat - a_lat)
     d_lng = math.radians(b_lng - a_lng)
@@ -82,13 +80,13 @@ _DISTRICT_RE = re.compile(r"([가-힣]+구)")
 
 
 def chip_of_address(address: str | None) -> str | None:
-    """주소 문자열의 자치구 → 9권역 칩 이름. 자치구가 없거나 미등록이면 None.
+    """주소에서 자치구를 찾아 지역 칩 이름으로 바꾼다. 못 찾으면 None.
 
-    이게 area 의 1차 정답이다 — 좌표 nearest_chip 보다 우선한다.
+    장소의 area 는 이 방식으로 정하는 게 맞다. 좌표로 가까운 칩을 찾는 것보다 정확하다
+    (강 건너 동네가 더 가까울 수 있다).
 
-    **런타임 호출부는 없다(참조용).** 임베딩 빌드 파이프라인을 폐기한 뒤
-    `data/embed/places.json` 이 소스오브트루스가 됐으므로, 장소를 손으로 추가할 때
-    그 레코드의 `area` 를 무엇으로 둘지 정하는 기준이 위 DISTRICT_TO_CHIP 표와 이 함수다.
+    지금 실행 중에 부르는 곳은 없다. places.json 에 장소를 손으로 추가할 때
+    area 를 무엇으로 둘지 정하는 기준으로 참고하는 함수다.
     """
     if not address:
         return None

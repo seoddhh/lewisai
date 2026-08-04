@@ -1,9 +1,10 @@
-"""서울 실시간 도시데이터(citydata)의 문화행사 — 스톱이 속한 명소의 '지금 하는' 행사.
+"""장소에서 지금 하고 있는 문화행사를 가져온다.
 
-왜 Visit Seoul 이 아니라 여기인가: Visit Seoul 축제공연행사 목록에는 몇 해 전 행사도
-그대로 남아 있어 지난 행사를 걸러내야 한다. citydata 는 서울 주요 명소(~122곳)의
-**실시간** 문화행사(EVENT_STTS)를 주므로, 지금 진행 중인 행사만 자연스럽게 나온다.
-혼잡도(congestion.py)와 같은 API라 별도 인증이 필요 없다 (seoul_api_key 공유).
+Visit Seoul 대신 서울시 실시간 API 를 쓰는 이유는, Visit Seoul 목록에는 몇 해 전 행사도
+그대로 남아 있어서 지난 것을 일일이 걸러내야 하기 때문이다.
+이쪽은 지금 진행 중인 행사만 주므로 그럴 필요가 없다.
+
+혼잡도(congestion.py)와 같은 API 라 키도 같이 쓴다.
 """
 from __future__ import annotations
 

@@ -1,20 +1,16 @@
-"""meals 노드 — 고른 끼니에 실제 식당 후보를 붙인다.
+"""고른 끼니마다 실제 식당 후보를 붙인다.
 
-식사는 목적 칩이 아니라 별도 축이므로 임베딩(places.json)이 아니라
-`data/meal_cache/` 권역 캐시(1,234곳)에서 온다. 파일 읽기라 네트워크 왕복이 없다.
+식당은 코스 장소와 달리 검색으로 찾지 않고, 미리 구워둔 `data/meal_cache/` 에서 읽는다.
+파일을 읽는 것뿐이라 네트워크를 안 탄다.
 
-## 왜 거리 제약 + 랜덤인가
+## 가까운 곳 중에서 무작위로 뽑는 이유
 
-이전 규칙은 "앵커 1.5km 안 거리순 상위 3곳" 이었다. 같은 권역·같은 앵커면
-**결정적으로 늘 같은 답**이 나와서 "항상 같은 식당만 나온다" 는 체감의 원인이었다.
+거리순으로 위에서 3곳을 자르면 같은 동네에서는 늘 같은 식당만 나온다.
+그렇다고 동네 전체에서 무작위로 뽑으면, 동네가 넓어서(홍대·마포는 끝에서 끝까지 11km)
+홍대에서 점심 먹는데 은평구 식당이 나올 수 있다.
 
-그렇다고 권역 전체 랜덤은 안 된다 — 권역이 너무 넓다 (실측 중심~최원거리:
-홍대·마포 11.0km · 강북·성북 9.2km · 성수·건대 8.7km). 홍대에서 점심인데
-은평구 식당이 나올 수 있다.
-
-그래서 **반경 안에서 뽑되 그 안에서는 랜덤**이다. 실측 재고(임의 장소 120곳 기준
-1.5km 안 중앙값): 점심 28곳 · 저녁 28곳 · 아침 8곳. 점심·저녁은 랜덤 뽑기에
-충분하고, 아침만 얇아 3km 폴백이 필요하다.
+그래서 걸어갈 만한 거리 안에서 고르되, 그 안에서는 무작위로 뽑는다.
+아침은 여는 곳이 적어서 반경을 넓혀야 할 때가 많다.
 """
 from __future__ import annotations
 
@@ -32,10 +28,10 @@ from app.tools.visitseoul import KIND_BAR, KIND_CAFE, KIND_RESTAURANT
 logger = logging.getLogger("lewisai.meals")
 
 OPTIONS_PER_MEAL = 3
-RADIUS_NEAR_KM = 1.5      # 걸어갈 만한 거리 — 우선
-RADIUS_FAR_KM = 3.0       # 못 채울 때만 (아침은 재고가 얇아 자주 여기까지 간다)
+RADIUS_NEAR_KM = 1.5      # 걸어갈 만한 거리. 여기서 먼저 찾는다
+RADIUS_FAR_KM = 3.0       # 위에서 못 채웠을 때만 넓힌다 (아침에 자주 여기까지 간다)
 
-# 끼니별 구성 — (종류, 개수). 해당 종류가 반경 안에 없으면 식당으로 메운다.
+# 끼니마다 어떤 종류를 몇 곳씩 넣을지. 그 종류가 근처에 없으면 일반 식당으로 채운다.
 RECIPE: dict[str, tuple[tuple[str, int], ...]] = {
     "아침": ((KIND_RESTAURANT, 2), (KIND_CAFE, 1)),
     "점심": ((KIND_RESTAURANT, 2), (KIND_CAFE, 1)),
@@ -46,7 +42,7 @@ _HOUR = re.compile(r"(\d{1,2})\s*[:시]")
 
 
 def _open_at(card: dict, hour: int) -> bool:
-    """use_time 원문으로 그 시각 영업 여부를 판정. 파싱 불가면 통과시킨다."""
+    """운영시간 문구를 보고 그 시각에 문을 여는지 본다. 읽어낼 수 없으면 통과시킨다."""
     hits = _HOUR.findall(card.get("use_time") or "")
     if not hits:
         return True
@@ -58,7 +54,7 @@ def _open_at(card: dict, hour: int) -> bool:
 
 def _pick(pool: list[dict], anchor: dict, used: set[str], label: str,
           radius_km: float, rng: random.Random) -> list[dict]:
-    """반경 안에서 끼니 구성대로 랜덤 선택. 구성이 안 되면 식당으로 메운다."""
+    """반경 안에서 끼니 구성(RECIPE)대로 무작위로 뽑는다. 구성이 안 되면 일반 식당으로 채운다."""
     hour = MEAL_TIMES[label]
     by_kind: dict[str, list[dict]] = {}
     for r in pool:
@@ -83,7 +79,7 @@ def _pick(pool: list[dict], anchor: dict, used: set[str], label: str,
 
 def _options_for(pool: list[dict], anchor: dict | None, used: set[str],
                  label: str, rng: random.Random) -> list[dict]:
-    """앵커 주변 후보 — 1.5km 를 먼저 보고 3곳을 못 채울 때만 3km 로 넓힌다."""
+    """기준 장소 주변에서 식당을 찾는다. 가까운 반경부터 보고, 모자랄 때만 넓힌다."""
     if not anchor or anchor.get("lat") is None:
         return []
     options: list[dict] = []
@@ -96,7 +92,7 @@ def _options_for(pool: list[dict], anchor: dict | None, used: set[str],
 
 
 async def meals_node(state: AgentState) -> dict:
-    """시간표의 식사 슬롯에 실제 식당 후보를 채운다. 끼니 미선택이면 즉시 반환."""
+    """시간표의 식사 자리에 실제 식당 후보를 채운다. 끼니를 안 골랐으면 아무것도 안 한다."""
     schedule = state.get("schedule", [])
     meal_slots = [s for s in schedule if s.get("slot_type") == "meal"]
     if not meal_slots:
@@ -105,9 +101,9 @@ async def meals_node(state: AgentState) -> dict:
     selected = state.get("selected", [])
     if not selected:
         return {}
-    _chips(state)  # 칩 파싱 실패 로깅 유지
+    _chips(state)  # 칩이 이상하면 여기서 로그가 남는다
 
-    # 코스가 걸친 권역의 캐시만 합친다 (제목 중복 제거)
+    # 코스가 걸쳐 있는 동네의 캐시만 합친다. 이름이 겹치는 식당은 하나만 남긴다
     pool: list[dict] = []
     seen_title: set[str] = set()
     for area in {nearest_chip(s["lat"], s["lng"]) for s in selected
@@ -117,13 +113,14 @@ async def meals_node(state: AgentState) -> dict:
                 seen_title.add(card["title"])
                 pool.append(card)
 
-    rng = random.Random()          # 완전 랜덤 — 같은 요청도 매번 다른 식당이 나온다
-    used: set[str] = set()         # 한 코스 안에서는 중복 없음
+    rng = random.Random()          # 시드를 안 준다. 같은 요청이어도 식당은 매번 달라진다
+    used: set[str] = set()         # 한 코스 안에서 같은 식당이 두 번 나오지 않게
     by_day_place = [s for s in schedule if s.get("slot_type") == "place"]
     name_to_stop = {s["name"]: s for s in selected}
 
     for slot in meal_slots:
-        # 앵커 = 같은 날, 이 식사 직전 장소. 없으면 직후 장소, 그것도 없으면 아무 장소
+        # 어디를 기준으로 찾을지 정한다. 같은 날 이 식사 바로 앞 장소가 1순위,
+        # 없으면 바로 뒤 장소, 그것도 없으면 그날 아무 장소나 쓴다.
         day = slot.get("day")
         same_day = [p for p in by_day_place if p.get("day") == day]
         before = [p for p in same_day if p["start_time"] <= slot["start_time"]]

@@ -1,3 +1,4 @@
+"""코스만 만드는 단순 API. 챗 형태가 아니라 코스 결과만 필요할 때 쓴다."""
 from fastapi import APIRouter
 
 from app.features.course.chain import run

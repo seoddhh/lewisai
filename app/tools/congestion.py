@@ -1,8 +1,8 @@
-"""서울 혼잡도 — 현재값 + 시간대별 예보 (citydata_ppltn). RAG 아님, 매 호출 직접 fetch.
+"""서울시 API 로 장소 혼잡도를 가져온다. 지금 혼잡도와 앞으로 12시간 예보를 같이 준다.
 
-코스는 "미래에 방문할 곳"이라 현재 혼잡도가 아니라 **방문 시각의 예보**(FCST_PPLTN)를
-써야 의미가 맞는다 (예: 오후 2시에 짠 7시 코스 → 7시 예상 혼잡도). 예보는 현재값과 같은
-응답에 실려 온다(12시간, 시(時)단위)라 추가 왕복이 없다. 5분 TTL 캐시.
+코스는 앞으로 갈 곳이라, 지금 혼잡한지보다 갈 시간에 혼잡할지가 중요하다
+(오후 2시에 짠 저녁 7시 코스라면 7시 예보를 봐야 한다).
+예보가 같은 응답에 실려 오므로 따로 부를 필요는 없다. 결과는 5분간 캐시한다.
 """
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ _TTL = 5 * 60  # 5분
 
 
 async def _fetch(area_name: str) -> dict | None:
-    """citydata_ppltn 원본 item(현재값 + FCST_PPLTN 예보) — 5분 캐시. 실패/미등록 시 None."""
+    """API 응답을 그대로 가져온다. 5분간 캐시하고, 실패하거나 등록 안 된 지점이면 None."""
     s = get_settings()
     if not s.seoul_api_key or not area_name:
         return None

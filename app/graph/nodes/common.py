@@ -1,4 +1,7 @@
+"""사용자가 쓴 문장에서 코스 조건을 뽑아내, 칩과 같은 모양으로 만든다.
 
+이렇게 해두면 뒤에 오는 노드들이 칩으로 들어왔는지 문장으로 들어왔는지 신경 쓰지 않아도 된다.
+"""
 from __future__ import annotations
 
 from langchain_core.prompts import ChatPromptTemplate
@@ -39,14 +42,15 @@ _PARSE_PROMPT = ChatPromptTemplate.from_messages(
     ]
 )
 
-# 파싱된 시간대 표현 → 시간 범위(시). 칩(schema._TIME_SLOT_WINDOWS)에 없는 '저녁'도 처리.
+# 시간대를 가리키는 말 → 몇 시부터 몇 시까지인지.
+# 칩에는 없지만 사람들이 흔히 쓰는 '저녁'도 여기 넣어둔다.
 _TIME_WORD_WINDOWS: dict[str, tuple[int, int]] = {
     "오전": (9, 12), "오후": (12, 18), "저녁": (18, 22), "밤": (18, 23),
 }
 
 
 def _synth_chips(data: dict) -> dict:
-    """자연어 추출 결과 → 칩과 같은 형태. 이후 파이프라인이 칩/자연어 구분 없이 한 갈래로 돈다."""
+    """문장에서 뽑아낸 값들을 칩과 같은 모양으로 바꾼다."""
     chips: dict = {}
     ts, te = data.get("time_start"), data.get("time_end")
     if isinstance(ts, int) and isinstance(te, int) and 0 <= ts <= 24 and ts < te <= 28:
@@ -54,7 +58,7 @@ def _synth_chips(data: dict) -> dict:
     elif data.get("time") in _TIME_WORD_WINDOWS:
         start, end = _TIME_WORD_WINDOWS[data["time"]]
         chips["time_window"] = {"start": start, "end": end}
-    # 허용값만 통과 — 어긋난 값 하나가 칩 전체 파싱 실패(_chips 폴백)로 번지지 않게
+    # 아는 값만 통과시킨다. 이상한 값 하나 때문에 칩 전체가 버려지지 않게
     allowed = {
         "companion": set(COMPANIONS),
         "purpose": set(PURPOSE_RULES),
@@ -64,12 +68,12 @@ def _synth_chips(data: dict) -> dict:
     for key, ok in allowed.items():
         if data.get(key) in ok:
             if key in ("companion", "purpose"):
-                chips[key + "s"] = [data[key]]  # 자연어에선 하나만 추출 — 칩 스키마는 리스트
+                chips[key + "s"] = [data[key]]  # 문장에선 하나만 뽑지만, 칩은 목록이라 감싸준다
             else:
                 chips[key] = data[key]
     if isinstance(data.get("days"), int) and 1 <= data["days"] <= 6:
         chips["days"] = data["days"]
-    # 끼니 — 자연어에 식사 의도가 있을 때만. 칩 경로에선 사용자가 직접 고른다.
+    # 끼니는 문장에 먹겠다는 뜻이 드러날 때만 넣는다
     meals = [m for m in (data.get("meals") or []) if m in MEALS]
     if meals:
         chips["meals"] = meals
@@ -77,18 +81,13 @@ def _synth_chips(data: dict) -> dict:
 
 
 async def parse_intent_node(state: AgentState) -> dict:
-    """자연어 → 칩 형태로 구조화. 칩 경로(req 주입)면 아무것도 하지 않는다.
-
-    이 에이전트는 코스만 만들므로 의도 분류(router)는 없앴다 — 칩 경로에서는
-    어차피 무동작이었고, 자연어도 전부 코스 요청으로 다룬다.
-    """
-    # 어댑터 경로: req 가 이미 주입됨 → 그대로 사용
+    """사용자가 쓴 문장을 칩 모양으로 바꾼다. 이미 칩으로 들어왔으면 아무것도 안 한다."""
+    # 칩으로 들어온 요청은 그대로 쓴다
     if state.get("req"):
         return {}
     message = state.get("message", "")
 
-    # 구조화 추출 — 시간/동반/목적/끼니는 칩과 같은 자리(chips)로 합쳐서
-    # 이후 노드(plan/retrieve/select/fit_schedule)가 칩 경로와 동일한 코드로 처리한다.
+    # 실패해도 코스는 만들어야 하므로, 원문만 들고 빈 칩으로 넘어간다
     try:
         msg = await (_PARSE_PROMPT | get_llm()).ainvoke({"message": message})
         data = parse_json_object(extract_text(msg.content))

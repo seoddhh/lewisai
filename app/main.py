@@ -15,7 +15,7 @@ app = FastAPI(title="서울로 AI (lewisai) — LangGraph RAG 에이전트", ver
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 운영 시 서울로 프론트 도메인으로 제한
+    allow_origins=["*"],  # 운영에 올릴 때는 프론트 도메인만 남길 것
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -23,11 +23,11 @@ app.add_middleware(
 
 @app.middleware("http")
 async def verify_internal_token(request: Request, call_next):
-    """BFF(strangemap)만 /agent/* 를 호출하도록 공유 시크릿을 검증한다.
+    """아무나 이 서버를 부르지 못하게 막는다.
 
-    AI_SERVER_TOKEN 이 설정돼 있으면 X-Internal-Token 헤더가 일치할 때만 통과.
-    비어 있으면(로컬 개발) 검증을 건너뛴다 — 프로덕션에서만 토큰을 채운다.
-    검증 대상은 /agent/* 뿐이라 /health 프로브·정적 UI 는 토큰 없이 열린다.
+    AI_SERVER_TOKEN 을 설정해 두면, /agent 로 시작하는 요청은 헤더의 토큰이 맞아야 통과한다.
+    토큰이 비어 있으면 그냥 통과시킨다(로컬 개발용).
+    /health 와 테스트용 화면은 토큰 없이도 열린다.
     """
     token = get_settings().ai_server_token
     if token and request.url.path.startswith("/agent"):
@@ -39,7 +39,7 @@ app.include_router(health.router)
 app.include_router(course.router)
 app.include_router(chat.router)
 
-# 검증용 챗봇 UI (정적 페이지) — GET /
+# 개발 중 직접 굴려보는 테스트용 챗봇 화면. 브라우저에서 / 로 들어가면 나온다
 _STATIC_DIR = Path(__file__).resolve().parent / "static"
 app.mount("/static", StaticFiles(directory=_STATIC_DIR), name="static")
 

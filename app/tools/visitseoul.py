@@ -1,17 +1,13 @@
-"""Visit Seoul API 어댑터 (표준 콘텐츠 조회). RAG 아님 — 직접 fetch 후 주입.
+"""Visit Seoul API 를 부르는 코드.
 
-**역할 한정**: Visit Seoul 은 "코스에 이미 확정된 장소의 **주변** 정보"만 담당한다.
- - 주변 식당 (음식 카테고리)
- - 주변 문화행사·관광정보 (축제공연행사 + 문화/역사/자연/체험관광)
-코스에 들어갈 장소 자체는 RAG(seoul_places) 가 고르고, AI 가 선정 이유를 붙인다.
+여기서 가져오는 건 이미 확정된 장소의 "주변" 정보뿐이다(식당, 문화행사, 관광정보).
+코스에 들어갈 장소 자체는 벡터 검색으로 고른다.
 
-- 실제 API: https://api-call.visitseoul.net (헤더 VISITSEOUL-API-KEY 인증)
-    POST /api/v1/contents/list  (com_ctgry_sn/lang_code_id/keyword/sort_type/page_no)
-    POST /api/v1/contents/info  (cid)  — 문서엔 GET 이라 적혀 있으나 실제로는 POST
-- 키가 없으면 MockVisitSeoulClient 가 data/mock/visitseoul_sample.json 으로 응답
-  → 레포 단독 실행/테스트 가능.
-- 목록 API에 지리 필터가 없다 → 지역명을 keyword 로 좁혀 받고, 상세의 좌표/주소로
-  반경·지역 후처리 필터링한다 (search_nearby 참고).
+몇 가지 알아둘 점:
+- 상세 조회는 문서에 GET 이라고 적혀 있지만 실제로는 POST 여야 동작한다.
+- API 키가 없으면 Mock 클라이언트가 샘플 파일로 응답한다. 키 없이도 돌려볼 수 있다.
+- 목록 API 에 "이 좌표 근처" 같은 조건이 없다. 그래서 지역명을 검색어로 넣어 넉넉히
+  받아온 다음, 상세에 실린 좌표로 직접 걸러낸다(search_nearby 참고).
 """
 from __future__ import annotations
 
@@ -33,9 +29,9 @@ from app.core.geo import haversine_km
 
 logger = logging.getLogger("lewisai.visitseoul")
 
-# 표준 콘텐츠 카테고리 일련번호 (상위 카테고리 필터용).
-# 주의: 응답의 com_ctgry_sn 은 우리가 보낸 상위 코드가 아니라 **하위 코드**(예: 음식 → Cx0t8m5
-# "카페/찻집")로 돌아온다. 따라서 종류 판정은 코드가 아니라 cate_depth 문자열로 한다.
+# 카테고리 코드. 요청할 때 "이 분류만 달라"고 넣는 값이다.
+# 주의: 응답에는 우리가 보낸 코드가 아니라 하위 분류 코드가 돌아온다.
+# 그래서 받은 결과의 종류를 판정할 때는 코드가 아니라 분류 이름 문자열(cate_depth)을 본다.
 CATEGORY = {
     "문화관광": "Ca0o2d4",
     "쇼핑": "Cu8e6t5",
@@ -84,9 +80,9 @@ _MOCK_JSON = Path(__file__).resolve().parents[2] / "data" / "mock" / "visitseoul
 
 
 def classify(cate_depth: str) -> str:
-    """" 음식 > 카페/찻집" → "cafe". 대상이 아니면 빈 문자열.
+    """분류 문자열을 우리가 쓰는 종류로 바꾼다. 예: "음식 > 카페/찻집" → "cafe".
 
-    " 음식"(하위분류 없음, 실측 전체의 약 14%)은 카페·주점이 아닌 일반 식당으로 본다.
+    하위 분류 없이 "음식"이라고만 온 것은 일반 식당으로 본다. 관심 없는 분류면 빈 문자열.
     """
     parts = [p.strip() for p in (cate_depth or "").split(">")]
     if parts and parts[0] == "음식":
@@ -96,17 +92,18 @@ def classify(cate_depth: str) -> str:
     return _DEPTH_TO_KIND.get(parts[0] if parts else "", "")
 
 
-# 우리 장소명(seoul_places)을 Visit Seoul 검색어로 바꾸는 규칙.
-# 목록 API 는 제목·요약 문자열 검색이라 이름을 그대로 넣으면 헛친다:
-#   "광화문·덕수궁" 0건 → "광화문" 22건 / "남산공원" 2건 → "남산" 50건
+# 우리 장소 이름을 Visit Seoul 검색어로 바꾸는 규칙.
+# 이 API 는 단순 문자열 검색이라 이름을 통째로 넣으면 거의 안 걸린다.
+#   "광화문·덕수궁"은 0건인데 "광화문"은 22건, "남산공원"은 2건인데 "남산"은 50건.
 _KW_SPLIT = re.compile(r"[·/,()\[\]]|\s+")
 _KW_SUFFIXES = ("한옥마을", "한강공원", "카페거리", "마을", "공원", "거리", "일대", "지구", "동")
 
 
 def place_keyword(name: str) -> str:
-    """장소명 → 검색어 (첫 토큰 + 접미어 제거). 남는 글자가 2자 미만이면 안 깎는다.
+    """장소 이름을 검색어로 다듬는다. 첫 덩어리만 남기고 흔한 접미사를 뗀다.
 
-    "창덕궁·종묘"→"창덕궁", "북촌한옥마을"→"북촌", "성수동"→"성수", "명동"→"명동"(유지).
+    "창덕궁·종묘" → "창덕궁", "북촌한옥마을" → "북촌", "성수동" → "성수".
+    떼고 나서 두 글자가 안 되면 그냥 둔다("명동"은 "명동" 그대로).
     """
     core = next((p for p in _KW_SPLIT.split(name) if p), name)
     for suffix in _KW_SUFFIXES:
@@ -116,12 +113,12 @@ def place_keyword(name: str) -> str:
 
 
 def _norm_date(value: str) -> str:
-    """"2026.07.07" → "2026-07-07" (API 가 점 구분 날짜를 준다). 빈 값은 그대로."""
+    """API 가 점으로 구분해 주는 날짜를 하이픈 형식으로 바꾼다. 빈 값은 그대로 둔다."""
     return (value or "").strip().replace(".", "-")
 
 
 class VisitSeoulError(Exception):
-    """429/5xx/네트워크 등 Visit Seoul 호출 실패."""
+    """Visit Seoul 호출이 실패했을 때 나는 에러(호출 제한, 서버 오류, 네트워크 문제 등)."""
 
 
 @dataclass
@@ -222,7 +219,7 @@ class HttpVisitSeoulClient:
         )
 
     async def _throttle(self) -> None:
-        """요청 시작을 min_interval 간격으로 직렬화 (rate limit 회피)."""
+        """요청 사이에 최소 간격을 둔다. 몰아서 부르면 호출 제한에 걸린다."""
         if self._min_interval <= 0:
             return
         async with self._throttle_lock:
@@ -232,7 +229,7 @@ class HttpVisitSeoulClient:
             self._last_ts = time.monotonic()
 
     async def _request(self, method: str, path: str, **kwargs: Any) -> dict:
-        """스로틀 → 요청. 429/5xx 는 1회 재시도(백오프) 후 VisitSeoulError."""
+        """간격을 지켜 요청을 보낸다. 서버 쪽 문제로 실패하면 한 번만 다시 시도한다."""
         last: Exception | None = None
         for attempt in range(2):
             await self._throttle()
@@ -338,11 +335,11 @@ class HttpVisitSeoulClient:
 
 
 class MockVisitSeoulClient:
-    """data/mock/visitseoul_sample.json 기반 오프라인 클라이언트."""
+    """API 키가 없을 때 쓰는 가짜 클라이언트. 샘플 파일로 응답한다."""
 
     source = "mock"
 
-    # 픽스처는 상위 카테고리 코드를 쓰므로 실제 API 의 cate_depth 문자열로 흉내 낸다
+    # 샘플 파일에는 분류 이름이 없고 코드만 있어서, 실제 API 가 주는 형태로 흉내 낸다
     _CODE_TO_DEPTH = {
         CATEGORY["음식"]: " 음식 > 한식",
         CATEGORY["축제공연행사"]: " 축제/공연/행사 > 축제",
@@ -462,7 +459,7 @@ async def _list_by_keywords(
     kinds: tuple[str, ...],
     lang: str,
 ) -> list[VsContent]:
-    """키워드별 목록을 라운드로빈으로 섞는다 — 한 키워드가 상세 예산을 독식하지 않도록."""
+    """검색어별 결과를 번갈아 가며 섞는다. 한 검색어가 결과를 다 차지하지 않게."""
     per_kw: list[list[VsContent]] = []
     for kw in keywords:
         try:
@@ -494,12 +491,12 @@ async def search_nearby(
     lang: str = "ko",
     client: BaseVisitSeoulClient | None = None,
 ) -> list[NearbyItem]:
-    """좌표 주변(radius_km 이내)의 Visit Seoul 콘텐츠를 가까운 순으로 반환.
+    """좌표 주변에 있는 것들을 가까운 순으로 찾는다.
 
-    keywords: 검색어들 — 보통 (장소명, …, 자치구). 앞쪽 키워드가 우선 예산을 받는다.
-    kinds:    restaurant | event | attraction 중 원하는 종류.
-    region_terms: 좌표가 없는 항목을 주소로 구제할 때 쓰는 자치구·동 이름.
-    budget:   상세 조회 건수 상한 (rate limit 예산).
+    keywords: 검색어들. 보통 장소 이름과 자치구를 넣는다. 앞에 둔 것이 우선한다.
+    kinds:    찾을 종류 — restaurant | event | attraction
+    region_terms: 좌표가 없는 항목을 주소로라도 건지고 싶을 때 쓰는 동네 이름들
+    budget:   상세 조회를 몇 번까지 할지. 호출 제한 때문에 무한정 부를 수 없다.
     """
     client = client or get_visitseoul_client()
     budget = budget or get_settings().visitseoul_detail_limit

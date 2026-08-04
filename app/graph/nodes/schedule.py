@@ -1,11 +1,10 @@
-"""fit_schedule 노드 — 시간 골격(plan)에 확정 장소를 앉힌다.
+"""plan 이 만든 시간 뼈대에 확정된 장소를 앉혀 시간표를 만든다.
 
-select 뒤, meals 앞에 온다. 예전에는 nearby(식당 풀) 뒤였는데, 식사가 사용자 선택이 되면서
-식당 후보는 시간표가 정해진 **뒤에** 붙이면 된다 (끼니 시각이 칩으로 이미 고정이므로).
+장소를 고른 뒤, 식당을 붙이기 전에 온다. 끼니 시각은 이미 정해져 있어서
+식당은 시간표가 나온 다음에 채워도 된다.
 
-시간 창이 없으면 아무것도 하지 않는다 (자연어 경로 등).
-
-멀티데이는 장소마다 select 가 붙인 day 로 묶어 하루씩 같은 골격으로 시간표를 만든다.
+시간 범위가 없는 요청이면 아무것도 하지 않는다.
+여러 날 코스는 날짜별로 나눠 하루씩 같은 방식으로 시간표를 만든다.
 """
 from __future__ import annotations
 
@@ -21,7 +20,7 @@ logger = logging.getLogger("lewisai.schedule")
 
 
 def _split_by_quota(stops: list[dict], quota: list[int]) -> tuple[list[list[dict]], list[dict]]:
-    """장소 목록을 구간별 배정 수대로 순서대로 자른다 → (구간별 그룹, 남은 것)."""
+    """장소 목록을 구간마다 정해진 개수만큼 앞에서부터 잘라 나눈다. 남은 것도 같이 돌려준다."""
     groups: list[list[dict]] = []
     i = 0
     for n in quota:
@@ -31,10 +30,10 @@ def _split_by_quota(stops: list[dict], quota: list[int]) -> tuple[list[list[dict
 
 
 async def fit_schedule_node(state: AgentState) -> dict:
-    """확정 장소 → 구간 예산에 맞춘 시간표 (멀티데이는 일자별).
+    """고른 장소들로 시간표를 짠다.
 
-    - selected 를 시간표 순서로 재정렬해 내보낸다 (서버가 방문 순서를 확정한다)
-    - 구간 수용 한계를 넘거나 예산이 모자란 장소는 flex(시각 없는 자유 방문 제안)
+    시간표 순서대로 장소 목록을 다시 정렬해 내보낸다. 방문 순서는 여기서 확정된다.
+    시간이 모자라 못 넣은 장소는 시각 없이 "자유 방문"으로 뺀다.
     """
     chips = _chips(state)
     selected = state.get("selected", [])

@@ -1,7 +1,7 @@
-"""Chroma 메타데이터 필터 리트리버 — 권역·목적 필터를 벡터검색 단계에서 적용한다.
+"""벡터 DB 에서 장소를 검색한다. 동네·목적 같은 조건도 검색 단계에서 같이 건다.
 
-진입점은 `search_with_score` 하나다. 점수 없는 `search()`·MMR `search_diverse()` 도
-있었지만 코스 파이프라인이 지리 재랭킹을 하려면 의미 거리가 필요해 쓰이지 않았다.
+쓰는 함수는 `search_with_score` 하나뿐이다. 코스는 검색 결과를 거리까지 따져
+다시 줄 세우기 때문에, 점수 없이 목록만 받는 함수로는 부족하다.
 """
 from __future__ import annotations
 
@@ -11,10 +11,10 @@ from app.core.vectorstore import get_vectorstore
 
 
 def _where(filters: dict | None) -> dict | None:
-    """{key: value} 또는 {key: [v1, v2]} → Chroma where 절 ($and 결합).
+    """조건 딕셔너리를 Chroma 가 알아듣는 형태로 바꾼다. 조건이 여럿이면 전부 만족해야 한다.
 
-    "$or"/"$and" 로 시작하는 키는 이미 Chroma 문법인 절로 보고 그대로 통과시킨다
-    (목적 필터처럼 "선택한 목적 중 하나라도" 조건을 걸 때 쓴다).
+    값이 목록이면 "그중 하나면 됨"이 되고, `$or` 같은 키는 이미 Chroma 문법이라 그대로 둔다
+    ("고른 목적 중 하나라도 해당" 같은 조건을 걸 때 쓴다).
     """
     if not filters:
         return None
@@ -36,9 +36,9 @@ def _where(filters: dict | None) -> dict | None:
 def search_with_score(
     query: str, k: int = 40, filters: dict | None = None
 ) -> list[tuple[Document, float]]:
-    """유사도 검색 + 점수. (doc, distance) 리스트, 거리가 작을수록 더 유사.
+    """검색어와 비슷한 장소를 점수와 함께 찾는다. 점수는 작을수록 비슷하다는 뜻이다.
 
-    코스 후처리 재랭킹(지리 근접 가중)에서 의미 유사도 점수가 필요할 때 쓴다.
+    이 점수는 나중에 거리와 섞어 후보 순서를 다시 정하는 데 쓴다.
     """
     vs = get_vectorstore()
     return vs.similarity_search_with_score(query, k=k, filter=_where(filters))
