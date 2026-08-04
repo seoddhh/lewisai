@@ -1,6 +1,4 @@
-"""장소 선정·선정 이유·방문 순서는 AI 가 확정한다 — strangemap 프론트는 그 순서 위에서
-실제 도로 경로(폴리라인)만 그린다.
-"""
+"""코스 그래프를 돌리고, 그 결과를 CourseResponse 모양으로 옮겨 담는다."""
 from __future__ import annotations
 
 from app.graph.build import run_agent
@@ -9,7 +7,10 @@ from .schema import Course, CourseRequest, CourseResponse, CourseStop
 
 
 async def run(req: CourseRequest) -> CourseResponse:
-    state = await run_agent(req={"note": req.note, "chips": req.chips.model_dump()})
+    payload: dict = {"note": req.note, "chips": req.chips.model_dump()}
+    if req.seed is not None:      # "다시 만들기". 안 주면 요청 내용으로 시드가 정해진다
+        payload["seed"] = req.seed
+    state = await run_agent(req=payload)
     result = state.get("result") or {}
     course_data = result.get("course")
     if course_data and course_data.get("stops"):
@@ -23,13 +24,11 @@ async def run(req: CourseRequest) -> CourseResponse:
             scheduled=course_data.get("scheduled", False),
             days=course_data.get("days", 1),
             day_areas=course_data.get("day_areas", {}),
-            # 멀티데이 일차별 설명 — compose 가 만들어 두는데 여기서 흘려버리고 있었다
-            # (그래프 payload/`/agent/chat` 에는 실려 나가고 이 라우트만 빈 객체였다)
             day_descriptions=course_data.get("day_descriptions", {}),
         )
         return CourseResponse(course=course, source=result.get("source", "ai"))
 
-    # 그래프가 결과를 못 만든 경우 최소 폴백
+    # 그래프가 코스를 못 만들었을 때 내보낼 빈 응답
     return CourseResponse(
         course=Course(title="서울 추천 코스", stops=[], tags=["코스"]),
         source="mock",

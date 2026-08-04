@@ -1,23 +1,20 @@
-"""LangGraph StateGraph 조립 + 컴파일(싱글턴) — 서울 코스 생성 에이전트.
+"""코스를 만드는 단계들을 순서대로 이어 붙이는 곳(LangGraph). 그래프는 한 번만 만들어 재사용한다.
 
-흐름:
-  START → parse_intent → plan → retrieve → select_places
-        → fit_schedule → meals → enrich → nearby → compose → END
+  parse_intent → plan → retrieve → select_places
+  → fit_schedule → meals → enrich → nearby → compose
 
-각 단계가 왜 그 자리인지:
-  - plan          칩만으로 시간 골격(식사 앵커 + 장소 구간)을 만든다. 순수 계산이라 맨 앞.
-                  이 골격이 select 프롬프트로 들어가 LLM 이 구간을 알고 장소를 고른다.
-  - fit_schedule  구간 예산에 맞춰 장소를 앉히고 방문 순서·시각을 확정한다.
-  - meals         고른 끼니에 실제 식당 후보를 붙인다. 시간표가 정해진 뒤라야 앵커가 잡힌다.
-  - enrich        방문 시각을 알아야 그 시(時)의 혼잡도 예보를 붙일 수 있다.
-  - nearby        스톱 주변 카드(식당·행사). 최종 payload 에만 쓰여 마지막.
+순서가 이런 이유:
+  - plan          칩만 보고 시간 뼈대(식사 시각·장소가 들어갈 구간)를 짠다. 계산만 하므로 맨 앞.
+                  이 뼈대를 AI 에게 같이 줘야 구간에 맞는 장소를 고른다.
+  - retrieve      뼈대에 맞는 후보 장소를 검색해 온다.
+  - select_places AI 가 후보 중에서 실제로 갈 곳을 고르고 이유를 쓴다.
+  - fit_schedule  고른 장소를 시간에 앉혀 방문 순서와 시각을 확정한다.
+  - meals         정해진 식사 시각 주변에서 실제 식당을 찾는다. 시간표가 나온 뒤라야 가능하다.
+  - enrich        방문 시각을 알아야 그 시간대의 예상 혼잡도를 붙일 수 있다.
+  - nearby        장소 주변 식당·행사 카드. 마지막 응답에만 쓰이므로 맨 뒤.
+  - compose       코스 제목과 소개 문구를 쓴다.
 
-에이전트의 임무는 사용자 맞춤코스 생성이다. 잡담 분기(chitchat)는 제거했다 — 클라이언트에
-잡담 입력창이 없고, 칩 경로에서는 router 가 어차피 무동작이었다. 그래프 밖에 남겨뒀던
-`/agent/chitchat` 라우트도 삭제했다(2026-07-30) — 아무도 호출하지 않는 죽은 코드였다.
-
-지도 폴리라인·실경로 거리는 서버가 만들지 않는다 (strangemap courseRouting.ts 담당).
-단, 방문 순서·시각은 서버가 확정한다.
+방문 순서와 시각까지는 서버가 정한다. 지도에 그릴 실제 경로와 거리는 프론트 담당이다.
 """
 from __future__ import annotations
 
@@ -71,10 +68,9 @@ def get_agent_graph():
 async def run_agent(
     *, message: str | None = None, req: dict | None = None
 ) -> dict[str, Any]:
-    """그래프 1회 실행. 자연어(message) 또는 어댑터(req) 진입 모두 지원.
+    """그래프를 한 번 돌린다. 사용자가 쓴 문장(message)이나 칩(req) 중 하나를 넣어 준다.
 
-    의도(intent) 인자는 없앴다 — 라우터를 제거한 뒤 읽는 곳이 없었고, 칩/자연어 분기는
-    parse_intent 가 `req` 유무로 판정한다.
+    둘 중 뭘로 들어왔는지는 parse_intent 가 req 유무로 판단한다.
     """
     state: dict[str, Any] = {}
     if message is not None:
@@ -84,8 +80,9 @@ async def run_agent(
     return await get_agent_graph().ainvoke(state)
 
 
-# ── 코스 생성 과정 노출 (칩/자연어 → 실제 장소가 어떻게 나왔는지) ────────────
+# ── 코스가 만들어진 과정을 챗봇에 보여주기 위한 부분 ──────────────────────────
 
+# 단계 이름 → 사용자에게 보여줄 문구
 COURSE_STEP_LABELS: dict[str, str] = {
     "plan": "시간 골격 구성 (식사 시각·장소 구간)",
     "retrieve": "후보 장소 검색 (RAG)",
@@ -99,7 +96,9 @@ COURSE_STEP_LABELS: dict[str, str] = {
 
 
 def course_steps(state: dict[str, Any]) -> list[dict[str, Any]]:
-    """최종 상태 → 챗봇에 보여줄 생성 단계에서의 장소선택 이유
+    """각 단계에서 무슨 일이 있었는지를 목록으로 만든다. 챗봇이 이걸 그대로 보여준다.
+
+    특히 select_places 단계에는 어떤 장소를 왜 골랐는지(picks)가 들어간다.
     """
     selected = state.get("selected", [])
     nearby = state.get("nearby", {})
@@ -155,11 +154,7 @@ def _schedule_detail(schedule: list[dict]) -> str:
 
 
 def _payload(state: dict[str, Any]) -> dict[str, Any]:
-    """그래프 최종 상태 → chat 응답 payload.
-
-    course: stops[] (name/lat/lng/reason/activities/nearby) + 생성 단계 트레이스.
-    이 에이전트는 코스만 만든다 — 잡담 분기는 그래프에서 제거했다.
-    """
+    """그래프가 끝난 상태를 API 응답 모양으로 바꾼다."""
     result = state.get("result") or {}
     return {
         "kind": "course",
@@ -169,24 +164,32 @@ def _payload(state: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-async def run_course(note: str, chips: dict[str, Any]) -> dict[str, Any]:
-    """칩(+자연어) → 코스 (결정적 진입)."""
-    return _payload(await run_agent(req={"note": note, "chips": chips}))
+async def run_course(note: str, chips: dict[str, Any], *,
+                     seed: int | None = None) -> dict[str, Any]:
+    """칩으로 코스를 만든다.
+
+    seed 는 후보를 뽑을 때의 무작위성만 정한다. 안 주면 칩 내용으로 정해져서
+    같은 요청에는 같은 코스가 나오고, 주면 그 값에 따라 다른 코스가 나온다.
+    """
+    req: dict[str, Any] = {"note": note, "chips": chips}
+    if seed is not None:
+        req["seed"] = seed
+    return _payload(await run_agent(req=req))
 
 
 async def run_chat(message: str) -> dict[str, Any]:
-    """자연어 → 코스. parse_intent 가 칩 형태로 구조화한 뒤 같은 파이프라인을 탄다."""
+    """사용자가 쓴 문장으로 코스를 만든다. parse_intent 가 문장을 칩 모양으로 바꾼 뒤 같은 길을 탄다."""
     return _payload(await run_agent(message=message))
 
 
 async def _stream(initial: dict[str, Any]) -> AsyncIterator[dict[str, Any]]:
-    """그래프 진행 상황/최종 payload 이벤트를 순서대로 yield.
+    """단계가 하나 끝날 때마다 진행 상황을, 다 끝나면 최종 결과를 내보낸다.
 
-    이벤트 종류(event):
-      - progress: {"stage": plan|retrieve|select_places|fit_schedule|meals|enrich|nearby|compose}
-      - final:    {"payload": {...}} 최종 구조화 응답(코스/steps 렌더링용).
+    보내는 이벤트는 두 가지다.
+      - progress: 어느 단계가 끝났는지
+      - final:    완성된 코스 전체
 
-    코스는 출력이 JSON 이라 토큰을 흘리지 않는다 (잡담 분기가 없어져 token 이벤트도 사라짐).
+    코스는 결과가 JSON 이라 글자 단위로 흘려보내지 않는다. 단계별로만 알려준다.
     """
     graph = get_agent_graph()
     state: dict[str, Any] = {}
@@ -208,9 +211,17 @@ async def _updates(graph, initial: dict[str, Any]):
             yield node, patch
 
 
-async def stream_course(note: str, chips: dict[str, Any]) -> AsyncIterator[dict[str, Any]]:
-    """칩 → 코스 스트리밍."""
-    async for evt in _stream({"req": {"note": note, "chips": chips}}):
+async def stream_course(note: str, chips: dict[str, Any], *,
+                        seed: int | None = None) -> AsyncIterator[dict[str, Any]]:
+    """칩으로 코스를 만들면서 진행 상황을 내보낸다.
+
+    프론트가 실제로 쓰는 경로가 이쪽이다. run_course 를 고칠 일이 있으면 여기도 같이 봐야 한다.
+    (예전에 seed 를 여기에만 안 넘겨서 "다시 만들기"가 조용히 안 먹은 적이 있다.)
+    """
+    req: dict[str, Any] = {"note": note, "chips": chips}
+    if seed is not None:
+        req["seed"] = seed
+    async for evt in _stream({"req": req}):
         yield evt
 
 

@@ -22,32 +22,22 @@ CongestionPref = Literal["여유", "보통", "상관없음"]
 Pace = Literal["packed", "relaxed"]      # 알찬/빼곡 | 여유로운/널널 일정
 
 # ── 식사 칩 ────────────────────────────────────────────────────────────────
-# 끼니는 "목적"이 아니라 별도 축이다. 예전엔 "맛집 탐방" 목적 칩 + 시간창에 따른
-# 자동 삽입이었는데 둘 다 문제였다:
-#  - 목적으로서의 맛집 탐방은 커버리지가 73곳(9%)뿐이고 그중 17곳이 갤러리·방송국 오분류
-#  - 자동 삽입은 사용자가 통제할 수 없어, 오후(12~18시) 창이면 시작하자마자 점심이 끼고
-#    코스가 일찍 끝나도 2시간 넘게 비운 뒤 저녁이 억지로 붙었다
-# 이제 사용자가 끼니를 직접 고르고, 고른 끼니만 고정 시각에 들어간다.
-# 식사 후보는 임베딩이 아니라 data/meal_cache (권역별 1,234곳)에서 온다.
+# 끼니는 목적 칩과 별개다. 사용자가 고른 끼니만, 정해진 시각에 코스에 들어간다.
+# 식당은 검색이 아니라 data/meal_cache 에서 가져온다.
 Meal = Literal["아침", "점심", "저녁"]
 MEALS = ("아침", "점심", "저녁")
-# 고정 시각 — 실측으로 재고를 확인한 값 (밀캐시 1,234곳의 use_time 파싱):
-#   아침 10시 367곳 · 점심 13시 1,075곳 · 저녁 19시 997곳
+# 끼니가 들어가는 시각. 그 시간에 실제로 문 연 식당이 넉넉한지 확인하고 정한 값이다.
 MEAL_TIMES: dict[str, int] = {"아침": 10, "점심": 13, "저녁": 19}
 MEAL_DURATION_MIN = 60
 
-# 목적 칩 — 현지인·여행자 공통 어휘 8개 (질문 문구만 audience 별로 달라진다).
-#   기존 12개는 로컬/여행자 쌍둥이 라벨이었다. 실측(상위40 후보 중복률) 결과
-#   관광↔유명 관광지 75% · 놀거리↔체험·액티비티 50% · 문화생활↔문화·예술·역사 35% ·
-#   힐링↔자연 힐링 32% 로 사실상 같은 검색이라, 네 쌍을 병합해 8개로 통일했다.
-# 각 목적은 task 조건을 갖는다:
-#  - query : 검색 확장어 (RAG 후보 검색)
-#  - rule  : 장소 "선정" 렌즈 — 어떤 장소를 고를지 (retrieve/select 단계)
-#  - act   : 행동 "생성" 렌즈 — 그 장소에서 무엇을 하는지(activities)의 결.
-#            동반자(COMPANION_RULES)와 곱해져 같은 장소라도 목적마다 다른 행동이 나오게 한다.
-#            특정 상호가 아니라 '행동 유형'으로 써서 환각을 막는다.
-#  - slug  : 임베딩 메타데이터 키(pt_*) — 검색 단계 목적 필터에 쓴다.
-#            build_embed_dataset.PURPOSE_SEED/KEYWORDS 와 어휘가 1:1 이어야 한다.
+# 목적 칩 — 현지인·여행자가 같은 7개를 쓴다(보여주는 질문 문구만 다르다).
+# 목적 하나가 네 가지 정보를 들고 있다:
+#  - query : 후보를 검색할 때 덧붙이는 검색어
+#  - rule  : 후보 중에서 어떤 장소를 고를지 AI 에게 주는 기준
+#  - act   : 그 장소에서 뭘 할지 쓸 때의 기준. 동반자 조건과 합쳐져서,
+#            같은 장소라도 목적에 따라 다른 행동이 나온다.
+#            가게 이름 대신 행동의 종류로 써야 AI 가 없는 가게를 지어내지 않는다.
+#  - slug  : 장소 데이터에 붙어 있는 태그 이름. 검색할 때 목적으로 걸러내는 데 쓴다.
 PURPOSE_RULES: dict[str, dict] = {
     "자연·힐링": {"slug": "nature",
                "query": "조용한 산책 자연 공원 한강 숲 정원 휴식",
@@ -79,19 +69,20 @@ PURPOSE_RULES: dict[str, dict] = {
             "act": "상권·시장 둘러보기·편집숍 구경·기념품 고르기처럼 사고 구경하는 행동"},
 }
 
-# 구 12칩 → 통합 8칩 → 현행 7칩. 브라우저에 남은 옛 칩 값·자연어 파서의 옛 어휘를 흡수한다.
+# 예전에 쓰던 칩 이름들. 브라우저에 옛 값이 남아 있거나 사용자가 비슷한 말로 적어도
+# 현행 칩으로 알아듣게 해준다.
 PURPOSE_ALIASES: dict[str, str] = {
     "힐링": "자연·힐링", "자연 힐링": "자연·힐링",
     "문화생활": "문화·예술", "문화·예술·역사": "문화·예술",
     "관광": "관광 명소", "유명 관광지": "관광 명소",
     "놀거리": "체험·놀거리", "체험·액티비티": "체험·놀거리",
 }
-# 폐기된 목적 — 값이 들어와도 조용히 버린다(칩 전체 파싱 실패로 번지지 않게).
-# "맛집 탐방" 은 목적이 아니라 끼니 칩(meals)으로 분리됐다.
+# 없어진 목적. 들어와도 에러 대신 조용히 무시한다(칩 하나 때문에 요청 전체가 깨지지 않게).
+# "맛집 탐방"은 목적이 아니라 끼니 칩(meals)으로 옮겼다.
 PURPOSE_RETIRED: frozenset[str] = frozenset({"맛집 탐방", "맛집탐방"})
 
-# 동반자 칩 — 검색(장소 선정)에는 관여하지 않고, "거기서 무엇을 하는지"(activities)와
-# 선정 이유·서사의 이유로만 쓴다. 임베딩 장소가 지역구 단위(예: "잠실·송파")라 장소 태깅 대신 목적 + 동행자로 생성
+# 동반자별로 "거기서 뭘 할지"를 정하는 기준. 장소를 고르는 데는 쓰지 않고,
+# 행동·선정 이유·소개 문구를 쓸 때만 쓴다.
 # 예: 친구와 잠실 → 야구 관람·보드게임 / 연인과 잠실 → 석촌호수 산책·팝업 구경.
 COMPANION_RULES: dict[str, str] = {
     "혼자": "몰입·자유 — 사색·전시 관람·독립적으로 즐기는 활동. '함께/둘이' 표현은 쓰지 말 것.",
@@ -101,28 +92,66 @@ COMPANION_RULES: dict[str, str] = {
     "아이와": "체험·안전·교육형 — 체험학습·넓고 개방된 공간·간식. 늦은 밤·주점류는 제외.",
     "부모님과": "여유로운 속도 — 고궁·정원·전통, 앉아서 쉴 곳이 있고 이동은 최소로.",
 }
+# 동반자별로 어떤 장소를 위로 올릴지 정하는 점수. 바로 위 COMPANION_RULES 가 "무엇을 할지"를
+# 맡는다면, 이쪽은 "어떤 장소가 먼저 나올지"를 맡는다.
+#
+# 후보에서 빼는 게 아니라 점수만 더한다. 아예 걸러내면 후보가 너무 적어지기 때문이다.
+# 점수는 0~1 사이 검색 점수에 더해지므로 ±0.15 안으로 둔다.
+# 이보다 크면 거리 점수를 눌러버려서 동선이 엉킨다.
+COMPANION_WEIGHTS: dict[str, dict] = {
+    "혼자": {"energy": {"calm": 0.06}, "stay_max": None},
+    "친구와": {"energy": {"lively": 0.08}, "stay_max": None},
+    "연인과": {"energy": {"calm": 0.05}, "night_ok": 0.05, "stay_max": None},
+    "배우자와": {"energy": {"calm": 0.05}, "stay_max": None},
+    # 아이와: 날씨·화장실 때문에 실내를 선호하고, 90분 넘게 머무는 곳과 늦은 밤은 감점
+    "아이와": {"indoor": 0.08, "stay_max": 90, "stay_penalty": 0.10, "night_ok": -0.06},
+    # 부모님과: 조용하고 앉아 쉴 수 있는 곳을 위로, 늦은 밤은 감점
+    "부모님과": {"energy": {"calm": 0.08}, "night_ok": -0.05, "stay_max": None},
+}
+
+# 목적별 가점. 위와 같은 방식으로, 같은 동네라도 목적에 따라 다른 장소가 먼저 나오게 한다.
+PURPOSE_WEIGHTS: dict[str, dict] = {
+    "자연·힐링": {"indoor": -0.08, "energy": {"calm": 0.08}},
+    "문화·예술": {"indoor": 0.06, "energy": {"calm": 0.04}},
+    "체험·놀거리": {"energy": {"lively": 0.08}},
+    "핫플레이스": {"energy": {"lively": 0.08}, "night_ok": 0.04},
+    "쇼핑": {"indoor": 0.05, "energy": {"lively": 0.04}},
+    "관광 명소": {},
+    "데이트": {"energy": {"calm": 0.05}, "night_ok": 0.06},
+}
+
 Purpose = Literal[
     "자연·힐링", "문화·예술", "관광 명소", "체험·놀거리",
     "데이트", "핫플레이스", "쇼핑",
 ]
 PURPOSE_SLUGS: dict[str, str] = {p: r["slug"] for p, r in PURPOSE_RULES.items()}
+# 검색할 때 태그로 걸러낼 수 있는 목적들. "데이트"만 뺀다 —
+# 공원·고궁·전시관·쇼핑몰이 전부 데이트하기 좋은 곳이라 태그를 붙여봐야 후보가 안 좁혀진다.
+# 대신 데이트 칩은 검색어(query)와 위 가점(PURPOSE_WEIGHTS)으로 반영한다.
+FILTERABLE_PURPOSES: frozenset[str] = frozenset(PURPOSE_SLUGS) - {"데이트"}
 
 # 칩 시간대 → 시간 범위 (시). 칩보다 구체적인 time_window 가 있으면 그쪽이 우선.
 _TIME_SLOT_WINDOWS: dict[str, tuple[int, int]] = {"오전": (9, 12), "오후": (12, 18), "밤": (18, 23)}
 
 
 class TimeWindow(BaseModel):
-    """코스 시간 범위 (예: 오후 2시~8시 = start 14, end 20). end 는 자정 넘김 허용(28=새벽 4시)."""
+    """코스를 도는 시간대. 오후 2시~8시면 start=14, end=20.
+
+    자정을 넘겨도 되게 end 는 24를 넘을 수 있다(28이면 새벽 4시).
+    """
 
     start: int = Field(ge=0, le=24)
     end: int = Field(ge=1, le=28)
 
     def overlaps(self, op_start: int, op_end: int) -> bool:
-        """이 시간 범위에 운영시간(op_start~op_end)이 겹치는가. 상시(0,24)·심야(예: 5~익일1시) 대응."""
+        """가게 운영시간(op_start~op_end)이 이 시간대와 겹치는지 본다.
+
+        24시간 영업이나 새벽까지 하는 곳(예: 5시~다음날 1시)도 제대로 판단한다.
+        """
         if (op_start, op_end) == (0, 24):
             return True
         o_end = op_end if op_end > op_start else op_end + 24
-        # 자정을 넘는 구간끼리 비교할 수 있게 운영 구간을 하루 뒤로도 밀어 본다
+        # 자정을 넘는 경우를 맞추려고, 운영시간을 하루 뒤로 밀어서도 한 번 더 겹치는지 본다
         for shift in (0, 24):
             if max(op_start + shift, self.start) < min(o_end + shift, self.end):
                 return True
@@ -132,14 +161,14 @@ class TimeWindow(BaseModel):
         return f"{self.start}시~{self.end % 24}시" if self.end > 24 else f"{self.start}시~{self.end}시"
 
 
-# 여행자는 시각 선택이 없다 — 하루 전체(09~21시)를 기본 창으로 스케줄·식사 슬롯을 만든다
+# 여행자에게는 시간대를 묻지 않으므로, 하루 전체(9~21시)를 기본으로 쓴다
 _TOURIST_DAY_WINDOW = (9, 21)
 
 
 class CourseChips(BaseModel):
-    """프론트 칩 선택값. 모두 선택 사항 — 비면 자연어(note)만으로 생성한다.
+    """사용자가 위저드에서 고른 칩들. 전부 선택 사항이라, 다 비어 있으면 자유입력만으로 만든다.
 
-    companions/purposes/locations 는 중복 선택 가능 — 프론트 위저드가 여러 칩을 담아 보낸다.
+    동반자·목적·지역은 여러 개를 고를 수 있어서 목록으로 받는다.
     """
 
     audience: Audience | None = None
@@ -151,19 +180,18 @@ class CourseChips(BaseModel):
     place_count: int = Field(4, ge=3, le=5, description="장소 수 칩 (3~5곳)")
     days: int = Field(1, ge=1, le=6, description="여행 일수 (당일치기=1 ~ 5박6일=6)")
     pace: Pace | None = None
-    # 코스에 넣을 끼니 — 고른 것만 MEAL_TIMES 의 고정 시각에 들어간다. 비면 식사 슬롯 없음.
+    # 코스에 넣을 끼니. 고른 것만 정해진 시각에 들어가고, 비어 있으면 식사를 안 넣는다.
     meals: list[Meal] = Field(default_factory=list)
-    # 구체적 시간 범위 — 프론트 시간 선택 칩 또는 자연어 파싱("오후 2시부터 8시까지")에서 채워진다
+    # 시간대 칩보다 구체적인 시간. 시간 선택 칩이나 "오후 2시부터 8시까지" 같은 문장에서 채워진다.
     time_window: TimeWindow | None = None
 
     @field_validator("purposes", mode="before")
     @classmethod
     def _merge_legacy_purposes(cls, v):
-        """구 12칩 라벨을 통합 7칩으로 접어 넣고, 폐기된 목적은 버린다.
+        """옛 목적 이름을 현행 이름으로 바꾸고, 없어진 목적은 버린다.
 
-        브라우저에 캐시된 옛 위저드 답(힐링/유명 관광지/맛집 탐방 …)이나 옛 어휘로 답하는
-        자연어 파서 결과가 들어와도 칩 전체 파싱 실패로 번지지 않게 한다. 병합 후 중복 제거.
-        "맛집 탐방" 은 목적이 아니라 끼니 칩(meals)으로 분리됐으므로 조용히 탈락시킨다.
+        브라우저에 남은 옛 값이 들어와도 요청 전체가 깨지지 않게 하려는 것이다.
+        바꾸고 나서 중복은 없앤다.
         """
         if not isinstance(v, list):
             return v
@@ -174,25 +202,26 @@ class CourseChips(BaseModel):
     @field_validator("meals", mode="before")
     @classmethod
     def _clean_meals(cls, v):
-        """허용값만 통과 + 시간 순 정렬 (아침 → 점심 → 저녁)."""
+        """모르는 값은 버리고, 아침 → 점심 → 저녁 순으로 정렬한다."""
         if not isinstance(v, list):
             return v
         kept = [m for m in dict.fromkeys(v) if m in MEALS]
         return sorted(kept, key=lambda m: MEAL_TIMES[m])
 
     def resolved_window(self) -> TimeWindow | None:
-        """스케줄/운영시간 필터에 쓸 시간 범위 — 구체 범위 > 칩 시간대 > 여행자 기본 > 없음.
+        """최종적으로 쓸 시간 범위. 구체적인 시간 > 시간대 칩 > 여행자 기본값 순으로 고른다.
 
-        **고른 끼니는 창을 넓힌다.** "오후(12~18시) + 저녁" 이면 19시 식사가 창 밖이라
-        조용히 사라지는데, 저녁을 고른 사용자의 의도는 "저녁까지 있겠다" 이기 때문이다.
-        창이 아예 없으면(현지인이 시간 미선택) 끼니만으로 창을 만들지는 않는다 —
-        시간표 자체가 없는 코스이므로 식사 슬롯도 놓을 자리가 없다.
+        고른 끼니가 범위 밖이면 범위를 늘린다. "오후(12~18시)"에 "저녁"을 골랐다면
+        19시 식사가 범위 밖이라 사라져 버리는데, 저녁을 고른 사람의 뜻은
+        "저녁까지 있겠다"이기 때문이다.
+
+        범위가 아예 없으면 끼니만으로 만들지는 않는다. 시간표가 없는 코스라 넣을 자리가 없다.
         """
         w = self._base_window()
         if not w or not self.meals:
             return w
         start = min([w.start] + [MEAL_TIMES[m] for m in self.meals])
-        # 식사는 1시간 걸리므로 마지막 끼니 + 1시간까지는 창이 열려 있어야 한다
+        # 식사에 1시간이 걸리니, 마지막 끼니 시각 + 1시간까지는 범위에 들어와야 한다
         end = max([w.end] + [MEAL_TIMES[m] + MEAL_DURATION_MIN // 60 for m in self.meals])
         return TimeWindow(start=start, end=min(end, 28))
 
@@ -207,10 +236,10 @@ class CourseChips(BaseModel):
         return None
 
     def meal_slots(self) -> list[tuple[str, int, int]]:
-        """고른 끼니 → (라벨, 시작 분, 종료 분). 창 밖 끼니는 제외한다.
+        """고른 끼니를 (이름, 시작 분, 끝나는 분) 형태로 만든다. 시간 범위를 벗어난 끼니는 뺀다.
 
-        resolved_window() 가 창을 넓히므로 보통은 전부 들어오지만, time_window 를
-        직접 지정한 요청에서는 창 밖 끼니가 생길 수 있다.
+        보통은 resolved_window() 가 범위를 늘려주니 다 들어오지만,
+        시간을 직접 지정한 요청에서는 범위 밖 끼니가 생길 수 있다.
         """
         w = self.resolved_window()
         if not w or not self.meals:
@@ -223,7 +252,7 @@ class CourseChips(BaseModel):
         return out
 
     def stops_per_day(self) -> int:
-        """하루 장소 수 — 일정 밀도 칩이 있으면 그쪽이 우선 (빼곡=5, 널널=3)."""
+        """하루에 몇 곳을 갈지. 일정 밀도 칩을 골랐으면 그쪽을 따른다(빼곡 5곳, 널널 3곳)."""
         if self.pace == "packed":
             return 5
         if self.pace == "relaxed":
@@ -231,11 +260,7 @@ class CourseChips(BaseModel):
         return self.place_count
 
     def purpose_rule(self) -> dict:
-        """선택된 목적들의 task 조건을 하나로 합친다.
-
-        query·rule 은 장소 선정용, act 은 행동(activities) 생성용 렌즈.
-        여러 목적을 골랐으면 각 문장을 중복 제거해 병기한다.
-        """
+        """고른 목적들의 조건을 하나로 합친다. 여러 개를 골랐으면 문장을 이어 붙인다."""
         rules = [PURPOSE_RULES[p] for p in self.purposes if p in PURPOSE_RULES]
         if not rules:
             return {}
@@ -246,29 +271,65 @@ class CourseChips(BaseModel):
         }
 
     def purpose_slugs(self) -> list[str]:
-        """선택 목적 → 임베딩 메타 키(pt_*) 용 slug. 검색 단계 목적 필터에 쓴다."""
-        return [PURPOSE_SLUGS[p] for p in self.purposes if p in PURPOSE_SLUGS]
+        """검색할 때 태그 필터로 쓸 목적 이름들.
+
+        "데이트"는 장소에 태그를 안 붙였기 때문에 여기서 빼야 한다.
+        넣으면 아무 장소도 안 걸려서 검색이 헛돈다.
+        """
+        return [PURPOSE_SLUGS[p] for p in self.purposes if p in FILTERABLE_PURPOSES]
+
+    def rerank_weights(self) -> dict:
+        """동반자 가점과 목적 가점을 하나로 합친다. 검색 결과 순서를 조정하는 데 쓴다.
+
+        같은 항목이 겹치면 더한다. "아이와 + 문화·예술"이면 실내 가점이 두 번 쌓여서
+        실내 문화시설이 확실히 위로 온다. 너무 커지지 않게 쓰는 쪽에서 ±0.2 로 자른다.
+        """
+        out: dict = {"indoor": 0.0, "night_ok": 0.0, "energy": {}, "stay_max": None,
+                     "stay_penalty": 0.0}
+        sources = [COMPANION_WEIGHTS.get(c, {}) for c in self.companions]
+        sources += [PURPOSE_WEIGHTS.get(p, {}) for p in self.purposes]
+        for w in sources:
+            out["indoor"] += w.get("indoor", 0.0)
+            out["night_ok"] += w.get("night_ok", 0.0)
+            for energy, v in (w.get("energy") or {}).items():
+                out["energy"][energy] = out["energy"].get(energy, 0.0) + v
+            if cap := w.get("stay_max"):
+                out["stay_max"] = min(out["stay_max"] or cap, cap)
+                out["stay_penalty"] = max(out["stay_penalty"], w.get("stay_penalty", 0.0))
+        return out
 
     def companion_rule(self) -> str:
-        """선택된 동반자들의 관계 렌즈를 합쳐 activities·서사 생성에 건다 (검색엔 미관여)."""
+        """고른 동반자들의 기준을 합친다. 행동·소개 문구를 쓸 때만 쓰고 검색에는 안 쓴다."""
         return " ".join(
             dict.fromkeys(
                 COMPANION_RULES[c] for c in self.companions if c in COMPANION_RULES
             )
         )
 
-    def summary(self) -> str:
-        """프롬프트/트레이스에 넣을 한 줄 요약."""
-        window = self.resolved_window()
+    def summary(self, *, for_description: bool = False) -> str:
+        """사용자가 고른 조건을 프롬프트에 넣을 한 줄로 만든다.
+
+        for_description=True 는 코스 전체 소개글을 쓸 때만 쓴다. 소개글에 나오면
+        어색한 값(시각, 식사 없음, 시민/여행자 구분)을 아예 빼고 준다.
+        프롬프트로 "쓰지 마"라고 해도 계속 새어 나와서, 재료에서 빼는 쪽을 택했다.
+        예를 들어 "서울 시민"을 주면 AI 가 이걸 동행자로 착각해 "서울 시민인 부모님과"
+        같은 문장을 썼다.
+        """
+        window = None if for_description else self.resolved_window()
         parts = [
+            "" if for_description else
             {"local": "서울 시민", "tourist": "서울 여행자"}.get(self.audience or ""),
             f"여행 기간: {self.days}일" if self.days > 1 else "",
             f"동반: {'·'.join(self.companions)}" if self.companions else "",
             f"시간대: {self.time}" if self.time else "",
             f"시간 범위: {window.label()}" if window else "",
             f"목적: {'·'.join(self.purposes)}" if self.purposes else "",
-            (f"식사: {'·'.join(f'{m} {MEAL_TIMES[m]}시' for m in self.meals)}"
-             if self.meals else "식사: 없음"),
+            (
+                (f"식사: {'·'.join(self.meals)}" if self.meals else "")
+                if for_description
+                else (f"식사: {'·'.join(f'{m} {MEAL_TIMES[m]}시' for m in self.meals)}"
+                      if self.meals else "식사: 없음")
+            ),
             f"위치: {'·'.join(self.locations)}" if self.locations else "",
             f"혼잡도 선호: {self.congestion}" if self.congestion else "",
             {"packed": "일정: 빼곡하게", "relaxed": "일정: 여유롭게"}.get(self.pace or ""),
@@ -280,10 +341,13 @@ class CourseChips(BaseModel):
 class CourseRequest(BaseModel):
     note: str = Field("", description="자유서술 (예: 야경 보면서 데이트)")
     chips: CourseChips = Field(default_factory=CourseChips)
+    seed: int | None = Field(
+        None, description='"다시 만들기" 용. 같은 칩으로 다른 코스를 받으려면 매번 다른 값을 '
+                          "보낸다. 생략하면 칩+note 로 시드가 정해져 결과가 결정적이다.")
 
 
 class NearbyCard(BaseModel):
-    """Visit Seoul 주변 정보 카드 식당 스키마"""
+    """장소 주변에 붙는 정보 카드 하나. 식당·행사·관광지가 같은 모양을 쓴다."""
 
     title: str
     summary: str = ""
@@ -291,56 +355,61 @@ class NearbyCard(BaseModel):
     lat: float | None = None
     lng: float | None = None
     dist_km: float | None = None
-    period: str = ""       # 행사 기간 (관광지·식당은 빈 문자열)
-    use_time: str = ""
+    period: str = ""       # 행사 기간. 식당·관광지는 비어 있다
+    use_time: str = ""     # 운영시간
     kind: str = ""         # event | attraction | restaurant
 
 
 class StopNearby(BaseModel):
+    """한 장소 주변의 식당과 관광지 목록."""
+
     restaurants: list[NearbyCard] = []
     attractions: list[NearbyCard] = []
 
 
 class CourseStop(BaseModel):
-    # ── 기존 계약 (프론트 UI 동결 필드) ──
+    """코스에 들어가는 장소 한 곳. 프론트 카드 하나에 그대로 대응된다."""
+
     name: str
     preview: str = ""
     description: str = ""
     duration: str = ""
     tip: str | None = None
-    # ── 추가 계약 (좌표는 프론트 라우팅 입력, reason/activities 는 AI 선정 근거) ──
+    # 좌표는 프론트가 지도에 경로를 그릴 때 쓴다
     lat: float | None = None
     lng: float | None = None
-    reason: str = ""                # 왜 이 코스에 이 장소를 골랐는지
-    activities: list[str] = []      # 이 장소에서 무엇을 할 수 있는지
-    congestion: str | None = None   # 방문 시각(start_time)의 예상 혼잡도 레벨(예보) — UI: "18시 예상 혼잡도: 여유"
+    reason: str = ""                # 왜 이 장소를 골랐는지
+    activities: list[str] = []      # 여기서 뭘 할 수 있는지
+    congestion: str | None = None   # 방문 시각의 예상 혼잡도. 예: "18시 예상 혼잡도: 여유"
     nearby: StopNearby = Field(default_factory=StopNearby)
-    # ── 스케줄 계약 (시간 범위 요청일 때만 채워짐 — 없으면 기존 응답과 동일) ──
+
+    # 아래는 시간표가 있는 코스에서만 채워진다
     start_time: str | None = None   # "14:00"
     end_time: str | None = None     # "15:30"
     slot_type: Literal["place", "meal", "flex"] = "place"
-    day: int | None = None          # 멀티데이 코스의 N일차 (하루 코스는 None)
-    # 식사 슬롯 한정 — 앵커 장소 3km 이내 Visit Seoul 실데이터 식당 (코스 내 중복 없음)
-    meal_options: list[NearbyCard] = []
-    # 직전 스톱에서의 이동 추정 (시간표 코스 한정) — 1.5km 이내 walk, 초과 transit
+    day: int | None = None          # 며칠째인지. 하루 코스면 None
+    meal_options: list[NearbyCard] = []  # 식사 슬롯일 때 고를 수 있는 주변 식당들
+    # 직전 장소에서 여기까지 오는 데 걸리는 시간. 1.5km 안이면 걷고, 넘으면 대중교통으로 본다
     travel_min: int | None = None
     travel_mode: Literal["walk", "transit"] | None = None
 
 
 class Course(BaseModel):
+    """완성된 코스 하나. 프론트가 받는 최종 결과물이다."""
+
     title: str
     subtitle: str = ""
     description: str = ""
     stops: list[CourseStop]
     tags: list[str] = []
-    scheduled: bool = False         # True 면 stops 순서·시간이 서버가 계산한 시간표
-    days: int = 1                   # 여행 일수 — stops 의 day 필드와 함께 일자별 렌더링용
-    day_areas: dict[int, str] = {}  # 일차 → 권역 (여행자 멀티데이 권역 분산일 때만)
-    # 일차 → 그 일차 설명. 멀티데이는 전체 description 을 짧게 두고 일차별로 쪼갠다
-    # (클라 일차 탭에 맞춰 그 일차 설명만 노출). 하루 코스는 빈 객체.
+    scheduled: bool = False         # True 면 stops 의 순서와 시간이 서버가 짠 시간표라는 뜻
+    days: int = 1                   # 며칠짜리 코스인지
+    day_areas: dict[int, str] = {}  # 며칠째에 어느 동네인지. 여러 날을 동네별로 나눴을 때만 채워진다
+    # 며칠째의 설명. 여러 날 코스는 전체 설명을 짧게 두고 날짜별로 나눠 쓴다
+    # (프론트가 날짜 탭마다 그 날 설명만 보여준다). 하루 코스면 비어 있다.
     day_descriptions: dict[int, str] = {}
 
 
 class CourseResponse(BaseModel):
     course: Course
-    source: str = "ai"
+    source: str = "ai"  # ai | mock — AI 가 만든 것인지 임시 데이터인지
