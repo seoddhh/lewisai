@@ -1,0 +1,470 @@
+{
+  "persona": "P04",
+  "persona_name": "성수 부부 시간 미정",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T06:41:32+00:00",
+  "total_sec": 8.13,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.2,
+    "select_places": 5.229,
+    "fit_schedule": 0.001,
+    "meals": 0.001,
+    "enrich": 0.001,
+    "nearby": 0.002,
+    "compose": 2.694
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.15,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 13.017,
+    "llm_sec_max": 5.227,
+    "input_tokens": 4607,
+    "output_tokens": 1050,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.227,
+        "in": 1856,
+        "out": 403,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.42,
+        "in": 746,
+        "out": 229,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.68,
+        "in": 753,
+        "out": 219,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.69,
+        "in": 1252,
+        "out": 199,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "성수·건대 데이트 코스",
+    "subtitle": "음악·전시·산책·역사를 차분하게 잇는 하루",
+    "description": "배우자와 함께 성수·건대 권역에서 데이트를 즐기려는 조건을 바탕으로 4곳을 골랐어요. 첫 방문지에서는 각자 헤드폰을 끼고 음악을 들으며 조용한 대화와 집중을 나누기 좋고, 문화 공간에서는 실내 전시와 이색 체험을 함께 즐길 수 있어 데이트 흐름을 이어가기 좋아요. 연무장길에서는 편집숍과 카페 풍경을 천천히 구경하며 산책 분위기를 살리고, 마지막에는 성수천 위 조선시대 석조 다리를 함께 걸으며 하루의 산책을 차분한 역사적 풍경으로 마무리해요. 실내 체험과 실외 산책을 섞어 날씨 영향을 줄이고, 하루 4곳이라는 밀도에 맞춰 여유 있게 둘러보도록 구성했어요.",
+    "stops": [
+      {
+        "name": "바이닐 성수",
+        "preview": "헤드폰으로 각자 음악을 들으며 차분하게 대화를 나누는 청음 공간이에요.",
+        "description": "성수동 골목에 자리한 레코드 청음실로, 개별 LP 플레이어와 헤드폰이 갖춰진 자리에서 음악을 듣는 구조예요. 입장 후 원하는 음반을 골라 헤드폰을 쓰면 주변 소음 없이 곡에 집중할 수 있어요. 함께 듣고 싶은 음반을 서로 골라 보며 취향을 이야기하고, 청음이 끝나면 인상 깊었던 곡을 꺼내 대화로 이어가면 돼요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5448,
+        "lng": 127.0561,
+        "reason": "배우자와 함께 각자 헤드폰으로 음악을 들으며 조용하게 집중과 대화를 나누기 좋아서 첫 방문지로 골랐어요.",
+        "activities": [
+          "개별 LP 플레이어와 헤드폰으로 음악 감상하기",
+          "함께 듣고 싶은 음반을 고르며 대화 나누기",
+          "청음 후 인상 깊었던 곡 이야기하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.06
+            },
+            {
+              "title": " 어니언",
+              "summary": "어니언은 70년대에 지어진 건물을 개조해 만든 카페. ",
+              "address": "서울 성동구 아차산로9길 8 (성수동2가)",
+              "lat": 37.5447391584,
+              "lng": 127.0581854139,
+              "use_time": "월요일~금요일 08:00~22:00\r\n주말 09:00~22:00\r\n(21:30 라스트오더)",
+              "kind": "cafe",
+              "dist_km": 0.18
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "성수연방",
+        "preview": "연무장길 근처에서 실내외 전시와 문화 체험을 함께 둘러볼 수 있는 복합 문화 공간이에요.",
+        "description": "연무장길과 가까운 위치에 여러 문화 시설이 모여 있는 곳으로, 실내 전시실과 야외 공간, 체험 프로그램이 함께 구성돼 있어요. 전시실을 따라 작품을 둘러본 뒤 중간에 마련된 휴식 공간에서 잠시 쉬어 가면 되고, 일정에 맞는 이색 문화 체험 프로그램에도 참여할 수 있어요. 실내외 전시를 이어서 보고 쉬어가며 데이트 흐름을 이어가기 좋은 동선이에요.",
+        "duration": "2시간",
+        "duration_min": 120,
+        "tip": null,
+        "lat": 37.541408,
+        "lng": 127.056908,
+        "reason": "연무장길에서 가까운 복합 문화 공간이라 실내 전시와 이색 체험을 함께 즐기며 데이트 흐름을 이어가기 좋아서 골랐어요.",
+        "activities": [
+          "실내외 전시 관람하기",
+          "이색 문화 체험 프로그램 참여하기",
+          "전시 사이 휴식 공간에서 쉬어가기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "성수동 대림창고 갤러리",
+              "summary": "옛 정미소를 개조하여 높은 천장과 개방감 있는 공간의 성수동 대형 카페",
+              "address": "서울 성동구 성수이로 78 (성수동2가, 대림창고)",
+              "lat": 37.5416392066484,
+              "lng": 127.056647865179,
+              "use_time": "매일 11:00-22:00",
+              "kind": "cafe",
+              "dist_km": 0.03
+            },
+            {
+              "title": "사델스 앳 키스 서울 ",
+              "summary": "뉴욕의 인기 브런치 레스토랑",
+              "address": "서울 성동구 연무장길 70 3층",
+              "lat": 37.5417859807922,
+              "lng": 127.057019569665,
+              "use_time": "매일 10:00-20:00",
+              "kind": "restaurant",
+              "dist_km": 0.04
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "성수 연무장길",
+        "preview": "연방 옆에서 걸어나와 카페와 편집숍을 천천히 구경하는 길이에요.",
+        "description": "성수역 연방 옆에서 시작되는 연무장길은 개성 있는 상점과 카페, 편집숍이 이어지는 거리예요. 연방 옆에서 걸어나와 감성적인 카페와 편집숍 풍경을 천천히 구경하며 산책 분위기를 살릴 수 있어요. 뚝섬까지 이어지는 산책로를 따라 걷거나 개성 있는 상점들을 둘러보며 길을 이어가요.",
+        "duration": "40분",
+        "duration_min": 40,
+        "tip": null,
+        "lat": 37.54417,
+        "lng": 127.049948,
+        "reason": "연방 옆에서 걸어나와 감성적인 카페와 편집숍 풍경을 천천히 구경하며 산책 분위기를 살리기 좋아서 골랐어요.",
+        "activities": [
+          "감성적인 카페와 편집숍 구경하기",
+          "뚝섬까지 이어지는 산책로 따라 걷기",
+          "개성 있는 상점들 둘러보기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "어메이징 브루잉컴퍼니 성수 브루펍",
+              "summary": "직접 양조한 50가지의 신선한 크래프트 비어를 마실 수 있는 펍",
+              "address": "서울 성동구 성수일로4길 4 (성수동1가)",
+              "lat": 37.5428525176827,
+              "lng": 127.049366172099,
+              "use_time": "평일 17:00-24:00\r\n토 15:00-24:00 / 일 14:00-23:00 ",
+              "kind": "bar",
+              "dist_km": 0.16
+            },
+            {
+              "title": "쓰윗 Thweet",
+              "summary": "어른들을 위한 쓰고 달콤한 프리미엄 위스키 아이스크림바",
+              "address": "서울 성동구 연무장3길 12 B1층",
+              "lat": 37.5446546541385,
+              "lng": 127.051779415666,
+              "use_time": "12:00-24:00",
+              "kind": "cafe",
+              "dist_km": 0.17
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "살곶이다리（전곶교）",
+        "preview": "성수천 위 조선시대 석조 다리 위를 함께 걷는 곳이에요.",
+        "description": "살곶이다리는 성수천 위에 놓인 조선시대 석조 다리로 보물 제1738호로 지정되어 있어요. 다리 위를 함께 걸으며 보물 제1738호 석조 다리의 역사적 가치를 살펴보고, 주변 경관을 바라보며 산책을 마무리해요. 하루의 산책을 차분한 역사적 풍경으로 정리하기 좋은 장소예요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.552288,
+        "lng": 127.046985,
+        "reason": "성수천 위 조선시대 석조 다리를 함께 걸으며 하루의 산책을 차분한 역사적 풍경으로 마무리하기 좋아서 골랐어요.",
+        "activities": [
+          "보물 제1738호 석조 다리 위를 함께 걷기",
+          "다리의 역사적 가치 살펴보기",
+          "주변 경관 바라보며 산책하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "훼미리손칼국수보쌈",
+              "summary": "뚝섬역 훼미리손칼국수보쌈은 깊은 국물의 칼국수와 부드러운 보쌈을 합리적인 가격에 즐길 수 있는 가성비 맛집이다.",
+              "address": "서울 성동구 왕십리로 134 (성수동1가)",
+              "lat": 37.5495264804791,
+              "lng": 127.044629777329,
+              "use_time": "11:30 ~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            },
+            {
+              "title": "선채 성수",
+              "summary": "전국 팔도의 다양한 식재료를 사용하는 작은 한식당",
+              "address": "서울 성동구 아차산로1길 11 (성수동1가)",
+              "lat": 37.5490883450365,
+              "lng": 127.045754250455,
+              "use_time": "11:30-22:00 / 브레이크타임 15:00-17:30 (주말은 브레이크타임 없이 운영)\r\n/ 라스트오더 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "성수동",
+      "데이트",
+      "음악",
+      "전시",
+      "산책",
+      "역사",
+      "카페",
+      "편집숍"
+    ],
+    "scheduled": false,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 시간표 생략"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "바이닐 성수, 성수연방, 성수 연무장길, 살곶이다리（전곶교）",
+      "picks": [
+        {
+          "name": "바이닐 성수",
+          "reason": "배우자와 함께 각자 헤드폰으로 음악을 들으며 조용하게 집중과 대화를 나누기 좋아서 첫 방문지로 골랐어요.",
+          "activities": [
+            "개별 LP 플레이어와 헤드폰으로 음악 감상하기",
+            "함께 듣고 싶은 음반을 고르며 대화 나누기",
+            "청음 후 인상 깊었던 곡 이야기하기"
+          ]
+        },
+        {
+          "name": "성수연방",
+          "reason": "연무장길에서 가까운 복합 문화 공간이라 실내 전시와 이색 체험을 함께 즐기며 데이트 흐름을 이어가기 좋아서 골랐어요.",
+          "activities": [
+            "실내외 전시 관람하기",
+            "이색 문화 체험 프로그램 참여하기",
+            "전시 사이 휴식 공간에서 쉬어가기"
+          ]
+        },
+        {
+          "name": "성수 연무장길",
+          "reason": "연방 옆에서 걸어나와 감성적인 카페와 편집숍 풍경을 천천히 구경하며 산책 분위기를 살리기 좋아서 골랐어요.",
+          "activities": [
+            "감성적인 카페와 편집숍 구경하기",
+            "뚝섬까지 이어지는 산책로 따라 걷기",
+            "개성 있는 상점들 둘러보기"
+          ]
+        },
+        {
+          "name": "살곶이다리（전곶교）",
+          "reason": "성수천 위 조선시대 석조 다리를 함께 걸으며 하루의 산책을 차분한 역사적 풍경으로 마무리하기 좋아서 골랐어요.",
+          "activities": [
+            "보물 제1738호 석조 다리 위를 함께 걷기",
+            "다리의 역사적 가치 살펴보기",
+            "주변 경관 바라보며 산책하기"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 건너뜀"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 8건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "성수·건대 데이트 코스"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "성수 연무장길",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.54417,
+      "lng": 127.049948,
+      "day_hint": null
+    },
+    {
+      "name": "바이닐 성수",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5448,
+      "lng": 127.0561,
+      "day_hint": null
+    },
+    {
+      "name": "응봉산",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.5482,
+      "lng": 127.0304,
+      "day_hint": null
+    },
+    {
+      "name": "성수연방",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.541408,
+      "lng": 127.056908,
+      "day_hint": null
+    },
+    {
+      "name": "달맞이 근린공원",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.538668,
+      "lng": 127.019145,
+      "day_hint": null
+    },
+    {
+      "name": "살곶이다리（전곶교）",
+      "category": "역사",
+      "area": "성수·건대",
+      "lat": 37.552288,
+      "lng": 127.046985,
+      "day_hint": null
+    },
+    {
+      "name": "로우클래식 성수점",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.541299,
+      "lng": 127.058651,
+      "day_hint": null
+    },
+    {
+      "name": "넥스트에디션 건대2호점",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5408,
+      "lng": 127.0691,
+      "day_hint": null
+    },
+    {
+      "name": "잠실대교",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.517628,
+      "lng": 127.086736,
+      "day_hint": null
+    },
+    {
+      "name": "송정제방길",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.553205,
+      "lng": 127.06763,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 0,
+  "meta": {
+    "llm_provider": "upstage",
+    "llm_model": "solar-pro4",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

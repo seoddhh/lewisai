@@ -1,0 +1,594 @@
+{
+  "persona": "P01",
+  "persona_name": "종로 연인 오후 데이트",
+  "seed": 11,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:08:56+00:00",
+  "total_sec": 15.913,
+  "timings": {
+    "parse_intent": 0.016,
+    "plan": 0.0,
+    "retrieve": 0.581,
+    "select_places": 6.513,
+    "fit_schedule": 0.001,
+    "meals": 0.005,
+    "enrich": 0.506,
+    "nearby": 0.75,
+    "compose": 7.541
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.259,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 21.745,
+    "llm_sec_max": 7.536,
+    "input_tokens": 10458,
+    "output_tokens": 2090,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 6.511,
+        "in": 4297,
+        "out": 593,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.523,
+        "in": 2905,
+        "out": 320,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.175,
+        "in": 1621,
+        "out": 413,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 7.536,
+        "in": 1635,
+        "out": 764,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "종로·중구, 궁궐 산책부터 야경까지 둘이 함께하는 문화 데이트",
+    "subtitle": "조선 고궁의 정원 → 전통 공예 거리 → 현대 미술관 → 야간 미디어파사드",
+    "description": "연인과 오후부터 저녁까지 보낼 문화·예술 데이트 코스를 종로·중구에 모았어요. 창경궁의 역사적 정원을 함께 산책하고 인사동에서 전통 공예품을 구경하며 한국 문화를 체험하도록 구성했어요. 갤러리 현대와 아뜰리에 광화는 현대 미술과 야간 빛 공연으로 저녁 시간대를 채우며 데이트를 마무리하는 문화 공간들이에요.",
+    "stops": [
+      {
+        "name": "창경궁",
+        "preview": "조선 시대 고궁에서 왕실 전각과 정원을 천천히 둘러봐요.",
+        "description": "서울 종로구에 위치한 창경궁은 조선 시대 왕실의 생활 공간으로, 아담한 규모의 전각들과 잘 정돈된 정원이 특징이에요. 왕실 전각과 서양식 대온실을 관람하고 고궁 산책로를 따라 연인과 함께 걸으며 역사 속 풍경을 감상할 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.579413,
+        "lng": 126.995223,
+        "reason": "연인과 함께 오후 시간을 활용해 조선 시대 고궁의 역사적 정원을 천천히 산책하며 문화를 감상할 수 있어서 골랐어요.",
+        "activities": [
+          "왕실 전각과 서양식 대온실 관람",
+          "고궁 산책로에서 연인과 산책"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "이다 (IDA)",
+              "summary": "한식 재료를 이용한 창의적인 요리를 선보이는 컨템포러리 레스토랑",
+              "address": "서울 종로구 서순라길 153 (권농동)",
+              "lat": 37.5770242057287,
+              "lng": 126.991713886327,
+              "use_time": "매일 12:00~22:00 (브레이크타임 15:00~17:00 /  라스트오더 21:00)",
+              "kind": "restaurant",
+              "dist_km": 0.41
+            },
+            {
+              "title": "갤러리소연카페",
+              "summary": "종묘 서쪽의 순라길인 서순라길의 돌담길에 위치한 운치 있는 카페",
+              "address": "서울 종로구 서순라길 149 (권농동)",
+              "lat": 37.5768335462841,
+              "lng": 126.991586098198,
+              "use_time": "토 11:00~22:00\r\n일~금 11:00~21:00",
+              "kind": "cafe",
+              "dist_km": 0.43
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 창경궁 주변",
+        "preview": "북촌 계동길에서 네 번째로 오래된 식당",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5810909221363,
+        "lng": 126.986679456785,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "왕짱구식당",
+            "summary": "북촌 계동길에서 네 번째로 오래된 식당",
+            "address": "서울 종로구 계동길 83 (계동)",
+            "lat": 37.5810909221363,
+            "lng": 126.986679456785,
+            "use_time": "매일 11:00 ~ 21:00",
+            "kind": "restaurant",
+            "dist_km": 0.78
+          },
+          {
+            "title": "할머니칼국수",
+            "summary": "멸치 육수를 사용한 칼국수로 유명한 집. 저렴한 가격. 칼국수에 수제비를 약간 넣어주는 것이 특징. 칼제비라고 칼국수와 수제비가 섞어서 나오는 메뉴.",
+            "address": "서울특별시 종로구 돈화문로11다길 14-2 (돈의동)",
+            "lat": 37.572823,
+            "lng": 126.990812,
+            "use_time": "월~토 11:00 ~ 21:00 / 일 11:00 ~ 19:00 (재료 소진 시 마감)\r\n",
+            "kind": "restaurant",
+            "dist_km": 0.83
+          },
+          {
+            "title": "반짝반짝빛나는",
+            "summary": "전통과 현대의 퓨전식 카페. 유기농 재료의 전통차. 식혜나 수정과",
+            "address": "서울특별시 종로구 인사동길 28-1 (관훈동)",
+            "lat": 37.573257,
+            "lng": 126.986121,
+            "use_time": "12:00 - 23:00\r\n",
+            "kind": "cafe",
+            "dist_km": 1.05
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "인사동",
+        "preview": "전통 공예품과 고미술을 둘러보고 전통 찻집에서 쉬어요.",
+        "description": "창경궁에서 가까운 인사동은 골목을 따라 갤러리와 공예품점이 늘어선 문화 거리예요. 전통 공예품 갤러리를 둘러보며 한국의 미술 문화를 함께 감상한 뒤, 전통 찻집에서 차를 마시며 여유로운 시간을 가져보세요.",
+        "duration": "1시간 39분",
+        "duration_min": 99,
+        "tip": "14시 예상 혼잡도 보통",
+        "lat": 37.5744,
+        "lng": 126.9855,
+        "reason": "창경궁에서 가까운 거리에 있으면서 전통 공예품과 고미술을 둘이 함께 구경하는 문화 체험이 가능해요.",
+        "activities": [
+          "전통 공예품 갤러리 둘러보기",
+          "전통 찻집에서 차 마시며 휴식"
+        ],
+        "congestion": "보통",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "경인미술관 전통다원",
+              "summary": "고택을 그대로 살려 한옥 특유의 운치가 돋보이는 공간. 예쁜 꽃과 나무로 치장된 정원과  다향. ",
+              "address": "서울특별시 종로구 인사동10길 11-4 (관훈동)",
+              "lat": 37.574513,
+              "lng": 126.985597,
+              "use_time": "매일 11:00 ~ 21:20",
+              "kind": "cafe",
+              "dist_km": 0.02
+            },
+            {
+              "title": "궁",
+              "summary": "30년 이상 전통 개성만두의 맛을 지키는 곳",
+              "address": "서울특별시 종로구 인사동10길 11-3 (관훈동)",
+              "lat": 37.57423,
+              "lng": 126.985393,
+              "use_time": "일,월,화 11:30~20:00 / 수,목,금,토 11:30~21:00 (월~금 브레이크 타임 15:00~16:00)",
+              "kind": "restaurant",
+              "dist_km": 0.02
+            }
+          ],
+          "attractions": [
+            {
+              "title": "[서울우리소리박물관] 2026 여름방학 교실 [우리소리 수집가]",
+              "summary": "서울우리소리박물관 교육실",
+              "address": "서울우리소리박물관 교육실",
+              "lat": 37.577157928122,
+              "lng": 126.989622047178,
+              "period": "2026-07-28~2026-08-07",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158625&menuNo=200011",
+              "kind": "event",
+              "dist_km": 0.48
+            },
+            {
+              "title": "[서울역사박물관] 태화관_시간을 잇는 공간",
+              "summary": "공평도시유적전시관 기획전시실",
+              "address": "공평도시유적전시관 기획전시실",
+              "lat": 37.57189081127559,
+              "lng": 126.98338815886143,
+              "period": "2026-06-26~2027-03-07",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158657&menuNo=200009",
+              "kind": "event",
+              "dist_km": 0.34
+            }
+          ]
+        },
+        "start_time": "14:00",
+        "end_time": "15:39",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "갤러리 현대",
+        "preview": "종로의 전통 한옥에서 현대 미술을 만나요",
+        "description": "종로 북촌에 자리한 갤러리 현대는 한옥 건물을 개조한 문화 공간으로, 전시 공간과 한옥의 건축미를 함께 경험할 수 있어요. 현대 미술 작품 전시를 관람하며 둘이 함께 작품에 대해 이야기 나누고, 한옥의 고즈넉한 분위기 속에서 건축 디테일을 감상해 보세요.",
+        "duration": "1시간 25분",
+        "duration_min": 85,
+        "tip": null,
+        "lat": 37.577307,
+        "lng": 126.979822,
+        "reason": "저녁 식사 직후 현대 미술 전시를 감상하고 전통 한옥의 분위기까지 느낄 수 있는 문화 공간으로 데이트 코스를 마무리할 수 있어요.",
+        "activities": [
+          "현대 미술 작품 전시 관람",
+          "한옥 건축미 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "두가헌",
+              "summary": "고풍스러운 한옥에서 정통 프랑스 요리를 즐길 수 있는 레스토랑.",
+              "address": "서울특별시 종로구 삼청로 14 (사간동)",
+              "lat": 37.577039,
+              "lng": 126.980439,
+              "use_time": "12:00 ~ 22:00",
+              "kind": "restaurant",
+              "dist_km": 0.06
+            },
+            {
+              "title": "무구옥 （MUGUOK）",
+              "summary": "가마솥으로 끓인 진한 육수가 특징인 닭 요리 전문점",
+              "address": "서울 종로구 율곡로1길 7 지상1층",
+              "lat": 37.5763938006477,
+              "lng": 126.979896933659,
+              "use_time": "11:30-15:00 / 17:30-21:00",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:54",
+        "end_time": "17:19",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 15,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "아뜰리에 광화",
+        "preview": "빛과 소리로 물드는 야간 전시 공간",
+        "description": "중구 청계천 인근의 아뜰리에 광화는 미디어파사드 야간 전시와 빛 공연이 펼쳐지는 문화 시설이에요. 저녁 시간대에 건물 외벽에 투사되는 영상과 조명, 음향이 어우러진 야간 전시를 감상하며 둘이 함께 야경을 즐겨 보세요.",
+        "duration": "1시간 25분",
+        "duration_min": 85,
+        "tip": null,
+        "lat": 37.571848,
+        "lng": 126.976168,
+        "reason": "밤 8시 이후 야간 미디어파사드 전시와 빛 공연을 감상하며 낭만적인 데이트를 마무리하기에 적합해요.",
+        "activities": [
+          "미디어파사드 야간 전시 감상",
+          "야간 빛 공연 관람"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "뽐모도로",
+              "summary": "광화문에서 한 시간씩 줄 서서 먹어야 하는 스파게티집",
+              "address": "서울특별시 종로구 새문안로9길 19-1 (당주동)",
+              "lat": 37.571062,
+              "lng": 126.975592,
+              "use_time": "평일 11:20 ~ 21:00\r\n(Break Time 15:00 ~ 17:00)",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": "일품당",
+              "summary": "신선한 샤브샤브와 스키야키를 맛볼 수 있는 곳으로 가쓰오부시와 다시마로 뽑은 육수. ",
+              "address": "서울 종로구 세종대로23길 25",
+              "lat": 37.57151047629067,
+              "lng": 126.97505576366883,
+              "use_time": "매일 11:30~15:00 / 17:00~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "17:35",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 16,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "저녁 식사 · 아뜰리에 광화 주변",
+        "preview": "가격대비 만족도 높은 스시를 내놓는 곳으로 인기가 올라가고 있는 집. ",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5739029320481,
+        "lng": 126.978983502911,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "스시미치루",
+            "summary": "가격대비 만족도 높은 스시를 내놓는 곳으로 인기가 올라가고 있는 집. ",
+            "address": "서울 종로구 종로1길 42 (수송동, 이마빌딩)",
+            "lat": 37.5739029320481,
+            "lng": 126.978983502911,
+            "use_time": " 11:30 ~ 14:30 / 17:30 ~21:30",
+            "kind": "restaurant",
+            "dist_km": 0.34
+          },
+          {
+            "title": "두가헌",
+            "summary": "고풍스러운 한옥에서 정통 프랑스 요리를 즐길 수 있는 레스토랑.",
+            "address": "서울특별시 종로구 삼청로 14 (사간동)",
+            "lat": 37.577039,
+            "lng": 126.980439,
+            "use_time": "12:00 ~ 22:00",
+            "kind": "restaurant",
+            "dist_km": 0.69
+          },
+          {
+            "title": "법원 ",
+            "summary": "독특한 위스키를 맛볼 수 있는 창덕궁 근처 아늑한 술집 ",
+            "address": "서울 종로구 창덕궁1길 33 (계동)",
+            "lat": 37.5792720710165,
+            "lng": 126.987364131703,
+            "use_time": "월~목  16:00~01:00\r\n금~일, 공휴일 14:00 ~ 01:00",
+            "kind": "bar",
+            "dist_km": 1.29
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "연인",
+      "문화·예술",
+      "산책",
+      "전시 감상",
+      "야경"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 점심·저녁"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "창경궁, 인사동, 갤러리 현대, 아뜰리에 광화",
+      "picks": [
+        {
+          "name": "창경궁",
+          "reason": "연인과 함께 오후 시간을 활용해 조선 시대 고궁의 역사적 정원을 천천히 산책하며 문화를 감상할 수 있어서 골랐어요.",
+          "activities": [
+            "왕실 전각과 서양식 대온실 관람",
+            "고궁 산책로에서 연인과 산책"
+          ]
+        },
+        {
+          "name": "인사동",
+          "reason": "창경궁에서 가까운 거리에 있으면서 전통 공예품과 고미술을 둘이 함께 구경하는 문화 체험이 가능해요.",
+          "activities": [
+            "전통 공예품 갤러리 둘러보기",
+            "전통 찻집에서 차 마시며 휴식"
+          ]
+        },
+        {
+          "name": "갤러리 현대",
+          "reason": "저녁 식사 직후 현대 미술 전시를 감상하고 전통 한옥의 분위기까지 느낄 수 있는 문화 공간으로 데이트 코스를 마무리할 수 있어요.",
+          "activities": [
+            "현대 미술 작품 전시 관람",
+            "한옥 건축미 감상"
+          ]
+        },
+        {
+          "name": "아뜰리에 광화",
+          "reason": "밤 8시 이후 야간 미디어파사드 전시와 빛 공연을 감상하며 낭만적인 데이트를 마무리하기에 적합해요.",
+          "activities": [
+            "미디어파사드 야간 전시 감상",
+            "야간 빛 공연 관람"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "12:00~20:00 · 장소 4곳 · 식사 2회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "2끼 · 식당 후보 6곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "인사동 보통"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 10건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "종로·중구, 궁궐 산책부터 야경까지 둘이 함께하는 문화 데이트"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "아뜰리에 광화",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.571848,
+      "lng": 126.976168,
+      "day_hint": null
+    },
+    {
+      "name": "창경궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.579413,
+      "lng": 126.995223,
+      "day_hint": null
+    },
+    {
+      "name": "세종문화회관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.572235,
+      "lng": 126.975934,
+      "day_hint": null
+    },
+    {
+      "name": "인사도시유적전시관",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.5708,
+      "lng": 126.9862,
+      "day_hint": null
+    },
+    {
+      "name": "갤러리 현대",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.577307,
+      "lng": 126.979822,
+      "day_hint": null
+    },
+    {
+      "name": "운현궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.576126,
+      "lng": 126.987126,
+      "day_hint": null
+    },
+    {
+      "name": "경인미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.574591,
+      "lng": 126.985723,
+      "day_hint": null
+    },
+    {
+      "name": "인사동",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.5744,
+      "lng": 126.9855,
+      "day_hint": null
+    },
+    {
+      "name": "종로구립 고희동미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.5832,
+      "lng": 126.9889,
+      "day_hint": null
+    },
+    {
+      "name": "숭례문(남대문)",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.559928,
+      "lng": 126.97536,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

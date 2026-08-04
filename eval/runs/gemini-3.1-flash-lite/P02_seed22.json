@@ -1,0 +1,359 @@
+{
+  "persona": "P02",
+  "persona_name": "관악 혼자 오전 산책",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:21:54+00:00",
+  "total_sec": 13.084,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.32,
+    "select_places": 4.478,
+    "fit_schedule": 0.001,
+    "meals": 0.0,
+    "enrich": 0.001,
+    "nearby": 0.001,
+    "compose": 8.28
+  },
+  "counters": {
+    "embed_calls": 2,
+    "embed_sec": 0.259,
+    "search_calls": 2,
+    "llm_calls": 3,
+    "llm_sec_total": 9.573,
+    "llm_sec_max": 3.517,
+    "input_tokens": 4997,
+    "output_tokens": 806,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 3.517,
+        "in": 2367,
+        "out": 305,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.258,
+        "in": 1599,
+        "out": 174,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.798,
+        "in": 1031,
+        "out": 327,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "관악의 숲과 예술이 잇는 고요한 오전",
+    "subtitle": "혼자 떠나는 자연 속 사색과 예술적 몰입의 시간",
+    "description": "혼자 관악·사당에서 보낼 오전, 자연·힐링 위주라는 조건을 바탕으로 3곳을 골랐어요. 낙성대 공원과 서달산처럼 인파가 붐비지 않는 야외 공간 위주로 구성해 여유로운 산책이 가능하도록 했어요. 마지막에는 남서울미술관에 들러 정적인 분위기 속에서 차분하게 작품을 관람하며 일정을 마무리하도록 구성했어요.",
+    "stops": [
+      {
+        "name": "서울시립 남서울미술관",
+        "preview": "옛 벨기에 영사관 건물의 정취와 예술을 만나는 공간",
+        "description": "구 벨기에 영사관을 보수해 만든 미술관으로, 근대 건축 양식이 보존된 실내에서 차분하게 작품을 관람할 수 있어요. 미술관 전시를 관람하며 역사적 건축물의 구조와 디테일을 살펴보는 시간을 가져보세요.",
+        "duration": "48분",
+        "duration_min": 48,
+        "tip": null,
+        "lat": 37.4761,
+        "lng": 126.9795,
+        "reason": "공원 산책 후 역사의 정취가 깃든 실내 공간에서 차분하게 예술 작품을 감상하며 몰입할 수 있어서 골랐어요.",
+        "activities": [
+          "미술관 전시 관람",
+          "역사적 건축물 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "깔리 사당점",
+              "summary": "인도에서 초빙한 쉐프가 직접 조리해 이국적인 맛 선사.",
+              "address": "서울 서초구 방배천로 21 (방배동)",
+              "lat": 37.47847068122336,
+              "lng": 126.98228168047788,
+              "use_time": "11:30 ~ 22:00",
+              "kind": "restaurant",
+              "dist_km": 0.36
+            },
+            {
+              "title": "BHC 사당점",
+              "summary": "BHC 사당점은 틴탑 리키의 부모님이 최근 오픈한 치킨 전문점. 지하 1층부터 옥상 테이블까지 자리가 넉넉하게 마련되어 있으며, 매장 곳곳에 리키와 틴탑 멤버들의 사진과 사인이 장식.",
+              "address": "서울 동작구 동작대로7길 16 (사당동)",
+              "lat": 37.479926462,
+              "lng": 126.9806849386,
+              "use_time": "12:00 - 02:00",
+              "kind": "restaurant",
+              "dist_km": 0.44
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "09:48",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "낙성대 공원",
+        "preview": "강감찬 장군의 얼이 서린 고즈넉한 도심 공원",
+        "description": "강감찬 장군을 기리는 사당과 안국사 등이 자리한 공원으로, 평일 오전에는 방문객이 적어 여유롭게 산책하기 좋아요. 사당을 둘러보고 정돈된 산책로를 따라 걷거나 잔디광장에 앉아 사색하며 휴식을 취해보세요.",
+        "duration": "32분",
+        "duration_min": 32,
+        "tip": null,
+        "lat": 37.471971,
+        "lng": 126.959371,
+        "reason": "혼자 사색하며 자연 속에서 고즈넉한 시간을 보내기에 가장 적합한 장소라서 골랐어요.",
+        "activities": [
+          "강감찬 사당 둘러보기",
+          "산책로 걷기",
+          "잔디광장에서 휴식"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "봉이전",
+              "summary": "관악산 등산 후 들르기 좋은 전집",
+              "address": "서울 관악구 봉천로 473-5 1층",
+              "lat": 37.4826031319887,
+              "lng": 126.952707052785,
+              "use_time": "월~금 14:00-01:00 / 토,일 13:00-01:00",
+              "kind": "restaurant",
+              "dist_km": 1.32
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "10:12",
+        "end_time": "10:44",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 24,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "서달산",
+        "preview": "도심 속에서 자연의 생명력을 만나는 완만한 숲길",
+        "description": "관악산의 줄기인 서달산은 경사가 완만하여 걷기 부담 없는 숲길이 조성되어 있어요. 나무 사이로 난 길을 따라 산책하며 계절마다 변화하는 자연 풍경을 사진으로 남기고 숲의 기운을 느끼며 오전 일정을 마무리해보세요.",
+        "duration": "48분",
+        "duration_min": 48,
+        "tip": null,
+        "lat": 37.494802,
+        "lng": 126.96159,
+        "reason": "오전 일정의 마무리로 푸른 숲길을 걸으며 자연의 생명력을 온전히 느끼며 힐링하기 좋아서 골랐어요.",
+        "activities": [
+          "숲길 산책",
+          "계절별 자연 풍경 사진 촬영"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "11:11",
+        "end_time": "11:59",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 27,
+        "travel_mode": "transit"
+      }
+    ],
+    "tags": [
+      "혼자여행",
+      "자연힐링",
+      "관악구산책",
+      "사색",
+      "미술관나들이"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 없음"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "서울시립 남서울미술관, 낙성대 공원, 서달산",
+      "picks": [
+        {
+          "name": "서울시립 남서울미술관",
+          "reason": "공원 산책 후 역사의 정취가 깃든 실내 공간에서 차분하게 예술 작품을 감상하며 몰입할 수 있어서 골랐어요.",
+          "activities": [
+            "미술관 전시 관람",
+            "역사적 건축물 감상"
+          ]
+        },
+        {
+          "name": "낙성대 공원",
+          "reason": "혼자 사색하며 자연 속에서 고즈넉한 시간을 보내기에 가장 적합한 장소라서 골랐어요.",
+          "activities": [
+            "강감찬 사당 둘러보기",
+            "산책로 걷기",
+            "잔디광장에서 휴식"
+          ]
+        },
+        {
+          "name": "서달산",
+          "reason": "오전 일정의 마무리로 푸른 숲길을 걸으며 자연의 생명력을 온전히 느끼며 힐링하기 좋아서 골랐어요.",
+          "activities": [
+            "숲길 산책",
+            "계절별 자연 풍경 사진 촬영"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "09:00~11:59 · 장소 3곳 · 식사 0회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 3건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "관악의 숲과 예술이 잇는 고요한 오전"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "사당",
+      "category": "쇼핑",
+      "area": "관악·사당",
+      "lat": 37.4767,
+      "lng": 126.9815,
+      "day_hint": null
+    },
+    {
+      "name": "낙성대 공원",
+      "category": "자연",
+      "area": "관악·사당",
+      "lat": 37.471971,
+      "lng": 126.959371,
+      "day_hint": null
+    },
+    {
+      "name": "서울시립 남서울미술관",
+      "category": "문화",
+      "area": "관악·사당",
+      "lat": 37.4761,
+      "lng": 126.9795,
+      "day_hint": null
+    },
+    {
+      "name": "서울대학교박물관",
+      "category": "역사",
+      "area": "관악·사당",
+      "lat": 37.4663,
+      "lng": 126.9482,
+      "day_hint": null
+    },
+    {
+      "name": "롤러팡팡 스케이트장",
+      "category": "체험",
+      "area": "관악·사당",
+      "lat": 37.4843,
+      "lng": 126.9315,
+      "day_hint": null
+    },
+    {
+      "name": "서달산",
+      "category": "자연",
+      "area": "관악·사당",
+      "lat": 37.494802,
+      "lng": 126.96159,
+      "day_hint": null
+    },
+    {
+      "name": "동작문화원 사당분원",
+      "category": "문화",
+      "area": "관악·사당",
+      "lat": 37.4847,
+      "lng": 126.9696,
+      "day_hint": null
+    },
+    {
+      "name": "국립서울현충원",
+      "category": "역사",
+      "area": "관악·사당",
+      "lat": 37.50338,
+      "lng": 126.972835,
+      "day_hint": null
+    },
+    {
+      "name": "샤로수길",
+      "category": "쇼핑",
+      "area": "관악·사당",
+      "lat": 37.4806,
+      "lng": 126.953,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

@@ -1,0 +1,572 @@
+{
+  "persona": "P01",
+  "persona_name": "종로 연인 오후 데이트",
+  "seed": 11,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:20:46+00:00",
+  "total_sec": 17.104,
+  "timings": {
+    "parse_intent": 0.016,
+    "plan": 0.0,
+    "retrieve": 0.569,
+    "select_places": 5.038,
+    "fit_schedule": 0.001,
+    "meals": 0.007,
+    "enrich": 0.0,
+    "nearby": 0.002,
+    "compose": 11.471
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.261,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 12.699,
+    "llm_sec_max": 5.036,
+    "input_tokens": 6371,
+    "output_tokens": 1022,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.036,
+        "in": 2697,
+        "out": 407,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.62,
+        "in": 1683,
+        "out": 189,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.576,
+        "in": 998,
+        "out": 219,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.467,
+        "in": 993,
+        "out": 207,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "종로와 중구에서 즐기는 문화 예술 데이트",
+    "subtitle": "역사의 숨결과 현대적 미디어가 공존하는 오후의 산책",
+    "description": "연인과 오후에 종로·중구에서 문화·예술을 즐기는 데이트를 하고 싶다는 조건을 바탕으로 4곳을 골랐어요. 인사도시유적전시관과 운현궁 등 역사적 의미가 있는 장소들을 포함하여 차분하게 대화를 나눌 수 있는 환경을 조성했어요. 점심과 저녁 식사를 일정 사이에 배치하여 예술적 관람과 휴식이 균형을 이루도록 구성했어요.",
+    "stops": [
+      {
+        "name": "인사도시유적전시관",
+        "preview": "조선 시대 시전 뒷골목의 흔적을 간직한 지하 유적지예요.",
+        "description": "인사동 네거리 지하에 위치한 이곳은 조선 전기 시전 뒷골목의 모습을 원형 그대로 보존하고 있어요. 전시된 발굴 유물과 안내 자료를 천천히 읽어보며 조선 시대 도심의 생활상을 확인하고 차분하게 관람을 이어가세요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5708,
+        "lng": 126.9862,
+        "reason": "조선 시대 도심 속 골목길이라는 독특한 역사적 현장을 연인과 함께 차분하게 둘러보기 좋아서 골랐어요.",
+        "activities": [
+          "조선 전기 시전 뒷골목 유적 관람",
+          "발굴된 역사 자료 읽기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "[백년가게] 종가집",
+              "summary": "20년 넘게 곱창의 맛을 탐구하는 곱창전문점",
+              "address": "서울 종로구 인사동길 15-13 ",
+              "lat": 37.572004302821,
+              "lng": 126.985898647928,
+              "use_time": "11:00 ~ 22:00",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            },
+            {
+              "title": "아리계곡 종각점",
+              "summary": "계곡에서 백숙을 즐기는 듯한 분위기의 닭요리 전문 한식 주점",
+              "address": "서울 종로구 우정국로2길 41 1층",
+              "lat": 37.5696663382871,
+              "lng": 126.985389032633,
+              "use_time": "매일 16:30-02:00",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 인사도시유적전시관 주변",
+        "preview": "“깊고 진한 육수로 든든하게 채우는 보양식”",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5690737703072,
+        "lng": 126.984123300195,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "종로삼계탕",
+            "summary": "“깊고 진한 육수로 든든하게 채우는 보양식”",
+            "address": "서울 종로구 종로8길 21 (관철동)",
+            "lat": 37.5690737703072,
+            "lng": 126.984123300195,
+            "use_time": "월 - 금 11:00-21:00 (브레이크타임 15:00-17:00, 라스트오더 20:15)\r\n토 11:00 - 15:00 (라스트오더 14:15)\r\n\r\n",
+            "kind": "restaurant",
+            "dist_km": 0.27
+          },
+          {
+            "title": "무교동북어국집",
+            "summary": "1968년부터 이어져 오는 북엇국 전문점.  냉동 황태가 아닌 단단하게 말린 북어로 끓인 것이 특징. 구수하고 담백한 맛의 뽀얀 국물에 반한 사람들이 점심때면 줄을 늘어섬.  리필이 가능.",
+            "address": "서울특별시 중구 을지로1길 38 (다동)",
+            "lat": 37.567704,
+            "lng": 126.979844,
+            "use_time": "평일 07:00~20:00 \r\n주말, 공휴일 07:00~15:00",
+            "kind": "restaurant",
+            "dist_km": 0.66
+          },
+          {
+            "title": "더 스팟 패뷸러스",
+            "summary": "프리미엄 수제 디저트 카페",
+            "address": "서울 중구 명동2길 22 (명동2가)",
+            "lat": 37.5623328436628,
+            "lng": 126.982600032183,
+            "use_time": "목요일~화요일 10:00~22:50\r\n수요일 10:00~22:35",
+            "kind": "cafe",
+            "dist_km": 0.99
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "운현궁",
+        "preview": "고종의 잠저이자 조선 후기 역사가 깃든 전통 건축 공간이에요.",
+        "description": "운현궁은 노락당과 이로당 등 조선 후기 상류 주택의 건축미를 잘 보여주는 곳이에요. 잘 가꾸어진 정원을 따라 둘이 함께 산책하며 고풍스러운 건축물 사이에서 사진을 남기고, 궁궐의 역사적 위엄을 천천히 살펴보세요.",
+        "duration": "1시간 30분",
+        "duration_min": 90,
+        "tip": null,
+        "lat": 37.576126,
+        "lng": 126.987126,
+        "reason": "조선 후기 역사가 깃든 공간에서 연인과 함께 고풍스러운 건축미를 배경으로 사진을 남기며 산책하기 좋아서 골랐어요.",
+        "activities": [
+          "안채와 사랑채 등 전통 건축물 둘러보기",
+          "계절별 정원 산책",
+          "궁궐의 역사적 위엄 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "텅 비어있는 삶 ",
+              "summary": "종로의 풍경을 담은 전망 좋은 안국역 카페 겸 맥주 바(Bar)",
+              "address": "서울 종로구 율곡로 82 (운니동, 로얄창덕궁빌딩) 7,8층",
+              "lat": 37.577176351699,
+              "lng": 126.988166778448,
+              "use_time": "11:00-23:00",
+              "kind": "cafe",
+              "dist_km": 0.15
+            },
+            {
+              "title": "gaga 가가",
+              "summary": "300년된 한옥에서 즐기는 테라스가 있는 한식 와인바",
+              "address": "서울 종로구 계동길 5 (계동)",
+              "lat": 37.5773850992308,
+              "lng": 126.986376383784,
+              "use_time": "월~목 17:00 ~ 23:00 (라스트오더 22:15) \r\n금 17:00 ~ 24:00 (라스트오더 23:15)\r\n토 15:00 ~ 24:00 (라스트오더 23:15) \r\n일 15:00 ~ 22:00 (라스트오더 21:15) ",
+              "kind": "restaurant",
+              "dist_km": 0.15
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "15:30",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "경인미술관",
+        "preview": "인사동 골목 안쪽에 자리한 고즈넉한 한옥 미술관이에요.",
+        "description": "전통 한옥을 개조해 만든 공간으로 여러 전시실에서 다양한 예술 작품을 감상할 수 있어요. 미술관 내 정원을 따라 걸으며 산책하고, 예술인들이 머무는 문화 공간에서 차를 마시며 시간을 보내요.",
+        "duration": "1시간 31분",
+        "duration_min": 91,
+        "tip": null,
+        "lat": 37.574591,
+        "lng": 126.985723,
+        "reason": "인사동의 활기찬 거리와 대비되는 고즈넉한 한옥 미술관에서 여유로운 문화 예술 데이트를 즐길 수 있어서 골랐어요.",
+        "activities": [
+          "다양한 전시실 예술 작품 감상",
+          "한옥 공간 속 정원 산책",
+          "예술인 문화 공간에서 휴식"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "경인미술관 전통다원",
+              "summary": "고택을 그대로 살려 한옥 특유의 운치가 돋보이는 공간. 예쁜 꽃과 나무로 치장된 정원과  다향. ",
+              "address": "서울특별시 종로구 인사동10길 11-4 (관훈동)",
+              "lat": 37.574513,
+              "lng": 126.985597,
+              "use_time": "매일 11:00 ~ 21:20",
+              "kind": "cafe",
+              "dist_km": 0.01
+            },
+            {
+              "title": "인사동 항아리수제비",
+              "summary": "항아리에 담겨 나오는 수제비 전문점. 굴이 들어간 얼큰한 수제비와 해물파전. 단골들은 개인 항아리를 갖고 있어 벽에 진열. 실내 분위기는  토속적.",
+              "address": "서울특별시 종로구 인사동8길 14-1 (관훈동)",
+              "lat": 37.57428,
+              "lng": 126.9859,
+              "use_time": "평일 11:30~14:50, 17:00~20:40\r\n주말, 공휴일 11:30~15:20, 17:00~20:40",
+              "kind": "restaurant",
+              "dist_km": 0.04
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:38",
+        "end_time": "17:09",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 8,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "아뜰리에 광화",
+        "preview": "세종문화회관 외벽을 활용한 미디어아트 전시 공간이에요.",
+        "description": "광화문 광장과 맞닿아 있어 접근성이 좋으며, 대형 외벽 스크린을 통해 다채로운 영상 예술을 선보여요. 저녁 시간대에는 화려한 미디어파사드 전시를 관람하고 빛의 흐름에 따라 변화하는 야간 공연을 감상해요.",
+        "duration": "1시간 31분",
+        "duration_min": 91,
+        "tip": null,
+        "lat": 37.571848,
+        "lng": 126.976168,
+        "reason": "하루의 마무리로 세종문화회관 외벽의 화려한 미디어파사드를 관람하며 예술적인 분위기 속에서 데이트를 완성할 수 있어서 골랐어요.",
+        "activities": [
+          "미디어파사드 전시 관람",
+          "야간 빛 공연 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "뽐모도로",
+              "summary": "광화문에서 한 시간씩 줄 서서 먹어야 하는 스파게티집",
+              "address": "서울특별시 종로구 새문안로9길 19-1 (당주동)",
+              "lat": 37.571062,
+              "lng": 126.975592,
+              "use_time": "평일 11:20 ~ 21:00\r\n(Break Time 15:00 ~ 17:00)",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": "일품당",
+              "summary": "신선한 샤브샤브와 스키야키를 맛볼 수 있는 곳으로 가쓰오부시와 다시마로 뽑은 육수. ",
+              "address": "서울 종로구 세종대로23길 25",
+              "lat": 37.57151047629067,
+              "lng": 126.97505576366883,
+              "use_time": "매일 11:30~15:00 / 17:00~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "17:29",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 20,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "저녁 식사 · 아뜰리에 광화 주변",
+        "preview": "각종 허브와 꽃향기의 옥상 정원이 자랑거리인 이탈리아 정통 레스토랑",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.567337,
+        "lng": 126.969177,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "어반가든",
+            "summary": "각종 허브와 꽃향기의 옥상 정원이 자랑거리인 이탈리아 정통 레스토랑",
+            "address": "서울특별시 중구 정동길 12-15 (정동)",
+            "lat": 37.567337,
+            "lng": 126.969177,
+            "use_time": " 11:00~22:00",
+            "kind": "restaurant",
+            "dist_km": 0.79
+          },
+          {
+            "title": "[백년가게] 종가집",
+            "summary": "20년 넘게 곱창의 맛을 탐구하는 곱창전문점",
+            "address": "서울 종로구 인사동길 15-13 ",
+            "lat": 37.572004302821,
+            "lng": 126.985898647928,
+            "use_time": "11:00 ~ 22:00",
+            "kind": "restaurant",
+            "dist_km": 0.86
+          },
+          {
+            "title": " 공간",
+            "summary": "북촌에 위치한 아늑한 공간의 바",
+            "address": "서울 종로구 율곡로3길 66-4 (안국동)",
+            "lat": 37.5785385590369,
+            "lng": 126.982348561989,
+            "use_time": "화~일 16:00 ~ 02:00 (라스트오더 01:30)",
+            "kind": "bar",
+            "dist_km": 0.92
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "연인과데이트",
+      "문화예술",
+      "종로중구",
+      "오후산책"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 점심·저녁"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "인사도시유적전시관, 운현궁, 경인미술관, 아뜰리에 광화",
+      "picks": [
+        {
+          "name": "인사도시유적전시관",
+          "reason": "조선 시대 도심 속 골목길이라는 독특한 역사적 현장을 연인과 함께 차분하게 둘러보기 좋아서 골랐어요.",
+          "activities": [
+            "조선 전기 시전 뒷골목 유적 관람",
+            "발굴된 역사 자료 읽기"
+          ]
+        },
+        {
+          "name": "운현궁",
+          "reason": "조선 후기 역사가 깃든 공간에서 연인과 함께 고풍스러운 건축미를 배경으로 사진을 남기며 산책하기 좋아서 골랐어요.",
+          "activities": [
+            "안채와 사랑채 등 전통 건축물 둘러보기",
+            "계절별 정원 산책",
+            "궁궐의 역사적 위엄 감상"
+          ]
+        },
+        {
+          "name": "경인미술관",
+          "reason": "인사동의 활기찬 거리와 대비되는 고즈넉한 한옥 미술관에서 여유로운 문화 예술 데이트를 즐길 수 있어서 골랐어요.",
+          "activities": [
+            "다양한 전시실 예술 작품 감상",
+            "한옥 공간 속 정원 산책",
+            "예술인 문화 공간에서 휴식"
+          ]
+        },
+        {
+          "name": "아뜰리에 광화",
+          "reason": "하루의 마무리로 세종문화회관 외벽의 화려한 미디어파사드를 관람하며 예술적인 분위기 속에서 데이트를 완성할 수 있어서 골랐어요.",
+          "activities": [
+            "미디어파사드 전시 관람",
+            "야간 빛 공연 감상"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "12:00~20:00 · 장소 4곳 · 식사 2회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "2끼 · 식당 후보 6곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 8건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "종로와 중구에서 즐기는 문화 예술 데이트"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "아뜰리에 광화",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.571848,
+      "lng": 126.976168,
+      "day_hint": null
+    },
+    {
+      "name": "창경궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.579413,
+      "lng": 126.995223,
+      "day_hint": null
+    },
+    {
+      "name": "세종문화회관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.572235,
+      "lng": 126.975934,
+      "day_hint": null
+    },
+    {
+      "name": "인사도시유적전시관",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.5708,
+      "lng": 126.9862,
+      "day_hint": null
+    },
+    {
+      "name": "갤러리 현대",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.577307,
+      "lng": 126.979822,
+      "day_hint": null
+    },
+    {
+      "name": "운현궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.576126,
+      "lng": 126.987126,
+      "day_hint": null
+    },
+    {
+      "name": "경인미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.574591,
+      "lng": 126.985723,
+      "day_hint": null
+    },
+    {
+      "name": "인사동",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.5744,
+      "lng": 126.9855,
+      "day_hint": null
+    },
+    {
+      "name": "종로구립 고희동미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.5832,
+      "lng": 126.9889,
+      "day_hint": null
+    },
+    {
+      "name": "숭례문(남대문)",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.559928,
+      "lng": 126.97536,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

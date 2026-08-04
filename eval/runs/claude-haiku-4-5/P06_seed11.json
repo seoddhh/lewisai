@@ -1,0 +1,443 @@
+{
+  "persona": "P06",
+  "persona_name": "잠실 아이와 체험",
+  "seed": 11,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:11:49+00:00",
+  "total_sec": 9.437,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.295,
+    "select_places": 4.075,
+    "fit_schedule": 0.001,
+    "meals": 0.005,
+    "enrich": 0.001,
+    "nearby": 0.001,
+    "compose": 5.057
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.27,
+    "search_calls": 1,
+    "llm_calls": 3,
+    "llm_sec_total": 13.155,
+    "llm_sec_max": 5.054,
+    "input_tokens": 8495,
+    "output_tokens": 1340,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 4.073,
+        "in": 4067,
+        "out": 430,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.028,
+        "in": 2738,
+        "out": 302,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 5.054,
+        "in": 1690,
+        "out": 608,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "아이와 함께하는 잠실 체험 데이",
+    "subtitle": "직업 체험부터 스포츠, 먹거리 탐방까지",
+    "description": "아이와 보낼 오전 시간에 체험·놀거리를 중심으로 잠실·송파 3곳을 골랐어요. 키자니아에서 다양한 직업을 직접 해보고 롯데월드 아이스링크에서 신체 활동을 즐기며, 점심 후 가락몰에서 제철 농산물을 구경하는 등 아이 눈높이의 활동으로 구성했어요. 같은 권역 내에서 이동을 최소화해 여유 있는 속도로 둘러볼 수 있어요.",
+    "stops": [
+      {
+        "name": "키자니아 서울",
+        "preview": "소방관, 의사 등 다양한 직업을 직접 체험하는 테마파크",
+        "description": "어린이가 실제 직업 현장을 모형으로 재현한 공간에서 소방관, 의사, 조종사 등 다양한 역할을 직접 해볼 수 있는 전문 테마파크예요. 아이 눈높이에 맞춘 시설과 시즌별 특별 프로그램이 함께 운영되고 있어서 직업 체험과 배움을 동시에 즐길 수 있어요.",
+        "duration": "1시간 45분",
+        "duration_min": 105,
+        "tip": null,
+        "lat": 37.51131,
+        "lng": 127.098142,
+        "reason": "아이가 다양한 직업을 직접 체험하며 배우고 즐길 수 있는 전문 테마파크라서 골랐어요",
+        "activities": [
+          "소방관·의사 등 다양한 직업 역할 체험",
+          "시즌 특별 프로그램 참여"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "도림",
+              "summary": "모던한 분위기에서 품격있게 중국요리를 즐길 수 있는 곳.",
+              "address": "서울 송파구 올림픽로 240 (잠실동, 롯데월드)",
+              "lat": 37.5113107836,
+              "lng": 127.0981403954,
+              "use_time": "평일 11:30 ~ 14:30 / 18:00 ~ 21:30\r\n주말 11:30 ~ 14:30 / 17:30 ~ 21:30",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            },
+            {
+              "title": "[백년가게] 군산오징어",
+              "summary": "Since 1988, 석촌호수 서호사거리에 위치한 오징어 불고기 전문점. \r\n",
+              "address": "서울 송파구 삼학사로 101 (삼전동, 군산오징어)",
+              "lat": 37.5062829479541,
+              "lng": 127.097001917858,
+              "use_time": "매일 11:30 ~ 22:30",
+              "kind": "restaurant",
+              "dist_km": 0.57
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "10:45",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "롯데월드 아이스링크",
+        "preview": "아이스 스케이트를 타며 신체 활동을 즐기는 실내 링크",
+        "description": "롯데월드 내 위치한 실내 아이스 스케이트장으로, 아이도 타기 좋은 환경에서 스케이트를 체험할 수 있어요. 링크 주변으로 롯데월드 어드벤처의 미니 어트랙션들도 함께 볼 수 있어서 오전 활동을 마무리하기에 좋아요.",
+        "duration": "1시간 10분",
+        "duration_min": 70,
+        "tip": null,
+        "lat": 37.511286,
+        "lng": 127.097941,
+        "reason": "키자니아 근처에서 아이 눈높이의 신체 활동 체험으로 오전 코스를 마무리할 수 있어요",
+        "activities": [
+          "아이스 스케이트 타기",
+          "롯데월드 어드벤처 미니 어트랙션 구경"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "도림",
+              "summary": "모던한 분위기에서 품격있게 중국요리를 즐길 수 있는 곳.",
+              "address": "서울 송파구 올림픽로 240 (잠실동, 롯데월드)",
+              "lat": 37.5113107836,
+              "lng": 127.0981403954,
+              "use_time": "평일 11:30 ~ 14:30 / 18:00 ~ 21:30\r\n주말 11:30 ~ 14:30 / 17:30 ~ 21:30",
+              "kind": "restaurant",
+              "dist_km": 0.02
+            },
+            {
+              "title": "[백년가게] 군산오징어",
+              "summary": "Since 1988, 석촌호수 서호사거리에 위치한 오징어 불고기 전문점. \r\n",
+              "address": "서울 송파구 삼학사로 101 (삼전동, 군산오징어)",
+              "lat": 37.5062829479541,
+              "lng": 127.097001917858,
+              "use_time": "매일 11:30 ~ 22:30",
+              "kind": "restaurant",
+              "dist_km": 0.56
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "10:50",
+        "end_time": "12:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 5,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "가락몰",
+        "preview": "제철 농산물과 시장 먹거리를 만나는 도심 농수산물 쇼핑 공간",
+        "description": "서울 도심 속 대규모 농수산물 도매시장으로, 신선한 채소, 과일, 수산물 코너를 둘러보며 제철 먹거리를 직접 확인할 수 있어요. 아이와 함께 시장 먹거리를 시식하고 구매하며 음식 문화를 체험하기에 좋은 공간이에요.",
+        "duration": "35분",
+        "duration_min": 35,
+        "tip": null,
+        "lat": 37.496467,
+        "lng": 127.113455,
+        "reason": "점심 후 아이와 함께 제철 농산물을 구경하며 먹거리를 탐방하는 쇼핑 체험을 할 수 있어요",
+        "activities": [
+          "신선한 농수산물 코너 둘러보기",
+          "시장 먹거리 시식·구매"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "용기수산",
+              "summary": "제철 회를 신선하게 즐길 수 있는 가락몰에 위치한 횟집",
+              "address": "서울 송파구 양재대로 932 가락몰 판매동 1층 C~28호",
+              "lat": 37.4945376921828,
+              "lng": 127.108713599026,
+              "use_time": "09:00-23:30",
+              "kind": "restaurant",
+              "dist_km": 0.47
+            },
+            {
+              "title": "플로리안",
+              "summary": "원두커피 전문점. 그 날 볶은 커피는 따로 칠판에 적어 놓기 때문에 신선한 원두를 맛볼 수 있음. 커피를 시키면 즉석에서 원두를 갈아서 내리기 때문에 조금 기다려야 함. ",
+              "address": "서울특별시 송파구 송파대로28길 27 (가락동)",
+              "lat": 37.4950353,
+              "lng": 127.1204001,
+              "use_time": "11:00~22:00",
+              "kind": "cafe",
+              "dist_km": 0.63
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:25",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "점심 식사 · 가락몰 주변",
+        "preview": "제철 회를 신선하게 즐길 수 있는 가락몰에 위치한 횟집",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.4945376921828,
+        "lng": 127.108713599026,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "용기수산",
+            "summary": "제철 회를 신선하게 즐길 수 있는 가락몰에 위치한 횟집",
+            "address": "서울 송파구 양재대로 932 가락몰 판매동 1층 C~28호",
+            "lat": 37.4945376921828,
+            "lng": 127.108713599026,
+            "use_time": "09:00-23:30",
+            "kind": "restaurant",
+            "dist_km": 0.47
+          },
+          {
+            "title": "비건네이처",
+            "summary": "“맛으로 증명하는 비건 디저트의 매력”",
+            "address": "서울 송파구 송파대로 448-1 (송파동)",
+            "lat": 37.5066968993568,
+            "lng": 127.106286466612,
+            "use_time": "10:00 - 21:30\r\n",
+            "kind": "restaurant",
+            "dist_km": 1.3
+          },
+          {
+            "title": "프로퍼커피바 2호점",
+            "summary": "방이역 인근 브런치&베이커리 맛집",
+            "address": "서울 송파구 오금로31가길 20 (방이동, 대림가락) 1층",
+            "lat": 37.5073379787265,
+            "lng": 127.123156221506,
+            "use_time": "09:00~22:00",
+            "kind": "cafe",
+            "dist_km": 1.48
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "아이와 함께",
+      "체험·놀거리",
+      "오전",
+      "잠실·송파",
+      "여유로운 일정"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 점심"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "키자니아 서울, 롯데월드 아이스링크, 가락몰",
+      "picks": [
+        {
+          "name": "키자니아 서울",
+          "reason": "아이가 다양한 직업을 직접 체험하며 배우고 즐길 수 있는 전문 테마파크라서 골랐어요",
+          "activities": [
+            "소방관·의사 등 다양한 직업 역할 체험",
+            "시즌 특별 프로그램 참여"
+          ]
+        },
+        {
+          "name": "롯데월드 아이스링크",
+          "reason": "키자니아 근처에서 아이 눈높이의 신체 활동 체험으로 오전 코스를 마무리할 수 있어요",
+          "activities": [
+            "아이스 스케이트 타기",
+            "롯데월드 어드벤처 미니 어트랙션 구경"
+          ]
+        },
+        {
+          "name": "가락몰",
+          "reason": "점심 후 아이와 함께 제철 농산물을 구경하며 먹거리를 탐방하는 쇼핑 체험을 할 수 있어요",
+          "activities": [
+            "신선한 농수산물 코너 둘러보기",
+            "시장 먹거리 시식·구매"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "09:00~14:00 · 장소 3곳 · 식사 1회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "1끼 · 식당 후보 3곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 6건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "아이와 함께하는 잠실 체험 데이"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "롯데월드 어드벤처",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.511432,
+      "lng": 127.098281,
+      "day_hint": null
+    },
+    {
+      "name": "가락몰",
+      "category": "쇼핑",
+      "area": "잠실·송파",
+      "lat": 37.496467,
+      "lng": 127.113455,
+      "day_hint": null
+    },
+    {
+      "name": "스트라이크존 서울 잠실구장",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.510298,
+      "lng": 127.080468,
+      "day_hint": null
+    },
+    {
+      "name": "송파구민회관",
+      "category": "문화",
+      "area": "잠실·송파",
+      "lat": 37.5024,
+      "lng": 127.0935,
+      "day_hint": null
+    },
+    {
+      "name": "키자니아 서울",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.51131,
+      "lng": 127.098142,
+      "day_hint": null
+    },
+    {
+      "name": "잠실",
+      "category": "쇼핑",
+      "area": "잠실·송파",
+      "lat": 37.5115,
+      "lng": 127.098,
+      "day_hint": null
+    },
+    {
+      "name": "잠실야구장",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.516484,
+      "lng": 127.073574,
+      "day_hint": null
+    },
+    {
+      "name": "호원아트홀",
+      "category": "문화",
+      "area": "잠실·송파",
+      "lat": 37.5263,
+      "lng": 127.1303,
+      "day_hint": null
+    },
+    {
+      "name": "롯데월드 아이스링크",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.511286,
+      "lng": 127.097941,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

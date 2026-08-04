@@ -1,0 +1,436 @@
+{
+  "persona": "P05",
+  "persona_name": "강남 부모님 쇼핑",
+  "seed": 11,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:24:27+00:00",
+  "total_sec": 23.862,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.333,
+    "select_places": 12.14,
+    "fit_schedule": 0.001,
+    "meals": 0.004,
+    "enrich": 0.733,
+    "nearby": 1.295,
+    "compose": 9.353
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.282,
+    "search_calls": 1,
+    "llm_calls": 3,
+    "llm_sec_total": 19.744,
+    "llm_sec_max": 12.136,
+    "input_tokens": 5241,
+    "output_tokens": 831,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 12.136,
+        "in": 2645,
+        "out": 314,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.76,
+        "in": 1579,
+        "out": 177,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.848,
+        "in": 1017,
+        "out": 340,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "부모님과 함께하는 여유로운 강남 쇼핑 나들이",
+    "subtitle": "쾌적한 실내에서 즐기는 쇼핑과 휴식의 시간",
+    "description": "부모님과 함께하는 오후 강남·서초 지역의 여유로운 쇼핑과 점심 식사라는 조건을 바탕으로 3곳을 골랐어요. 강남역 지하쇼핑센터와 같은 실내 공간을 포함하여 이동 동선을 최소화하고 부모님과 함께 머무르기 편한 환경을 고려했어요. 식사 후에는 강남 코엑스처럼 공간이 넓고 쾌적한 곳을 배치하여 여유롭게 시간을 보낼 수 있도록 구성했어요.",
+    "stops": [
+      {
+        "name": "강남역 지하쇼핑센터",
+        "preview": "지하철역과 연결된 쾌적한 실내 쇼핑 공간이에요.",
+        "description": "강남역 지하에 길게 뻗은 이곳은 다양한 뷰티 브랜드와 의류 매장이 밀집해 있어 이동 동선을 최소화하며 구경하기 좋아요. 매장들을 따라 조성된 상가존 스트리트 숍을 천천히 걸으며 쇼핑을 즐겨보세요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.498165,
+        "lng": 127.028308,
+        "reason": "부모님과 함께 이동 동선을 최소화하면서도 쾌적한 실내 환경에서 다양한 뷰티 브랜드를 구경하기 위해 골랐어요.",
+        "activities": [
+          "다양한 뷰티 브랜드 매장 둘러보기",
+          "상가존 스트리트 숍 구경하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "브릭샌드 강남역점",
+              "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+              "address": "서울 강남구 강남대로 396 강남역 신분당선 지하1층",
+              "lat": 37.4981646510326,
+              "lng": 127.028307900881,
+              "use_time": "평일 (월 - 금) 08:00 - 20:30\r\n토 09:00 - 22:00\r\n일 10:00 - 19:00",
+              "kind": "cafe",
+              "dist_km": 0.0
+            },
+            {
+              "title": "트로이케밥",
+              "summary": "튀르키예 현지인이 운영하는 정통 튀르키예 케밥 전문 음식점",
+              "address": "서울 강남구 테헤란로1길 16 (역삼동)",
+              "lat": 37.4994331757035,
+              "lng": 127.027938127133,
+              "use_time": "10:00 - 03:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 강남역 지하쇼핑센터 주변",
+        "preview": "서울을 대표하는 디저트 선물, 브릭샌드",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.4981646510326,
+        "lng": 127.028307900881,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "브릭샌드 강남역점",
+            "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+            "address": "서울 강남구 강남대로 396 강남역 신분당선 지하1층",
+            "lat": 37.4981646510326,
+            "lng": 127.028307900881,
+            "use_time": "평일 (월 - 금) 08:00 - 20:30\r\n토 09:00 - 22:00\r\n일 10:00 - 19:00",
+            "kind": "cafe",
+            "dist_km": 0.0
+          },
+          {
+            "title": "흑우정 강남역본점",
+            "summary": "최고 등급의 고베규와 한우를 엄선하여 재료부터 다른 소고기 경험을 할 수 있는 곳이다. ",
+            "address": "서울 서초구 강남대로69길 10 (서초동)",
+            "lat": 37.5017648931173,
+            "lng": 127.024249020995,
+            "use_time": "11:00 ~ 22:00 (라스트오더 21:00)\r\n",
+            "kind": "restaurant",
+            "dist_km": 0.54
+          },
+          {
+            "title": "레드마블하우스",
+            "summary": "고급스러운 분위기에서 한우  1++ 등급의 최상급 고기를 즐길 수 있는 곳. ",
+            "address": "서울 강남구 논현로 408",
+            "lat": 37.49668027838757,
+            "lng": 127.039217743749,
+            "use_time": "평일 11:30~14:30 / 17:30~22:00\r\n ",
+            "kind": "restaurant",
+            "dist_km": 0.98
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "강남 코엑스",
+        "preview": "복합 문화 공간에서 휴식과 볼거리를 즐겨보세요.",
+        "description": "코엑스는 넓은 규모를 갖춘 복합 쇼핑몰로 오후 시간에는 다소 붐비지만 실내에서 여유롭게 시간을 보내기 적합해요. 높은 서가가 인상적인 별마당도서관에서 이국적인 풍경을 감상하고, 아쿠아리움으로 이동해 다양한 해양 생물을 관찰하며 시간을 보내세요.",
+        "duration": "2시간 23분",
+        "duration_min": 143,
+        "tip": "14시 예상 혼잡도 약간 붐빔",
+        "lat": 37.5012,
+        "lng": 127.0396,
+        "reason": "식사 후 넓고 여유로운 공간에서 부모님과 함께 휴식하며 문화적인 볼거리를 즐기기에 적합한 장소라서 골랐어요.",
+        "activities": [
+          "별마당도서관에서 이국적인 풍경 감상하기",
+          "아쿠아리움에서 해양 생물 관찰하기"
+        ],
+        "congestion": "약간 붐빔",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "강가 역삼점",
+              "summary": "인도 정통의 맛을 선보이는 정통 인도 레스토랑. ",
+              "address": "서울 강남구 논현로 508 (역삼동, GS강남타워)",
+              "lat": 37.5019949322814,
+              "lng": 127.037336400239,
+              "use_time": "평일 11:00 - 14:30 / 17:00 - 21:00 \r\n주말 11:30 - 15:00 / 17:00 - 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.22
+            },
+            {
+              "title": "싱카이 역삼점",
+              "summary": "1930년대 상하이의 고급 레스토랑 분위기를 주는 곳, 광동식 사천요리.",
+              "address": "서울 강남구 논현로 508 (역삼동, GS강남타워)",
+              "lat": 37.5019949322814,
+              "lng": 127.037336400239,
+              "use_time": "11:30~14:30, 17:30~21:30",
+              "kind": "restaurant",
+              "dist_km": 0.22
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "16:23",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "무역센터 (WTC Seoul)",
+        "preview": "강남의 비즈니스 중심지이자 상징적인 명소예요.",
+        "description": "무역센터는 현대적인 고층 빌딩이 밀집한 강남의 대표적인 비즈니스 지구예요. 코엑스에서 도보로 이동 가능하며, 주변 거리를 거닐며 도시의 활기찬 분위기를 살피거나 인근 휴식 공간에서 여정을 마무리하기 좋아요.",
+        "duration": "1시간 12분",
+        "duration_min": 72,
+        "tip": null,
+        "lat": 37.510357,
+        "lng": 127.061024,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "바이킹스워프 코엑스점",
+              "summary": "국내 최초 랍스터 무한리필 뷔페 레스토랑",
+              "address": "서울 강남구 영동대로 513 (삼성동, 코엑스)",
+              "lat": 37.5118239121138,
+              "lng": 127.059159043842,
+              "use_time": "월요일~금요일-2부제, 토요일~일요일-4부",
+              "kind": "restaurant",
+              "dist_km": 0.23
+            },
+            {
+              "title": "마노디셰프",
+              "summary": "피자와 파스타를 부담없이 즐길 수 있는 이탈리안 비스트로. ",
+              "address": "서울특별시 강남구 테헤란로87길 21 (삼성동)",
+              "lat": 37.509053,
+              "lng": 127.058313,
+              "use_time": "평일 11:00 ~ 15:00 / 17:00 ~ 21:30\r\n토요일 11:00 ~ 15:50 / 17:00 ~ 21:30\r\n일요일 11:00 ~ 15:50 / 17:00 ~ 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.28
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "16:48",
+        "end_time": "18:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "transit"
+      }
+    ],
+    "tags": [
+      "부모님과함께",
+      "강남쇼핑",
+      "여유로운일정",
+      "실내데이트"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 점심"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "강남역 지하쇼핑센터, 강남 코엑스, 무역센터 (WTC Seoul)",
+      "picks": [
+        {
+          "name": "강남역 지하쇼핑센터",
+          "reason": "부모님과 함께 이동 동선을 최소화하면서도 쾌적한 실내 환경에서 다양한 뷰티 브랜드를 구경하기 위해 골랐어요.",
+          "activities": [
+            "다양한 뷰티 브랜드 매장 둘러보기",
+            "상가존 스트리트 숍 구경하기"
+          ]
+        },
+        {
+          "name": "강남 코엑스",
+          "reason": "식사 후 넓고 여유로운 공간에서 부모님과 함께 휴식하며 문화적인 볼거리를 즐기기에 적합한 장소라서 골랐어요.",
+          "activities": [
+            "별마당도서관에서 이국적인 풍경 감상하기",
+            "아쿠아리움에서 해양 생물 관찰하기"
+          ]
+        },
+        {
+          "name": "무역센터 (WTC Seoul)",
+          "reason": "",
+          "activities": []
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "12:00~18:00 · 장소 3곳 · 식사 1회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "1끼 · 식당 후보 3곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "강남 코엑스 약간 붐빔"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 6건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "부모님과 함께하는 여유로운 강남 쇼핑 나들이"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "강남역",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.4979,
+      "lng": 127.0276,
+      "day_hint": null
+    },
+    {
+      "name": "무역센터 (WTC Seoul)",
+      "category": "명소",
+      "area": "강남·서초",
+      "lat": 37.510357,
+      "lng": 127.061024,
+      "day_hint": null
+    },
+    {
+      "name": "무신사 스탠다드 강남",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.50258,
+      "lng": 127.024817,
+      "day_hint": null
+    },
+    {
+      "name": "반디인하우스 강남본점",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.504842,
+      "lng": 127.026186,
+      "day_hint": null
+    },
+    {
+      "name": "역삼",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.5007,
+      "lng": 127.0364,
+      "day_hint": null
+    },
+    {
+      "name": "강남역 지하쇼핑센터",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.498165,
+      "lng": 127.028308,
+      "day_hint": null
+    },
+    {
+      "name": "강남 코엑스",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.5012,
+      "lng": 127.0396,
+      "day_hint": null
+    },
+    {
+      "name": "젬브로스",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.515696,
+      "lng": 127.023431,
+      "day_hint": null
+    },
+    {
+      "name": "교대",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.4934,
+      "lng": 127.0138,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

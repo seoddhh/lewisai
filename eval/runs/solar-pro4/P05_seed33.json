@@ -1,0 +1,440 @@
+{
+  "persona": "P05",
+  "persona_name": "강남 부모님 쇼핑",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T06:41:58+00:00",
+  "total_sec": 10.394,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.001,
+    "retrieve": 0.177,
+    "select_places": 5.881,
+    "fit_schedule": 0.001,
+    "meals": 0.001,
+    "enrich": 0.0,
+    "nearby": 0.001,
+    "compose": 4.331
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.152,
+    "search_calls": 1,
+    "llm_calls": 3,
+    "llm_sec_total": 14.494,
+    "llm_sec_max": 5.879,
+    "input_tokens": 4113,
+    "output_tokens": 767,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.879,
+        "in": 2052,
+        "out": 230,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.287,
+        "in": 1222,
+        "out": 187,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.328,
+        "in": 839,
+        "out": 350,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "부모님과 강남·서초 오후 쇼핑 코스",
+    "subtitle": "점심 식사 뒤 여유 있게 둘러보는 쇼핑 동선",
+    "description": "부모님과 함께 오후 시간대에 강남·서초에서 쇼핑 위주로 보내고, 점심 식사와 여유로운 일정을 원한다는 조건을 바탕으로 3곳을 골랐어요. 점심 식사 직후 걸음을 옮기기 편한 지하 통로에서 쇼핑 상권의 첫걸음을 떼기 좋게 강남역 지하쇼핑센터를 넣었고, 이어서 브랜드 플래그십 스토어를 둘러보며 패션 감각을 구경하는 흐름에 무신사 스탠다드 강남을 맞췄어요. 이동이 길지 않게 강남·서초 권역 안에서만 묶어 부모님과 함께 앉아 쉬거나 천천히 둘러볼 수 있는 흐름으로 구성했어요.",
+    "stops": [
+      {
+        "name": "강남역 지하쇼핑센터",
+        "preview": "강남역과 이어지는 지하 통로에서 뷰티와 스트리트 숍을 가볍게 둘러보는 곳이에요.",
+        "description": "강남역 지하쇼핑센터는 지하철역과 바로 이어지는 지하 통로를 따라 상가존이 이어진 곳이에요. 점심 식사 직후라 동선이 짧고 앉아서 쉬기 쉬운 편이라 부모님과 함께 걷기 부담이 적어요. 상가존을 따라 천천히 걸으며 뷰티 브랜드 매장을 둘러보고, 스트리트 숍에서 기념품이나 가벼운 소품을 고르며 쇼핑 상권의 첫걸음을 떼기 좋아요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.498165,
+        "lng": 127.028308,
+        "reason": "점심 식사 직후 부모님과 함께 걷기 편한 지하 통로에서 뷰티·스트리트 숍을 가볍게 둘러보며 쇼핑 상권의 첫걸음을 떼기 좋아서 골랐어요",
+        "activities": [
+          "상가존을 따라 천천히 걸으며 뷰티 브랜드 매장 둘러보기",
+          "스트리트 숍에서 기념품이나 가벼운 소품 고르기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "브릭샌드 강남역점",
+              "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+              "address": "서울 강남구 강남대로 396 강남역 신분당선 지하1층",
+              "lat": 37.4981646510326,
+              "lng": 127.028307900881,
+              "use_time": "평일 (월 - 금) 08:00 - 20:30\r\n토 09:00 - 22:00\r\n일 10:00 - 19:00",
+              "kind": "cafe",
+              "dist_km": 0.0
+            },
+            {
+              "title": "트로이케밥",
+              "summary": "튀르키예 현지인이 운영하는 정통 튀르키예 케밥 전문 음식점",
+              "address": "서울 강남구 테헤란로1길 16 (역삼동)",
+              "lat": 37.4994331757035,
+              "lng": 127.027938127133,
+              "use_time": "10:00 - 03:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 강남역 지하쇼핑센터 주변",
+        "preview": "서울을 대표하는 디저트 선물, 브릭샌드",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.4981646510326,
+        "lng": 127.028307900881,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "브릭샌드 강남역점",
+            "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+            "address": "서울 강남구 강남대로 396 강남역 신분당선 지하1층",
+            "lat": 37.4981646510326,
+            "lng": 127.028307900881,
+            "use_time": "평일 (월 - 금) 08:00 - 20:30\r\n토 09:00 - 22:00\r\n일 10:00 - 19:00",
+            "kind": "cafe",
+            "dist_km": 0.0
+          },
+          {
+            "title": "태양의토마토라멘",
+            "summary": "일본에서 넘어온 트렌디한 라멘, 태양의 토마토라멘",
+            "address": "서울특별시 강남구 강남대로106길 7 2층",
+            "lat": 37.5029768645382,
+            "lng": 127.026223922998,
+            "use_time": "매일 11:00-21:00",
+            "kind": "restaurant",
+            "dist_km": 0.57
+          },
+          {
+            "title": "신가예촌",
+            "summary": "고향의 정겨움이 깊이 묻어나는 곳 \r\n46년 외길 토속 한정식 총주방장과 호텔신라 지배인이 뭉친 토속 음식 전문점. ",
+            "address": "서울 서초구 서운로 11 (서초동, 서초대우디오빌)",
+            "lat": 37.4849946106957,
+            "lng": 127.029112829918,
+            "use_time": "평일 11:00 ~ 15:00 / 17:00 ~ 22:00\r\n주말, 공휴일 11:00 ~ 15:00 / 16:30 ~ 21:00",
+            "kind": "restaurant",
+            "dist_km": 1.47
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "무신사 스탠다드 강남",
+        "preview": "브랜드 플래그십 스토어의 진열을 보며 패션 감각을 둘러볼 수 있는 곳이에요.",
+        "description": "무신사 스탠다드 강남은 브랜드 플래그십 스토어 형태로 꾸며져 있어 진열과 패션 감각을 한눈에 살펴볼 수 있는 공간이에요. 점심 뒤 오후 시간대에 방문하면 비교적 여유롭게 매장 안을 둘러볼 수 있어요. 부모님과 함께 베로 나들이하듯 매장 안을 천천히 걸으며 브랜드 진열을 구경하고 패션 감각을 탐방하기 좋아요.",
+        "duration": "2시간 1분",
+        "duration_min": 121,
+        "tip": null,
+        "lat": 37.50258,
+        "lng": 127.024817,
+        "reason": "점심 뒤 여유롭게 브랜드 플래그십 스토어를 둘러보며 패션 감각을 구경하는 쇼핑 흐름에 잘 맞아서 골랐어요",
+        "activities": [
+          "플래그십 스토어의 브랜드 진열과 패션 감각 탐방하기",
+          "부모님과 함께 베로 나들이하듯 매장 안을 천천히 둘러보기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "흑우정 강남역본점",
+              "summary": "최고 등급의 고베규와 한우를 엄선하여 재료부터 다른 소고기 경험을 할 수 있는 곳이다. ",
+              "address": "서울 서초구 강남대로69길 10 (서초동)",
+              "lat": 37.5017648931173,
+              "lng": 127.024249020995,
+              "use_time": "11:00 ~ 22:00 (라스트오더 21:00)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": "더블린",
+              "summary": "기네스 생맥주를 마실 수 있어 인기있는 아이리시 펍.",
+              "address": "서울 강남구 강남대로 442 (역삼동)",
+              "lat": 37.5020611194,
+              "lng": 127.0260565648,
+              "use_time": "월~목 15:00~01:00, 금 15:00~02:00, 토 14:00~02:00, 일 14:00~24:00",
+              "kind": "bar",
+              "dist_km": 0.12
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "16:01",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "무역센터 (WTC Seoul)",
+        "preview": "강남 일대 업무·상업 중심지에 자리한 무역센터 건물 일대를 둘러보는 곳이에요.",
+        "description": "무역센터(WTC Seoul)는 강남권 업무·상업 중심지에 자리한 건물 일대로, 주변으로 코엑스와 상업 시설들이 함께 이어져 있어 이동하면서 둘러보기 편해요. 오후 늦은 시간대에는 주변 보행 동선을 따라 건물 외관과 주변 분위기를 살펴보며 이동할 수 있어요. 주어진 시간 동안 무역센터 일대의 공간과 주변 볼거리를 천천히 확인하며 다음 일정으로 이어가기 좋아요.",
+        "duration": "1시간 30분",
+        "duration_min": 90,
+        "tip": null,
+        "lat": 37.510357,
+        "lng": 127.061024,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "바이킹스워프 코엑스점",
+              "summary": "국내 최초 랍스터 무한리필 뷔페 레스토랑",
+              "address": "서울 강남구 영동대로 513 (삼성동, 코엑스)",
+              "lat": 37.5118239121138,
+              "lng": 127.059159043842,
+              "use_time": "월요일~금요일-2부제, 토요일~일요일-4부",
+              "kind": "restaurant",
+              "dist_km": 0.23
+            },
+            {
+              "title": "마노디셰프",
+              "summary": "피자와 파스타를 부담없이 즐길 수 있는 이탈리안 비스트로. ",
+              "address": "서울특별시 강남구 테헤란로87길 21 (삼성동)",
+              "lat": 37.509053,
+              "lng": 127.058313,
+              "use_time": "평일 11:00 ~ 15:00 / 17:00 ~ 21:30\r\n토요일 11:00 ~ 15:50 / 17:00 ~ 21:30\r\n일요일 11:00 ~ 15:50 / 17:00 ~ 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.28
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "16:30",
+        "end_time": "18:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 29,
+        "travel_mode": "transit"
+      }
+    ],
+    "tags": [
+      "부모님",
+      "오후",
+      "쇼핑",
+      "점심 식사",
+      "강남",
+      "서초",
+      "여유",
+      "하루 3곳"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 점심"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "강남역 지하쇼핑센터, 무신사 스탠다드 강남, 무역센터 (WTC Seoul)",
+      "picks": [
+        {
+          "name": "강남역 지하쇼핑센터",
+          "reason": "점심 식사 직후 부모님과 함께 걷기 편한 지하 통로에서 뷰티·스트리트 숍을 가볍게 둘러보며 쇼핑 상권의 첫걸음을 떼기 좋아서 골랐어요",
+          "activities": [
+            "상가존을 따라 천천히 걸으며 뷰티 브랜드 매장 둘러보기",
+            "스트리트 숍에서 기념품이나 가벼운 소품 고르기"
+          ]
+        },
+        {
+          "name": "무신사 스탠다드 강남",
+          "reason": "점심 뒤 여유롭게 브랜드 플래그십 스토어를 둘러보며 패션 감각을 구경하는 쇼핑 흐름에 잘 맞아서 골랐어요",
+          "activities": [
+            "플래그십 스토어의 브랜드 진열과 패션 감각 탐방하기",
+            "부모님과 함께 베로 나들이하듯 매장 안을 천천히 둘러보기"
+          ]
+        },
+        {
+          "name": "무역센터 (WTC Seoul)",
+          "reason": "",
+          "activities": []
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "12:00~18:00 · 장소 3곳 · 식사 1회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "1끼 · 식당 후보 3곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 6건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "부모님과 강남·서초 오후 쇼핑 코스"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "무신사 스탠다드 강남",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.50258,
+      "lng": 127.024817,
+      "day_hint": null
+    },
+    {
+      "name": "무역센터 (WTC Seoul)",
+      "category": "명소",
+      "area": "강남·서초",
+      "lat": 37.510357,
+      "lng": 127.061024,
+      "day_hint": null
+    },
+    {
+      "name": "강남 코엑스",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.5012,
+      "lng": 127.0396,
+      "day_hint": null
+    },
+    {
+      "name": "강남역 지하쇼핑센터",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.498165,
+      "lng": 127.028308,
+      "day_hint": null
+    },
+    {
+      "name": "반디인하우스 강남본점",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.504842,
+      "lng": 127.026186,
+      "day_hint": null
+    },
+    {
+      "name": "역삼",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.5007,
+      "lng": 127.0364,
+      "day_hint": null
+    },
+    {
+      "name": "교대",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.4934,
+      "lng": 127.0138,
+      "day_hint": null
+    },
+    {
+      "name": "젬브로스",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.515696,
+      "lng": 127.023431,
+      "day_hint": null
+    },
+    {
+      "name": "고투몰",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.506219,
+      "lng": 127.005053,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "upstage",
+    "llm_model": "solar-pro4",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

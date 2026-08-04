@@ -1,0 +1,835 @@
+{
+  "persona": "P12",
+  "persona_name": "여행자 2일 · 서울에 없는 것 요구",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:37:06+00:00",
+  "total_sec": 44.26,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.0,
+    "retrieve": 0.442,
+    "select_places": 10.875,
+    "fit_schedule": 0.001,
+    "meals": 0.002,
+    "enrich": 0.882,
+    "nearby": 1.063,
+    "compose": 30.993
+  },
+  "counters": {
+    "embed_calls": 3,
+    "embed_sec": 0.363,
+    "search_calls": 3,
+    "llm_calls": 9,
+    "llm_sec_total": 25.9,
+    "llm_sec_max": 4.451,
+    "input_tokens": 12312,
+    "output_tokens": 2090,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 3.941,
+        "in": 2218,
+        "out": 428,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.451,
+        "in": 2143,
+        "out": 418,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.192,
+        "in": 1951,
+        "out": 169,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.284,
+        "in": 1023,
+        "out": 90,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 1.629,
+        "in": 946,
+        "out": 86,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.296,
+        "in": 1022,
+        "out": 191,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.487,
+        "in": 1032,
+        "out": 238,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.638,
+        "in": 1029,
+        "out": 221,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.982,
+        "in": 948,
+        "out": 249,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "성수와 성북의 트렌디한 감성 탐방",
+    "subtitle": "친구와 함께 즐기는 핫플레이스 쇼핑과 문화 여행",
+    "description": "친구와 함께 강북·성북·성수·건대 권역에서 핫플레이스와 쇼핑을 즐기고자 하는 요청을 바탕으로 8곳의 장소를 구성했어요. 성수 카페거리와 무신사 테라스 성수처럼 최근 화제인 공간을 포함해 친구와 함께 즐길 거리와 쇼핑 요소를 고르게 배치했어요. 이틀 동안 하루 4곳씩 권역별로 묶어 이동 효율을 높였으며 저녁 식사를 포함한 일정을 짜서 하루를 알차게 채웠어요.",
+    "stops": [
+      {
+        "name": "성북천 여울다리",
+        "preview": "드라마 촬영지로 알려진 성북천의 산책로예요.",
+        "description": "성북천을 따라 이어지는 여울다리는 드라마 촬영지로 유명해 많은 방문객이 찾는 곳이에요. 친구와 함께 드라마 속 장면을 재현하며 사진을 남기고, 수변 길을 따라 천천히 걸으며 산책을 즐겨보세요.",
+        "duration": "46분",
+        "duration_min": 46,
+        "tip": null,
+        "lat": 37.5908,
+        "lng": 127.016,
+        "reason": "최근 화제인 K-콘텐츠 촬영지를 방문해 친구와 함께 기억에 남는 인증샷을 남기기 좋아서 골랐어요.",
+        "activities": [
+          "드라마 속 장면을 재현하며 사진 촬영하기",
+          "수변 길을 따라 여유롭게 산책하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "송림원",
+              "summary": "산동 출신 화교가 운영하는 곳. 허름하나 맛은 수준급.",
+              "address": "서울 성북구 동소문로 25-2",
+              "lat": 37.58990386790041,
+              "lng": 127.00880894481736,
+              "use_time": " 11:30 ~ 21:00 KST",
+              "kind": "restaurant",
+              "dist_km": 0.64
+            },
+            {
+              "title": "밥짓고 티우림",
+              "summary": "정성어린 손길로 차 우리고 밥 짓고 술 익는 곳",
+              "address": "서울 성북구 성북로2길 15 2층",
+              "lat": 37.5893529647453,
+              "lng": 127.00660665992,
+              "use_time": "월-금 11:00~15:00 / 17:00~21:00\r\n토 11:00~15:00 / 17:00~20:00",
+              "kind": "restaurant",
+              "dist_km": 0.84
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "12:46",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "성북마을극장",
+        "preview": "지역의 이야기를 담은 소규모 공연장이에요.",
+        "description": "성북동의 골목 사이에 자리한 성북마을극장은 주민과 연극인들이 함께 만드는 공연이 자주 열리는 문화 공간이에요. 극장 마당 공간에서 지역의 색채가 묻어나는 공연을 관람하며 문화적인 시간을 가져보세요.",
+        "duration": "1시간 44분",
+        "duration_min": 104,
+        "tip": null,
+        "lat": 37.5916,
+        "lng": 127.0174,
+        "reason": "지역의 색깔이 묻어나는 문화 공간에서 친구와 함께 이색적인 공연 관람을 경험하기 좋아서 골랐어요.",
+        "activities": [
+          "지역 주민과 연극인들의 공연 관람하기",
+          "마당 공간에서 문화적 분위기 즐기기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "송림원",
+              "summary": "산동 출신 화교가 운영하는 곳. 허름하나 맛은 수준급.",
+              "address": "서울 성북구 동소문로 25-2",
+              "lat": 37.58990386790041,
+              "lng": 127.00880894481736,
+              "use_time": " 11:30 ~ 21:00 KST",
+              "kind": "restaurant",
+              "dist_km": 0.78
+            },
+            {
+              "title": "밥짓고 티우림",
+              "summary": "정성어린 손길로 차 우리고 밥 짓고 술 익는 곳",
+              "address": "서울 성북구 성북로2길 15 2층",
+              "lat": 37.5893529647453,
+              "lng": 127.00660665992,
+              "use_time": "월-금 11:00~15:00 / 17:00~21:00\r\n토 11:00~15:00 / 17:00~20:00",
+              "kind": "restaurant",
+              "dist_km": 0.98
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:53",
+        "end_time": "14:37",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 7,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "숭인시장",
+        "preview": "시장 골목을 누비며 현지 먹거리와 소소한 기념품을 발견하는 시간이에요.",
+        "description": "다양한 식재료와 상점들이 밀집한 숭인시장은 지역 주민들의 활기가 가득한 곳이에요. 시장 골목 구석구석을 걸어 다니며 마음에 드는 기념품을 찾아보고, 시장 곳곳의 먹거리 상점에서 출출함을 달래줄 간식을 맛보세요.",
+        "duration": "1시간 9분",
+        "duration_min": 69,
+        "tip": null,
+        "lat": 37.613209,
+        "lng": 127.02944,
+        "reason": "저녁 식사 전, 활기찬 시장 골목을 탐방하며 현지의 맛과 활기 넘치는 쇼핑 분위기를 느끼기 좋아서 골랐어요.",
+        "activities": [
+          "시장 골목 구석구석 구경하며 기념품 찾기",
+          "다양한 먹거리 상점에서 간식 맛보기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "갈비명가이상(길음신관)",
+              "summary": "갈비 전문점으로, 최고 품질이 인증된 최상급 갈비만을 엄선하여 변함없는 최고의 고기 맛.",
+              "address": "서울 성북구 정릉로 395 (하월곡동, 이상빌딩)",
+              "lat": 37.6038846878459,
+              "lng": 127.025725119816,
+              "use_time": "11:00~22:00",
+              "kind": "restaurant",
+              "dist_km": 1.09
+            },
+            {
+              "title": "갈비명가 이상(본점)",
+              "summary": "갈비 전문점으로, 최고 품질이 인증된 최상급 갈비만을 엄선하여 변함없는 최고의 고기 맛.",
+              "address": "서울 성북구 정릉로 364",
+              "lat": 37.60140207800184,
+              "lng": 127.023672303021,
+              "use_time": " 11:00~22:00",
+              "kind": "restaurant",
+              "dist_km": 1.41
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:04",
+        "end_time": "16:13",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 27,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "북서울꿈의숲",
+        "preview": "전망대에 올라 숲의 전경을 내려다보고 연못 주변을 거닐며 여유를 즐겨요.",
+        "description": "넓은 녹지와 산책로가 조성된 북서울꿈의숲은 현재 혼잡도 여유로 한적한 분위기예요. 전망대에 올라 주변 경관을 조망한 뒤, 칠패지 연못을 따라 조성된 산책로를 걸으며 친구와 함께 숲의 정취를 나눠보세요.",
+        "duration": "2시간 19분",
+        "duration_min": 139,
+        "tip": null,
+        "lat": 37.6218,
+        "lng": 127.0411,
+        "reason": "여행의 시작점에서 친구와 함께 숲의 정취를 느끼며 여유로운 분위기를 즐기기 좋아서 골랐어요.",
+        "activities": [
+          "꿈의숲 전망대에서 전경 감상하기",
+          "칠패지 연못 주변 산책하기"
+        ],
+        "congestion": "여유",
+        "nearby": {
+          "restaurants": [],
+          "attractions": [
+            {
+              "title": "[세종문화회관] 2026 상상톡톡미술관 기획전시 [빠씨를 찾아서]",
+              "summary": "북서울꿈의숲 상상톡톡미술관",
+              "address": "북서울꿈의숲 상상톡톡미술관",
+              "lat": 37.62254520644527,
+              "lng": 127.04139068396867,
+              "period": "2026-07-11~2026-10-25",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158234&menuNo=200009",
+              "kind": "event",
+              "dist_km": 0.09
+            }
+          ]
+        },
+        "start_time": "16:41",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 28,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "저녁 식사 · 북서울꿈의숲 주변",
+        "preview": "날씨를 고려해 어육 살을 배합하는 장인의 전통 어묵",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.6307289053601,
+        "lng": 127.022668132796,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "수유어묵공장",
+            "summary": "날씨를 고려해 어육 살을 배합하는 장인의 전통 어묵",
+            "address": "서울 강북구 도봉로67길 18",
+            "lat": 37.6307289053601,
+            "lng": 127.022668132796,
+            "use_time": "08:00~21:00",
+            "kind": "restaurant",
+            "dist_km": 1.9
+          },
+          {
+            "title": "갈비명가이상(길음신관)",
+            "summary": "갈비 전문점으로, 최고 품질이 인증된 최상급 갈비만을 엄선하여 변함없는 최고의 고기 맛.",
+            "address": "서울 성북구 정릉로 395 (하월곡동, 이상빌딩)",
+            "lat": 37.6038846878459,
+            "lng": 127.025725119816,
+            "use_time": "11:00~22:00",
+            "kind": "restaurant",
+            "dist_km": 2.41
+          },
+          {
+            "title": "[백년가게] 참누렁소",
+            "summary": "칼끝 하나로 이룬 소고기 음식 문화",
+            "address": "서울 노원구 공릉로63길 13 (유토피아빌딩)",
+            "lat": 37.63486408338562,
+            "lng": 127.0705366513625,
+            "use_time": "매일 11:00 ~ 21:20  ",
+            "kind": "restaurant",
+            "dist_km": 2.97
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "무신사 테라스 성수",
+        "preview": "트렌디한 패션 아이템을 한자리에서 만나는 편집숍이에요.",
+        "description": "다양한 패션 브랜드의 팝업과 상품을 큐레이션하여 선보이는 복합 문화 공간이에요. 여기서 입점 브랜드의 오프라인 공간을 둘러보고 친구와 함께 트렌디한 패션 아이템을 쇼핑하며 취향을 공유해 보세요.",
+        "duration": "1시간 9분",
+        "duration_min": 69,
+        "tip": null,
+        "lat": 37.544443,
+        "lng": 127.055458,
+        "reason": "친구와 함께 요즘 가장 유행하는 패션 브랜드를 직접 살펴보고 쇼핑 취향을 공유하기 적합해서 골랐어요.",
+        "activities": [
+          "트렌디한 패션 아이템 쇼핑",
+          "입점 브랜드 오프라인 공간 탐방"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.13
+            },
+            {
+              "title": "앤더슨씨 ",
+              "summary": "빈티지 가구에 둘러싸인 여유롭고 고급스러운 카페",
+              "address": "서울 성동구 성수일로6길 36 1층",
+              "lat": 37.5442085730523,
+              "lng": 127.053984411341,
+              "use_time": "매일 11:00-18:00",
+              "kind": "cafe",
+              "dist_km": 0.13
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:09",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "성수 카페거리",
+        "preview": "오래된 공장을 개조한 독특한 카페들이 모여 있어요.",
+        "description": "옛 공장과 창고를 리모델링한 카페들이 밀집해 있어 성수동 특유의 산업적인 분위기를 느낄 수 있는 곳이에요. 현재 방문객이 적당히 오가는 거리에서 마음에 드는 창고형 카페를 찾아 커피와 디저트를 즐기고, 골목 곳곳의 팝업스토어를 구경해 보세요.",
+        "duration": "2시간 18분",
+        "duration_min": 138,
+        "tip": "13시 예상 혼잡도 보통",
+        "lat": 37.5444,
+        "lng": 127.0564,
+        "reason": "오후의 여유로운 분위기 속에서 성수만의 독특한 공장 개조 카페를 방문해 핫플레이스의 매력을 느끼기 위해서예요.",
+        "activities": [
+          "창고형 카페에서 커피와 디저트 즐기기",
+          "주변 팝업스토어 구경"
+        ],
+        "congestion": "보통",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": " 어니언",
+              "summary": "어니언은 70년대에 지어진 건물을 개조해 만든 카페. ",
+              "address": "서울 성동구 아차산로9길 8 (성수동2가)",
+              "lat": 37.5447391584,
+              "lng": 127.0581854139,
+              "use_time": "월요일~금요일 08:00~22:00\r\n주말 09:00~22:00\r\n(21:30 라스트오더)",
+              "kind": "cafe",
+              "dist_km": 0.16
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "13:15",
+        "end_time": "15:33",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": 6,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "성수연방",
+        "preview": "성수동의 트렌디한 라이프스타일을 한자리에서 만나는 복합 문화 공간이에요.",
+        "description": "옛 공장을 개조해 만든 이곳은 다양한 라이프스타일 숍과 식음료 매장이 모여 있는 성수동의 거점이에요. 건물 중앙의 중정을 중심으로 마련된 실내외 전시를 둘러보며 공간의 분위기를 살피고, 아기자기한 상점 사이를 거닐며 여유롭게 휴식 시간을 가져보세요.",
+        "duration": "1시간 43분",
+        "duration_min": 103,
+        "tip": null,
+        "lat": 37.541408,
+        "lng": 127.056908,
+        "reason": "성수동의 복합 문화 트렌드를 한곳에서 감각적으로 경험하며 여행의 시작을 열기 좋아서 골랐어요.",
+        "activities": [
+          "실내외 이색 전시 관람",
+          "복합 문화 공간 내 휴식"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "성수동 대림창고 갤러리",
+              "summary": "옛 정미소를 개조하여 높은 천장과 개방감 있는 공간의 성수동 대형 카페",
+              "address": "서울 성동구 성수이로 78 (성수동2가, 대림창고)",
+              "lat": 37.5416392066484,
+              "lng": 127.056647865179,
+              "use_time": "매일 11:00-22:00",
+              "kind": "cafe",
+              "dist_km": 0.03
+            },
+            {
+              "title": "사델스 앳 키스 서울 ",
+              "summary": "뉴욕의 인기 브런치 레스토랑",
+              "address": "서울 성동구 연무장길 70 3층",
+              "lat": 37.5417859807922,
+              "lng": 127.057019569665,
+              "use_time": "매일 10:00-20:00",
+              "kind": "restaurant",
+              "dist_km": 0.04
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:43",
+        "end_time": "17:26",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": 10,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "디뮤지엄",
+        "preview": "감각적인 전시와 공간 연출로 성수동의 문화적 깊이를 더하는 미술관이에요.",
+        "description": "성수동에 위치한 디뮤지엄은 현대 미술과 다양한 디자인 전시를 기획하여 폭넓은 시각 예술을 선보이는 공간이에요. 성수연방에서 도보로 이동한 뒤 큐레이션된 전시를 관람하고, 관람객과 함께 작품을 감상하며 2일차 여행의 마지막 일정을 채워보세요.",
+        "duration": "1시간 9분",
+        "duration_min": 69,
+        "tip": null,
+        "lat": 37.5442,
+        "lng": 127.0434,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "포틀러",
+              "summary": "포틀랜드 감성을 담은 수제 디저트 스모어 전문 브랜드, 포틀러",
+              "address": "서울 성동구 왕십리로 82-20 (성수동1가)",
+              "lat": 37.54486501793,
+              "lng": 127.045715571993,
+              "use_time": " 12:00 ~ 20:00\r\n",
+              "kind": "cafe",
+              "dist_km": 0.22
+            },
+            {
+              "title": "목로정원",
+              "summary": "내면부터 가꾸는 비건카페",
+              "address": "서울 성동구 서울숲2길 47 (성수동1가)",
+              "lat": 37.5463451036977,
+              "lng": 127.044017271466,
+              "use_time": "12:00-19:00",
+              "kind": "cafe",
+              "dist_km": 0.24
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "17:51",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "저녁 식사 · 디뮤지엄 주변",
+        "preview": "“성수 골목길에서 찾은 소바 달인의 내공”",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.546808145881,
+        "lng": 127.047007351689,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "소바마에",
+            "summary": "“성수 골목길에서 찾은 소바 달인의 내공”",
+            "address": "서울 성동구 왕십리로4길 26-20 (성수동1가)",
+            "lat": 37.546808145881,
+            "lng": 127.047007351689,
+            "use_time": "화요일-금요일 11:00-21:00 \r\n(브레이크타임 15:00 – 17:00)\r\n(라스트오더 20:30)\r\n토요일-일요일 11:00 – 20:30 \r\n(라스트 오더20:00)",
+            "kind": "restaurant",
+            "dist_km": 0.43
+          },
+          {
+            "title": "어메이징 브루잉컴퍼니 성수 브루펍",
+            "summary": "직접 양조한 50가지의 신선한 크래프트 비어를 마실 수 있는 펍",
+            "address": "서울 성동구 성수일로4길 4 (성수동1가)",
+            "lat": 37.5428525176827,
+            "lng": 127.049366172099,
+            "use_time": "평일 17:00-24:00\r\n토 15:00-24:00 / 일 14:00-23:00 ",
+            "kind": "bar",
+            "dist_km": 0.55
+          },
+          {
+            "title": "밀스",
+            "summary": "미슐랭 출신 쉐프가 운영하는 수제 소시지와 사워도우 브레드를 활용한 카페",
+            "address": "서울 성동구 뚝섬로4길 21 (성수동1가)",
+            "lat": 37.5389686315866,
+            "lng": 127.050937053628,
+            "use_time": "",
+            "kind": "restaurant",
+            "dist_km": 0.88
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "코스"
+    ],
+    "scheduled": true,
+    "days": 2,
+    "day_areas": {
+      "1": "강북·성북",
+      "2": "성수·건대"
+    },
+    "day_descriptions": {
+      "1": "성북천 여울다리에서 드라마 속 명장면을 따라 사진을 찍으며 산책을 시작하고, 성북마을극장으로 이동해 지역 공연을 관람해요. 오후에는 숭인시장에 들러 시장 골목을 구경하며 간식을 먹고, 마지막으로 북서울꿈의숲 전망대에 올라 저녁 식사 전까지 주변 경치를 감상해요.",
+      "2": "오전에는 무신사 테라스 성수에서 패션 브랜드 공간을 둘러보고, 오후에는 성수 카페거리로 이동해 팝업스토어를 구경하며 시간을 보내요. 이어 성수연방에서 복합 문화 공간을 탐방한 뒤, 저녁에는 디뮤지엄으로 자리를 옮겨 전시를 관람하며 일정을 마무리해요."
+    }
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 저녁"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 12곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "성북천 여울다리, 성북마을극장, 숭인시장, 북서울꿈의숲, 무신사 테라스 성수, 성수 카페거리, 성수연방, 디뮤지엄",
+      "picks": [
+        {
+          "name": "성북천 여울다리",
+          "reason": "최근 화제인 K-콘텐츠 촬영지를 방문해 친구와 함께 기억에 남는 인증샷을 남기기 좋아서 골랐어요.",
+          "activities": [
+            "드라마 속 장면을 재현하며 사진 촬영하기",
+            "수변 길을 따라 여유롭게 산책하기"
+          ]
+        },
+        {
+          "name": "성북마을극장",
+          "reason": "지역의 색깔이 묻어나는 문화 공간에서 친구와 함께 이색적인 공연 관람을 경험하기 좋아서 골랐어요.",
+          "activities": [
+            "지역 주민과 연극인들의 공연 관람하기",
+            "마당 공간에서 문화적 분위기 즐기기"
+          ]
+        },
+        {
+          "name": "숭인시장",
+          "reason": "저녁 식사 전, 활기찬 시장 골목을 탐방하며 현지의 맛과 활기 넘치는 쇼핑 분위기를 느끼기 좋아서 골랐어요.",
+          "activities": [
+            "시장 골목 구석구석 구경하며 기념품 찾기",
+            "다양한 먹거리 상점에서 간식 맛보기"
+          ]
+        },
+        {
+          "name": "북서울꿈의숲",
+          "reason": "여행의 시작점에서 친구와 함께 숲의 정취를 느끼며 여유로운 분위기를 즐기기 좋아서 골랐어요.",
+          "activities": [
+            "꿈의숲 전망대에서 전경 감상하기",
+            "칠패지 연못 주변 산책하기"
+          ]
+        },
+        {
+          "name": "무신사 테라스 성수",
+          "reason": "친구와 함께 요즘 가장 유행하는 패션 브랜드를 직접 살펴보고 쇼핑 취향을 공유하기 적합해서 골랐어요.",
+          "activities": [
+            "트렌디한 패션 아이템 쇼핑",
+            "입점 브랜드 오프라인 공간 탐방"
+          ]
+        },
+        {
+          "name": "성수 카페거리",
+          "reason": "오후의 여유로운 분위기 속에서 성수만의 독특한 공장 개조 카페를 방문해 핫플레이스의 매력을 느끼기 위해서예요.",
+          "activities": [
+            "창고형 카페에서 커피와 디저트 즐기기",
+            "주변 팝업스토어 구경"
+          ]
+        },
+        {
+          "name": "성수연방",
+          "reason": "성수동의 복합 문화 트렌드를 한곳에서 감각적으로 경험하며 여행의 시작을 열기 좋아서 골랐어요.",
+          "activities": [
+            "실내외 이색 전시 관람",
+            "복합 문화 공간 내 휴식"
+          ]
+        },
+        {
+          "name": "디뮤지엄",
+          "reason": "",
+          "activities": []
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "2일 · 12:00~20:00 · 장소 8곳 · 식사 2회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "2끼 · 식당 후보 6곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "북서울꿈의숲 여유, 성수 카페거리 보통"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 15건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "성수와 성북의 트렌디한 감성 탐방"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "숭인시장",
+      "category": "쇼핑",
+      "area": "강북·성북",
+      "lat": 37.613209,
+      "lng": 127.02944,
+      "day_hint": 1
+    },
+    {
+      "name": "성북마을극장",
+      "category": "문화",
+      "area": "강북·성북",
+      "lat": 37.5916,
+      "lng": 127.0174,
+      "day_hint": 1
+    },
+    {
+      "name": "성북천 여울다리",
+      "category": "명소",
+      "area": "강북·성북",
+      "lat": 37.5908,
+      "lng": 127.016,
+      "day_hint": 1
+    },
+    {
+      "name": "화계사",
+      "category": "역사",
+      "area": "강북·성북",
+      "lat": 37.632521,
+      "lng": 127.007087,
+      "day_hint": 1
+    },
+    {
+      "name": "북서울꿈의숲",
+      "category": "자연",
+      "area": "강북·성북",
+      "lat": 37.6218,
+      "lng": 127.0411,
+      "day_hint": 1
+    },
+    {
+      "name": "미아사거리",
+      "category": "쇼핑",
+      "area": "강북·성북",
+      "lat": 37.613,
+      "lng": 127.0246,
+      "day_hint": 1
+    },
+    {
+      "name": "성수 연무장길",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.54417,
+      "lng": 127.049948,
+      "day_hint": 2
+    },
+    {
+      "name": "디뮤지엄",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.5442,
+      "lng": 127.0434,
+      "day_hint": 2
+    },
+    {
+      "name": "서울숲",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.5444,
+      "lng": 127.0374,
+      "day_hint": 2
+    },
+    {
+      "name": "성수 카페거리",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.5444,
+      "lng": 127.0564,
+      "day_hint": 2
+    },
+    {
+      "name": "성수연방",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.541408,
+      "lng": 127.056908,
+      "day_hint": 2
+    },
+    {
+      "name": "무신사 테라스 성수",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.544443,
+      "lng": 127.055458,
+      "day_hint": 2
+    }
+  ],
+  "day_areas": {
+    "1": "강북·성북",
+    "2": "성수·건대"
+  },
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

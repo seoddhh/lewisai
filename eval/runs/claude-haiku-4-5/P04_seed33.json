@@ -1,0 +1,459 @@
+{
+  "persona": "P04",
+  "persona_name": "성수 부부 시간 미정",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:11:06+00:00",
+  "total_sec": 10.304,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.173,
+    "select_places": 5.875,
+    "fit_schedule": 0.001,
+    "meals": 0.0,
+    "enrich": 0.001,
+    "nearby": 0.001,
+    "compose": 4.251
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.153,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 16.68,
+    "llm_sec_max": 5.873,
+    "input_tokens": 9795,
+    "output_tokens": 1684,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.873,
+        "in": 3866,
+        "out": 630,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.172,
+        "in": 2861,
+        "out": 263,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.388,
+        "in": 1540,
+        "out": 378,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.247,
+        "in": 1528,
+        "out": 413,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "성수·건대, 배우자와 함께하는 감성 데이트",
+    "subtitle": "산책과 야경으로 채우는 오후부터 저녁까지",
+    "description": "배우자와 성수·건대에서 보낼 하루를 4곳으로 구성했어요. 감성적인 거리 산책에서 시작해 실내 음악 감상으로 여유로운 시간을 갖고, 역사 문화를 경험한 뒤 저녁 야경으로 마무리하는 흐름이에요. 야외 산책과 실내 휴식을 번갈아 배치해 둘이 함께할 다양한 경험을 담았어요.",
+    "stops": [
+      {
+        "name": "성수 연무장길",
+        "preview": "개성 있는 상점과 카페가 모인 감성 거리",
+        "description": "성수동의 연무장길은 감성 카페와 편집숍들이 모여 있는 거리예요. 배우자와 함께 천천히 산책하며 각 상점의 개성 있는 분위기를 구경할 수 있고, 이 길은 뚝섬까지 이어지는 야외 산책로로 연결되어 있어 자연스럽게 강변 산책을 즐길 수 있어요.",
+        "duration": "50분",
+        "duration_min": 50,
+        "tip": null,
+        "lat": 37.54417,
+        "lng": 127.049948,
+        "reason": "배우자와 함께 감성적인 거리를 천천히 산책하며 개성 있는 상점들을 구경하고 뚝섬까지 이어지는 야외 산책로를 즐기기 좋아서 골랐어요",
+        "activities": [
+          "감성 카페와 편집숍 둘러보기",
+          "뚝섬까지 이어지는 산책로 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "어메이징 브루잉컴퍼니 성수 브루펍",
+              "summary": "직접 양조한 50가지의 신선한 크래프트 비어를 마실 수 있는 펍",
+              "address": "서울 성동구 성수일로4길 4 (성수동1가)",
+              "lat": 37.5428525176827,
+              "lng": 127.049366172099,
+              "use_time": "평일 17:00-24:00\r\n토 15:00-24:00 / 일 14:00-23:00 ",
+              "kind": "bar",
+              "dist_km": 0.16
+            },
+            {
+              "title": "쓰윗 Thweet",
+              "summary": "어른들을 위한 쓰고 달콤한 프리미엄 위스키 아이스크림바",
+              "address": "서울 성동구 연무장3길 12 B1층",
+              "lat": 37.5446546541385,
+              "lng": 127.051779415666,
+              "use_time": "12:00-24:00",
+              "kind": "cafe",
+              "dist_km": 0.17
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "바이닐 성수",
+        "preview": "LP 음악을 함께 감상하는 청음 카페",
+        "description": "바이닐 성수는 개별 LP 플레이어로 음악을 감상할 수 있는 공간이에요. 야외 산책 후 실내의 조용한 분위기 속에서 배우자와 함께 LP를 선택해 음악을 듣고, 카페에서 여유로운 시간을 보낼 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5448,
+        "lng": 127.0561,
+        "reason": "야외 산책 후 실내에서 조용한 분위기 속 개별 LP 플레이어로 함께 음악을 감상하며 여유로운 시간을 보낼 수 있어서 골랐어요",
+        "activities": [
+          "LP 음악 함께 감상하기",
+          "바이닐 청음 카페에서 휴식"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.06
+            },
+            {
+              "title": " 어니언",
+              "summary": "어니언은 70년대에 지어진 건물을 개조해 만든 카페. ",
+              "address": "서울 성동구 아차산로9길 8 (성수동2가)",
+              "lat": 37.5447391584,
+              "lng": 127.0581854139,
+              "use_time": "월요일~금요일 08:00~22:00\r\n주말 09:00~22:00\r\n(21:30 라스트오더)",
+              "kind": "cafe",
+              "dist_km": 0.18
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "살곶이다리（전곶교）",
+        "preview": "조선시대 보물 석조 다리에서 성수천 경관을 함께 감상해요",
+        "description": "조선시대에 지어진 석조 다리로, 현재 보물로 지정되어 있어요. 다리 위에서 성수천의 물길을 따라 주변 경관을 천천히 감상하며 산책할 수 있어요. 역사가 담긴 구조물을 함께 탐방하고 물 위에 비친 하늘을 바라보는 시간을 가져보세요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.552288,
+        "lng": 127.046985,
+        "reason": "조선시대 보물로 지정된 석조 다리의 역사적 가치를 함께 경험하고 다리 위에서 성수천 경관을 감상하는 문화적 산책을 더하기 위해 골랐어요",
+        "activities": [
+          "보물 지정 석조 다리 탐방",
+          "주변 경관 함께 감상하며 산책"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "훼미리손칼국수보쌈",
+              "summary": "뚝섬역 훼미리손칼국수보쌈은 깊은 국물의 칼국수와 부드러운 보쌈을 합리적인 가격에 즐길 수 있는 가성비 맛집이다.",
+              "address": "서울 성동구 왕십리로 134 (성수동1가)",
+              "lat": 37.5495264804791,
+              "lng": 127.044629777329,
+              "use_time": "11:30 ~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            },
+            {
+              "title": "선채 성수",
+              "summary": "전국 팔도의 다양한 식재료를 사용하는 작은 한식당",
+              "address": "서울 성동구 아차산로1길 11 (성수동1가)",
+              "lat": 37.5490883450365,
+              "lng": 127.045754250455,
+              "use_time": "11:30-22:00 / 브레이크타임 15:00-17:30 (주말은 브레이크타임 없이 운영)\r\n/ 라스트오더 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "응봉산",
+        "preview": "도시 야경과 한강을 함께 내려다보는 저녁 산책로에요",
+        "description": "성수·건대 일대에서 탁 트인 도시 야경과 한강을 조망할 수 있는 명소예요. 저녁 시간에 산책하며 서울의 불빛이 켜지는 풍경을 배우자와 함께 감상할 수 있어요. 여유로운 분위기에서 한강의 흐름과 주변 건물들의 야경을 즐겨보세요.",
+        "duration": "45분",
+        "duration_min": 45,
+        "tip": null,
+        "lat": 37.5482,
+        "lng": 127.0304,
+        "reason": "저녁 시간에 탁 트인 도시 야경을 배우자와 함께 감상하며 마무리하는 로맨틱한 마지막 코스로 골랐어요",
+        "activities": [
+          "도심 야경 감상",
+          "한강 조망 함께 즐기기"
+        ],
+        "congestion": "여유",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "라프레플루트",
+              "summary": "다양한 과일을 쉽고 간편하게 접할 수 있는 프리미엄 과일가게 라프레 플루트.",
+              "address": "서울 성동구 서울숲2길 8-8 (성수동1가) 2층",
+              "lat": 37.5472524943165,
+              "lng": 127.039443386345,
+              "use_time": "월~금 13:00~19:30\r\n토~일 13:00~20:00",
+              "kind": "cafe",
+              "dist_km": 0.8
+            },
+            {
+              "title": "OMOT 오므오트",
+              "summary": "성수동 서울숲에 위치한 한국차 전문 티카페\r\n",
+              "address": "서울 성동구 서울숲2길 12 (성수동1가)  지하1층",
+              "lat": 37.5472294392078,
+              "lng": 127.039948298252,
+              "use_time": "수~월 : 12:00~17:30 / 18:30~20:30\r\n",
+              "kind": "cafe",
+              "dist_km": 0.85
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "배우자",
+      "데이트",
+      "산책",
+      "야경",
+      "성수"
+    ],
+    "scheduled": false,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 시간표 생략"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "성수 연무장길, 바이닐 성수, 살곶이다리（전곶교）, 응봉산",
+      "picks": [
+        {
+          "name": "성수 연무장길",
+          "reason": "배우자와 함께 감성적인 거리를 천천히 산책하며 개성 있는 상점들을 구경하고 뚝섬까지 이어지는 야외 산책로를 즐기기 좋아서 골랐어요",
+          "activities": [
+            "감성 카페와 편집숍 둘러보기",
+            "뚝섬까지 이어지는 산책로 걷기"
+          ]
+        },
+        {
+          "name": "바이닐 성수",
+          "reason": "야외 산책 후 실내에서 조용한 분위기 속 개별 LP 플레이어로 함께 음악을 감상하며 여유로운 시간을 보낼 수 있어서 골랐어요",
+          "activities": [
+            "LP 음악 함께 감상하기",
+            "바이닐 청음 카페에서 휴식"
+          ]
+        },
+        {
+          "name": "살곶이다리（전곶교）",
+          "reason": "조선시대 보물로 지정된 석조 다리의 역사적 가치를 함께 경험하고 다리 위에서 성수천 경관을 감상하는 문화적 산책을 더하기 위해 골랐어요",
+          "activities": [
+            "보물 지정 석조 다리 탐방",
+            "주변 경관 함께 감상하며 산책"
+          ]
+        },
+        {
+          "name": "응봉산",
+          "reason": "저녁 시간에 탁 트인 도시 야경을 배우자와 함께 감상하며 마무리하는 로맨틱한 마지막 코스로 골랐어요",
+          "activities": [
+            "도심 야경 감상",
+            "한강 조망 함께 즐기기"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 건너뜀"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "응봉산 여유"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 8건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "성수·건대, 배우자와 함께하는 감성 데이트"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "성수 연무장길",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.54417,
+      "lng": 127.049948,
+      "day_hint": null
+    },
+    {
+      "name": "바이닐 성수",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5448,
+      "lng": 127.0561,
+      "day_hint": null
+    },
+    {
+      "name": "응봉산",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.5482,
+      "lng": 127.0304,
+      "day_hint": null
+    },
+    {
+      "name": "성수연방",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.541408,
+      "lng": 127.056908,
+      "day_hint": null
+    },
+    {
+      "name": "달맞이 근린공원",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.538668,
+      "lng": 127.019145,
+      "day_hint": null
+    },
+    {
+      "name": "살곶이다리（전곶교）",
+      "category": "역사",
+      "area": "성수·건대",
+      "lat": 37.552288,
+      "lng": 127.046985,
+      "day_hint": null
+    },
+    {
+      "name": "로우클래식 성수점",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.541299,
+      "lng": 127.058651,
+      "day_hint": null
+    },
+    {
+      "name": "넥스트에디션 건대2호점",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5408,
+      "lng": 127.0691,
+      "day_hint": null
+    },
+    {
+      "name": "잠실대교",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.517628,
+      "lng": 127.086736,
+      "day_hint": null
+    },
+    {
+      "name": "송정제방길",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.553205,
+      "lng": 127.06763,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 0,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

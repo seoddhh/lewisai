@@ -1,0 +1,443 @@
+{
+  "persona": "P06",
+  "persona_name": "잠실 아이와 체험",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:12:11+00:00",
+  "total_sec": 10.633,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.205,
+    "select_places": 5.772,
+    "fit_schedule": 0.001,
+    "meals": 0.002,
+    "enrich": 0.001,
+    "nearby": 0.002,
+    "compose": 4.648
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.155,
+    "search_calls": 1,
+    "llm_calls": 3,
+    "llm_sec_total": 13.115,
+    "llm_sec_max": 5.77,
+    "input_tokens": 8569,
+    "output_tokens": 1398,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.77,
+        "in": 4059,
+        "out": 503,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.7,
+        "in": 2774,
+        "out": 310,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.645,
+        "in": 1736,
+        "out": 585,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "아이와 함께하는 잠실 체험 원데이",
+    "subtitle": "직업 체험·해양 생물 관찰·스포츠 투어로 채우는 오전부터 오후까지",
+    "description": "아이와 보낼 오전, 체험·놀거리 목적에 맞춰 잠실·송파 권역 3곳을 골랐어요. 키자니아 서울에서 다양한 직업을 직접 체험한 뒤 롯데월드 아쿠아리움에서 해양 생물과 상호작용하며 활동의 결을 바꿔요. 실내 체험 후 서울올림픽주경기장의 야외 투어와 산책로에서 신선한 공기를 마시며 마무리하는 구성이에요.",
+    "stops": [
+      {
+        "name": "롯데월드 아쿠아리움",
+        "preview": "5대양 해양 생물을 직접 관찰하고 만나는 수족관",
+        "description": "롯데월드 내 위치한 대규모 수족관으로, 5대양의 해양 생태계를 재현한 전시 공간에서 다양한 해양 생물을 관찰할 수 있어요. 계절별 특별 전시와 해양 생물 전시 체험을 통해 아이가 바다 생물에 대해 직접 배우고 상호작용하는 시간을 가져요.",
+        "duration": "1시간 11분",
+        "duration_min": 71,
+        "tip": null,
+        "lat": 37.513752,
+        "lng": 127.104447,
+        "reason": "키자니아에서 나온 후 가까운 거리에서 해양 생물을 직접 관찰하고 상호작용하는 체험으로 활동의 결을 바꿔요",
+        "activities": [
+          "5대양 해양 생태계 관찰 및 해양 생물 전시 체험",
+          "계절별 특별 전시 관람"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "마키노차야 블랙31 롯데월드타워점",
+              "summary": "롯데월드타워 31층 프리미엄 뷔페 레스토랑",
+              "address": "서울 송파구 올림픽로 300 (신천동, 롯데월드타워앤드롯데월드몰) 31층",
+              "lat": 37.5137519612953,
+              "lng": 127.104446890835,
+              "use_time": "평일 11:30~14:30, 18:00~21:00 / 주말 11:30~15:30, 17:00~21:00",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            },
+            {
+              "title": "강가 잠실점 ",
+              "summary": "2000년 신사본점을 시작으로 전국에 매장을 두고 있는 인도 정통요리 전문점",
+              "address": "서울 송파구 올림픽로 300 (신천동, 롯데월드타워앤드롯데월드몰)",
+              "lat": 37.51375250260386,
+              "lng": 127.10444609981752,
+              "use_time": "10:30~22:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "10:11",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "키자니아 서울",
+        "preview": "소방관, 의사, 조종사 등 다양한 직업을 직접 체험하는 공간",
+        "description": "실내 테마파크로, 아이가 소방관·의사·조종사 등 여러 직업의 역할극을 직접 해보며 배울 수 있어요. 시즌별 특별 프로그램도 운영되어 방문할 때마다 새로운 체험 기회를 만날 수 있습니다.",
+        "duration": "1시간 26분",
+        "duration_min": 86,
+        "tip": null,
+        "lat": 37.51131,
+        "lng": 127.098142,
+        "reason": "아이가 직접 다양한 직업을 체험하며 놀 수 있는 활기찬 공간이라 체험·놀거리 목적에 딱 맞아요",
+        "activities": [
+          "소방관·의사·조종사 등 여러 직업 역할극 체험",
+          "시즌별 특별 프로그램 참여"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "도림",
+              "summary": "모던한 분위기에서 품격있게 중국요리를 즐길 수 있는 곳.",
+              "address": "서울 송파구 올림픽로 240 (잠실동, 롯데월드)",
+              "lat": 37.5113107836,
+              "lng": 127.0981403954,
+              "use_time": "평일 11:30 ~ 14:30 / 18:00 ~ 21:30\r\n주말 11:30 ~ 14:30 / 17:30 ~ 21:30",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            },
+            {
+              "title": "[백년가게] 군산오징어",
+              "summary": "Since 1988, 석촌호수 서호사거리에 위치한 오징어 불고기 전문점. \r\n",
+              "address": "서울 송파구 삼학사로 101 (삼전동, 군산오징어)",
+              "lat": 37.5062829479541,
+              "lng": 127.097001917858,
+              "use_time": "매일 11:30 ~ 22:30",
+              "kind": "restaurant",
+              "dist_km": 0.57
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "10:26",
+        "end_time": "11:52",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 15,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "서울올림픽주경기장",
+        "preview": "경기장 투어와 산책로에서 스포츠 에너지를 느끼는 야외 공간",
+        "description": "1988년 서울올림픽 개최지인 주경기장으로, 투어 프로그램을 통해 경기장 내부를 둘러볼 수 있어요. 주변 산책로를 걸으며 신선한 공기를 마시고 풍경을 감상하는 야외 활동으로 오전 실내 활동의 결을 바꿀 수 있습니다.",
+        "duration": "43분",
+        "duration_min": 43,
+        "tip": null,
+        "lat": 37.516199,
+        "lng": 127.075941,
+        "reason": "실내 활동 후 야외에서 경기장 투어와 산책로를 걸으며 신선한 공기를 마시고 스포츠 에너지를 느낄 수 있어요",
+        "activities": [
+          "경기장 투어 참여",
+          "주변 산책로에서 산책 및 풍경 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "펍휘트니",
+              "summary": "실내에서 야구 관람이 가능한 대형 스크린이 있는 펍",
+              "address": "서울 송파구 올림픽로10길 9 (잠실동, 진영빌딩) 1층",
+              "lat": 37.5108040969638,
+              "lng": 127.081240468854,
+              "use_time": "매일 17:00-05:00",
+              "kind": "bar",
+              "dist_km": 0.76
+            },
+            {
+              "title": "해주냉면 ",
+              "summary": "냉면 하나로 30여 년간 명성을 날리고 있는 집.",
+              "address": "서울 송파구 백제고분로7길 8-16 (잠실동, 남광빌딩)",
+              "lat": 37.5096527123279,
+              "lng": 127.079773391153,
+              "use_time": "월요일~토요일 11:30 ~ 21:00 ",
+              "kind": "restaurant",
+              "dist_km": 0.8
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:17",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "점심 식사 · 서울올림픽주경기장 주변",
+        "preview": "냉면 하나로 30여 년간 명성을 날리고 있는 집.",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5096527123279,
+        "lng": 127.079773391153,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "해주냉면 ",
+            "summary": "냉면 하나로 30여 년간 명성을 날리고 있는 집.",
+            "address": "서울 송파구 백제고분로7길 8-16 (잠실동, 남광빌딩)",
+            "lat": 37.5096527123279,
+            "lng": 127.079773391153,
+            "use_time": "월요일~토요일 11:30 ~ 21:00 ",
+            "kind": "restaurant",
+            "dist_km": 0.8
+          },
+          {
+            "title": "커리인",
+            "summary": "“집밥처럼 즐기는 정통 인도 커리의 따뜻함”",
+            "address": "서울 강남구 영동대로96길 37 (삼성동)",
+            "lat": 37.5116744058932,
+            "lng": 127.065531273265,
+            "use_time": "10:30-21:00",
+            "kind": "restaurant",
+            "dist_km": 1.05
+          },
+          {
+            "title": "꽃지",
+            "summary": "서산에서 가져온 꽃게로 만든 게장과 꽃게 요리가 정갈하게 나오는 곳.",
+            "address": "서울 강남구 봉은사로 610 (삼성동, 수도빌딩)",
+            "lat": 37.5142222987,
+            "lng": 127.0616183879,
+            "use_time": "매일 11:30~21:30\r\n(Break Time 15:00~17:00)",
+            "kind": "restaurant",
+            "dist_km": 1.28
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "아이와 함께",
+      "체험·놀거리",
+      "잠실·송파",
+      "오전",
+      "점심 포함"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 점심"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "롯데월드 아쿠아리움, 키자니아 서울, 서울올림픽주경기장",
+      "picks": [
+        {
+          "name": "롯데월드 아쿠아리움",
+          "reason": "키자니아에서 나온 후 가까운 거리에서 해양 생물을 직접 관찰하고 상호작용하는 체험으로 활동의 결을 바꿔요",
+          "activities": [
+            "5대양 해양 생태계 관찰 및 해양 생물 전시 체험",
+            "계절별 특별 전시 관람"
+          ]
+        },
+        {
+          "name": "키자니아 서울",
+          "reason": "아이가 직접 다양한 직업을 체험하며 놀 수 있는 활기찬 공간이라 체험·놀거리 목적에 딱 맞아요",
+          "activities": [
+            "소방관·의사·조종사 등 여러 직업 역할극 체험",
+            "시즌별 특별 프로그램 참여"
+          ]
+        },
+        {
+          "name": "서울올림픽주경기장",
+          "reason": "실내 활동 후 야외에서 경기장 투어와 산책로를 걸으며 신선한 공기를 마시고 스포츠 에너지를 느낄 수 있어요",
+          "activities": [
+            "경기장 투어 참여",
+            "주변 산책로에서 산책 및 풍경 감상"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "09:00~14:00 · 장소 3곳 · 식사 1회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "1끼 · 식당 후보 3곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 6건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "아이와 함께하는 잠실 체험 원데이"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "롯데월드 아쿠아리움",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.513752,
+      "lng": 127.104447,
+      "day_hint": null
+    },
+    {
+      "name": "잠실",
+      "category": "쇼핑",
+      "area": "잠실·송파",
+      "lat": 37.5115,
+      "lng": 127.098,
+      "day_hint": null
+    },
+    {
+      "name": "서울올림픽주경기장",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.516199,
+      "lng": 127.075941,
+      "day_hint": null
+    },
+    {
+      "name": "서울백제어린이박물관",
+      "category": "문화",
+      "area": "잠실·송파",
+      "lat": 37.52034,
+      "lng": 127.115518,
+      "day_hint": null
+    },
+    {
+      "name": "롯데월드 어드벤처",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.511432,
+      "lng": 127.098281,
+      "day_hint": null
+    },
+    {
+      "name": "스트라이크존 서울 잠실구장",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.510298,
+      "lng": 127.080468,
+      "day_hint": null
+    },
+    {
+      "name": "송파구민회관",
+      "category": "문화",
+      "area": "잠실·송파",
+      "lat": 37.5024,
+      "lng": 127.0935,
+      "day_hint": null
+    },
+    {
+      "name": "가든파이브라이프",
+      "category": "쇼핑",
+      "area": "잠실·송파",
+      "lat": 37.477613,
+      "lng": 127.124963,
+      "day_hint": null
+    },
+    {
+      "name": "키자니아 서울",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.51131,
+      "lng": 127.098142,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

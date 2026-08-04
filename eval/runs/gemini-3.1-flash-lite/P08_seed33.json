@@ -1,0 +1,1015 @@
+{
+  "persona": "P08",
+  "persona_name": "이태원 연인 1박 2일",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:28:26+00:00",
+  "total_sec": 38.556,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.001,
+    "retrieve": 0.357,
+    "select_places": 8.035,
+    "fit_schedule": 0.001,
+    "meals": 0.007,
+    "enrich": 0.192,
+    "nearby": 0.335,
+    "compose": 29.627
+  },
+  "counters": {
+    "embed_calls": 2,
+    "embed_sec": 0.276,
+    "search_calls": 2,
+    "llm_calls": 8,
+    "llm_sec_total": 21.514,
+    "llm_sec_max": 6.126,
+    "input_tokens": 11251,
+    "output_tokens": 1972,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 6.126,
+        "in": 3326,
+        "out": 806,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.26,
+        "in": 1937,
+        "out": 159,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 1.705,
+        "in": 1007,
+        "out": 87,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 1.548,
+        "in": 973,
+        "out": 90,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.368,
+        "in": 1014,
+        "out": 197,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.496,
+        "in": 1007,
+        "out": 209,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.393,
+        "in": 995,
+        "out": 206,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.618,
+        "in": 992,
+        "out": 218,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "용산에서 나누는 둘만의 시간",
+    "subtitle": "역사와 전망이 어우러진 연인을 위한 이틀간의 산책",
+    "description": "연인과 함께 오후 시간대 용산·이태원 일대를 즐기며 관광 명소와 데이트를 즐기려는 목적을 바탕으로 8곳의 코스를 구성했어요. 하루에 4곳씩 방문하도록 권역을 나누어 이동 동선을 효율적으로 정리했어요. 국립중앙박물관과 남산서울타워와 같은 대표 명소부터 휴식 공간까지 포함하여 여유와 관람을 고루 배치했어요.",
+    "stops": [
+      {
+        "name": "국립중앙박물관",
+        "preview": "한국의 역사를 마주하는 거대한 문화 공간이에요.",
+        "description": "국내 최대 규모의 박물관으로 상설전시실에서 선사 시대부터 근대까지의 유물을 관람해요. 관람을 마친 뒤에는 박물관의 야외정원을 따라 천천히 걸으며 둘이 함께 산책하는 시간을 가져보세요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": "12시 예상 혼잡도 약간 붐빔",
+        "lat": 37.5227,
+        "lng": 126.9814,
+        "reason": "한국의 역사를 상징하는 대표 명소에서 데이트의 시작을 차분하게 열기 위해 골랐어요.",
+        "activities": [
+          "상설전시실에서 한국 역사 유물 관람",
+          "야외정원 따라 둘이 함께 산책"
+        ],
+        "congestion": "약간 붐빔",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "동빙고",
+              "summary": "우유, 팥, 떡 등의 심플한 재료로도 최상의 맛을 내는 곳. 투박해 보이지만 굵은 팥과 깔끔한 단 맛이 금세 중독될 정도.",
+              "address": "서울 용산구 이촌로 319 (이촌동, 현대아파트)",
+              "lat": 37.5179629692604,
+              "lng": 126.982326982438,
+              "use_time": "매일 10:30 ~ 21:30",
+              "kind": "cafe",
+              "dist_km": 0.53
+            },
+            {
+              "title": "와세다야",
+              "summary": "일본식 숯불구이인 야키니쿠 전문점. ",
+              "address": "서울특별시 용산구 이촌로88길 3  (이촌동)",
+              "lat": 37.5180452,
+              "lng": 126.9787152,
+              "use_time": "평일 16:30~23:00, 주말 16:00~23:00",
+              "kind": "restaurant",
+              "dist_km": 0.57
+            }
+          ],
+          "attractions": [
+            {
+              "title": "뮤지컬 [할머니의 여름휴가 : 씨씨상점]",
+              "summary": "국립중앙박물관 극장 용",
+              "address": "국립중앙박물관 극장 용",
+              "lat": 37.5247022357875,
+              "lng": 126.977740246542,
+              "period": "2026-07-04~2026-08-30",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158649&menuNo=200008",
+              "kind": "event",
+              "dist_km": 0.39
+            },
+            {
+              "title": "[국립중앙박물관] 이슬람 미술， 찬란한 빛의 여정",
+              "summary": "국립중앙박물관 상설전시관 이슬람실",
+              "address": "국립중앙박물관 상설전시관 이슬람실",
+              "lat": 37.52385582212769,
+              "lng": 126.98020301648833,
+              "period": "2025-11-22~2026-10-11",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156371&menuNo=200009",
+              "kind": "event",
+              "dist_km": 0.17
+            }
+          ]
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 국립중앙박물관 주변",
+        "preview": "서울 용산구 대표 떡볶이 맛집",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5311508644746,
+        "lng": 126.96921812343,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "현선이네 용산본점",
+            "summary": "서울 용산구 대표 떡볶이 맛집",
+            "address": "서울 용산구 한강대로39길 2-13 (한강로2가)",
+            "lat": 37.5311508644746,
+            "lng": 126.96921812343,
+            "use_time": "매일 11:00-24:00 라스트오더 22:40",
+            "kind": "restaurant",
+            "dist_km": 1.43
+          },
+          {
+            "title": "부다스벨리",
+            "summary": "간편하게 태국 음식을 즐길 수 있는 곳. 향신료의 양을 적절하게 조절.",
+            "address": "서울특별시 용산구 녹사평대로40길 48 (이태원동)",
+            "lat": 37.5344172,
+            "lng": 126.9883963,
+            "use_time": "일요일~목요일 11:30~15:00, 16:30~22:00\r\n금요일~토요일 11:30~15:00, 16:30~22:30",
+            "kind": "restaurant",
+            "dist_km": 1.44
+          },
+          {
+            "title": "김용안과자점",
+            "summary": "옛 방식으로 정성껏 만드는 전병",
+            "address": "서울 용산구 한강대로 155-1 (한강로2가)",
+            "lat": 37.5330751959489,
+            "lng": 126.971256672775,
+            "use_time": "월요일~토요일 10:00~16:00(소진시 마감)",
+            "kind": "cafe",
+            "dist_km": 1.46
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "사운즈 한남",
+        "preview": "세련된 도심 속 복합 문화 공간이에요.",
+        "description": "다양한 매장이 모여 있는 복합 문화 공간으로 내부에 위치한 갤러리에서 예술 작품을 구경해요. 이후 베이커리 카페 콰르텟에 들러 따뜻한 커피와 디저트를 나누며 둘만의 휴식을 즐겨보세요.",
+        "duration": "1시간 25분",
+        "duration_min": 85,
+        "tip": null,
+        "lat": 37.53375,
+        "lng": 127.00215,
+        "reason": "박물관 관람 후 세련된 복합 문화 공간에서 휴식하며 데이트 분위기를 이어가기 위해 골랐어요.",
+        "activities": [
+          "갤러리에서 예술 작품 구경",
+          "베이커리 카페 콰르텟에서 커피와 디저트 즐기기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "도이치하우스",
+              "summary": "독일 풍의 소시지 요리, 아이스바인(족발), 코돈브로(돈가스)와 함께 흑맥주를 비롯한 다양한 유럽 맥주가 있는 곳.",
+              "address": "서울 용산구 대사관로 46 (한남동, 서울빌딩)",
+              "lat": 37.5333071483,
+              "lng": 127.0030502516,
+              "use_time": "월~금 09:00 ~ 23:00\r\n토 11:00 ~ 22:00",
+              "kind": "bar",
+              "dist_km": 0.09
+            },
+            {
+              "title": "동아냉면",
+              "summary": "30여 년 전통의 냉면 전문점. ",
+              "address": "서울 용산구 대사관로 45-1 (한남동)",
+              "lat": 37.5337100703679,
+              "lng": 127.003259577905,
+              "use_time": "10:00 ~ 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "15:25",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "해방촌·경리단길",
+        "preview": "남산 아래 이국적인 골목을 거니는 시간",
+        "description": "남산 자락을 따라 형성된 가파른 언덕길에 작은 상점과 카페가 밀집해 있어요. 예상 혼잡도가 낮아 한적하게 언덕길을 따라 골목을 산책하고, 높은 곳에 위치한 루프탑 바에 앉아 도심 풍경을 감상해요.",
+        "duration": "1시간 25분",
+        "duration_min": 85,
+        "tip": null,
+        "lat": 37.5423,
+        "lng": 126.9871,
+        "reason": "남산 자락의 이국적인 분위기를 느끼며 활기찬 거리의 매력을 만끽하기 위해 골랐어요.",
+        "activities": [
+          "언덕길 따라 골목 산책",
+          "루프탑 바에서 도심 풍경 감상"
+        ],
+        "congestion": "여유",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "오파토 O'pato",
+              "summary": "해방촌에 위치한 소금빵이 유명한 브런치 카페",
+              "address": "서울 용산구 신흥로12길 4 (용산동2가) 1층",
+              "lat": 37.5433560596177,
+              "lng": 126.987950907764,
+              "use_time": "매일 08:00~16:30 (라스트오더 16:00)\r\n",
+              "kind": "cafe",
+              "dist_km": 0.14
+            },
+            {
+              "title": "코타티 해방촌",
+              "summary": "해방촌에 위치한 내추럴 젤라또 샵",
+              "address": "서울 용산구 신흥로12길 7 (용산동2가, 진흥푸르지오)",
+              "lat": 37.5434749237785,
+              "lng": 126.988171767697,
+              "use_time": " 12:00-22:00",
+              "kind": "cafe",
+              "dist_km": 0.16
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:48",
+        "end_time": "17:13",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 23,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "남산서울타워",
+        "preview": "서울의 야경을 한눈에 담는 전망대",
+        "description": "남산 정상에 위치한 서울의 상징적인 타워로 시내 전역을 조망할 수 있는 전망대가 마련되어 있어요. 전망대에서 서울 도심의 야경을 감상하고, 저녁 시간대에 펼쳐지는 야간 조명 쇼를 배경으로 기념사진을 촬영해요.",
+        "duration": "1시간 25분",
+        "duration_min": 85,
+        "tip": null,
+        "lat": 37.551123,
+        "lng": 126.987868,
+        "reason": "서울의 야경을 한눈에 담으며 낭만적인 데이트를 마무리하기에 가장 적합한 장소라서 골랐어요.",
+        "activities": [
+          "전망대에서 서울 도심 야경 감상",
+          "야간 조명 쇼와 함께 기념사진 촬영"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "두루미분식 N서울타워점",
+              "summary": "남산에서 즐기는 새로운 분식의 맛",
+              "address": "서울 용산구 남산공원길 105 N서울타워 광장층 T1층",
+              "lat": 37.5511225714939,
+              "lng": 126.987867837993,
+              "use_time": "11:00-22:00",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            },
+            {
+              "title": "한쿡",
+              "summary": "해발 400M 남산에서 즐기는 다채로운 한식 다이닝, 한쿡",
+              "address": "서울 용산구 남산공원길 105",
+              "lat": 37.5511225714939,
+              "lng": 126.987867837993,
+              "use_time": "매일 12:00 ~ 22:00 \r\n(브레이크타임 16:00 ~ 17:00 / 라스트오더 20:00) ",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "17:34",
+        "end_time": "18:59",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 21,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "저녁 식사 · 남산서울타워 주변",
+        "preview": "해발 400M 남산에서 즐기는 다채로운 한식 다이닝, 한쿡",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5511225714939,
+        "lng": 126.987867837993,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "한쿡",
+            "summary": "해발 400M 남산에서 즐기는 다채로운 한식 다이닝, 한쿡",
+            "address": "서울 용산구 남산공원길 105",
+            "lat": 37.5511225714939,
+            "lng": 126.987867837993,
+            "use_time": "매일 12:00 ~ 22:00 \r\n(브레이크타임 16:00 ~ 17:00 / 라스트오더 20:00) ",
+            "kind": "restaurant",
+            "dist_km": 0.0
+          },
+          {
+            "title": "텐카이",
+            "summary": "꼬치구이를 즐길 수 있는 일본식 정통 야키도리 전문점. ",
+            "address": "서울 용산구 소월로 322 (한남동, 하얏트호텔)",
+            "lat": 37.5397618957,
+            "lng": 126.9962389057,
+            "use_time": "일~목 18:00~24:00\r\n금~토 18:00~01:00",
+            "kind": "restaurant",
+            "dist_km": 1.46
+          },
+          {
+            "title": "남산술클럽",
+            "summary": "100가지의 전통주를 잔술로 경험할 수 있는 전통주 바",
+            "address": "서울 용산구 녹사평대로 228-2 1층",
+            "lat": 37.5380390727755,
+            "lng": 126.987040929654,
+            "use_time": "18:00-01:00",
+            "kind": "bar",
+            "dist_km": 1.46
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "용산역사박물관",
+        "preview": "옛 철도병원을 리모델링한 근대 건축 역사 공간이에요.",
+        "description": "옛 용산철도병원 건물을 보수하여 개관한 이곳은 붉은 벽돌의 근대 건축미가 돋보여요. 건물 외관을 배경으로 사진을 촬영한 뒤 내부 전시실로 이동해 용산 지역의 변천사를 담은 전시를 관람해요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5257,
+        "lng": 126.9658,
+        "reason": "근대 건축물의 아름다움과 지역의 역사를 함께 살펴보며 특별한 추억을 쌓기 위해 골랐어요.",
+        "activities": [
+          "옛 용산철도병원 건물 외관 배경으로 사진 촬영",
+          "지역사 전시실 관람"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "금홍 ",
+              "summary": "검은색으로 내부를 꾸민 일본풍의 작은 차이니스 레스토랑.",
+              "address": "서울 용산구 서빙고로 17 (한강로3가)",
+              "lat": 37.5269056148241,
+              "lng": 126.966566172294,
+              "use_time": " 11:00~15:00, 16:30~21:00",
+              "kind": "restaurant",
+              "dist_km": 0.15
+            },
+            {
+              "title": "트래버틴 ",
+              "summary": "용산 은행나무길의 힙한 카페 트래버틴 ",
+              "address": "서울 용산구 한강대로7길 18-7 (한강로3가)",
+              "lat": 37.5248745716605,
+              "lng": 126.962078419523,
+              "use_time": "11:00~20:30 (라스트 오더 20:00) ",
+              "kind": "cafe",
+              "dist_km": 0.34
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 용산역사박물관 주변",
+        "preview": "검은색으로 내부를 꾸민 일본풍의 작은 차이니스 레스토랑.",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5269056148241,
+        "lng": 126.966566172294,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "금홍 ",
+            "summary": "검은색으로 내부를 꾸민 일본풍의 작은 차이니스 레스토랑.",
+            "address": "서울 용산구 서빙고로 17 (한강로3가)",
+            "lat": 37.5269056148241,
+            "lng": 126.966566172294,
+            "use_time": " 11:00~15:00, 16:30~21:00",
+            "kind": "restaurant",
+            "dist_km": 0.15
+          },
+          {
+            "title": "도토리 용산점",
+            "summary": "도토리 모양 마들렌이 달콤하게 유혹하는 카페",
+            "address": "서울 용산구 한강대로52길 25-6 1층",
+            "lat": 37.5319010156056,
+            "lng": 126.972796475845,
+            "use_time": "매일 09:00 - 23:00",
+            "kind": "cafe",
+            "dist_km": 0.93
+          },
+          {
+            "title": "한강생태",
+            "summary": "여러 가지 해물로 육수를 끓여낸 생태 매운탕이 유명한 곳. 삼겹살도 유명.",
+            "address": "서울특별시 용산구 백범로 400 (한강로1가)",
+            "lat": 37.535723,
+            "lng": 126.973004,
+            "use_time": "10:00 ~ 22:00\r\n",
+            "kind": "restaurant",
+            "dist_km": 1.28
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "백빈건널목",
+        "preview": "도심 속에서 기차를 가까이 볼 수 있는 레트로한 건널목이에요.",
+        "description": "용산역 인근에 자리한 이곳은 차단기가 내려가고 열차가 지나가는 풍경을 눈앞에서 마주할 수 있어요. 건널목 특유의 레트로한 분위기를 배경으로 서로의 모습을 담으며 기념사진을 찍어보세요.",
+        "duration": "1시간 22분",
+        "duration_min": 82,
+        "tip": null,
+        "lat": 37.525113,
+        "lng": 126.960809,
+        "reason": "레트로한 감성이 묻어나는 장소에서 아날로그적인 데이트 사진을 남기기 위해 골랐어요.",
+        "activities": [
+          "열차가 지나는 풍경 관람",
+          "레트로한 분위기 속에서 기념사진 찍기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "퍼멘츠 ",
+              "summary": " 비건 발효 음식을 내추럴 와인, 수제 Raw 콤부차와 함께 제공",
+              "address": "서울 용산구 한강대로7길 22 (한강로3가)",
+              "lat": 37.5247746664463,
+              "lng": 126.961848143516,
+              "use_time": "일요일~목요일 17:00 - 23:00\r\n금요일~토요일 17:00 - 24:00",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": "트래버틴 ",
+              "summary": "용산 은행나무길의 힙한 카페 트래버틴 ",
+              "address": "서울 용산구 한강대로7길 18-7 (한강로3가)",
+              "lat": 37.5248745716605,
+              "lng": 126.962078419523,
+              "use_time": "11:00~20:30 (라스트 오더 20:00) ",
+              "kind": "cafe",
+              "dist_km": 0.12
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "15:22",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "노들섬",
+        "preview": "한강의 풍경을 따라 걷는 섬 산책",
+        "description": "한강대교 중간에 위치한 노들섬은 넓은 잔디마당과 산책로가 조성되어 있어 한강 전경을 가까이서 볼 수 있어요. 방문객이 적어 여유로운 오후 시간에 한강 전경을 배경으로 산책로를 걸어보고, 섬 내부에서 열리는 다양한 문화 공연을 구경하며 시간을 보내보세요.",
+        "duration": "1시간 22분",
+        "duration_min": 82,
+        "tip": null,
+        "lat": 37.51766,
+        "lng": 126.958034,
+        "reason": "한강의 탁 트인 전망을 즐기며 여유로운 오후 시간을 보내기 위해 골랐어요.",
+        "activities": [
+          "한강 전경을 배경으로 산책로 걷기",
+          "다양한 문화 공연 구경"
+        ],
+        "congestion": "여유",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "스페이스 K 노들",
+              "summary": "옛 노량진 취수장을 리모델링한 미디어아트 카페 겸 복합문화공간",
+              "address": "서울 동작구 현충로 11 1층",
+              "lat": 37.5133081706521,
+              "lng": 126.957454466539,
+              "use_time": "11:00-22:00",
+              "kind": "cafe",
+              "dist_km": 0.49
+            },
+            {
+              "title": "퍼멘츠 ",
+              "summary": " 비건 발효 음식을 내추럴 와인, 수제 Raw 콤부차와 함께 제공",
+              "address": "서울 용산구 한강대로7길 22 (한강로3가)",
+              "lat": 37.5247746664463,
+              "lng": 126.961848143516,
+              "use_time": "일요일~목요일 17:00 - 23:00\r\n금요일~토요일 17:00 - 24:00",
+              "kind": "restaurant",
+              "dist_km": 0.86
+            }
+          ],
+          "attractions": [
+            {
+              "title": "[노들섬] 오픈노들",
+              "summary": "노들섬",
+              "address": "노들섬",
+              "lat": 37.5176638307111,
+              "lng": 126.958036465507,
+              "period": "2026-08-04~2026-10-31",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158941&menuNo=200010",
+              "kind": "event",
+              "dist_km": 0.0
+            },
+            {
+              "title": "2026 서울거리공연 구석구석라이브",
+              "summary": "공연별 상이",
+              "address": "공연별 상이",
+              "lat": 37.5176638307111,
+              "lng": 126.958036465507,
+              "period": "2026-05-01~2026-12-31",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=157655&menuNo=200008",
+              "kind": "event",
+              "dist_km": 0.0
+            }
+          ]
+        },
+        "start_time": "15:41",
+        "end_time": "17:03",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": 19,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "북파크라운지",
+        "preview": "책과 함께하는 차분한 휴식",
+        "description": "한남동 블루스퀘어 내에 위치한 북파크라운지는 높은 서가로 둘러싸인 조용한 실내 독서 공간이에요. 이곳에서 각자 취향에 맞는 책을 골라 읽으며 여행의 마지막 일정을 정리하고, 창가 자리에 앉아 편안하게 휴식을 취하며 시간을 마무리해보세요.",
+        "duration": "1시간 22분",
+        "duration_min": 82,
+        "tip": null,
+        "lat": 37.540869,
+        "lng": 127.002485,
+        "reason": "여행의 마지막을 조용한 분위기 속에서 둘만의 독서와 휴식으로 마무리하기 위해 골랐어요.",
+        "activities": [
+          "라운지에서 취향에 맞는 책 읽기",
+          "창가 자리에서 편안하게 휴식 취하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "패션파이브",
+              "summary": "한남동의 랜드마크. 인테리어, 맛, 데코까지 훌륭.  ",
+              "address": "서울특별시 용산구 이태원로 272 (한남동)",
+              "lat": 37.538747,
+              "lng": 127.001997,
+              "use_time": "07:30 ~ 22:00 ",
+              "kind": "cafe",
+              "dist_km": 0.24
+            },
+            {
+              "title": "릭십 lick sip",
+              "summary": "커피부터 위스키, 와인, 맥주까지 다양하게 즐길 수 있는 카페&바",
+              "address": "서울 용산구 이태원로54길 16-5 1층",
+              "lat": 37.5374040115229,
+              "lng": 127.002499397002,
+              "use_time": "화,수 18:00-24:00 / 목 12:00-24:00 / 금,토 12:00-01:00 / 일 13:00-23:00",
+              "kind": "restaurant",
+              "dist_km": 0.39
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "17:38",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": 35,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "저녁 식사 · 북파크라운지 주변",
+        "preview": "북어국 외에도 안줏거리가 많아 술 한잔하기 좋은 곳. 다양한 종류의 전이랑, 수육.오징어무침이 인기 메뉴.",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.533909,
+        "lng": 127.008057,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "한남북엇국",
+            "summary": "북어국 외에도 안줏거리가 많아 술 한잔하기 좋은 곳. 다양한 종류의 전이랑, 수육.오징어무침이 인기 메뉴.",
+            "address": "서울특별시 용산구 독서당로 65-7 (한남동)",
+            "lat": 37.533909,
+            "lng": 127.008057,
+            "use_time": "월요일~토요일 08:00 ~ 15:00 / 17:00 ~ 23:00 (22:00 라스트오더)\r\n일요일 08:00 ~ 15:00 / 17:00 ~ 21:00 (20:00 라스트오더)",
+            "kind": "restaurant",
+            "dist_km": 0.92
+          },
+          {
+            "title": "방울과꼬막",
+            "summary": "제철 해산물과 포장마차 메뉴 전문 용산 한식주점",
+            "address": "서울 용산구 대사관로30길 11-5 1층",
+            "lat": 37.5326889601861,
+            "lng": 127.005766353421,
+            "use_time": "월-수 17:00-00:30 / 목,금 17:00-02:00 / 토 15:00-02:00",
+            "kind": "bar",
+            "dist_km": 0.95
+          },
+          {
+            "title": "케르반 이태원점",
+            "summary": "케르반 이태원점은 정식 할랄 인증을 받은 레스토랑으로 터키 요리사가 직접 요리. ",
+            "address": "서울 용산구 이태원로 192 (이태원동)",
+            "lat": 37.53436667407795,
+            "lng": 126.99537025000907,
+            "use_time": "매일 11:00~06:00",
+            "kind": "restaurant",
+            "dist_km": 0.96
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "용산데이트",
+      "이태원산책",
+      "커플여행",
+      "서울명소"
+    ],
+    "scheduled": true,
+    "days": 2,
+    "day_areas": {},
+    "day_descriptions": {
+      "1": "국립중앙박물관에서 역사 유물을 관람하며 일정을 시작해 오후에는 사운즈 한남으로 이동하여 갤러리 구경과 카페 휴식을 즐겨요. 이후 해방촌과 경리단길 골목을 산책하고, 마지막으로 남산서울타워 전망대에 올라 서울의 야경을 감상하며 하루를 마무리해요.",
+      "2": "12시 용산역사박물관에서 근대 건축물을 둘러본 뒤 백빈건널목으로 이동해 열차가 지나는 풍경을 배경으로 사진을 촬영해요. 오후에는 노들섬 산책로를 걸으며 한강 전망을 감상하고, 17시 38분부터 북파크라운지에서 책을 읽으며 일정을 마무리해요."
+    }
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 점심·저녁"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 14곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "국립중앙박물관, 사운즈 한남, 해방촌·경리단길, 남산서울타워, 용산역사박물관, 백빈건널목, 노들섬, 북파크라운지",
+      "picks": [
+        {
+          "name": "국립중앙박물관",
+          "reason": "한국의 역사를 상징하는 대표 명소에서 데이트의 시작을 차분하게 열기 위해 골랐어요.",
+          "activities": [
+            "상설전시실에서 한국 역사 유물 관람",
+            "야외정원 따라 둘이 함께 산책"
+          ]
+        },
+        {
+          "name": "사운즈 한남",
+          "reason": "박물관 관람 후 세련된 복합 문화 공간에서 휴식하며 데이트 분위기를 이어가기 위해 골랐어요.",
+          "activities": [
+            "갤러리에서 예술 작품 구경",
+            "베이커리 카페 콰르텟에서 커피와 디저트 즐기기"
+          ]
+        },
+        {
+          "name": "해방촌·경리단길",
+          "reason": "남산 자락의 이국적인 분위기를 느끼며 활기찬 거리의 매력을 만끽하기 위해 골랐어요.",
+          "activities": [
+            "언덕길 따라 골목 산책",
+            "루프탑 바에서 도심 풍경 감상"
+          ]
+        },
+        {
+          "name": "남산서울타워",
+          "reason": "서울의 야경을 한눈에 담으며 낭만적인 데이트를 마무리하기에 가장 적합한 장소라서 골랐어요.",
+          "activities": [
+            "전망대에서 서울 도심 야경 감상",
+            "야간 조명 쇼와 함께 기념사진 촬영"
+          ]
+        },
+        {
+          "name": "용산역사박물관",
+          "reason": "근대 건축물의 아름다움과 지역의 역사를 함께 살펴보며 특별한 추억을 쌓기 위해 골랐어요.",
+          "activities": [
+            "옛 용산철도병원 건물 외관 배경으로 사진 촬영",
+            "지역사 전시실 관람"
+          ]
+        },
+        {
+          "name": "백빈건널목",
+          "reason": "레트로한 감성이 묻어나는 장소에서 아날로그적인 데이트 사진을 남기기 위해 골랐어요.",
+          "activities": [
+            "열차가 지나는 풍경 관람",
+            "레트로한 분위기 속에서 기념사진 찍기"
+          ]
+        },
+        {
+          "name": "노들섬",
+          "reason": "한강의 탁 트인 전망을 즐기며 여유로운 오후 시간을 보내기 위해 골랐어요.",
+          "activities": [
+            "한강 전경을 배경으로 산책로 걷기",
+            "다양한 문화 공연 구경"
+          ]
+        },
+        {
+          "name": "북파크라운지",
+          "reason": "여행의 마지막을 조용한 분위기 속에서 둘만의 독서와 휴식으로 마무리하기 위해 골랐어요.",
+          "activities": [
+            "라운지에서 취향에 맞는 책 읽기",
+            "창가 자리에서 편안하게 휴식 취하기"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "2일 · 12:00~20:00 · 장소 8곳 · 식사 4회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "4끼 · 식당 후보 12곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "국립중앙박물관 약간 붐빔, 해방촌·경리단길 여유, 노들섬 여유"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 20건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "용산에서 나누는 둘만의 시간"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "백빈건널목",
+      "category": "명소",
+      "area": "용산·이태원",
+      "lat": 37.525113,
+      "lng": 126.960809,
+      "day_hint": null
+    },
+    {
+      "name": "이태원",
+      "category": "쇼핑",
+      "area": "용산·이태원",
+      "lat": 37.534,
+      "lng": 126.994,
+      "day_hint": null
+    },
+    {
+      "name": "국립중앙박물관",
+      "category": "역사",
+      "area": "용산·이태원",
+      "lat": 37.5227,
+      "lng": 126.9814,
+      "day_hint": null
+    },
+    {
+      "name": "사운즈 한남",
+      "category": "문화",
+      "area": "용산·이태원",
+      "lat": 37.53375,
+      "lng": 127.00215,
+      "day_hint": null
+    },
+    {
+      "name": "남산 둘레길",
+      "category": "자연",
+      "area": "용산·이태원",
+      "lat": 37.550857,
+      "lng": 126.990759,
+      "day_hint": null
+    },
+    {
+      "name": "남산서울타워",
+      "category": "명소",
+      "area": "용산·이태원",
+      "lat": 37.551123,
+      "lng": 126.987868,
+      "day_hint": null
+    },
+    {
+      "name": "합덕슈퍼",
+      "category": "쇼핑",
+      "area": "용산·이태원",
+      "lat": 37.535697,
+      "lng": 126.999933,
+      "day_hint": null
+    },
+    {
+      "name": "용산도시기억전시관",
+      "category": "역사",
+      "area": "용산·이태원",
+      "lat": 37.5269,
+      "lng": 126.9666,
+      "day_hint": null
+    },
+    {
+      "name": "남산하늘숲길 소월정원",
+      "category": "자연",
+      "area": "용산·이태원",
+      "lat": 37.552346,
+      "lng": 126.9823,
+      "day_hint": null
+    },
+    {
+      "name": "북파크라운지",
+      "category": "문화",
+      "area": "용산·이태원",
+      "lat": 37.540869,
+      "lng": 127.002485,
+      "day_hint": null
+    },
+    {
+      "name": "노들섬",
+      "category": "명소",
+      "area": "용산·이태원",
+      "lat": 37.51766,
+      "lng": 126.958034,
+      "day_hint": null
+    },
+    {
+      "name": "해방촌·경리단길",
+      "category": "쇼핑",
+      "area": "용산·이태원",
+      "lat": 37.5423,
+      "lng": 126.9871,
+      "day_hint": null
+    },
+    {
+      "name": "용산역사박물관",
+      "category": "역사",
+      "area": "용산·이태원",
+      "lat": 37.5257,
+      "lng": 126.9658,
+      "day_hint": null
+    },
+    {
+      "name": "소월로",
+      "category": "자연",
+      "area": "용산·이태원",
+      "lat": 37.54653,
+      "lng": 126.98516,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

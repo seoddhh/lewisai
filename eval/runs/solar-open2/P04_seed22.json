@@ -1,0 +1,403 @@
+{
+  "persona": "P04",
+  "persona_name": "성수 부부 시간 미정",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T06:22:52+00:00",
+  "total_sec": 9.701,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.001,
+    "retrieve": 0.193,
+    "select_places": 4.867,
+    "fit_schedule": 0.0,
+    "meals": 0.0,
+    "enrich": 0.0,
+    "nearby": 0.001,
+    "compose": 4.636
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.147,
+    "search_calls": 1,
+    "llm_calls": 3,
+    "llm_sec_total": 12.298,
+    "llm_sec_max": 4.866,
+    "input_tokens": 3918,
+    "output_tokens": 730,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 4.866,
+        "in": 1895,
+        "out": 276,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.798,
+        "in": 1213,
+        "out": 147,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.634,
+        "in": 810,
+        "out": 307,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "성수·건대 데이트 코스",
+    "subtitle": "배우자와 함께 하는 음악과 산책",
+    "description": "배우자와 성수·건대 일대에서 데이트를 즐기려는 조건을 바탕으로 3곳을 골랐어요. 실내 청음 공간에서 같은 음악을 들으며 대화를 나눌 수 있는 장소를 첫 번째로 넣어 조용한 분위기를 살렸어요. 성수동 특유의 감성과 팝업스토어가 있는 거리를 두 번째로 배치해 산책과 쇼핑 시간을 함께 넣었어요. 조선시대 석조 다리에서 조용히 산책하며 역사적 분위기를 느낄 수 있는 장소를 마지막으로 구성해 데이트의 마무리를 차분하게 만들었어요.",
+    "stops": [
+      {
+        "name": "바이닐 성수",
+        "preview": "LP 플레이어와 헤드폰으로 음악을 듣는 실내 청음 공간이에요.",
+        "description": "바이닐 성수는 실내 청음 공간으로, LP 플레이어와 헤드폰을 이용해 각자 음악을 감상할 수 있는 곳이에요. 함께 들을 앨범을 고른 뒤 음악을 듣고 나서 감상평을 나누며 대화를 이어가면 돼요. 조용한 분위기 속에서 같은 음악을 공유하며 대화를 나누기 좋은 첫 코스예요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5448,
+        "lng": 127.0561,
+        "reason": "실내 청음 공간에서 둘이 같은 음악을 들으며 조용한 대화를 나누기 좋아서 첫 코스로 골랐어요.",
+        "activities": [
+          "LP 플레이어와 헤드폰으로 각자 음악 감상",
+          "함께 들을 앨범 고르기",
+          "음악 감상 후 감상평 나누기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.06
+            },
+            {
+              "title": " 어니언",
+              "summary": "어니언은 70년대에 지어진 건물을 개조해 만든 카페. ",
+              "address": "서울 성동구 아차산로9길 8 (성수동2가)",
+              "lat": 37.5447391584,
+              "lng": 127.0581854139,
+              "use_time": "월요일~금요일 08:00~22:00\r\n주말 09:00~22:00\r\n(21:30 라스트오더)",
+              "kind": "cafe",
+              "dist_km": 0.18
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "성수 카페거리",
+        "preview": "감성적인 인테리어의 카페와 팝업스토어가 있는 성수동 거리예요.",
+        "description": "성수 카페거리는 성수동 특유의 분위기와 트렌디한 팝업스토어가 있는 거리로, 옛 방직공장을 개조한 건물도 둘러볼 수 있어요. 감성적인 인테리어의 카페에서 휴식을 취하고, 팝업스토어를 구경하며 가볍게 산책하기 좋아요. 예상 혼잡도는 보통이라 여유롭게 둘러볼 수 있는 두 번째 코스예요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": "예상 혼잡도 보통",
+        "lat": 37.5444,
+        "lng": 127.0564,
+        "reason": "성수동 특유의 감성적인 분위기와 트렌디한 팝업스토어가 데이트 산책 코스에 잘 어울려서 두 번째로 골랐어요.",
+        "activities": [
+          "감성적인 인테리어의 카페에서 휴식",
+          "트렌디한 팝업스토어 구경",
+          "옛 방직공장 개조 건물 둘러보기"
+        ],
+        "congestion": "보통",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": " 어니언",
+              "summary": "어니언은 70년대에 지어진 건물을 개조해 만든 카페. ",
+              "address": "서울 성동구 아차산로9길 8 (성수동2가)",
+              "lat": 37.5447391584,
+              "lng": 127.0581854139,
+              "use_time": "월요일~금요일 08:00~22:00\r\n주말 09:00~22:00\r\n(21:30 라스트오더)",
+              "kind": "cafe",
+              "dist_km": 0.16
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "살곶이다리（전곶교）",
+        "preview": "보물로 지정된 조선시대 석조 다리 위에서 산책하는 곳이에요.",
+        "description": "살곶이다리(전곶교)는 보물 제1738호로 지정된 조선시대 석조 다리로, 다리 위에서 조용히 산책하며 주변 경관을 탐방할 수 있어요. 다리 주변 경관을 둘러보고 감성 사진을 촬영하며 역사적 분위기를 느껴보세요. 조용한 산책과 사진 촬영을 함께 하기 좋은 마지막 코스예요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.552288,
+        "lng": 127.046985,
+        "reason": "보물로 지정된 조선시대 석조 다리 위에서 둘이 조용히 산책하며 역사적 분위기를 느낄 수 있어서 골랐어요.",
+        "activities": [
+          "보물 제1738호 석조 다리 위 산책",
+          "다리 주변 경관 탐방",
+          "감성 사진 촬영"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "훼미리손칼국수보쌈",
+              "summary": "뚝섬역 훼미리손칼국수보쌈은 깊은 국물의 칼국수와 부드러운 보쌈을 합리적인 가격에 즐길 수 있는 가성비 맛집이다.",
+              "address": "서울 성동구 왕십리로 134 (성수동1가)",
+              "lat": 37.5495264804791,
+              "lng": 127.044629777329,
+              "use_time": "11:30 ~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            },
+            {
+              "title": "선채 성수",
+              "summary": "전국 팔도의 다양한 식재료를 사용하는 작은 한식당",
+              "address": "서울 성동구 아차산로1길 11 (성수동1가)",
+              "lat": 37.5490883450365,
+              "lng": 127.045754250455,
+              "use_time": "11:30-22:00 / 브레이크타임 15:00-17:30 (주말은 브레이크타임 없이 운영)\r\n/ 라스트오더 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "데이트",
+      "부부",
+      "성수",
+      "건대",
+      "음악",
+      "산책"
+    ],
+    "scheduled": false,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 시간표 생략"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "바이닐 성수, 성수 카페거리, 살곶이다리（전곶교）",
+      "picks": [
+        {
+          "name": "바이닐 성수",
+          "reason": "실내 청음 공간에서 둘이 같은 음악을 들으며 조용한 대화를 나누기 좋아서 첫 코스로 골랐어요.",
+          "activities": [
+            "LP 플레이어와 헤드폰으로 각자 음악 감상",
+            "함께 들을 앨범 고르기",
+            "음악 감상 후 감상평 나누기"
+          ]
+        },
+        {
+          "name": "성수 카페거리",
+          "reason": "성수동 특유의 감성적인 분위기와 트렌디한 팝업스토어가 데이트 산책 코스에 잘 어울려서 두 번째로 골랐어요.",
+          "activities": [
+            "감성적인 인테리어의 카페에서 휴식",
+            "트렌디한 팝업스토어 구경",
+            "옛 방직공장 개조 건물 둘러보기"
+          ]
+        },
+        {
+          "name": "살곶이다리（전곶교）",
+          "reason": "보물로 지정된 조선시대 석조 다리 위에서 둘이 조용히 산책하며 역사적 분위기를 느낄 수 있어서 골랐어요.",
+          "activities": [
+            "보물 제1738호 석조 다리 위 산책",
+            "다리 주변 경관 탐방",
+            "감성 사진 촬영"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 건너뜀"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "성수 카페거리 보통"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 6건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "성수·건대 데이트 코스"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "성수 카페거리",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.5444,
+      "lng": 127.0564,
+      "day_hint": null
+    },
+    {
+      "name": "바이닐 성수",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5448,
+      "lng": 127.0561,
+      "day_hint": null
+    },
+    {
+      "name": "청담대교",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.530877,
+      "lng": 127.065983,
+      "day_hint": null
+    },
+    {
+      "name": "성수아트홀",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.5454,
+      "lng": 127.0469,
+      "day_hint": null
+    },
+    {
+      "name": "달맞이 근린공원",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.538668,
+      "lng": 127.019145,
+      "day_hint": null
+    },
+    {
+      "name": "살곶이다리（전곶교）",
+      "category": "역사",
+      "area": "성수·건대",
+      "lat": 37.552288,
+      "lng": 127.046985,
+      "day_hint": null
+    },
+    {
+      "name": "로우클래식 성수점",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.541299,
+      "lng": 127.058651,
+      "day_hint": null
+    },
+    {
+      "name": "마스터키 건대점",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5419,
+      "lng": 127.0673,
+      "day_hint": null
+    },
+    {
+      "name": "잠실대교",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.517628,
+      "lng": 127.086736,
+      "day_hint": null
+    },
+    {
+      "name": "설렘아트홀",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.547,
+      "lng": 127.0724,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 0,
+  "meta": {
+    "llm_provider": "upstage",
+    "llm_model": "solar-open2",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

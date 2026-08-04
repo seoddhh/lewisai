@@ -1,0 +1,442 @@
+{
+  "persona": "P06",
+  "persona_name": "잠실 아이와 체험",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:25:48+00:00",
+  "total_sec": 13.891,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.0,
+    "retrieve": 0.214,
+    "select_places": 5.68,
+    "fit_schedule": 0.001,
+    "meals": 0.001,
+    "enrich": 0.001,
+    "nearby": 0.001,
+    "compose": 7.99
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.153,
+    "search_calls": 1,
+    "llm_calls": 3,
+    "llm_sec_total": 11.592,
+    "llm_sec_max": 5.678,
+    "input_tokens": 5225,
+    "output_tokens": 806,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.678,
+        "in": 2568,
+        "out": 305,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.428,
+        "in": 1610,
+        "out": 156,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.486,
+        "in": 1047,
+        "out": 345,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "아이와 함께하는 잠실 탐구 여행",
+    "subtitle": "직업 체험부터 역사 탐방까지 알찬 송파 나들이",
+    "description": "아이와 오전부터 잠실·송파에서 보낼 체험과 놀거리 위주라는 조건을 바탕으로 3곳을 골랐어요. 키자니아 서울과 같은 실내 공간 위주로 구성해 날씨에 구애받지 않고 아이가 능동적으로 참여할 수 있도록 했어요. 점심 식사를 포함해 여유로운 흐름으로 아이의 흥미와 교육적 가치를 모두 고려해 일정을 짰어요.",
+    "stops": [
+      {
+        "name": "키자니아 서울",
+        "preview": "어린이 눈높이에 맞춘 다채로운 직업 체험 공간이에요.",
+        "description": "실제 도시를 축소해 놓은 듯한 환경에서 다양한 직업을 직접 경험할 수 있는 체험형 테마파크예요. 소방서와 병원 등 사회 시설의 역할을 맡아 상황극에 참여하고, 시즌별로 운영되는 특별 프로그램에 참여하며 능동적인 놀이 시간을 보내보세요.",
+        "duration": "1시간 40분",
+        "duration_min": 100,
+        "tip": null,
+        "lat": 37.51131,
+        "lng": 127.098142,
+        "reason": "아이의 눈높이에 맞춘 다양한 직업 체험을 통해 능동적인 놀이 시간을 보낼 수 있어서 골랐어요.",
+        "activities": [
+          "소방서 및 병원 역할 놀이 참여",
+          "시즌별 특별 프로그램 체험"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "도림",
+              "summary": "모던한 분위기에서 품격있게 중국요리를 즐길 수 있는 곳.",
+              "address": "서울 송파구 올림픽로 240 (잠실동, 롯데월드)",
+              "lat": 37.5113107836,
+              "lng": 127.0981403954,
+              "use_time": "평일 11:30 ~ 14:30 / 18:00 ~ 21:30\r\n주말 11:30 ~ 14:30 / 17:30 ~ 21:30",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            },
+            {
+              "title": "[백년가게] 군산오징어",
+              "summary": "Since 1988, 석촌호수 서호사거리에 위치한 오징어 불고기 전문점. \r\n",
+              "address": "서울 송파구 삼학사로 101 (삼전동, 군산오징어)",
+              "lat": 37.5062829479541,
+              "lng": 127.097001917858,
+              "use_time": "매일 11:30 ~ 22:30",
+              "kind": "restaurant",
+              "dist_km": 0.57
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "10:40",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "롯데월드 아쿠아리움",
+        "preview": "전 세계 바닷속 생태계를 가까이에서 탐험하는 곳이에요.",
+        "description": "잠실 롯데월드몰 지하에 위치한 대규모 수족관으로, 다양한 해양 생물들이 서식하는 5대양의 모습을 재현했어요. 전 세계 바다 생태계를 관람하며 이동하고, 계절별로 새롭게 준비되는 특별 전시와 교육 프로그램에 참여하며 차분하게 휴식 시간을 가져보세요.",
+        "duration": "1시간 7분",
+        "duration_min": 67,
+        "tip": null,
+        "lat": 37.513752,
+        "lng": 127.104447,
+        "reason": "오전 활동 후 점심 식사 전, 시원한 실내에서 해양 생태계를 관찰하며 정적인 휴식과 교육을 병행하기 좋아서 골랐어요.",
+        "activities": [
+          "전 세계 5대양 해양 생태계 관람",
+          "계절별 특별 전시 및 체험 프로그램 참여"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "마키노차야 블랙31 롯데월드타워점",
+              "summary": "롯데월드타워 31층 프리미엄 뷔페 레스토랑",
+              "address": "서울 송파구 올림픽로 300 (신천동, 롯데월드타워앤드롯데월드몰) 31층",
+              "lat": 37.5137519612953,
+              "lng": 127.104446890835,
+              "use_time": "평일 11:30~14:30, 18:00~21:00 / 주말 11:30~15:30, 17:00~21:00",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            },
+            {
+              "title": "강가 잠실점 ",
+              "summary": "2000년 신사본점을 시작으로 전국에 매장을 두고 있는 인도 정통요리 전문점",
+              "address": "서울 송파구 올림픽로 300 (신천동, 롯데월드타워앤드롯데월드몰)",
+              "lat": 37.51375250260386,
+              "lng": 127.10444609981752,
+              "use_time": "10:30~22:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.0
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "10:55",
+        "end_time": "12:02",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 15,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "서울백제어린이박물관",
+        "preview": "아이들의 시선에서 백제 역사를 탐구하는 체험관이에요.",
+        "description": "백제 시대의 유물과 문화를 어린이 눈높이에서 알기 쉽게 전시한 교육 공간이에요. 어린이 전용 역사 문화 전시를 둘러보며 당시의 생활상을 이해하고, 박물관 내에 마련된 문화 시설 체험 활동을 통해 역사를 직접 보고 만지며 탐구해보세요.",
+        "duration": "33분",
+        "duration_min": 33,
+        "tip": null,
+        "lat": 37.52034,
+        "lng": 127.115518,
+        "reason": "오후 일정을 시작하기 전 아이가 직접 역사를 보고 만지며 탐구할 수 있는 차분한 교육적 경험을 제공하고 싶어서 골랐어요.",
+        "activities": [
+          "어린이 전용 역사 문화 전시 관람",
+          "박물관 내 문화 시설 체험"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "산들해",
+              "summary": "한옥 기와 모양의 1, 2층 한정식집. 이천 쌀로 지은 돌솥밥과 간장게장, 생선모둠구이, 부침개, 보쌈, 잡채 등 20여 가지 반찬. 1층은 입식, 2층은 좌식으로 되어 있으며 이천 쌀과 김 판매.",
+              "address": "서울 송파구 위례성대로 6 (방이동, 현대토픽스)",
+              "lat": 37.5168403317,
+              "lng": 127.1131512072,
+              "use_time": "11:10 ~ 15:00 / 17:00 ~ 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.44
+            },
+            {
+              "title": "어양",
+              "summary": "해산물 요리에 강한 곳으로, 주방 한쪽에 커다란 수족관 보유.",
+              "address": "서울 송파구 위례성대로 14 (한미타워)",
+              "lat": 37.5165620707,
+              "lng": 127.1139335398,
+              "use_time": "평일 11:30~15:00 / 17:30~22:00, 주말 11:30~15:00 / 17:30~21:30",
+              "kind": "restaurant",
+              "dist_km": 0.44
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:27",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "점심 식사 · 서울백제어린이박물관 주변",
+        "preview": "한옥 기와 모양의 1, 2층 한정식집. 이천 쌀로 지은 돌솥밥과 간장게장, 생선모둠구이, 부침개, 보쌈, 잡채 등 20여 가지 반찬. 1층은 입식, 2층은 좌식으로 되어 있으며 이천 쌀과 김 판매.",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5168403317,
+        "lng": 127.1131512072,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "산들해",
+            "summary": "한옥 기와 모양의 1, 2층 한정식집. 이천 쌀로 지은 돌솥밥과 간장게장, 생선모둠구이, 부침개, 보쌈, 잡채 등 20여 가지 반찬. 1층은 입식, 2층은 좌식으로 되어 있으며 이천 쌀과 김 판매.",
+            "address": "서울 송파구 위례성대로 6 (방이동, 현대토픽스)",
+            "lat": 37.5168403317,
+            "lng": 127.1131512072,
+            "use_time": "11:10 ~ 15:00 / 17:00 ~ 21:00",
+            "kind": "restaurant",
+            "dist_km": 0.44
+          },
+          {
+            "title": "한국집 롯데월드몰점",
+            "summary": "“한식 대표메뉴 비빔밥을 편리하고 쾌적하게”",
+            "address": "서울 송파구 올림픽로 300 (신천동, 롯데월드타워앤드롯데월드몰)",
+            "lat": 37.5137129859207,
+            "lng": 127.104301829165,
+            "use_time": "10:30 - 22:00 (21:00 라스트오더)\r\n\r\n",
+            "kind": "restaurant",
+            "dist_km": 1.23
+          },
+          {
+            "title": "홈수끼 (Home Sukki)",
+            "summary": "태국의 수키와 일본의 샤부샤부를 혼합한 음식점.",
+            "address": "서울 송파구 위례성대로 134 (방이동, 한스빌딩)",
+            "lat": 37.512040936,
+            "lng": 127.1262418357,
+            "use_time": " 11:30 ~ 22:00",
+            "kind": "restaurant",
+            "dist_km": 1.32
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "아이와함께",
+      "잠실나들이",
+      "체험학습",
+      "송파여행"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 점심"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "키자니아 서울, 롯데월드 아쿠아리움, 서울백제어린이박물관",
+      "picks": [
+        {
+          "name": "키자니아 서울",
+          "reason": "아이의 눈높이에 맞춘 다양한 직업 체험을 통해 능동적인 놀이 시간을 보낼 수 있어서 골랐어요.",
+          "activities": [
+            "소방서 및 병원 역할 놀이 참여",
+            "시즌별 특별 프로그램 체험"
+          ]
+        },
+        {
+          "name": "롯데월드 아쿠아리움",
+          "reason": "오전 활동 후 점심 식사 전, 시원한 실내에서 해양 생태계를 관찰하며 정적인 휴식과 교육을 병행하기 좋아서 골랐어요.",
+          "activities": [
+            "전 세계 5대양 해양 생태계 관람",
+            "계절별 특별 전시 및 체험 프로그램 참여"
+          ]
+        },
+        {
+          "name": "서울백제어린이박물관",
+          "reason": "오후 일정을 시작하기 전 아이가 직접 역사를 보고 만지며 탐구할 수 있는 차분한 교육적 경험을 제공하고 싶어서 골랐어요.",
+          "activities": [
+            "어린이 전용 역사 문화 전시 관람",
+            "박물관 내 문화 시설 체험"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "09:00~14:00 · 장소 3곳 · 식사 1회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "1끼 · 식당 후보 3곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 6건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "아이와 함께하는 잠실 탐구 여행"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "키자니아 서울",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.51131,
+      "lng": 127.098142,
+      "day_hint": null
+    },
+    {
+      "name": "잠실",
+      "category": "쇼핑",
+      "area": "잠실·송파",
+      "lat": 37.5115,
+      "lng": 127.098,
+      "day_hint": null
+    },
+    {
+      "name": "롯데월드 아이스링크",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.511286,
+      "lng": 127.097941,
+      "day_hint": null
+    },
+    {
+      "name": "호원아트홀",
+      "category": "문화",
+      "area": "잠실·송파",
+      "lat": 37.5263,
+      "lng": 127.1303,
+      "day_hint": null
+    },
+    {
+      "name": "롯데월드 아쿠아리움",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.513752,
+      "lng": 127.104447,
+      "day_hint": null
+    },
+    {
+      "name": "서울백제어린이박물관",
+      "category": "문화",
+      "area": "잠실·송파",
+      "lat": 37.52034,
+      "lng": 127.115518,
+      "day_hint": null
+    },
+    {
+      "name": "잠실야구장",
+      "category": "체험",
+      "area": "잠실·송파",
+      "lat": 37.516484,
+      "lng": 127.073574,
+      "day_hint": null
+    },
+    {
+      "name": "새마을시장",
+      "category": "쇼핑",
+      "area": "잠실·송파",
+      "lat": 37.508916,
+      "lng": 127.083881,
+      "day_hint": null
+    },
+    {
+      "name": "롯데월드 어드벤처",
+      "category": "자연",
+      "area": "잠실·송파",
+      "lat": 37.511432,
+      "lng": 127.098281,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

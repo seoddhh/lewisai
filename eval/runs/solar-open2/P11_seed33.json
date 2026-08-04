@@ -1,0 +1,663 @@
+{
+  "persona": "P11",
+  "persona_name": "여행자 2일 · 권역 1개만",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T06:27:05+00:00",
+  "total_sec": 10.353,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.201,
+    "select_places": 5.047,
+    "fit_schedule": 0.001,
+    "meals": 0.003,
+    "enrich": 0.001,
+    "nearby": 0.002,
+    "compose": 5.096
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.155,
+    "search_calls": 1,
+    "llm_calls": 6,
+    "llm_sec_total": 20.439,
+    "llm_sec_max": 5.092,
+    "input_tokens": 6583,
+    "output_tokens": 1261,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.045,
+        "in": 2246,
+        "out": 335,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 1.622,
+        "in": 629,
+        "out": 80,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 1.893,
+        "in": 689,
+        "out": 89,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.02,
+        "in": 1387,
+        "out": 184,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.767,
+        "in": 786,
+        "out": 235,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 5.092,
+        "in": 846,
+        "out": 338,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "영등포·여의도 오후 자연 힐링 코스",
+    "subtitle": "배우자와 함께 여유롭게 거니는 2일 일정",
+    "description": "배우자와 함께하는 오후, 자연·힐링을 목적으로 여유롭게 움직이며 점심을 포함한 2일 5곳 코스를 구성했어요. 여의도·영등포 권역에 장소를 모아 이동 부담을 줄이고, 여의도한강공원 물빛광장과 선유도공원처럼 수변과 생태를 함께 누릴 수 있는 공간을 골라 천천히 머무는 시간을 확보했어요. 혼잡도를 낮춰 한적한 산책과 휴식을 우선했고, 점심을 넣어 식사 후 잔디마당과 숲길에서 가볍게 산책하며 분위기를 이어가게 했어요.",
+    "stops": [
+      {
+        "name": "마포대교",
+        "preview": "한강 바람과 노을을 한눈에 담는 산책 코스",
+        "description": "마포대교는 여의도 방향의 한강 위를 가로지르는 다리로, 난간 너머로 탁 트인 강 풍경과 멀리 이어지는 노을을 조망할 수 있는 공간이에요. 12시부터 13시까지 한강 풍경 조망과 강바람 맞으며 산책을 천천히 즐기면, 점심 전 짧은 이동 시간 동안 여유롭게 쉬어 가기 좋아요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.533937,
+        "lng": 126.937313,
+        "reason": "한강 바람과 탁 트인 노을 풍경을 보며 배우자와 여유 있게 쉬어 가기에 좋아서 골랐어요",
+        "activities": [
+          "한강 풍경 조망",
+          "강바람 맞으며 산책"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "마포옥",
+              "summary": "1949년부터 마포를 지켜오고 있는 설렁탕집",
+              "address": "서울특별시 마포구 토정로 312 1층",
+              "lat": 37.5398742377381,
+              "lng": 126.943351207119,
+              "use_time": "7:00~21:00",
+              "kind": "restaurant",
+              "dist_km": 0.85
+            },
+            {
+              "title": "원조조박집 ",
+              "summary": "단골도 대를 이어 찾아가는 돼지갈비집",
+              "address": "서울특별시 마포구 토정로 313-1 1층동",
+              "lat": 37.5399716114492,
+              "lng": 126.943866192022,
+              "use_time": "11:30~22:00 (브레이크 타임 15:00~17:00)",
+              "kind": "restaurant",
+              "dist_km": 0.89
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 마포대교 주변",
+        "preview": "1949년부터 마포를 지켜오고 있는 설렁탕집",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5398742377381,
+        "lng": 126.943351207119,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "마포옥",
+            "summary": "1949년부터 마포를 지켜오고 있는 설렁탕집",
+            "address": "서울특별시 마포구 토정로 312 1층",
+            "lat": 37.5398742377381,
+            "lng": 126.943351207119,
+            "use_time": "7:00~21:00",
+            "kind": "restaurant",
+            "dist_km": 0.85
+          },
+          {
+            "title": "베이스이즈나이스 (base is nice)",
+            "summary": "채소 본연의 맛을 전하고 있는 채소 친화적 식당",
+            "address": "서울 마포구 도화2길 20 (도화동)",
+            "lat": 37.539624938496,
+            "lng": 126.949105836145,
+            "use_time": "11:00 ~ 15:00",
+            "kind": "restaurant",
+            "dist_km": 1.22
+          },
+          {
+            "title": "환대커피워크",
+            "summary": "하루가 조금 더 따뜻해지길 바라며 준비한 작은 카페",
+            "address": "서울 마포구 독막로34길 4-4 1층",
+            "lat": 37.5465476957078,
+            "lng": 126.939939139574,
+            "use_time": "10:00-20:00",
+            "kind": "cafe",
+            "dist_km": 1.42
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "여의도공원",
+        "preview": "넓은 잔디마당과 숲길이 이어지는 도심 속 휴식처",
+        "description": "여의도공원은 여의도 중심부에 자리한 대규모 공원으로, 넓은 잔디마당과 한국전통의 숲이 이어져 있어 도심 속에서도 산책과 휴식을 함께 누리기 좋은 곳이에요. 14시부터 16시 12분까지 잔디마당 걷기와 한국전통의 숲 산책을 여유롭게 이어가면, 점심 식사 뒤 배우자와 함께 천천히 둘러보며 데이트 분위기를 이어가기 좋아요.",
+        "duration": "2시간 12분",
+        "duration_min": 132,
+        "tip": null,
+        "lat": 37.5268,
+        "lng": 126.9223,
+        "reason": "잔디마당과 숲길에서 식사 후 가볍게 산책하며 로맨틱한 데이트 분위기를 이어가기에 좋아서 골랐어요",
+        "activities": [
+          "잔디마당 걷기",
+          "한국전통의 숲 산책"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "브릭샌드 여의도점",
+              "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+              "address": "서울 영등포구 여의대로 70 (여의도동, ONE CENTINEL) 1층",
+              "lat": 37.5248391165921,
+              "lng": 126.924184821656,
+              "use_time": "평일 07:00 - 20:30 \r\n주말 09:00 - 20:00",
+              "kind": "cafe",
+              "dist_km": 0.27
+            },
+            {
+              "title": "더마칸 여의도점",
+              "summary": "“빌딩 숲 사이 말레이 요리의 리프레시”",
+              "address": "서울 영등포구 여의대로 70 (여의도동, ONE CENTINEL)",
+              "lat": 37.5248391165921,
+              "lng": 126.924184821656,
+              "use_time": "브레이크타임 15:00-17:00, 라스트오더 14:00, 20:00",
+              "kind": "restaurant",
+              "dist_km": 0.27
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "16:12",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "여의도샛강생태공원",
+        "preview": "도심 습지 생태를 가까이서 만나는 조용한 산책로",
+        "description": "여의도샛강생태공원은 여의도를 따라 흐르는 샛강 주변에 조성된 생태 공원으로, 습지와 수변 식생, 조용한 산책로가 이어져 있어 도심 속에서 자연 생태를 가까이 관찰하기 좋은 곳이에요. 16시 32분부터 18시까지 습지 생태 관찰과 산책로 걷기를 천천히 즐기면, 하루의 마지막 시간을 자연의 치유 속에서 여유롭게 마무리하기 좋아요.",
+        "duration": "1시간 28분",
+        "duration_min": 88,
+        "tip": null,
+        "lat": 37.518693,
+        "lng": 126.922225,
+        "reason": "도심 속 습지 생태와 조용한 산책로를 천천히 걸으며 자연의 치유를 느끼기 좋아서 골랐어요",
+        "activities": [
+          "습지 생태 관찰",
+          "산책로 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "풀향기손칼국수",
+              "summary": "20여 년 전통의 손칼국수 집. 손으로 직접 썰어서 만든 칼국수 면이 부들부들하면서도 쫄깃. ",
+              "address": "서울 영등포구 여의나루로 42 (여의도종합상가)",
+              "lat": 37.52145506476983,
+              "lng": 126.9250679954855,
+              "use_time": "10:00~14:30, 16:30~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.4
+            },
+            {
+              "title": "주빈",
+              "summary": "아담한 공간의 핸드드립 커피 전문점. 커피를 산지별로 15가지 이상 갖추어 두고 있으며, 로스팅을 직접 하기 때문에 항상 신선한 커피를 맛볼 수 있음.",
+              "address": "서울특별시 영등포구 의사당대로 127 (여의도동)",
+              "lat": 37.520202,
+              "lng": 126.926361,
+              "use_time": "월요일~금요일 10:00~19:30\r\n",
+              "kind": "cafe",
+              "dist_km": 0.4
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "16:32",
+        "end_time": "18:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 20,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "여의도한강공원 물빛광장",
+        "preview": "시원한 바닥 분수와 넓은 물빛을 보며 배우자와 함께 쉬어 가는 곳이에요",
+        "description": "여의도한강공원 물빛광장은 한강변에 자리한 넓은 야외 광장으로, 바닥 분수와 수변 풍경이 한눈에 들어오는 공간이에요. 12시부터 13시까지 머무르며 바닥 분수를 감상하고 수변 산책로를 천천히 걸어보세요. 오전 일정이 마무리되는 시간대라 비교적 한적하게 물빛 풍경을 즐기며 산책할 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.531247,
+        "lng": 126.928686,
+        "reason": "시원한 바닥 분수와 넓은 물빛 풍경 속에서 배우자와 함께 여유롭게 쉬어 가기 좋아서 골랐어요",
+        "activities": [
+          "바닥 분수 감상",
+          "수변 산책로 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "백원",
+              "summary": "중국 4대 지방의 요리를 골고루 맛볼 수 있는 곳.",
+              "address": "서울 영등포구 여의공원로 101 (여의도동, C.C.M.M빌딩)",
+              "lat": 37.5292720472,
+              "lng": 126.9248927386,
+              "use_time": "11:30 ~ 14:00 / 17:30 ~ 22:00",
+              "kind": "restaurant",
+              "dist_km": 0.4
+            },
+            {
+              "title": "희정식당",
+              "summary": "푸짐한 소시지와 햄 사리의 부대찌개 전문점. ",
+              "address": "서울 영등포구 여의나루로 117",
+              "lat": 37.5262412525,
+              "lng": 126.9310907322,
+              "use_time": " 11:30~23:00",
+              "kind": "restaurant",
+              "dist_km": 0.6
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 여의도한강공원 물빛광장 주변",
+        "preview": "한강이 보이는 더 뷰 라운지",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5302893644917,
+        "lng": 126.921969207155,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "켄싱턴 호텔 더 뷰 라운지",
+            "summary": "한강이 보이는 더 뷰 라운지",
+            "address": "서울 영등포구 국회대로76길 16 (여의도동)",
+            "lat": 37.5302893644917,
+            "lng": 126.921969207155,
+            "use_time": "[조식]\r\n주중 : 07:00~09:30\r\n주말 및 공휴일 : 07:00~10:00\r\n[웰컴 티타임]\r\n15:00~17:00\r\n[해피아워]\r\n18:00~21:00",
+            "kind": "restaurant",
+            "dist_km": 0.6
+          },
+          {
+            "title": "리치몬드 제과점 더현대서울점 ",
+            "summary": "1979년 마포구에서 시작해 지금까지 오랜 역사를 가지고 있는 리치몬드 제과점",
+            "address": "서울 영등포구 여의대로 108 (여의도동, 파크원)",
+            "lat": 37.5251913154781,
+            "lng": 126.929112756574,
+            "use_time": "10:30 ~ 20:00",
+            "kind": "cafe",
+            "dist_km": 0.67
+          },
+          {
+            "title": "여의도따로국밥",
+            "summary": "진한 국물의 국밥과 큼직한 사태가 들어 있는 따로국밥전문점. 꼬리수육도 인기. 여의도에 자리 잡은 지 30여 년 전통.",
+            "address": "서울 영등포구 여의대방로69길 28 (유성빌딩)",
+            "lat": 37.52145460468794,
+            "lng": 126.93019920858046,
+            "use_time": "07:00~22:00",
+            "kind": "restaurant",
+            "dist_km": 1.1
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "선유도공원",
+        "preview": "수생식물과 계절별 꽃단지가 어우러진 재활용 생태공원에서 산책하기 좋아요",
+        "description": "선유도공원은 옛 정수장을 재활용해 만든 생태공원으로, 수생식물이 자라는 수변 공간과 계절별 꽃단지가 잘 정돈되어 있어요. 14시부터 17시까지 머물며 수생식물 경관을 감상하고 계절별 꽃단지를 따라 산책해 보세요. 넓은 잔디와 산책로가 이어져 있어 여유롭게 둘러보며 자연 속에서 쉬어 가기 좋아요.",
+        "duration": "3시간",
+        "duration_min": 180,
+        "tip": null,
+        "lat": 37.542383,
+        "lng": 126.901819,
+        "reason": "수생식물과 계절별 꽃단지가 어우러진 재활용 생태공원에서 배우자와 함께 여유로운 자연 산책을 즐기기 좋아서 골랐어요",
+        "activities": [
+          "수생식물 경관 감상",
+          "계절별 꽃단지 산책"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "카페진정성 한강편 커피하우스",
+              "summary": "한강을 바라보며 티타임을 가질 수 있는 양화대교 위 카페",
+              "address": "서울 영등포구 선유로 313 (당산동, 양화대교 전망카페)",
+              "lat": 37.5401186796401,
+              "lng": 126.900869247808,
+              "use_time": "매일 10:00-21:00",
+              "kind": "cafe",
+              "dist_km": 0.27
+            },
+            {
+              "title": "잠두봉더나인",
+              "summary": "한강 위에서 이색적으로 즐기는 삼겹살 맛집",
+              "address": "서울 마포구 마포나루길 582 (C& 한강랜드 잠두봉 유람선 선착장)",
+              "lat": 37.5456533782884,
+              "lng": 126.906440520699,
+              "use_time": "매일 12:00-22:00",
+              "kind": "restaurant",
+              "dist_km": 0.55
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "17:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "영등포",
+      "여의도",
+      "자연",
+      "힐링",
+      "배우자",
+      "오후",
+      "점심",
+      "여유",
+      "2일",
+      "5곳"
+    ],
+    "scheduled": true,
+    "days": 2,
+    "day_areas": {},
+    "day_descriptions": {
+      "1": "12시 마포대교에서 한강 풍경을 조망하며 강바람을 맞고 산책한 뒤, 13시 점심을 먹으러 이동해요. 14시부터 여의도공원에서 잔디마당과 한국전통의 숲길을 천천히 걸으며 여유롭게 시간을 보내고, 16시 32분 여의도샛강생태공원으로 옮겨 습지 생태를 관찰하며 산책로를 걸어 오후를 마무리해요.",
+      "2": "오후 12시에 여의도한강공원 물빛광장에서 바닥 분수를 감상하고 수변 산책로를 걸으며 여유롭게 시작해요. 13시에는 인근에서 점심을 먹고, 14시에 선유도공원으로 이동해 수생식물 경관을 보며 계절별 꽃단지를 천천히 산책해요. 17시까지 공원에서 자연 속 산책을 이어가며 하루를 마무리해요."
+    }
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 점심"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 12곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "마포대교, 여의도공원, 여의도샛강생태공원, 여의도한강공원 물빛광장, 선유도공원",
+      "picks": [
+        {
+          "name": "마포대교",
+          "reason": "한강 바람과 탁 트인 노을 풍경을 보며 배우자와 여유 있게 쉬어 가기에 좋아서 골랐어요",
+          "activities": [
+            "한강 풍경 조망",
+            "강바람 맞으며 산책"
+          ]
+        },
+        {
+          "name": "여의도공원",
+          "reason": "잔디마당과 숲길에서 식사 후 가볍게 산책하며 로맨틱한 데이트 분위기를 이어가기에 좋아서 골랐어요",
+          "activities": [
+            "잔디마당 걷기",
+            "한국전통의 숲 산책"
+          ]
+        },
+        {
+          "name": "여의도샛강생태공원",
+          "reason": "도심 속 습지 생태와 조용한 산책로를 천천히 걸으며 자연의 치유를 느끼기 좋아서 골랐어요",
+          "activities": [
+            "습지 생태 관찰",
+            "산책로 걷기"
+          ]
+        },
+        {
+          "name": "여의도한강공원 물빛광장",
+          "reason": "시원한 바닥 분수와 넓은 물빛 풍경 속에서 배우자와 함께 여유롭게 쉬어 가기 좋아서 골랐어요",
+          "activities": [
+            "바닥 분수 감상",
+            "수변 산책로 걷기"
+          ]
+        },
+        {
+          "name": "선유도공원",
+          "reason": "수생식물과 계절별 꽃단지가 어우러진 재활용 생태공원에서 배우자와 함께 여유로운 자연 산책을 즐기기 좋아서 골랐어요",
+          "activities": [
+            "수생식물 경관 감상",
+            "계절별 꽃단지 산책"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "2일 · 12:00~17:00 · 장소 5곳 · 식사 2회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "2끼 · 식당 후보 6곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 10건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "영등포·여의도 오후 자연 힐링 코스"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "여의서로 벚꽃길",
+      "category": "자연",
+      "area": "여의도·영등포",
+      "lat": 37.5327,
+      "lng": 126.9145,
+      "day_hint": null
+    },
+    {
+      "name": "여의도공원",
+      "category": "명소",
+      "area": "여의도·영등포",
+      "lat": 37.5268,
+      "lng": 126.9223,
+      "day_hint": null
+    },
+    {
+      "name": "개울건강도서관",
+      "category": "문화",
+      "area": "여의도·영등포",
+      "lat": 37.526,
+      "lng": 126.8566,
+      "day_hint": null
+    },
+    {
+      "name": "여의도샛강생태공원",
+      "category": "자연",
+      "area": "여의도·영등포",
+      "lat": 37.518693,
+      "lng": 126.922225,
+      "day_hint": null
+    },
+    {
+      "name": "양천공원 책쉼터",
+      "category": "문화",
+      "area": "여의도·영등포",
+      "lat": 37.518,
+      "lng": 126.8682,
+      "day_hint": null
+    },
+    {
+      "name": "마포대교",
+      "category": "자연",
+      "area": "여의도·영등포",
+      "lat": 37.533937,
+      "lng": 126.937313,
+      "day_hint": null
+    },
+    {
+      "name": "개봉도서관",
+      "category": "문화",
+      "area": "여의도·영등포",
+      "lat": 37.4895,
+      "lng": 126.858,
+      "day_hint": null
+    },
+    {
+      "name": "여의도한강공원 물빛광장",
+      "category": "자연",
+      "area": "여의도·영등포",
+      "lat": 37.531247,
+      "lng": 126.928686,
+      "day_hint": null
+    },
+    {
+      "name": "대림도서관",
+      "category": "문화",
+      "area": "여의도·영등포",
+      "lat": 37.5043,
+      "lng": 126.8961,
+      "day_hint": null
+    },
+    {
+      "name": "선유도공원",
+      "category": "자연",
+      "area": "여의도·영등포",
+      "lat": 37.542383,
+      "lng": 126.901819,
+      "day_hint": null
+    },
+    {
+      "name": "건강힐링센터",
+      "category": "문화",
+      "area": "여의도·영등포",
+      "lat": 37.5176,
+      "lng": 126.8459,
+      "day_hint": null
+    },
+    {
+      "name": "안양천",
+      "category": "자연",
+      "area": "여의도·영등포",
+      "lat": 37.5271,
+      "lng": 126.871,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "upstage",
+    "llm_model": "solar-open2",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

@@ -1,0 +1,586 @@
+{
+  "persona": "P03",
+  "persona_name": "홍대 친구 밤 핫플",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:10:18+00:00",
+  "total_sec": 12.043,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.001,
+    "retrieve": 0.202,
+    "select_places": 7.529,
+    "fit_schedule": 0.001,
+    "meals": 0.001,
+    "enrich": 0.001,
+    "nearby": 0.002,
+    "compose": 4.306
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.152,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 18.168,
+    "llm_sec_max": 7.527,
+    "input_tokens": 11052,
+    "output_tokens": 2038,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 7.527,
+        "in": 4730,
+        "out": 820,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.911,
+        "in": 2998,
+        "out": 279,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.426,
+        "in": 1492,
+        "out": 369,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.304,
+        "in": 1832,
+        "out": 570,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "홍대 야간 핫플레이스 투어",
+    "subtitle": "친구와 함께 트렌디한 문화·쇼핑 거리를 밤새 누비기",
+    "description": "친구와 밤에 둘러볼 홍대·마포의 핫플레이스 5곳을 빼곡하게 구성했어요. 플리마켓과 K-POP 팬 문화 공간부터 독립 브랜드 쇼핑까지 최근 트렌드의 중심인 장소들을 모았어요. 저녁 식사 후 문화 공간까지 이어가며 밤 시간을 효율적으로 활용할 수 있도록 짜였어요.",
+    "stops": [
+      {
+        "name": "홍대R1 레드컬처마켓",
+        "preview": "트렌디한 플리마켓과 버스킹이 어우러진 약 2km 거리",
+        "description": "홍대 일대의 핫플레이스를 둘러보는 저녁을 시작해요. 플리마켓 부스에서 독립 작가의 창작물을 구경하고 캐리커처 체험을 즐기거나 거리 곳곳의 버스킹을 감상하며 활기찬 분위기에 빠져들 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.55554,
+        "lng": 126.924619,
+        "reason": "친구와 함께 핫플레이스를 둘러보는 저녁 시작으로, 트렌디한 플리마켓과 버스킹이 어우러진 약 2km 관광특화 거리에서 활기찬 분위기를 경험하기 위해 골랐어요.",
+        "activities": [
+          "플리마켓·캐리커처 체험",
+          "버스킹 감상 및 거리 분위기 즐기기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "산띠",
+              "summary": "인도, 네팔 음식을 저렴하게 즐길 수 있는 곳.",
+              "address": "서울 마포구 와우산로27길 70",
+              "lat": 37.5555524568689,
+              "lng": 126.92498407095916,
+              "use_time": "11:30~22:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.03
+            },
+            {
+              "title": "누산타라쿠",
+              "summary": "인도네시아 요리를 기반으로 한 비스트로로, 깔끔하고 세련된 아시안 로컬 푸드를 맛볼 수 있는 곳이다. 동남아시아에서 직접 공수한 재료들과 할랄 인증 육류로 재현한 본토의 맛이 매력적이다. 닭, 양, 소 등 종류별 고기를 구이, 튀김, 양념 등 다양한 조리법과 조합하여 고를 수 있는 나시고렝이 대표메뉴다.",
+              "address": "서울 마포구 어울마당로 136-6 (서교동)",
+              "lat": 37.5558491294068,
+              "lng": 126.92522732389,
+              "use_time": "11:00-23:00 (라스트오더 22:00)",
+              "kind": "restaurant",
+              "dist_km": 0.06
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "18:00",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "저녁 식사 · 홍대R1 레드컬처마켓 주변",
+        "preview": "혼술러들의 성지, 연남동 혼술 Bar 깃털",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5591160501995,
+        "lng": 126.923950344259,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": null,
+        "meal_options": [
+          {
+            "title": "깃털",
+            "summary": "혼술러들의 성지, 연남동 혼술 Bar 깃털",
+            "address": "서울 마포구 동교로 212-2 (동교동)",
+            "lat": 37.5591160501995,
+            "lng": 126.923950344259,
+            "use_time": "일~목 18:00 - 익일 3:00\r\n금~토 18:00 - 익일 5:00",
+            "kind": "bar",
+            "dist_km": 0.4
+          },
+          {
+            "title": "대포찜닭",
+            "summary": "닭 인형으로 주문하고 닭 캐릭터로 인테리어를 하는 등 색다른 경험을 제공하여 젊은 관광객들에게 인기가 많습니다. ",
+            "address": "서울 서대문구 연세로 27-1 (창천동, 대성빌딩)",
+            "lat": 37.5581094871035,
+            "lng": 126.936672389728,
+            "use_time": "11:00 - 22:00 (20:40 라스트오더, 매주 일요일 휴무)\r\n",
+            "kind": "restaurant",
+            "dist_km": 1.1
+          },
+          {
+            "title": "마차횟집",
+            "summary": "가격대비 만족도가 높은 자연산 회와 해물을 즐길 수 있는 곳.   ",
+            "address": "서울 마포구 토정로 155 (하중동)",
+            "lat": 37.5457876817,
+            "lng": 126.9282754601,
+            "use_time": "평일 11:30 ~ 13:30 / 17:00 ~ 22:00\r\n주말 17:00 ~ 21:00",
+            "kind": "restaurant",
+            "dist_km": 1.13
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "위드뮤 AK PLAZA 홍대점",
+        "preview": "K-POP 굿즈와 포토존이 가득한 팬 문화 공간",
+        "description": "K-POP 팬들을 위한 전문 숍으로, 다양한 굿즈 컬렉션을 둘러보고 포토존에서 친구와 함께 인증샷을 남길 수 있어요. 최근 트렌디한 팬 문화를 경험하기에 좋은 곳이에요.",
+        "duration": "31분",
+        "duration_min": 31,
+        "tip": null,
+        "lat": 37.557746,
+        "lng": 126.926498,
+        "reason": "친구와 함께 K-POP 굿즈와 포토존을 둘러보며 최근 트렌디한 팬 문화 공간을 경험하기 위해 골랐어요.",
+        "activities": [
+          "K-POP 굿즈 컬렉션 구경",
+          "포토존에서 함께 인증샷"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "돈수백",
+              "summary": "부산 정통 돼지국밥 전문점",
+              "address": "서울 마포구 홍익로6길 74 (동교동)",
+              "lat": 37.5569478413594,
+              "lng": 126.925283945612,
+              "use_time": "24시간 영업",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            },
+            {
+              "title": "애슐리퀸즈 홍대점",
+              "summary": "연간 2천만 명이 찾는 대한민국 No.1 뷔페 브랜드",
+              "address": "서울 마포구 양화로 176 3층(동교동, 동교동 스타피카소)",
+              "lat": 37.5572467836494,
+              "lng": 126.924986220455,
+              "use_time": "11:00~21:00",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "20:00",
+        "end_time": "20:31",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "홍대",
+        "preview": "독립 브랜드와 감성 카페가 모여 있는 쇼핑 거리",
+        "description": "저녁 식사를 마친 후 홍대 거리의 독립 브랜드 매장들을 돌아다니며 쇼핑을 즐기고 거리 곳곳에서 벌어지는 퍼포먼스를 감상해요. 약간 붐비는 분위기 속에서 친구와 함께 SNS 핫플레이스를 투어할 수 있어요.",
+        "duration": "34분",
+        "duration_min": 34,
+        "tip": "20시 예상 혼잡도 약간 붐빔",
+        "lat": 37.5563,
+        "lng": 126.9225,
+        "reason": "저녁 식사 직후 가까운 거리에서 독립 브랜드와 감성 카페를 탐방하며 친구와 함께 쇼핑 문화를 즐기는 SNS 핫플레이스 투어를 이어가기 위해 골랐어요.",
+        "activities": [
+          "독립 브랜드 매장 쇼핑",
+          "거리 퍼포먼스 감상"
+        ],
+        "congestion": "약간 붐빔",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "불이아",
+              "summary": " 중국 본토 훠궈보다는 덜 맵게 중국식 훠궈를 먹을 수 있는 곳.  ",
+              "address": "서울특별시 마포구 동교로 182-6 (동교동)",
+              "lat": 37.55657,
+              "lng": 126.921969,
+              "use_time": " 11:00 ~ 23:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.06
+            },
+            {
+              "title": "신진도간장게장",
+              "summary": "푸짐한 양에 짜지 않은 맛으로 외국인들이 많이 찾는 간장게장 식당",
+              "address": "서울 마포구 월드컵북로2길 41 (동교동)",
+              "lat": 37.5570316520572,
+              "lng": 126.92279105332,
+              "use_time": "11:00 - 22:00 (15:00 - 17:00 브레이크타임)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.09
+            }
+          ],
+          "attractions": [
+            {
+              "title": "차슬아 개인전 [동굴로]",
+              "summary": "크리스프 웨지",
+              "address": "크리스프 웨지",
+              "lat": 37.5493590071323,
+              "lng": 126.916412664084,
+              "period": "2026-08-04~2026-08-17",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158858&menuNo=200009",
+              "kind": "event",
+              "dist_km": 0.94
+            }
+          ]
+        },
+        "start_time": "20:42",
+        "end_time": "21:16",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 11,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "KT&G 상상마당",
+        "preview": "밤 늦게까지 운영하는 복합 문화 공간",
+        "description": "홍대 지역의 대규모 문화 시설로 미술관, 영화관, 라이브 클럽 등 다양한 전시와 공연을 한 공간에서 즐길 수 있어요. 미술 전시를 둘러보거나 라이브 공연을 감상하며 밤의 문화생활을 채워보세요.",
+        "duration": "38분",
+        "duration_min": 38,
+        "tip": null,
+        "lat": 37.550958,
+        "lng": 126.921064,
+        "reason": "밤 늦게까지 운영하는 실내 문화 공간에서 미술관·영화관·라이브 클럽을 경험하며 하루의 마무리를 문화적으로 채우기 위해 골랐어요.",
+        "activities": [
+          "미술 전시 관람",
+          "라이브 공연 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "신이도가",
+              "summary": "전통 한옥의 아름다움을 살린 개방감 있는 분위기 좋은 카페.",
+              "address": "서울 마포구 잔다리로 20-12",
+              "lat": 37.5514417912612,
+              "lng": 126.920913150714,
+              "use_time": "11:00 ~ 23:30",
+              "kind": "cafe",
+              "dist_km": 0.06
+            },
+            {
+              "title": "하하&김종국의 401 정육식당",
+              "summary": "홍대에 위치한 하하&김종국의 401 정육식당",
+              "address": "서울 마포구 잔다리로 23 (서교동)",
+              "lat": 37.5507380197,
+              "lng": 126.9202404422,
+              "use_time": "16:00 - 02:00",
+              "kind": "restaurant",
+              "dist_km": 0.08
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "21:31",
+        "end_time": "22:09",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 15,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "미디어 아트 갤러리 언더독뮤지엄",
+        "preview": "디지털 미디어 아트를 경험하는 갤러리",
+        "description": "미디어 아트와 디지털 설치미술 작품들을 전시하는 갤러리로, 빛과 영상으로 만든 몰입형 전시 공간을 경험할 수 있어요. 친구와 함께 새로운 형태의 예술 작품들을 감상하며 밤 시간을 마무리해보세요.",
+        "duration": "41분",
+        "duration_min": 41,
+        "tip": null,
+        "lat": 37.5517,
+        "lng": 126.918,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "청돈옥 (Cheongdonok)",
+              "summary": "240시간 웻·드라이 교차숙성한 국내산 암퇘지를 숯불에 구워내는 홍대 고기집",
+              "address": "서울 마포구 잔다리로6길 10, 1층 (서교동)",
+              "lat": 37.551960252738,
+              "lng": 126.919619205143,
+              "use_time": "월–목 16:30–22:00 / 금 16:30–23:00 / 토 12:00–23:00 / 일 12:00–22:00",
+              "kind": "restaurant",
+              "dist_km": 0.15
+            },
+            {
+              "title": "스시겐",
+              "summary": "동교동의 숨은 일식 맛집. 그릇에 담긴 밥 위에 생선을 올린 지라시 초밥.",
+              "address": "서울 마포구 양화로7길 6-12 (서교동, 삼이빌딩)",
+              "lat": 37.5516322168,
+              "lng": 126.9156403597,
+              "use_time": "11:30 ~ 15:00 / 17:00 ~ 22:00",
+              "kind": "restaurant",
+              "dist_km": 0.21
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "22:19",
+        "end_time": "23:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 10,
+        "travel_mode": "walk"
+      }
+    ],
+    "tags": [
+      "홍대",
+      "야간",
+      "쇼핑",
+      "문화",
+      "친구",
+      "핫플레이스"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 2개 · 식사 저녁"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 11곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "홍대R1 레드컬처마켓, 위드뮤 AK PLAZA 홍대점, 홍대, KT&G 상상마당, 미디어 아트 갤러리 언더독뮤지엄",
+      "picks": [
+        {
+          "name": "홍대R1 레드컬처마켓",
+          "reason": "친구와 함께 핫플레이스를 둘러보는 저녁 시작으로, 트렌디한 플리마켓과 버스킹이 어우러진 약 2km 관광특화 거리에서 활기찬 분위기를 경험하기 위해 골랐어요.",
+          "activities": [
+            "플리마켓·캐리커처 체험",
+            "버스킹 감상 및 거리 분위기 즐기기"
+          ]
+        },
+        {
+          "name": "위드뮤 AK PLAZA 홍대점",
+          "reason": "친구와 함께 K-POP 굿즈와 포토존을 둘러보며 최근 트렌디한 팬 문화 공간을 경험하기 위해 골랐어요.",
+          "activities": [
+            "K-POP 굿즈 컬렉션 구경",
+            "포토존에서 함께 인증샷"
+          ]
+        },
+        {
+          "name": "홍대",
+          "reason": "저녁 식사 직후 가까운 거리에서 독립 브랜드와 감성 카페를 탐방하며 친구와 함께 쇼핑 문화를 즐기는 SNS 핫플레이스 투어를 이어가기 위해 골랐어요.",
+          "activities": [
+            "독립 브랜드 매장 쇼핑",
+            "거리 퍼포먼스 감상"
+          ]
+        },
+        {
+          "name": "KT&G 상상마당",
+          "reason": "밤 늦게까지 운영하는 실내 문화 공간에서 미술관·영화관·라이브 클럽을 경험하며 하루의 마무리를 문화적으로 채우기 위해 골랐어요.",
+          "activities": [
+            "미술 전시 관람",
+            "라이브 공연 감상"
+          ]
+        },
+        {
+          "name": "미디어 아트 갤러리 언더독뮤지엄",
+          "reason": "",
+          "activities": []
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "18:00~23:00 · 장소 5곳 · 식사 1회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "1끼 · 식당 후보 3곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "홍대 약간 붐빔"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 11건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "홍대 야간 핫플레이스 투어"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "홍대",
+      "category": "쇼핑",
+      "area": "홍대·마포",
+      "lat": 37.5563,
+      "lng": 126.9225,
+      "day_hint": null
+    },
+    {
+      "name": "홍대R1 레드컬처마켓",
+      "category": "명소",
+      "area": "홍대·마포",
+      "lat": 37.55554,
+      "lng": 126.924619,
+      "day_hint": null
+    },
+    {
+      "name": "KT&G 상상마당",
+      "category": "문화",
+      "area": "홍대·마포",
+      "lat": 37.550958,
+      "lng": 126.921064,
+      "day_hint": null
+    },
+    {
+      "name": "연남동",
+      "category": "쇼핑",
+      "area": "홍대·마포",
+      "lat": 37.5615,
+      "lng": 126.9236,
+      "day_hint": null
+    },
+    {
+      "name": "미디어 아트 갤러리 언더독뮤지엄",
+      "category": "문화",
+      "area": "홍대·마포",
+      "lat": 37.5517,
+      "lng": 126.918,
+      "day_hint": null
+    },
+    {
+      "name": "홍대 패션거리",
+      "category": "쇼핑",
+      "area": "홍대·마포",
+      "lat": 37.554198,
+      "lng": 126.922392,
+      "day_hint": null
+    },
+    {
+      "name": "상암동 MBC 신사옥",
+      "category": "문화",
+      "area": "홍대·마포",
+      "lat": 37.581123,
+      "lng": 126.890989,
+      "day_hint": null
+    },
+    {
+      "name": "위드뮤 AK PLAZA 홍대점",
+      "category": "쇼핑",
+      "area": "홍대·마포",
+      "lat": 37.557746,
+      "lng": 126.926498,
+      "day_hint": null
+    },
+    {
+      "name": "tvN",
+      "category": "문화",
+      "area": "홍대·마포",
+      "lat": 37.578396,
+      "lng": 126.891522,
+      "day_hint": null
+    },
+    {
+      "name": "더키월드",
+      "category": "쇼핑",
+      "area": "홍대·마포",
+      "lat": 37.556155,
+      "lng": 126.927014,
+      "day_hint": null
+    },
+    {
+      "name": "탈영역우정국",
+      "category": "문화",
+      "area": "홍대·마포",
+      "lat": 37.547,
+      "lng": 126.9276,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 2,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

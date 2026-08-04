@@ -1,0 +1,1764 @@
+{
+  "persona": "P10",
+  "persona_name": "여행자 3일 · 권역 3개 지정",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:14:34+00:00",
+  "total_sec": 13.969,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.0,
+    "retrieve": 0.634,
+    "select_places": 7.677,
+    "fit_schedule": 0.001,
+    "meals": 0.028,
+    "enrich": 0.111,
+    "nearby": 0.359,
+    "compose": 5.156
+  },
+  "counters": {
+    "embed_calls": 4,
+    "embed_sec": 0.533,
+    "search_calls": 4,
+    "llm_calls": 13,
+    "llm_sec_total": 62.29,
+    "llm_sec_max": 7.674,
+    "input_tokens": 32301,
+    "output_tokens": 6811,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 6.938,
+        "in": 4007,
+        "out": 793,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 6.959,
+        "in": 3918,
+        "out": 854,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 7.674,
+        "in": 3969,
+        "out": 863,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.072,
+        "in": 1879,
+        "out": 273,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.49,
+        "in": 1630,
+        "out": 395,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.491,
+        "in": 1870,
+        "out": 337,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.746,
+        "in": 1839,
+        "out": 249,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.029,
+        "in": 1685,
+        "out": 430,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.037,
+        "in": 4248,
+        "out": 377,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.263,
+        "in": 1677,
+        "out": 376,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.654,
+        "in": 1863,
+        "out": 577,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.786,
+        "in": 1846,
+        "out": 607,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 5.151,
+        "in": 1870,
+        "out": 680,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "서울 3일, 친구와 함께 도시를 걷다",
+    "subtitle": "궁궐·역사·한강 야경, 서울의 얼굴을 모두 담기",
+    "description": "친구와 함께 서울의 관광 명소를 둘러보는 3일 일정으로, 종로·중구·홍대·마포·강남·서초 전역을 효율적으로 연결했어요. 경복궁과 창덕궁 같은 궁궐 문화유산부터 청계광장, 서울광장 같은 도시 랜드마크, 선정릉 같은 왕릉까지 서울의 역사와 현대를 함께 경험하도록 구성했어요. 매일 5곳씩 빼곡하게 일정을 짜되 아침·점심·저녁 식사를 모두 포함해 하루를 꽉 채웠고, 야경 명소들을 저녁 시간대에 배치해 서울의 밤 풍경까지 담을 수 있게 했어요.",
+    "stops": [
+      {
+        "name": "경복궁",
+        "preview": "조선 왕조의 법궁에서 전통 건축을 만나다",
+        "description": "서울 종로구에 위치한 경복궁은 조선 시대 왕실의 중심 궁궐로, 근정전과 경회루 같은 주요 전각들이 원형으로 보존되어 있어요. 친구와 함께 궁궐 곳곳을 돌며 조선 건축의 특징을 살펴보고, 후원 산책로에서 전통 정원의 모습을 감상하면서 사진도 남길 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": "9시 예상 혼잡도 보통",
+        "lat": 37.5796,
+        "lng": 126.977,
+        "reason": "서울을 처음 방문하는 친구와 함께 조선 왕조의 법궁을 돌며 전통 건축과 궁궐 문화를 체험하는 것이 서울 관광의 필수 코스라서 골랐어요",
+        "activities": [
+          "근정전과 경회루 관람하기",
+          "궁궐 전각을 함께 돌며 사진 찍기",
+          "후원 산책로에서 조선 건축 감상하기"
+        ],
+        "congestion": "보통",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "황생가칼국수",
+              "summary": "인기 메뉴는 왕만두가 들어간 버섯전골, 1인분에 왕만두 3개와 칼국수.",
+              "address": "서울 종로구 북촌로5길 78 (소격동)",
+              "lat": 37.580078184627475,
+              "lng": 126.98066815278152,
+              "use_time": "11:00 ~ 21:30  (20:30 라스트오더)",
+              "kind": "restaurant",
+              "dist_km": 0.33
+            },
+            {
+              "title": "더레스토랑",
+              "summary": "일본식 프랑스 요리를 맛볼 수 있는 곳으로 깔끔한 맛과 데코레이션으로 유명",
+              "address": "서울특별시 종로구 삼청로 54 (소격동)",
+              "lat": 37.580691,
+              "lng": 126.980476,
+              "use_time": "매일 10:00 ~ 22:00 1F 카페\r\n매일 12:00 ~ 15:00 / 18:00 ~ 22:00 2F 레스토랑",
+              "kind": "restaurant",
+              "dist_km": 0.33
+            }
+          ],
+          "attractions": [
+            {
+              "title": "2026년 집옥재(팔우정 포함) 작은 도서관 개방",
+              "summary": "경복궁 집옥재·팔우정",
+              "address": "경복궁 집옥재·팔우정",
+              "lat": 37.5759040910202,
+              "lng": 126.976842133821,
+              "period": "2026-04-01~2026-10-31",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=157383&menuNo=200011",
+              "kind": "event",
+              "dist_km": 0.41
+            },
+            {
+              "title": "2026년 경복궁 [경회루·향원정] 특별관람",
+              "summary": "경복궁 경회루·향원정",
+              "address": "경복궁 경회루·향원정",
+              "lat": 37.5759040910202,
+              "lng": 126.976842133821,
+              "period": "2026-04-01~2026-10-30",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=157389&menuNo=200011",
+              "kind": "event",
+              "dist_km": 0.41
+            }
+          ]
+        },
+        "start_time": "09:00",
+        "end_time": "10:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "아침 식사 · 경복궁 주변",
+        "preview": "담백하게 구워낸 다양한 종류의 스콘으로 유명한 카페 레이어드 본점",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5777414803804,
+        "lng": 126.985931528189,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "카페 레이어드 안국점",
+            "summary": "담백하게 구워낸 다양한 종류의 스콘으로 유명한 카페 레이어드 본점",
+            "address": "서울 종로구 북촌로2길 2-3 (재동)",
+            "lat": 37.5777414803804,
+            "lng": 126.985931528189,
+            "use_time": "매일 08:00 ~ 22:00 ",
+            "kind": "cafe",
+            "dist_km": 0.81
+          },
+          {
+            "title": "감촌",
+            "summary": "24시간 푹 고아 끓여낸 사골국물을육수로 사용하여, 다른 순두부찌개에 비해 국물이 걸쭉하고 힘이 있는 것이 특징. 인근 직장인들 뿐 아니라 외국인 단골이 굉장히 많은 곳.",
+            "address": "서울특별시 종로구 종로 19 (종로1가)",
+            "lat": 37.572301,
+            "lng": 126.979841,
+            "use_time": "09:30~22:00  ",
+            "kind": "restaurant",
+            "dist_km": 0.85
+          },
+          {
+            "title": "청진옥 ",
+            "summary": "청진동 골목의 해장국 대명사",
+            "address": "서울 종로구 종로3길 32 (청진동, 청진빌딩)",
+            "lat": 37.571729636393,
+            "lng": 126.979463167521,
+            "use_time": "06:00~22:00",
+            "kind": "restaurant",
+            "dist_km": 0.9
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "청계광장",
+        "preview": "도심 속 분수 쇼와 청계천의 시작을 경험하다",
+        "description": "종로구 중심에 위치한 청계광장은 계절마다 달라지는 분수 쇼가 펼쳐지는 현대 도시 공간이에요. 청계천의 시작점에서 분수를 감상하고 함께 기념 사진을 촬영하면서 서울의 도시 경관을 느껴보세요.",
+        "duration": "2시간",
+        "duration_min": 120,
+        "tip": null,
+        "lat": 37.5689,
+        "lng": 126.9774,
+        "reason": "점심 후 도심 속 감성적인 공간에서 K-콘텐츠 촬영지의 분수 쇼를 보며 서울의 현대적 랜드마크를 경험하게 했어요",
+        "activities": [
+          "계절 분수 쇼 감상하기",
+          "청계천 시작점에서 기념 사진 촬영하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "강가 무교점",
+              "summary": "강가는 정통 인도 레스토랑.",
+              "address": "서울 중구 세종대로 136 (태평로1가, 파이낸스빌딩)",
+              "lat": 37.56842249719518,
+              "lng": 126.9782578910947,
+              "use_time": "평일 11:30~15:00, 17:00~21:30\r\n주말 11:30~15:00, 17:00~20:00",
+              "kind": "restaurant",
+              "dist_km": 0.09
+            },
+            {
+              "title": "일도씨닭갈비 광화문점",
+              "summary": " 일도씨닭갈비는 세련된 레스토랑과 같은 분위기의 닭갈비 음식점.",
+              "address": "서울 중구 세종대로 136 (태평로1가, 파이낸스빌딩)",
+              "lat": 37.56842249719518,
+              "lng": 126.9782578910947,
+              "use_time": "매일 10:00 - 21:30\r\n(20:30 주문 마감)",
+              "kind": "restaurant",
+              "dist_km": 0.09
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "11:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 청계광장 주변",
+        "preview": "“할랄로 안심하고 즐기는 K-BBQ\"",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5631673277352,
+        "lng": 126.985096247235,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "부산집 KBBQ",
+            "summary": "“할랄로 안심하고 즐기는 K-BBQ\"",
+            "address": "서울 중구 명동8길 11-8 (명동2가)",
+            "lat": 37.5631673277352,
+            "lng": 126.985096247235,
+            "use_time": "12:00-22:30 (라스트오더 21:40)",
+            "kind": "restaurant",
+            "dist_km": 0.93
+          },
+          {
+            "title": "대련집",
+            "summary": "사골로 우려낸 진한 칼국수가 주메뉴이지만 보쌈, 홍어찜, 파전 등 다양한 한식 . 내국인, 외국인 모두에게 인기.",
+            "address": "서울 종로구 종로16길 37 (관수동)",
+            "lat": 37.5684318339367,
+            "lng": 126.989091477256,
+            "use_time": "11:00~14:30, 17:00~21:30",
+            "kind": "restaurant",
+            "dist_km": 1.03
+          },
+          {
+            "title": "서울 커피 익선점",
+            "summary": "현재와 과거가 공존하는 서울에서 가장 오래된 한옥마을에 위치한 서울커피 익선점",
+            "address": "서울 종로구 수표로28길 33-3 (익선동)",
+            "lat": 37.5732799099118,
+            "lng": 126.990121119632,
+            "use_time": "매일 11:00 ~ 22:00 (21:40 주문 마감)",
+            "kind": "cafe",
+            "dist_km": 1.22
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "남산예장공원",
+        "preview": "도시 야경을 배경으로 한 숲길 산책",
+        "description": "중구 남산에 자리한 남산예장공원은 울창한 숲길과 전망대를 갖춘 자연 공간으로, 도시 한복판에서 조용한 산책을 즐길 수 있어요. 숲길을 걸으며 야경을 감상하고, 서울의 밤 풍경을 배경으로 친구와 함께 사진을 남겨보세요.",
+        "duration": "1시간 32분",
+        "duration_min": 92,
+        "tip": null,
+        "lat": 37.559887,
+        "lng": 126.988939,
+        "reason": "저녁 식사 후 도시 속 울창한 숲길에서 하루의 피로를 함께 풀고, 활기 넘친 광장과 궁궐 관광 후 조용한 자연으로 마무리하려고 골랐어요",
+        "activities": [
+          "숲길 산책하며 야경 감상하기",
+          "도시 야경을 배경으로 기념 사진 촬영하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "명동정",
+              "summary": "“프라이빗 룸에서 맛보는 정통 한정식의 품격\"",
+              "address": "서울 중구 삼일대로 299 (충무로2가, 이화빌딩)",
+              "lat": 37.5615320382121,
+              "lng": 126.988490465272,
+              "use_time": "11:30-21:30 (브레이크타임 15:00-17:00)\r\n(라스트오더 20:00)",
+              "kind": "restaurant",
+              "dist_km": 0.19
+            },
+            {
+              "title": "레팍라식당",
+              "summary": "말레이어로 “느긋하게 쉬자”는 뜻의 ‘레팍라’는, 그 이름처럼 편안한 분위기 속에서 말레이시아의 정통 요리를 즐길 수 있는 식당이다. 나시르막(Nasi Lemak), 미고랭(Mee Goreng), 사테(Satay), 락사(Laksa) 등 대표 메뉴를 통해 한국에서는 접하기 어려운 이국적인 맛을 경험할 수 있다.",
+              "address": "서울 중구 퇴계로24길 2 (남산동3가)",
+              "lat": 37.5607597227316,
+              "lng": 126.986940678078,
+              "use_time": "10:30-22:00 (브레이크타임 16:00-17:00)\r\n(라스트오더 21:30)",
+              "kind": "restaurant",
+              "dist_km": 0.2
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "15:32",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "창덕궁",
+        "preview": "조선 궁궐의 건축과 정원을 한눈에",
+        "description": "경복궁과 달리 자연 지형을 살린 배치가 특징인 궁궐로, 인정전의 웅장한 목조 건축과 낙선재의 소박한 양식을 비교하며 관람할 수 있어요. 후원 산책로는 조선 왕실이 즐긴 정원의 연못과 정자, 숲길을 함께 걸으며 조선 정원 문화를 깊이 있게 경험하는 공간이에요.",
+        "duration": "3시간",
+        "duration_min": 180,
+        "tip": null,
+        "lat": 37.579503,
+        "lng": 126.991034,
+        "reason": "경복궁과 다른 궁궐의 매력을 느끼고, 조용한 후원 산책로에서 왕실 문화를 깊이 있게 체험하며 역사 테마를 심화시키려고 골랐어요",
+        "activities": [
+          "인정전과 낙선재 건축 양식 비교 관람하기",
+          "후원 산책로를 함께 걸으며 조선 정원 감상하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "카페 상국",
+              "summary": "빈티지 감성 옛 주택을 개조한 한옥뷰 맛집 카페 ",
+              "address": "서울 종로구 창덕궁길 47-7 1~3층",
+              "lat": 37.5795705432739,
+              "lng": 126.98888664069,
+              "use_time": "월 10:20-19:00 / 화-토 10:20-21:30 / 일 10:00-21:00",
+              "kind": "cafe",
+              "dist_km": 0.19
+            },
+            {
+              "title": "비원손칼국수",
+              "summary": "창경궁 부근에 있는 한우 양지로 국물을 낸 30년 된 칼국수 집. ",
+              "address": "서울 종로구 창덕궁1길 9-1",
+              "lat": 37.579171033197966,
+              "lng": 126.9887877551793,
+              "use_time": " 11:00 ~ 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.2
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:57",
+        "end_time": "18:57",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "저녁 식사 · 창덕궁 주변",
+        "preview": "독특한 위스키를 맛볼 수 있는 창덕궁 근처 아늑한 술집 ",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5792720710165,
+        "lng": 126.987364131703,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 1,
+        "meal_options": [
+          {
+            "title": "법원 ",
+            "summary": "독특한 위스키를 맛볼 수 있는 창덕궁 근처 아늑한 술집 ",
+            "address": "서울 종로구 창덕궁1길 33 (계동)",
+            "lat": 37.5792720710165,
+            "lng": 126.987364131703,
+            "use_time": "월~목  16:00~01:00\r\n금~일, 공휴일 14:00 ~ 01:00",
+            "kind": "bar",
+            "dist_km": 0.32
+          },
+          {
+            "title": "모녀김밥",
+            "summary": "광장시장을 가야 하는 이유 중의 하나가 된 겨자소스와 곁들여 먹는 김밥의 원조집. ",
+            "address": "서울 종로구 동호로 403-23 (예지동)",
+            "lat": 37.570002,
+            "lng": 126.998902,
+            "use_time": "매일 09:00 ~ 21:00",
+            "kind": "restaurant",
+            "dist_km": 1.26
+          },
+          {
+            "title": "두르가 광화문점",
+            "summary": "“편안하게 즐기는 인도·네팔 요리의 맛과 전통”",
+            "address": "서울 종로구 종로 19 (종로1가, 르메이에르종로타운1)",
+            "lat": 37.5708444878121,
+            "lng": 126.979923668151,
+            "use_time": "10:00-22:00 (브레이크타임 15:00-17:00, 라스트오더 21:00)",
+            "kind": "restaurant",
+            "dist_km": 1.37
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "서울광장",
+        "preview": "도심 중심에서 즐기는 밤의 서울",
+        "description": "시청 앞 광장으로 야간 조명이 밝혀진 서울의 대표 랜드마크예요. 광장을 산책하며 야경 속 도시 풍경을 감상하고, 시민 문화 공간의 밤 분위기를 친구와 함께 느껴보세요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.565853,
+        "lng": 126.977985,
+        "reason": "밤 시간에 활기 있는 도심 랜드마크에서 서울의 야경과 문화 공간을 마지막으로 경험하며 3일 여행의 첫날을 마무리하는 상징적 장소라서 골랐어요",
+        "activities": [
+          "야경 속 광장 산책하기",
+          "시민 문화 공간의 야간 분위기 감상하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "도원 ",
+              "summary": "30여 년 역사의 호텔 중식당으로, 재벌 총수, 정치인들이 자주 찾는 곳으로도 유명.",
+              "address": "서울 중구 소공로 119 (서울프라자호텔)",
+              "lat": 37.56467068647689,
+              "lng": 126.97791489210915,
+              "use_time": "11:30~14:30, 18:00~21:30",
+              "kind": "restaurant",
+              "dist_km": 0.13
+            },
+            {
+              "title": "리북손만두",
+              "summary": "시원하고 깔끔한 김치말이밥, 접시만두, 만둣국이 유명한 곳. ",
+              "address": "서울 중구 무교로 17-13 (무교동)",
+              "lat": 37.567251255,
+              "lng": 126.9785434734,
+              "use_time": "평일 11:00~21:00 (브레이크타임 14:30~17:00 )\r\n주말 11:00~20:00",
+              "kind": "restaurant",
+              "dist_km": 0.16
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "slot_type": "place",
+        "day": 1,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "연세대 캠퍼스",
+        "preview": "신촌의 고풍스러운 대학 캠퍼스에서 역사적 건축물과 정원을 산책해요",
+        "description": "서울을 대표하는 대학 캠퍼스로, 100년을 넘는 역사 속에 지어진 고풍스러운 건축물들과 잘 가꾼 정원이 있어요. 캠퍼스 곳곳의 포토스폿에서 친구와 함께 사진을 촬영하며 서울의 역사와 문화를 눈으로 담을 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.563805,
+        "lng": 126.942932,
+        "reason": "서울을 대표하는 대학 명소로 고풍스러운 건축물과 캠퍼스 산책을 통해 서울의 역사와 문화를 경험할 수 있어서 골랐어요",
+        "activities": [
+          "고풍스러운 건축물과 정원 산책",
+          "캠퍼스 곳곳 포토스폿에서 함께 사진 촬영"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "딸기골분식",
+              "summary": "40년 동안 이대 학생들에게 저렴한 가격으로 인기 있는 분식집. ",
+              "address": "서울 서대문구 연대동문길 29 (대신동)",
+              "lat": 37.5639169706,
+              "lng": 126.9438324972,
+              "use_time": "07:00 ~ 21:30",
+              "kind": "restaurant",
+              "dist_km": 0.08
+            },
+            {
+              "title": "라본느타르트",
+              "summary": "집에서 직접 만든 듯한 타르트를 먹을 수 있는 곳. ",
+              "address": "서울 서대문구 연대동문길 29 (대신동)",
+              "lat": 37.5639171508019,
+              "lng": 126.943832497098,
+              "use_time": "평일 08:00 ~ 20:00\r\n토요일 09:00 ~ 17:00",
+              "kind": "cafe",
+              "dist_km": 0.08
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "10:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "아침 식사 · 연세대 캠퍼스 주변",
+        "preview": "40년 동안 이대 학생들에게 저렴한 가격으로 인기 있는 분식집. ",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5639169706,
+        "lng": 126.9438324972,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "딸기골분식",
+            "summary": "40년 동안 이대 학생들에게 저렴한 가격으로 인기 있는 분식집. ",
+            "address": "서울 서대문구 연대동문길 29 (대신동)",
+            "lat": 37.5639169706,
+            "lng": 126.9438324972,
+            "use_time": "07:00 ~ 21:30",
+            "kind": "restaurant",
+            "dist_km": 0.08
+          },
+          {
+            "title": "가미분식",
+            "summary": "이대 앞 추억의 한 끼 식사, 가미 우동과 주먹밥",
+            "address": "서울 서대문구 이화여대8길 2 무궁화상가아파트",
+            "lat": 37.5586536023804,
+            "lng": 126.945920737962,
+            "use_time": "10:00~20:30",
+            "kind": "restaurant",
+            "dist_km": 0.63
+          },
+          {
+            "title": "피터팬1978",
+            "summary": "프랑스·일본 장인의 기술이 녹아 있는 베이커리",
+            "address": "서울 서대문구 증가로 10",
+            "lat": 37.5693884840153,
+            "lng": 126.931759938035,
+            "use_time": "08:00~21:00",
+            "kind": "cafe",
+            "dist_km": 1.16
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "연세대학교신촌캠퍼스박물관",
+        "preview": "1924년 개관한 대학박물관의 효시에서 한국 역사를 만나요",
+        "description": "우리나라 대학박물관 중 가장 오래된 역사를 지닌 박물관으로, 캠퍼스 산책 후 그 역사를 깊이 있게 이해할 수 있어요. 전시 공간에서 1924년 개관 이후의 역사에 대한 해설을 감상하며 한국 근현대 문화유산을 배울 수 있어요.",
+        "duration": "2시간",
+        "duration_min": 120,
+        "tip": null,
+        "lat": 37.5661,
+        "lng": 126.9439,
+        "reason": "우리나라 대학박물관의 효시로서 역사적 의의가 크고, 방금 캠퍼스를 돌아본 후 그 역사를 깊이 있게 이해할 수 있는 흐름이어서 골랐어요",
+        "activities": [
+          "박물관 전시 관람",
+          "1924년 개관 역사에 대한 해설 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "함평면옥",
+              "summary": "푸짐한 만두전골과 김치말이 국시로 유명한 집.",
+              "address": "서울 서대문구 성산로 527 (대신동, 하늬솔빌딩)",
+              "lat": 37.5641443682,
+              "lng": 126.944565775,
+              "use_time": "평일 11:00 ~ 21:00 (20:00 라스트오더)\r\n토요일 11:00 ~ 15:00 (14:00 라스트오더)",
+              "kind": "restaurant",
+              "dist_km": 0.23
+            },
+            {
+              "title": "라본느타르트",
+              "summary": "집에서 직접 만든 듯한 타르트를 먹을 수 있는 곳. ",
+              "address": "서울 서대문구 연대동문길 29 (대신동)",
+              "lat": 37.5639171508019,
+              "lng": 126.943832497098,
+              "use_time": "평일 08:00 ~ 20:00\r\n토요일 09:00 ~ 17:00",
+              "kind": "cafe",
+              "dist_km": 0.24
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "11:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 연세대학교신촌캠퍼스박물관 주변",
+        "preview": "푸짐한 만두전골과 김치말이 국시로 유명한 집.",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.5641443682,
+        "lng": 126.944565775,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "함평면옥",
+            "summary": "푸짐한 만두전골과 김치말이 국시로 유명한 집.",
+            "address": "서울 서대문구 성산로 527 (대신동, 하늬솔빌딩)",
+            "lat": 37.5641443682,
+            "lng": 126.944565775,
+            "use_time": "평일 11:00 ~ 21:00 (20:00 라스트오더)\r\n토요일 11:00 ~ 15:00 (14:00 라스트오더)",
+            "kind": "restaurant",
+            "dist_km": 0.23
+          },
+          {
+            "title": "스타벅스 이대점",
+            "summary": "대한민국에 스타벅스가 가장 처음 생긴 지점",
+            "address": "서울 서대문구 이화여대길 34 (대현동, 신흥빌딩)",
+            "lat": 37.5584543135108,
+            "lng": 126.94594623384044,
+            "use_time": "월~목 08:00~20:00\r\n금~토 09:00~20:00",
+            "kind": "cafe",
+            "dist_km": 0.87
+          },
+          {
+            "title": "형제갈비",
+            "summary": "40년 가까이 된 갈비 전문점. 신촌 일대에서는 예전부터 유명했던 집. 숯불에 구워 먹는 소갈비의 맛이 일품.  돌솥비빔밥, 갈비탕, 보리밥 등 저렴하게 한식을 즐길 수 있는 곳.",
+            "address": "서울 서대문구 명물1길 2 (창천동)",
+            "lat": 37.557838918578,
+            "lng": 126.937349643274,
+            "use_time": "매일 11:00 ~ 22:00 \r\n",
+            "kind": "restaurant",
+            "dist_km": 1.08
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "한국천주교순교자박물관",
+        "preview": "병인박해의 역사를 기억하는 마포의 의미 있는 공간이에요",
+        "description": "한국 근현대사의 중요한 순간인 순교의 역사를 다루는 박물관으로, 병인박해 시대의 배경과 의미를 담은 전시를 관람할 수 있어요. 친구와 함께 역사 교육을 나누며 의미 있는 시간을 보낼 수 있어요.",
+        "duration": "1시간 49분",
+        "duration_min": 109,
+        "tip": null,
+        "lat": 37.5441,
+        "lng": 126.9118,
+        "reason": "점심 후 마포 권역 역사 명소로 한국 근현대사의 중요한 순간을 기억하는 공간이며, 친구와 함께 의미 있는 역사 교육을 나눌 수 있어서 골랐어요",
+        "activities": [
+          "순교기념 박물관 전시 관람",
+          "병인박해 역사 배경 이해하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "파스텔커피웍스",
+              "summary": "스페셜티 커피 전문 로스팅 기업 파스텔커피웍스",
+              "address": "서울 마포구 성지길 58 (합정동, 노박빌딩)",
+              "lat": 37.5462699792267,
+              "lng": 126.912617576909,
+              "use_time": "월-금 8:30-18:00 (라스트오더 17:30)\r\n토-일 09:30-18:30 (라스트오더 18:00)",
+              "kind": "cafe",
+              "dist_km": 0.25
+            },
+            {
+              "title": "카페 그레이랩",
+              "summary": "벚꽃시즌, 벚꽃 아래서 커피를 마실 수 있는 SNS에서 핫한 합정 카페",
+              "address": "서울 마포구 토정로3길 16 (합정동)",
+              "lat": 37.5462838392978,
+              "lng": 126.914442257195,
+              "use_time": "월-일 10:00-22:00",
+              "kind": "cafe",
+              "dist_km": 0.34
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "15:49",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "월드컵공원",
+        "preview": "한강변 생태공원에서 푸른 잔디광장과 테마 정원을 둘러봐요.",
+        "description": "서울 마포구 한강변에 자리한 생태공원으로, 넓은 잔디광장과 계절마다 다른 모습의 테마 정원들이 있어요. 매립지 역사를 전시한 관람 공간도 마련되어 있습니다. 친구와 함께 잔디광장을 산책하고, 테마 정원들을 둘러본 뒤 매립지 역사 전시를 관람하며 오후 후반을 보낼 수 있어요.",
+        "duration": "2시간 43분",
+        "duration_min": 163,
+        "tip": "16시 예상 혼잡도 보통",
+        "lat": 37.5686,
+        "lng": 126.897,
+        "reason": "오후 후반 야외에서 친구와 함께 휴식하며 생태공원의 푸른 잔디광장과 테마 정원을 돌아볼 수 있는 개방감 있는 명소라서 골랐어요",
+        "activities": [
+          "잔디광장에서 산책",
+          "테마 정원 둘러보기",
+          "매립지 역사 전시 관람"
+        ],
+        "congestion": "보통",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "성산왕갈비",
+              "summary": "푸짐한 생돼지갈비로 유명. 돼지갈비 맛도 좋으며 양도 푸짐하여 인기",
+              "address": "서울특별시 마포구 월드컵북로 233  (성산동, 성산시영아파트)",
+              "lat": 37.568919,
+              "lng": 126.902346,
+              "use_time": "12:00~15:00, 17:00~21:00 ",
+              "kind": "restaurant",
+              "dist_km": 0.47
+            },
+            {
+              "title": "듀이커피",
+              "summary": "상암동의 분위기 좋은 카페",
+              "address": "서울 마포구 성암로15길 56 (상암동)",
+              "lat": 37.5765047248981,
+              "lng": 126.896469991427,
+              "use_time": "11:00 ~ 20:00",
+              "kind": "cafe",
+              "dist_km": 0.88
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "16:17",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": 28,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "저녁 식사 · 월드컵공원 주변",
+        "preview": "푸짐한 생돼지갈비로 유명. 돼지갈비 맛도 좋으며 양도 푸짐하여 인기",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.568919,
+        "lng": 126.902346,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 2,
+        "meal_options": [
+          {
+            "title": "성산왕갈비",
+            "summary": "푸짐한 생돼지갈비로 유명. 돼지갈비 맛도 좋으며 양도 푸짐하여 인기",
+            "address": "서울특별시 마포구 월드컵북로 233  (성산동, 성산시영아파트)",
+            "lat": 37.568919,
+            "lng": 126.902346,
+            "use_time": "12:00~15:00, 17:00~21:00 ",
+            "kind": "restaurant",
+            "dist_km": 0.47
+          },
+          {
+            "title": "일등식당",
+            "summary": "정성으로 깊은 맛을 우리는 뼈해장국 가게",
+            "address": "서울 마포구 방울내로 82 (망원동)",
+            "lat": 37.5605651073381,
+            "lng": 126.904350324808,
+            "use_time": "주중 9:00~21:00 / 주말 8:30~21:00",
+            "kind": "restaurant",
+            "dist_km": 1.1
+          },
+          {
+            "title": "진미소곱창 상암직영점",
+            "summary": "초벌 없이 신선한 생 곱창구이를 즐길 수 있는 흔치 않은 곱창 전문점",
+            "address": "서울 마포구 매봉산로2길 15 (상암동, 효인빌딩)",
+            "lat": 37.5785264982816,
+            "lng": 126.894977598231,
+            "use_time": "15:00 - 23:00 (22:00 라스트오더, 매주 일요일 휴무)\r\n",
+            "kind": "restaurant",
+            "dist_km": 1.12
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "성산대교",
+        "preview": "빨간 아치형 다리에서 한강 야경을 감상하는 포토스폿이에요.",
+        "description": "마포구와 강남구를 잇는 빨간색 아치형 다리로, 저녁 시간에 한강을 배경으로 한 야경이 아름다워요. 다리 위에서 한강의 야경을 감상하고, 강변 산책로에서 친구와 함께 사진을 촬영하며 하루를 마무리할 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.551477,
+        "lng": 126.891605,
+        "reason": "저녁 시간에 한강의 야경을 감상할 수 있는 빨간 아치형 다리로, 하루를 마무리하며 친구와 함께 강변 경관을 즐기기에 좋은 포토스폿이어서 골랐어요",
+        "activities": [
+          "빨간 다리 위에서 한강 야경 감상",
+          "강변 산책로에서 함께 사진 촬영"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "하우스오브바이닐 망원점",
+              "summary": "LP음악과 커피를 즐기는 공간",
+              "address": "서울 마포구 희우정로16길 23 1층",
+              "lat": 37.5546556518102,
+              "lng": 126.903248791394,
+              "use_time": "11:00-22:00",
+              "kind": "cafe",
+              "dist_km": 1.09
+            },
+            {
+              "title": "발리인망원",
+              "summary": "“망원으로 떠나는 발리 맛의 여행”",
+              "address": "서울 마포구 포은로 67 (망원동)",
+              "lat": 37.5532902785265,
+              "lng": 126.906035897936,
+              "use_time": "11:30 - 21:00 (15:00 - 17:00 브레이크타임, 14:30/20:00 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 1.29
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "slot_type": "place",
+        "day": 2,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "강남역",
+        "preview": "서울 대표 상권의 중심에서 도시의 활기를 느껴요.",
+        "description": "강남역은 지하철 2호선과 신분당선이 만나는 주요 환승역으로, 역 내 대형 쇼핑몰과 브랜드 매장들이 밀집해 있어요. 아침 9시부터 10시까지 약간 붐비는 시간대지만, 친구와 함께 지하철 환승센터를 둘러보고 브랜드 쇼핑을 하며 서울의 활기찬 분위기로 3일차 일정을 시작할 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": "9시 예상 혼잡도 약간 붐빔",
+        "lat": 37.4979,
+        "lng": 127.0276,
+        "reason": "서울 대표 상권에서 강남·서초 권역의 활기찬 분위기를 시작으로, 친구와 함께 도시의 에너지를 느끼며 이날 일정을 열어요.",
+        "activities": [
+          "지하철 환승센터 둘러보기",
+          "대형 쇼핑몰에서 브랜드 쇼핑"
+        ],
+        "congestion": "약간 붐빔",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "브릭샌드 강남역점",
+              "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+              "address": "서울 강남구 강남대로 396 강남역 신분당선 지하1층",
+              "lat": 37.4981646510326,
+              "lng": 127.028307900881,
+              "use_time": "평일 (월 - 금) 08:00 - 20:30\r\n토 09:00 - 22:00\r\n일 10:00 - 19:00",
+              "kind": "cafe",
+              "dist_km": 0.07
+            },
+            {
+              "title": "리샨",
+              "summary": "미국 차이나타운 스타일의 퓨전 중식을 하는 곳.",
+              "address": "서울 서초구 서초대로74길 11 (서초동, 삼성전자빌딩)",
+              "lat": 37.4966332658,
+              "lng": 127.0269141213,
+              "use_time": "평일 11:00~15:00, 16:40~21:30\r\n토 11:00~20:30",
+              "kind": "restaurant",
+              "dist_km": 0.15
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "10:00",
+        "slot_type": "place",
+        "day": 3,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "아침 식사 · 강남역 주변",
+        "preview": "유럽형 카페 베이커리 아티제의 도산공원 분점. ",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.4966332657545,
+        "lng": 127.026914121286,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "10:00",
+        "end_time": "11:00",
+        "slot_type": "meal",
+        "day": 3,
+        "meal_options": [
+          {
+            "title": "아티제 삼성타운점",
+            "summary": "유럽형 카페 베이커리 아티제의 도산공원 분점. ",
+            "address": "서울 서초구 서초대로74길 11 (서초동, 삼성전자빌딩)",
+            "lat": 37.4966332657545,
+            "lng": 127.026914121286,
+            "use_time": "주중 07:00~22:30 토 09:00~22:00 일 09:00~21:00\r\n",
+            "kind": "cafe",
+            "dist_km": 0.15
+          },
+          {
+            "title": "사오월수라상",
+            "summary": "조선시대 왕실 수라상 조리비법 그대로 재현한 강남역 간장게장 맛집",
+            "address": "서울 강남구 역삼로7길 17 (역삼동, 네스빌) 1층",
+            "lat": 37.4951475238352,
+            "lng": 127.03256826852,
+            "use_time": "매일 10:00-22:00 (15:00-17:00 브레이크타임) ",
+            "kind": "restaurant",
+            "dist_km": 0.53
+          },
+          {
+            "title": "역삼동북어집 ",
+            "summary": "맵고 칼칼한 북어찜을 맛볼 수 있는 곳. 점심때는 북어찜 백반. 국물이 많은 북어찜 스타일로, 해장용.",
+            "address": "서울 강남구 논현로85길 5-14 (역삼동)",
+            "lat": 37.49858760742147,
+            "lng": 127.0367308165429,
+            "use_time": "화요알~금요일 10:00~20:30, 토요일~일요일 08:40~20:00",
+            "kind": "restaurant",
+            "dist_km": 0.81
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "강남 코엑스",
+        "preview": "쇼핑과 문화, 자연을 한 곳에서 경험하는 복합 공간이에요.",
+        "description": "강남역 인근의 코엑스는 대형 쇼핑몰, 별마당도서관, 아쿠아리움, 전시 공간을 갖춘 복합 문화 시설이에요. 11시부터 13시까지 약간 붐비는 가운데, 친구와 함께 별마당도서관의 이국적인 풍경을 감상하고 아쿠아리움에서 다양한 해양 생물을 관람하며, 계절 특별전시도 둘러볼 수 있어요.",
+        "duration": "2시간",
+        "duration_min": 120,
+        "tip": "11시 예상 혼잡도 약간 붐빔",
+        "lat": 37.5012,
+        "lng": 127.0396,
+        "reason": "점심 후 복합 문화 공간에서 다양한 볼거리를 한 곳에서 경험할 수 있어, 친구와 함께 여유롭게 관광 명소를 감상하기에 좋아요.",
+        "activities": [
+          "별마당도서관의 이국적 풍경 감상",
+          "아쿠아리움에서 해양 생물 관람",
+          "계절 특별전시 관람"
+        ],
+        "congestion": "약간 붐빔",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "강가 역삼점",
+              "summary": "인도 정통의 맛을 선보이는 정통 인도 레스토랑. ",
+              "address": "서울 강남구 논현로 508 (역삼동, GS강남타워)",
+              "lat": 37.5019949322814,
+              "lng": 127.037336400239,
+              "use_time": "평일 11:00 - 14:30 / 17:00 - 21:00 \r\n주말 11:30 - 15:00 / 17:00 - 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.22
+            },
+            {
+              "title": "싱카이 역삼점",
+              "summary": "1930년대 상하이의 고급 레스토랑 분위기를 주는 곳, 광동식 사천요리.",
+              "address": "서울 강남구 논현로 508 (역삼동, GS강남타워)",
+              "lat": 37.5019949322814,
+              "lng": 127.037336400239,
+              "use_time": "11:30~14:30, 17:30~21:30",
+              "kind": "restaurant",
+              "dist_km": 0.22
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "11:00",
+        "end_time": "13:00",
+        "slot_type": "place",
+        "day": 3,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "점심 식사 · 강남 코엑스 주변",
+        "preview": "고급스러운 분위기에서 한우  1++ 등급의 최상급 고기를 즐길 수 있는 곳. ",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.49668027838757,
+        "lng": 127.039217743749,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "slot_type": "meal",
+        "day": 3,
+        "meal_options": [
+          {
+            "title": "레드마블하우스",
+            "summary": "고급스러운 분위기에서 한우  1++ 등급의 최상급 고기를 즐길 수 있는 곳. ",
+            "address": "서울 강남구 논현로 408",
+            "lat": 37.49668027838757,
+            "lng": 127.039217743749,
+            "use_time": "평일 11:30~14:30 / 17:30~22:00\r\n ",
+            "kind": "restaurant",
+            "dist_km": 0.5
+          },
+          {
+            "title": "그릴아지사이",
+            "summary": "일본인 조리장이 만들어 내는 일본 본토식 요리.",
+            "address": "서울 강남구 테헤란로13길 8-10 (동영빌딩)",
+            "lat": 37.50035821621512,
+            "lng": 127.0332439834285,
+            "use_time": "11:30~14:00, 17:30~23:00",
+            "kind": "restaurant",
+            "dist_km": 0.57
+          },
+          {
+            "title": "레트로오븐",
+            "summary": "치아바타나 올리브빵 같이 빵 자체의 맛에 중점을 둔 빵 맛이 좋기로 유명한 곳. ",
+            "address": "서울 강남구 봉은사로55길 25",
+            "lat": 37.51214707500623,
+            "lng": 127.04394469822186,
+            "use_time": "수~토 13:00 ~ 19:00",
+            "kind": "cafe",
+            "dist_km": 1.28
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "선정릉(선릉)",
+        "preview": "선정릉(선릉)\n종류: 역사\n권역: 강남·서초\n소개: 선정릉(선릉)은 강남",
+        "description": "",
+        "duration": "2시간 42분",
+        "duration_min": 162,
+        "tip": null,
+        "lat": 37.507801,
+        "lng": 127.047811,
+        "reason": "오후 일정에서 도시의 활기에서 벗어나 조선 시대 왕릉의 역사적 분위기로 전환하며, 친구와 함께 도심 속 전통 경관을 산책하는 명소 경험을 더해요.",
+        "activities": [
+          "왕릉 산책로 걷기",
+          "도심 속 전통 경관 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "칙바이칙 선릉역점",
+              "summary": "역사적 장소에서 치킨, 그 이상의 맛.“치킨의 새로운  경험, 칙바이칙”",
+              "address": "서울 강남구 선릉로 523 (역삼동)",
+              "lat": 37.5062009307086,
+              "lng": 127.047796643158,
+              "use_time": " 10:00~20:30",
+              "kind": "restaurant",
+              "dist_km": 0.18
+            },
+            {
+              "title": "에삐 EPI",
+              "summary": "분위기 좋은 선릉역 베이커리 카페",
+              "address": "서울 강남구 선릉로 518 1층",
+              "lat": 37.50584173096,
+              "lng": 127.048603936888,
+              "use_time": "07:00-21:00",
+              "kind": "cafe",
+              "dist_km": 0.23
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "14:00",
+        "end_time": "16:42",
+        "slot_type": "place",
+        "day": 3,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "스페이스세컨뷰",
+        "preview": "저녁 식사 후 조용한 미술관에서 시각예술을 감상해요.",
+        "description": "현대미술과 디자인 작품을 전시하는 미술관이에요. 17시 12분부터 19시까지 시각예술 전시를 관람하며 아트&디자인 작품을 감상할 수 있어요. 친구와 함께 전시 공간을 돌아다니며 작품에 대해 나누는 시간을 가져보세요.",
+        "duration": "1시간 48분",
+        "duration_min": 108,
+        "tip": null,
+        "lat": 37.4875,
+        "lng": 127.0196,
+        "reason": "저녁 식사 후 조용한 미술관에서 시각예술 전시를 관람하며, 친구와 함께 문화적 감성을 나누는 마무리 활동을 구성해요.",
+        "activities": [
+          "시각예술 전시 관람",
+          "아트&디자인 작품 감상"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "타셴",
+              "summary": " 책과 샌드위치와 커피, 음료를 독서와 함께하는 아트 북카페 . ",
+              "address": "서울 서초구 효령로 317 (서초동, 대한건축사협회)",
+              "lat": 37.485996562274,
+              "lng": 127.018727197944,
+              "use_time": "평일 08:00 ~ 22:30\r\n주말 10:00 ~ 19:00",
+              "kind": "cafe",
+              "dist_km": 0.18
+            },
+            {
+              "title": "삼학도",
+              "summary": "전라남도 목포 삼학도 스타일의 남도 음식을 접할 수 있는 곳. ",
+              "address": "서울 서초구 효령로57길 4 (서초동)",
+              "lat": 37.4854189072992,
+              "lng": 127.017065185618,
+              "use_time": "월~금 11:00~15:00, 17:00~21:30",
+              "kind": "restaurant",
+              "dist_km": 0.32
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "17:12",
+        "end_time": "19:00",
+        "slot_type": "place",
+        "day": 3,
+        "meal_options": [],
+        "travel_min": 30,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "저녁 식사 · 스페이스세컨뷰 주변",
+        "preview": "매일 직접 도정한 신선한 쌀로 지은 솥밥과 숙성 고기를 선보이는 강남역의 한식 다이닝, 쌀의 본질과 불의 향으로 한 끼의 깊은 맛을 완성하는 서울의 미식 공간\r\n",
+        "description": "",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.4940256264701,
+        "lng": 127.028224355185,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "19:00",
+        "end_time": "20:00",
+        "slot_type": "meal",
+        "day": 3,
+        "meal_options": [
+          {
+            "title": "도정육관",
+            "summary": "매일 직접 도정한 신선한 쌀로 지은 솥밥과 숙성 고기를 선보이는 강남역의 한식 다이닝, 쌀의 본질과 불의 향으로 한 끼의 깊은 맛을 완성하는 서울의 미식 공간\r\n",
+            "address": "서울 서초구 서초대로78길 42 (서초동, 현대기림오피스텔)",
+            "lat": 37.4940256264701,
+            "lng": 127.028224355185,
+            "use_time": "월~금 11:30 - 21:30  (14:30 - 16:00 브레이크타임 / 20:50 라스트오더)\r\n토 12:00 - 21:30  (14:30 - 16:00 브레이크타임 / 20:50 라스트오더)\r\n",
+            "kind": "restaurant",
+            "dist_km": 1.05
+          },
+          {
+            "title": "아카사카",
+            "summary": "서울 시내에서 손꼽히는 일식집 중의 하나.",
+            "address": "서울특별시 서초구 서초대로74길 23",
+            "lat": 37.495625820193446,
+            "lng": 127.02708308129532,
+            "use_time": "월~금 11:00~15:00, 16:50~21:50 / 토요일 11:00~15:00, 16:50~21:00",
+            "kind": "restaurant",
+            "dist_km": 1.12
+          },
+          {
+            "title": "느린마을 양조장 강남점",
+            "summary": "전통주와 함께 특별한 안주를 맛볼 수 있는 국내 최초의 도심 속 양조장",
+            "address": "서울 서초구 서초대로73길 7 (서초동)",
+            "lat": 37.4981314601413,
+            "lng": 127.02527908458,
+            "use_time": "월요일~토요일: 17:00 - 24:00 / 일요일, 공휴일: 16:00~23:00",
+            "kind": "bar",
+            "dist_km": 1.28
+          }
+        ],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "세빛섬",
+        "preview": "한강 위의 인공섬에서 서울의 밤 풍경을 담아요.",
+        "description": "한강 위에 떠 있는 인공섬으로, 야경 라운지와 전망 공간이 마련되어 있어요. 20시부터 21시까지 한강 선상 야경을 감상하며 친구와 함께 서울의 밤 풍경을 사진에 담을 수 있어요. 야경 라운지에서 하루를 마무리하며 경험을 나누어보세요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": null,
+        "lat": 37.512436,
+        "lng": 126.995962,
+        "reason": "저녁 늦은 시간 한강 위의 인공섬에서 야경을 감상하며, 친구와 함께 서울의 밤 풍경을 담는 포토스폿으로 3일 일정을 마무리해요.",
+        "activities": [
+          "한강 선상 야경 감상",
+          "야경 라운지에서 경험 공유"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "케르반 반포점",
+              "summary": "케르반 반포점은 신세계몰에 위치한 할랄 음식점. ",
+              "address": "서울 서초구 신반포로 176 (반포동, 센트럴시티)",
+              "lat": 37.5039344562304,
+              "lng": 127.0024111972472,
+              "use_time": "매일 08:00 ~ 20:00",
+              "kind": "restaurant",
+              "dist_km": 1.1
+            },
+            {
+              "title": "파미에스테이션",
+              "summary": " 내로라하는 국내 맛집을 한곳에 모아놓은 전 세계 다양한 맛의 공간",
+              "address": "서울 서초구 신반포로 176 (센트럴시티)",
+              "lat": 37.50436330401388,
+              "lng": 127.00361907848227,
+              "use_time": "10:00~22:00\r\n일부 매장 브레이크타임(15:00~17:00)\r\n일부 매장 운영시간 상이 - 개별 페이지 참조",
+              "kind": "restaurant",
+              "dist_km": 1.12
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "slot_type": "place",
+        "day": 3,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "역사",
+      "명소",
+      "야경",
+      "궁궐",
+      "친구"
+    ],
+    "scheduled": true,
+    "days": 3,
+    "day_areas": {
+      "1": "종로·중구",
+      "2": "홍대·마포",
+      "3": "강남·서초"
+    },
+    "day_descriptions": {
+      "1": "1일차는 경복궁에서 조선 왕조의 법궁을 둘러보며 시작해요. 근정전과 경회루를 관람하고 후원 산책로에서 전통 건축을 감상한 뒤 청계광장으로 이동해 계절 분수 쇼를 보며 점심을 먹어요. 오후는 남산예장공원의 숲길을 산책하며 도시 야경을 배경으로 사진을 찍고, 창덕궁으로 옮겨 경복궁과 다른 궁궐의 건축 양식을 비교 관람하며 조선 정원을 함께 걸어요. 저녁 늦게는 서울광장에서 야경 속 광장을 산책하며 첫날을 마무리해요.",
+      "2": "2일차는 신촌의 연세대 캠퍼스에서 출발해 고풍스러운 건축물을 둘러보고 사진을 찍으며 시작해요(09:00~10:00). 이어 같은 캠퍼스 내 박물관에서 1924년 개관 이래의 대학 역사를 전시 관람으로 깊이 있게 이해한 뒤(11:00~13:00), 점심을 먹고 마포의 한국천주교순교자박물관으로 이동해 병인박해 등 근현대사를 살펴봐요(14:00~15:49). 오후 후반부터는 월드컵공원의 잔디광장과 테마 정원을 산책하며 야외에서 휴식하고(16:17~19:00), 저녁 식사 후 성산대교로 이동해 빨간 아치 다리 위에서 한강 야경을 감상하며 하루를 마무리해요(20:00~21:00).",
+      "3": "3일차는 강남역에서 쇼핑으로 시작해 코엑스의 별마당도서관과 아쿠아리움을 거쳐 오후에 선정릉으로 이동하며 도심 속 왕릉 산책로를 둘러봐요. 저녁은 스페이스세컨뷰에서 시각예술 전시를 감상한 후 세빛섬의 한강 야경으로 마무리하는 일정이에요. 아침 강남역의 활기에서 시작해 쇼핑과 문화시설을 거쳐 역사 경관으로 전환했다가 저녁 미술관과 한강 야경으로 마무리하는 흐름이에요."
+    }
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 4개 · 식사 아침·점심·저녁"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 21곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "경복궁, 청계광장, 남산예장공원, 창덕궁, 서울광장, 연세대 캠퍼스, 연세대학교신촌캠퍼스박물관, 한국천주교순교자박물관, 월드컵공원, 성산대교, 강남역, 강남 코엑스, 선정릉(선릉), 스페이스세컨뷰, 세빛섬",
+      "picks": [
+        {
+          "name": "경복궁",
+          "reason": "서울을 처음 방문하는 친구와 함께 조선 왕조의 법궁을 돌며 전통 건축과 궁궐 문화를 체험하는 것이 서울 관광의 필수 코스라서 골랐어요",
+          "activities": [
+            "근정전과 경회루 관람하기",
+            "궁궐 전각을 함께 돌며 사진 찍기",
+            "후원 산책로에서 조선 건축 감상하기"
+          ]
+        },
+        {
+          "name": "청계광장",
+          "reason": "점심 후 도심 속 감성적인 공간에서 K-콘텐츠 촬영지의 분수 쇼를 보며 서울의 현대적 랜드마크를 경험하게 했어요",
+          "activities": [
+            "계절 분수 쇼 감상하기",
+            "청계천 시작점에서 기념 사진 촬영하기"
+          ]
+        },
+        {
+          "name": "남산예장공원",
+          "reason": "저녁 식사 후 도시 속 울창한 숲길에서 하루의 피로를 함께 풀고, 활기 넘친 광장과 궁궐 관광 후 조용한 자연으로 마무리하려고 골랐어요",
+          "activities": [
+            "숲길 산책하며 야경 감상하기",
+            "도시 야경을 배경으로 기념 사진 촬영하기"
+          ]
+        },
+        {
+          "name": "창덕궁",
+          "reason": "경복궁과 다른 궁궐의 매력을 느끼고, 조용한 후원 산책로에서 왕실 문화를 깊이 있게 체험하며 역사 테마를 심화시키려고 골랐어요",
+          "activities": [
+            "인정전과 낙선재 건축 양식 비교 관람하기",
+            "후원 산책로를 함께 걸으며 조선 정원 감상하기"
+          ]
+        },
+        {
+          "name": "서울광장",
+          "reason": "밤 시간에 활기 있는 도심 랜드마크에서 서울의 야경과 문화 공간을 마지막으로 경험하며 3일 여행의 첫날을 마무리하는 상징적 장소라서 골랐어요",
+          "activities": [
+            "야경 속 광장 산책하기",
+            "시민 문화 공간의 야간 분위기 감상하기"
+          ]
+        },
+        {
+          "name": "연세대 캠퍼스",
+          "reason": "서울을 대표하는 대학 명소로 고풍스러운 건축물과 캠퍼스 산책을 통해 서울의 역사와 문화를 경험할 수 있어서 골랐어요",
+          "activities": [
+            "고풍스러운 건축물과 정원 산책",
+            "캠퍼스 곳곳 포토스폿에서 함께 사진 촬영"
+          ]
+        },
+        {
+          "name": "연세대학교신촌캠퍼스박물관",
+          "reason": "우리나라 대학박물관의 효시로서 역사적 의의가 크고, 방금 캠퍼스를 돌아본 후 그 역사를 깊이 있게 이해할 수 있는 흐름이어서 골랐어요",
+          "activities": [
+            "박물관 전시 관람",
+            "1924년 개관 역사에 대한 해설 감상"
+          ]
+        },
+        {
+          "name": "한국천주교순교자박물관",
+          "reason": "점심 후 마포 권역 역사 명소로 한국 근현대사의 중요한 순간을 기억하는 공간이며, 친구와 함께 의미 있는 역사 교육을 나눌 수 있어서 골랐어요",
+          "activities": [
+            "순교기념 박물관 전시 관람",
+            "병인박해 역사 배경 이해하기"
+          ]
+        },
+        {
+          "name": "월드컵공원",
+          "reason": "오후 후반 야외에서 친구와 함께 휴식하며 생태공원의 푸른 잔디광장과 테마 정원을 돌아볼 수 있는 개방감 있는 명소라서 골랐어요",
+          "activities": [
+            "잔디광장에서 산책",
+            "테마 정원 둘러보기",
+            "매립지 역사 전시 관람"
+          ]
+        },
+        {
+          "name": "성산대교",
+          "reason": "저녁 시간에 한강의 야경을 감상할 수 있는 빨간 아치형 다리로, 하루를 마무리하며 친구와 함께 강변 경관을 즐기기에 좋은 포토스폿이어서 골랐어요",
+          "activities": [
+            "빨간 다리 위에서 한강 야경 감상",
+            "강변 산책로에서 함께 사진 촬영"
+          ]
+        },
+        {
+          "name": "강남역",
+          "reason": "서울 대표 상권에서 강남·서초 권역의 활기찬 분위기를 시작으로, 친구와 함께 도시의 에너지를 느끼며 이날 일정을 열어요.",
+          "activities": [
+            "지하철 환승센터 둘러보기",
+            "대형 쇼핑몰에서 브랜드 쇼핑"
+          ]
+        },
+        {
+          "name": "강남 코엑스",
+          "reason": "점심 후 복합 문화 공간에서 다양한 볼거리를 한 곳에서 경험할 수 있어, 친구와 함께 여유롭게 관광 명소를 감상하기에 좋아요.",
+          "activities": [
+            "별마당도서관의 이국적 풍경 감상",
+            "아쿠아리움에서 해양 생물 관람",
+            "계절 특별전시 관람"
+          ]
+        },
+        {
+          "name": "선정릉(선릉)",
+          "reason": "오후 일정에서 도시의 활기에서 벗어나 조선 시대 왕릉의 역사적 분위기로 전환하며, 친구와 함께 도심 속 전통 경관을 산책하는 명소 경험을 더해요.",
+          "activities": [
+            "왕릉 산책로 걷기",
+            "도심 속 전통 경관 감상"
+          ]
+        },
+        {
+          "name": "스페이스세컨뷰",
+          "reason": "저녁 식사 후 조용한 미술관에서 시각예술 전시를 관람하며, 친구와 함께 문화적 감성을 나누는 마무리 활동을 구성해요.",
+          "activities": [
+            "시각예술 전시 관람",
+            "아트&디자인 작품 감상"
+          ]
+        },
+        {
+          "name": "세빛섬",
+          "reason": "저녁 늦은 시간 한강 위의 인공섬에서 야경을 감상하며, 친구와 함께 서울의 밤 풍경을 담는 포토스폿으로 3일 일정을 마무리해요.",
+          "activities": [
+            "한강 선상 야경 감상",
+            "야경 라운지에서 경험 공유"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "3일 · 09:00~21:00 · 장소 15곳 · 식사 9회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": true,
+      "detail": "9끼 · 식당 후보 27곳"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "경복궁 보통, 월드컵공원 보통, 강남역 약간 붐빔, 강남 코엑스 약간 붐빔"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 32건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "서울 3일, 친구와 함께 도시를 걷다"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "서울광장",
+      "category": "명소",
+      "area": "종로·중구",
+      "lat": 37.565853,
+      "lng": 126.977985,
+      "day_hint": 1
+    },
+    {
+      "name": "롯데면세점 본점",
+      "category": "쇼핑",
+      "area": "종로·중구",
+      "lat": 37.565346,
+      "lng": 126.981008,
+      "day_hint": 1
+    },
+    {
+      "name": "경복궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.5796,
+      "lng": 126.977,
+      "day_hint": 1
+    },
+    {
+      "name": "DDP(동대문디자인플라자)",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.5674,
+      "lng": 127.0098,
+      "day_hint": 1
+    },
+    {
+      "name": "남산예장공원",
+      "category": "자연",
+      "area": "종로·중구",
+      "lat": 37.559887,
+      "lng": 126.988939,
+      "day_hint": 1
+    },
+    {
+      "name": "청계광장",
+      "category": "명소",
+      "area": "종로·중구",
+      "lat": 37.5689,
+      "lng": 126.9774,
+      "day_hint": 1
+    },
+    {
+      "name": "창덕궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.579503,
+      "lng": 126.991034,
+      "day_hint": 1
+    },
+    {
+      "name": "연세대학교신촌캠퍼스박물관",
+      "category": "역사",
+      "area": "홍대·마포",
+      "lat": 37.5661,
+      "lng": 126.9439,
+      "day_hint": 2
+    },
+    {
+      "name": "연세대 캠퍼스",
+      "category": "명소",
+      "area": "홍대·마포",
+      "lat": 37.563805,
+      "lng": 126.942932,
+      "day_hint": 2
+    },
+    {
+      "name": "월드컵공원",
+      "category": "자연",
+      "area": "홍대·마포",
+      "lat": 37.5686,
+      "lng": 126.897,
+      "day_hint": 2
+    },
+    {
+      "name": "전쟁과여성인권박물관",
+      "category": "역사",
+      "area": "홍대·마포",
+      "lat": 37.5601,
+      "lng": 126.9149,
+      "day_hint": 2
+    },
+    {
+      "name": "서강대학교",
+      "category": "명소",
+      "area": "홍대·마포",
+      "lat": 37.551465,
+      "lng": 126.94298,
+      "day_hint": 2
+    },
+    {
+      "name": "성산대교",
+      "category": "자연",
+      "area": "홍대·마포",
+      "lat": 37.551477,
+      "lng": 126.891605,
+      "day_hint": 2
+    },
+    {
+      "name": "한국천주교순교자박물관",
+      "category": "역사",
+      "area": "홍대·마포",
+      "lat": 37.5441,
+      "lng": 126.9118,
+      "day_hint": 2
+    },
+    {
+      "name": "강남 코엑스",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.5012,
+      "lng": 127.0396,
+      "day_hint": 3
+    },
+    {
+      "name": "강남씨어터",
+      "category": "문화",
+      "area": "강남·서초",
+      "lat": 37.4954,
+      "lng": 127.0333,
+      "day_hint": 3
+    },
+    {
+      "name": "센트럴시티 터미널",
+      "category": "명소",
+      "area": "강남·서초",
+      "lat": 37.505985,
+      "lng": 127.00518,
+      "day_hint": 3
+    },
+    {
+      "name": "세빛섬",
+      "category": "자연",
+      "area": "강남·서초",
+      "lat": 37.512436,
+      "lng": 126.995962,
+      "day_hint": 3
+    },
+    {
+      "name": "선정릉(선릉)",
+      "category": "역사",
+      "area": "강남·서초",
+      "lat": 37.507801,
+      "lng": 127.047811,
+      "day_hint": 3
+    },
+    {
+      "name": "강남역",
+      "category": "쇼핑",
+      "area": "강남·서초",
+      "lat": 37.4979,
+      "lng": 127.0276,
+      "day_hint": 3
+    },
+    {
+      "name": "스페이스세컨뷰",
+      "category": "문화",
+      "area": "강남·서초",
+      "lat": 37.4875,
+      "lng": 127.0196,
+      "day_hint": 3
+    }
+  ],
+  "day_areas": {
+    "1": "종로·중구",
+    "2": "홍대·마포",
+    "3": "강남·서초"
+  },
+  "skeleton_segments": 4,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

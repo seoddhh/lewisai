@@ -1,0 +1,472 @@
+{
+  "persona": "P04",
+  "persona_name": "성수 부부 시간 미정",
+  "seed": 11,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T06:22:42+00:00",
+  "total_sec": 10.647,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.0,
+    "retrieve": 0.326,
+    "select_places": 4.699,
+    "fit_schedule": 0.001,
+    "meals": 0.0,
+    "enrich": 0.355,
+    "nearby": 0.737,
+    "compose": 4.526
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.279,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 14.913,
+    "llm_sec_max": 4.697,
+    "input_tokens": 4717,
+    "output_tokens": 1025,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 4.697,
+        "in": 1907,
+        "out": 426,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.769,
+        "in": 1282,
+        "out": 189,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.924,
+        "in": 765,
+        "out": 188,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.523,
+        "in": 763,
+        "out": 222,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "성수·건대 배우자와 함께하는 데이트 코스",
+    "subtitle": "카페 거리 산책부터 전망대 야경까지",
+    "description": "배우자와 성수·건대 일대에서 데이트를 즐기며, 산책과 카페 휴식, 감각적인 쇼핑과 역사적 풍경, 조용한 자연 전망까지 함께 경험하도록 구성했어요. 성수 카페거리에서 걸음을 시작해 가까운 로맨틱무브 성수 플래그쉽 스토어까지 취향을 나누고, 살곶이다리에서는 잠시 조용한 산책을 즐기도록 배치했어요. 응봉산 팔각정은 일정이 끝나고 서울 시내를 함께 바라보며 여유를 나누는 마무리 장소로 골랐어요. 이렇게 장소의 분위기와 이동 흐름을 고려해 데이트의 리듬을 자연스럽게 이어가게 했어요.",
+    "stops": [
+      {
+        "name": "성수 카페거리",
+        "preview": "옛 방직공장과 창고를 개조한 카페들이 모여 있는 거리예요.",
+        "description": "성수와 건대를 오가며 데이트를 시작하기에 가장 가까운 거리에서 두 사람이 함께 산책하며 분위기를 환기하기 좋아요. 옛 방직공장과 창고를 개조한 카페들을 둘러보며 성수 카페 거리의 분위기를 걸어보세요. 트렌디한 팝업스토어도 함께 구경할 수 있어요.",
+        "duration": "1시간",
+        "duration_min": 60,
+        "tip": "예상 혼잡도 보통",
+        "lat": 37.5444,
+        "lng": 127.0564,
+        "reason": "성수와 건대를 오가며 데이트를 시작하기에 가장 가까운 거리에서 두 사람이 함께 산책하며 분위기를 환기하기 좋아서 골랐어요.",
+        "activities": [
+          "옛 방직공장과 창고를 개조한 감성 카페 둘러보기",
+          "트렌디한 팝업스토어 구경하기",
+          "카페 거리 분위기 산책하기"
+        ],
+        "congestion": "보통",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "팔각도 성수역점",
+              "summary": "“숯불 닭갈비의 참을 수 없는 매력”",
+              "address": "서울 성동구 성수일로8길 53 (성수동2가, 성수동복합시설)",
+              "lat": 37.5452842944977,
+              "lng": 127.056449654682,
+              "use_time": "11:30 - 22:30 (21:30 라스트오더)\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.1
+            },
+            {
+              "title": " 어니언",
+              "summary": "어니언은 70년대에 지어진 건물을 개조해 만든 카페. ",
+              "address": "서울 성동구 아차산로9길 8 (성수동2가)",
+              "lat": 37.5447391584,
+              "lng": 127.0581854139,
+              "use_time": "월요일~금요일 08:00~22:00\r\n주말 09:00~22:00\r\n(21:30 라스트오더)",
+              "kind": "cafe",
+              "dist_km": 0.16
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "로맨틱무브 성수 플래그쉽 스토어",
+        "preview": "카페 거리에서 가까운 감각적인 브랜드 쇼룸이에요.",
+        "description": "카페 거리에서 가까운 곳에 있어 산책 후 자연스럽게 이어지기 좋아요. 감각적인 브랜드 쇼룸을 함께 둘러보며 데이트의 취향을 나누어 보세요. 프리미엄 한국 패션 쇼핑 공간을 탐색하고 나들이·탐방 코스를 따라 걸어볼 수 있어요.",
+        "duration": "40분",
+        "duration_min": 40,
+        "tip": null,
+        "lat": 37.541519,
+        "lng": 127.060816,
+        "reason": "카페 거리에서 가까운 곳에 있어 산책 후 자연스럽게 이어지기 좋고, 감각적인 브랜드 쇼룸을 함께 둘러보며 데이트의 취향을 나누기 좋아서 골랐어요.",
+        "activities": [
+          "감각적인 브랜드 쇼룸 둘러보기",
+          "프리미엄 한국 패션 쇼핑 공간 탐색하기",
+          "나들이·탐방 코스 따라 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "브릭샌드 성수팩토리",
+              "summary": "서울을 대표하는 디저트 선물, 브릭샌드",
+              "address": "서울 성동구 성수이로20길 54 1층",
+              "lat": 37.5416832712644,
+              "lng": 127.062187507167,
+              "use_time": "10:00 - 19:00",
+              "kind": "cafe",
+              "dist_km": 0.12
+            },
+            {
+              "title": "잠수교집 성수 직영점",
+              "summary": "잠수교집 성수 직영점은 냉동 삼겹살과 다양한 밑반찬을 제공하며, 직원이 구워주는 삼겹살과 함께 풍성한 식사를 즐길 수 있는 맛집이다.",
+              "address": "서울 성동구 아차산로 137 (성수동2가, 승림빌딩)",
+              "lat": 37.5438107208854,
+              "lng": 127.059367735654,
+              "use_time": "11:30 ~ 04:30",
+              "kind": "restaurant",
+              "dist_km": 0.29
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "살곶이다리（전곶교）",
+        "preview": "성수천 위 조선시대 석조 다리에서의 조용한 산책",
+        "description": "살곶이다리는 성수천 위에 놓인 조선시대 석조 다리로, 보물 제1738호로 지정되어 있어요. 다리 위를 함께 걸으며 주변의 성수동 수변 풍경을 감상할 수 있고, 다리 주변의 경관도 둘러볼 수 있어요. 산책 후 바로 응봉산으로 이동해 서울 시내 전경을 조망하면 데이트 일정이 자연스럽게 이어져요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.552288,
+        "lng": 127.046985,
+        "reason": "성수천 위에 놓인 조선시대 석조 다리를 함께 걸으며 데이트 중 잠깐의 조용한 산책과 역사적 풍경을 감상하기 좋아서 골랐어요.",
+        "activities": [
+          "조선시대 석조 다리 위 산책하기",
+          "보물 제1738호 주변 경관 탐방하기",
+          "성수동 수변 풍경 감상하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "훼미리손칼국수보쌈",
+              "summary": "뚝섬역 훼미리손칼국수보쌈은 깊은 국물의 칼국수와 부드러운 보쌈을 합리적인 가격에 즐길 수 있는 가성비 맛집이다.",
+              "address": "서울 성동구 왕십리로 134 (성수동1가)",
+              "lat": 37.5495264804791,
+              "lng": 127.044629777329,
+              "use_time": "11:30 ~22:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            },
+            {
+              "title": "선채 성수",
+              "summary": "전국 팔도의 다양한 식재료를 사용하는 작은 한식당",
+              "address": "서울 성동구 아차산로1길 11 (성수동1가)",
+              "lat": 37.5490883450365,
+              "lng": 127.045754250455,
+              "use_time": "11:30-22:00 / 브레이크타임 15:00-17:30 (주말은 브레이크타임 없이 운영)\r\n/ 라스트오더 21:00",
+              "kind": "restaurant",
+              "dist_km": 0.37
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "응봉산 팔각정",
+        "preview": "탁 트인 서울 시내 전경을 바라보는 자연 전망 명소",
+        "description": "응봉산 팔각정은 성수·건대 권역에서 조금 떨어진 조용한 자연 전망 명소로, 서울 시내를 탁 트인 전경으로 바라볼 수 있어요. 산책로를 따라 걷다가 피크닉 공간에서 잠시 휴식하며 여유를 나눌 수 있어요. 데이트의 마무리로 이곳을 찾으면 하루의 분위기를 차분하게 정리할 수 있어요.",
+        "duration": "40분",
+        "duration_min": 40,
+        "tip": null,
+        "lat": 37.548267,
+        "lng": 127.029554,
+        "reason": "성수·건대 권역에서 조금 떨어진 조용한 자연 전망 명소로, 데이트의 마무리에 탁 트인 서울 시내 풍경을 함께 바라보며 여유를 나누기 좋아서 골랐어요.",
+        "activities": [
+          "서울 시내 탁 트인 전경 조망하기",
+          "산책로를 따라 걷기",
+          "피크닉 공간에서 휴식하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "라프레플루트",
+              "summary": "다양한 과일을 쉽고 간편하게 접할 수 있는 프리미엄 과일가게 라프레 플루트.",
+              "address": "서울 성동구 서울숲2길 8-8 (성수동1가) 2층",
+              "lat": 37.5472524943165,
+              "lng": 127.039443386345,
+              "use_time": "월~금 13:00~19:30\r\n토~일 13:00~20:00",
+              "kind": "cafe",
+              "dist_km": 0.88
+            },
+            {
+              "title": "OMOT 오므오트",
+              "summary": "성수동 서울숲에 위치한 한국차 전문 티카페\r\n",
+              "address": "서울 성동구 서울숲2길 12 (성수동1가)  지하1층",
+              "lat": 37.5472294392078,
+              "lng": 127.039948298252,
+              "use_time": "수~월 : 12:00~17:30 / 18:30~20:30\r\n",
+              "kind": "cafe",
+              "dist_km": 0.92
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": null,
+        "end_time": null,
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      }
+    ],
+    "tags": [
+      "배우자",
+      "데이트",
+      "성수",
+      "건대",
+      "산책",
+      "쇼핑",
+      "역사",
+      "자연",
+      "전망",
+      "하루 4곳"
+    ],
+    "scheduled": false,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 시간표 생략"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "성수 카페거리, 로맨틱무브 성수 플래그쉽 스토어, 살곶이다리（전곶교）, 응봉산 팔각정",
+      "picks": [
+        {
+          "name": "성수 카페거리",
+          "reason": "성수와 건대를 오가며 데이트를 시작하기에 가장 가까운 거리에서 두 사람이 함께 산책하며 분위기를 환기하기 좋아서 골랐어요.",
+          "activities": [
+            "옛 방직공장과 창고를 개조한 감성 카페 둘러보기",
+            "트렌디한 팝업스토어 구경하기",
+            "카페 거리 분위기 산책하기"
+          ]
+        },
+        {
+          "name": "로맨틱무브 성수 플래그쉽 스토어",
+          "reason": "카페 거리에서 가까운 곳에 있어 산책 후 자연스럽게 이어지기 좋고, 감각적인 브랜드 쇼룸을 함께 둘러보며 데이트의 취향을 나누기 좋아서 골랐어요.",
+          "activities": [
+            "감각적인 브랜드 쇼룸 둘러보기",
+            "프리미엄 한국 패션 쇼핑 공간 탐색하기",
+            "나들이·탐방 코스 따라 걷기"
+          ]
+        },
+        {
+          "name": "살곶이다리（전곶교）",
+          "reason": "성수천 위에 놓인 조선시대 석조 다리를 함께 걸으며 데이트 중 잠깐의 조용한 산책과 역사적 풍경을 감상하기 좋아서 골랐어요.",
+          "activities": [
+            "조선시대 석조 다리 위 산책하기",
+            "보물 제1738호 주변 경관 탐방하기",
+            "성수동 수변 풍경 감상하기"
+          ]
+        },
+        {
+          "name": "응봉산 팔각정",
+          "reason": "성수·건대 권역에서 조금 떨어진 조용한 자연 전망 명소로, 데이트의 마무리에 탁 트인 서울 시내 풍경을 함께 바라보며 여유를 나누기 좋아서 골랐어요.",
+          "activities": [
+            "서울 시내 탁 트인 전경 조망하기",
+            "산책로를 따라 걷기",
+            "피크닉 공간에서 휴식하기"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": false,
+      "detail": "시간 범위 없음 — 건너뜀"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "성수 카페거리 보통"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 8건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "성수·건대 배우자와 함께하는 데이트 코스"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "로맨틱무브 성수 플래그쉽 스토어",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.541519,
+      "lng": 127.060816,
+      "day_hint": null
+    },
+    {
+      "name": "이스케이프샾 건대점",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5412,
+      "lng": 127.0688,
+      "day_hint": null
+    },
+    {
+      "name": "성수대교",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.536178,
+      "lng": 127.034894,
+      "day_hint": null
+    },
+    {
+      "name": "서울숲 스튜디오301",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.5479,
+      "lng": 127.0413,
+      "day_hint": null
+    },
+    {
+      "name": "응봉산 팔각정",
+      "category": "자연",
+      "area": "성수·건대",
+      "lat": 37.548267,
+      "lng": 127.029554,
+      "day_hint": null
+    },
+    {
+      "name": "살곶이다리（전곶교）",
+      "category": "역사",
+      "area": "성수·건대",
+      "lat": 37.552288,
+      "lng": 127.046985,
+      "day_hint": null
+    },
+    {
+      "name": "성수 카페거리",
+      "category": "쇼핑",
+      "area": "성수·건대",
+      "lat": 37.5444,
+      "lng": 127.0564,
+      "day_hint": null
+    },
+    {
+      "name": "넥스트에디션 건대2호점",
+      "category": "체험",
+      "area": "성수·건대",
+      "lat": 37.5408,
+      "lng": 127.0691,
+      "day_hint": null
+    },
+    {
+      "name": "응봉산",
+      "category": "명소",
+      "area": "성수·건대",
+      "lat": 37.5482,
+      "lng": 127.0304,
+      "day_hint": null
+    },
+    {
+      "name": "설렘아트홀",
+      "category": "문화",
+      "area": "성수·건대",
+      "lat": 37.547,
+      "lng": 127.0724,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 0,
+  "meta": {
+    "llm_provider": "upstage",
+    "llm_model": "solar-open2",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "persona": "P07",
+  "persona_name": "종로 연인 + 들어줄 수 없는 요구",
+  "seed": 22,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:12:31+00:00",
+  "total_sec": 12.863,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.206,
+    "select_places": 5.323,
+    "fit_schedule": 0.001,
+    "meals": 0.001,
+    "enrich": 0.729,
+    "nearby": 1.339,
+    "compose": 5.26
+  },
+  "counters": {
+    "embed_calls": 1,
+    "embed_sec": 0.153,
+    "search_calls": 1,
+    "llm_calls": 4,
+    "llm_sec_total": 18.984,
+    "llm_sec_max": 5.321,
+    "input_tokens": 9570,
+    "output_tokens": 1477,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 5.321,
+        "in": 4250,
+        "out": 381,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.959,
+        "in": 2587,
+        "out": 289,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.447,
+        "in": 1359,
+        "out": 374,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 5.257,
+        "in": 1374,
+        "out": 433,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "mock",
+  "course": {
+    "title": "종로·중구에서 둘이 걷는 서울 한옥과 예술",
+    "subtitle": "광화문에서 북촌까지, 오후의 전통 거리",
+    "description": "한강 자전거와 노을을 바탕으로 한 요청을 종로·중구의 문화·예술 중심으로 재구성했어요. 청계천과 광화문광장을 거쳐 서촌과 북촌 한옥마을로 이어지는 동선으로, 전통 건축과 현대 갤러리를 함께 경험할 수 있게 짰어요. 오후 시간에 걸어서 둘이 함께 서울의 역사 깊은 거리를 천천히 즐길 수 있어요.",
+    "stops": [
+      {
+        "name": "청계천 광교갤러리",
+        "preview": "청계천 위 광교 아래 자리한 갤러리에서 현대미술을 감상해요.",
+        "description": "청계천을 가로지르는 광교 아래 공간을 활용한 갤러리로, 회화·설치·영상 등 다양한 현대미술 작품을 전시하고 있어요. 물 위의 독특한 위치에서 작품을 관람하며 청계천의 풍경도 함께 즐길 수 있습니다.",
+        "duration": "1시간 13분",
+        "duration_min": 73,
+        "tip": null,
+        "lat": 37.5688,
+        "lng": 126.9829,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "베이커리 아궁",
+              "summary": "한국적인 재료와 방식을 활용한 맛있는 빵과 음료로 대한민국의 옛 전통 잔치를 그대로 표현해낸 종각역 한옥 카페",
+              "address": "서울 종로구 우정국로 6 (관철동, 교원종각빌딩)",
+              "lat": 37.5694160213616,
+              "lng": 126.983203748708,
+              "use_time": "매일 09:00 ~ 22:00 (*라스트오더 - 21:30)",
+              "kind": "cafe",
+              "dist_km": 0.07
+            },
+            {
+              "title": "종로삼계탕",
+              "summary": "“깊고 진한 육수로 든든하게 채우는 보양식”",
+              "address": "서울 종로구 종로8길 21 (관철동)",
+              "lat": 37.5690737703072,
+              "lng": 126.984123300195,
+              "use_time": "월 - 금 11:00-21:00 (브레이크타임 15:00-17:00, 라스트오더 20:15)\r\n토 11:00 - 15:00 (라스트오더 14:15)\r\n\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.11
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "12:00",
+        "end_time": "13:13",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "광화문광장",
+        "preview": "서울 중심의 광장에서 도시 풍경을 바라보며 산책해요.",
+        "description": "종로와 중구의 경계에 위치한 광화문광장은 넓은 포장도로와 분수, 조각상 등이 배치된 개방형 광장이에요. 주변 문화유산을 배경으로 연인과 함께 천천히 산책하며 서울의 도시 풍경을 감상할 수 있습니다.",
+        "duration": "1시간 13분",
+        "duration_min": 73,
+        "tip": null,
+        "lat": 37.571623,
+        "lng": 126.976788,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "뽐모도로",
+              "summary": "광화문에서 한 시간씩 줄 서서 먹어야 하는 스파게티집",
+              "address": "서울특별시 종로구 새문안로9길 19-1 (당주동)",
+              "lat": 37.571062,
+              "lng": 126.975592,
+              "use_time": "평일 11:20 ~ 21:00\r\n(Break Time 15:00 ~ 17:00)",
+              "kind": "restaurant",
+              "dist_km": 0.12
+            },
+            {
+              "title": "옴",
+              "summary": "네팔관광청 소장이 운영하는 네팔/인도 요리 전문점. ",
+              "address": "서울 종로구 새문안로 103 (신문로1가, 선광빌딩)",
+              "lat": 37.5705081504947,
+              "lng": 126.976078259106,
+              "use_time": " 11:00 ~ 22:00 ",
+              "kind": "restaurant",
+              "dist_km": 0.14
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "13:28",
+        "end_time": "14:41",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 15,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "서촌한옥마을",
+        "preview": "종로 서쪽 골목길을 따라 펼쳐진 전통 주거지",
+        "description": "윤동주 시인의 집과 경복궁 담장이 어우러진 한옥 밀집 지역이에요. 좁은 골목을 따라 걸으며 한옥의 지붕선과 담장, 그리고 그 사이로 보이는 하늘을 감상하고, 역사 자료와 전시 공간을 둘러보면서 서울의 근현대 문화를 살펴볼 수 있어요.",
+        "duration": "1시간 13분",
+        "duration_min": 73,
+        "tip": null,
+        "lat": 37.580193,
+        "lng": 126.968508,
+        "reason": "",
+        "activities": [],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "에이치커피로스터스 서촌 ",
+              "summary": "스페셜티 커피를 직접 로스팅하는 서촌 골목길에 자리한 카페",
+              "address": "서울 종로구 필운대로5가길 11-6 (누하동)",
+              "lat": 37.57976432789,
+              "lng": 126.968039867831,
+              "use_time": "10:00-18:00",
+              "kind": "cafe",
+              "dist_km": 0.06
+            },
+            {
+              "title": "원조할머니떡볶이집",
+              "summary": "통인시장에서 기름떡볶이로 유명해진 집. 양념에 볶듯이 해서 나오는 스타일. ",
+              "address": "서울특별시 종로구 자하문로15길 13 (통인동)",
+              "lat": 37.5806736,
+              "lng": 126.9690078,
+              "use_time": "매일 10:00~20:00 재료 소진 시 영업 종료\r\n",
+              "kind": "restaurant",
+              "dist_km": 0.07
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "15:06",
+        "end_time": "16:19",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 25,
+        "travel_mode": "walk"
+      },
+      {
+        "name": "북촌한옥마을",
+        "preview": "삼청동에서 계곡로까지 이어진 한옥 거리",
+        "description": "청와대 북쪽에 자리한 이곳은 전통 목조 건축이 가장 잘 보존된 지역으로, 담장과 골목이 만드는 풍경이 뚜렷해요. 여유로운 시간대에 한옥 건축과 전통 문화를 담은 전시 공간을 천천히 둘러보고, 골목을 산책하며 해가 넘어가는 풍경을 감상할 수 있어요.",
+        "duration": "1시간 13분",
+        "duration_min": 73,
+        "tip": null,
+        "lat": 37.5827,
+        "lng": 126.9843,
+        "reason": "",
+        "activities": [],
+        "congestion": "여유",
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "차마시는뜰 차뜰",
+              "summary": "전통차를 즐길 수 있는 북촌 한옥 찻집",
+              "address": "서울 종로구 북촌로11나길 26 1층",
+              "lat": 37.5822190175845,
+              "lng": 126.982274443699,
+              "use_time": "10:00-19:00 라스트오더 18:10",
+              "kind": "cafe",
+              "dist_km": 0.19
+            },
+            {
+              "title": "차마시는뜰",
+              "summary": "고즈넉한 고택에서 즐기는 전통차 한 잔. 분위기도 맛도 전통 그대로.",
+              "address": "서울특별시 종로구 북촌로11나길 26 (삼청동)",
+              "lat": 37.582143,
+              "lng": 126.982261,
+              "use_time": "수요일~월요일 10:00 ~ 19:00\r\n",
+              "kind": "cafe",
+              "dist_km": 0.19
+            }
+          ],
+          "attractions": [
+            {
+              "title": "[서울공예박물관] 비밀요원 CMI: 두 번째 비밀코드 [1，2학년]",
+              "summary": "전시3동 1층 교육실 및 전시1동-전시3동 상설전시실",
+              "address": "전시3동 1층 교육실 및 전시1동-전시3동 상설전시실",
+              "lat": 37.5766481740232,
+              "lng": 126.983533363501,
+              "period": "2026-07-28~2026-08-28",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158680&menuNo=200011",
+              "kind": "event",
+              "dist_km": 0.68
+            },
+            {
+              "title": "[여름， 사랑] 길벗어린이 그림책작가 그룹전",
+              "summary": "아트센터림 1층 아트윈도우， 2층 갤러리 1，2관",
+              "address": "아트센터림 1층 아트윈도우， 2층 갤러리 1，2관",
+              "lat": 37.5790919031737,
+              "lng": 126.982040842138,
+              "period": "2026-07-23~2026-08-23",
+              "use_time": "",
+              "url": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158725&menuNo=200009",
+              "kind": "event",
+              "dist_km": 0.45
+            }
+          ]
+        },
+        "start_time": "16:47",
+        "end_time": "18:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 28,
+        "travel_mode": "walk"
+      }
+    ],
+    "tags": [
+      "연인",
+      "문화·예술",
+      "종로·중구",
+      "한옥",
+      "갤러리"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 없음"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 10곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "청계천 광교갤러리, 광화문광장, 서촌한옥마을, 북촌한옥마을",
+      "picks": [
+        {
+          "name": "청계천 광교갤러리",
+          "reason": "",
+          "activities": []
+        },
+        {
+          "name": "광화문광장",
+          "reason": "",
+          "activities": []
+        },
+        {
+          "name": "서촌한옥마을",
+          "reason": "",
+          "activities": []
+        },
+        {
+          "name": "북촌한옥마을",
+          "reason": "",
+          "activities": []
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "12:00~18:00 · 장소 4곳 · 식사 0회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "북촌한옥마을 여유"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 10건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": false,
+      "detail": "종로·중구에서 둘이 걷는 서울 한옥과 예술"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "청계천 광교갤러리",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.5688,
+      "lng": 126.9829,
+      "day_hint": null
+    },
+    {
+      "name": "광화문광장",
+      "category": "명소",
+      "area": "종로·중구",
+      "lat": 37.571623,
+      "lng": 126.976788,
+      "day_hint": null
+    },
+    {
+      "name": "북촌한옥마을",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.5827,
+      "lng": 126.9843,
+      "day_hint": null
+    },
+    {
+      "name": "서촌한옥마을",
+      "category": "자연",
+      "area": "종로·중구",
+      "lat": 37.580193,
+      "lng": 126.968508,
+      "day_hint": null
+    },
+    {
+      "name": "경인미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.574591,
+      "lng": 126.985723,
+      "day_hint": null
+    },
+    {
+      "name": "운현궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.576126,
+      "lng": 126.987126,
+      "day_hint": null
+    },
+    {
+      "name": "성균관대학교",
+      "category": "명소",
+      "area": "종로·중구",
+      "lat": 37.58723,
+      "lng": 126.993116,
+      "day_hint": null
+    },
+    {
+      "name": "일민미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.569868,
+      "lng": 126.977655,
+      "day_hint": null
+    },
+    {
+      "name": "창경궁",
+      "category": "역사",
+      "area": "종로·중구",
+      "lat": 37.579413,
+      "lng": 126.995223,
+      "day_hint": null
+    },
+    {
+      "name": "금호미술관",
+      "category": "문화",
+      "area": "종로·중구",
+      "lat": 37.577465,
+      "lng": 126.979913,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "claude",
+    "llm_model": "claude-haiku-4-5",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

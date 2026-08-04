@@ -1,0 +1,389 @@
+{
+  "persona": "P02",
+  "persona_name": "관악 혼자 오전 산책",
+  "seed": 33,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T06:22:03+00:00",
+  "total_sec": 7.635,
+  "timings": {
+    "parse_intent": 0.002,
+    "plan": 0.001,
+    "retrieve": 0.311,
+    "select_places": 2.935,
+    "fit_schedule": 0.001,
+    "meals": 0.0,
+    "enrich": 0.001,
+    "nearby": 0.001,
+    "compose": 4.384
+  },
+  "counters": {
+    "embed_calls": 2,
+    "embed_sec": 0.269,
+    "search_calls": 2,
+    "llm_calls": 3,
+    "llm_sec_total": 10.181,
+    "llm_sec_max": 4.381,
+    "input_tokens": 3993,
+    "output_tokens": 745,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 2.932,
+        "in": 1889,
+        "out": 216,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.868,
+        "in": 1231,
+        "out": 194,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 4.381,
+        "in": 873,
+        "out": 335,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "관악산에서 용양봉저정 공원까지, 혼자 걷는 오전 자연 힐링 코스",
+    "subtitle": "숲길과 사찰, 도심 전망 공원을 잇는 3곳 일정",
+    "description": "혼자 다니는 오전 시간대, 자연과 힐링을 중심으로 한다는 조건을 바탕으로 3곳을 골랐어요. 관악산의 숲길 산책과 달마사의 고즈넉한 사찰 분위기로 조용한 몰입을 이어 가도록 구성했고, 용양봉저정 공원에서는 도심 전망대에서 쉬며 하루를 마무리할 수 있게 배치했어요. 혼잡도 선호가 여유인 점을 반영해 이동이 길지 않은 권역 안에서 천천히 둘러볼 수 있는 장소로 골랐어요.",
+    "stops": [
+      {
+        "name": "관악산",
+        "preview": "도심 속 숲길을 천천히 걷는 오전 힐링의 출발지",
+        "description": "관악산 탐방로는 도심에서 가까운 자연 공간으로, 수려한 산세를 따라 이어진 길을 따라 걸으며 숲길 풍경을 천천히 둘러볼 수 있어요. 탐방로를 따라 걷다 보면 전망대에 도착해 사색하며 쉬기 좋고, 오전 9시부터 9시 54분까지 혼자 사색하며 숲길을 천천히 걷기 좋은 도심 자연이라 오전 힐링 코스의 첫 출발지로 골랐어요.",
+        "duration": "54분",
+        "duration_min": 54,
+        "tip": null,
+        "lat": 37.453668,
+        "lng": 126.949485,
+        "reason": "혼자 사색하며 숲길을 천천히 걷기 좋은 도심 자연이라 오전 힐링 코스의 첫 출발지로 골랐어요",
+        "activities": [
+          "수려한 산세를 따라 탐방로 산책하기",
+          "전망대에서 사색하며 쉬기",
+          "숲길 풍경을 천천히 둘러보기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "두레미담(서울대점)",
+              "summary": "양껏 먹을 수 있는 자율 배식의 매력",
+              "address": "서울특별시 관악구 관악로 1  (신림동)",
+              "lat": 37.456426009687135,
+              "lng": 126.94866512663356,
+              "use_time": "11:00 ~ 14:00 / 17:00 ~ 19:00",
+              "kind": "restaurant",
+              "dist_km": 0.32
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "09:54",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "달마사",
+        "preview": "고즈넉한 사찰 분위기와 산책길이 있는 조용한 몰입의 공간",
+        "description": "달마사는 전통사찰의 고요한 분위기를 감상할 수 있는 곳으로, 나들이용 산책길 따라 걷기 좋고 사찰 주변을 천천히 둘러볼 수 있어요. 10시 30분부터 11시까지 고즈넉한 사찰 분위기와 산책길이 조용한 몰입을 원하는 오전 시간에 잘 어울려서 골랐어요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.498446,
+        "lng": 126.962205,
+        "reason": "고즈넉한 사찰 분위기와 산책길이 조용한 몰입을 원하는 오전 시간에 잘 어울려서 골랐어요",
+        "activities": [
+          "전통사찰의 고요한 분위기 감상하기",
+          "나들이용 산책길 따라 걷기",
+          "사찰 주변을 천천히 둘러보기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "터방내",
+              "summary": "80년대 감성을 간직한 사이폰 커피와 프라페",
+              "address": "서울 동작구 흑석로 101-7",
+              "lat": 37.5080576288247,
+              "lng": 126.960755041795,
+              "use_time": "12:00~23:00",
+              "kind": "cafe",
+              "dist_km": 1.08
+            },
+            {
+              "title": "우부래도",
+              "summary": "국내산 쌀, 현미, 유기농 우리밀 등 건강한 재료를 사용하는 것이 특징. ",
+              "address": "서울 동작구 상도로37길 3 (상도1동)",
+              "lat": 37.5031717035143,
+              "lng": 126.948655254952,
+              "use_time": "매일 10:00~22:00",
+              "kind": "cafe",
+              "dist_km": 1.31
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "10:30",
+        "end_time": "11:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 36,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "용양봉저정 공원",
+        "preview": "도심 전망대에서 조용히 쉬며 노을 풍경을 바라보는 마무리 장소",
+        "description": "용양봉저정 공원은 전망이 트인 산책로를 따라 걷기 좋고, 도심 전망대에서 조용히 쉬며 아름다운 노을 풍경을 감상할 수 있는 곳이에요. 11시 30분부터 12시까지 도심 전망대에서 조용히 쉬며 노을 풍경을 바라볼 수 있어 혼자 여유롭게 쉬어 가기 좋은 마무리 장소라서 골랐어요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.5118,
+        "lng": 126.958588,
+        "reason": "도심 전망대에서 조용히 쉬며 노을 풍경을 바라볼 수 있어 혼자 여유롭게 쉬어 가기 좋은 마무리 장소라서 골랐어요",
+        "activities": [
+          "도심 전망대에서 조용히 쉬기",
+          "아름다운 노을 풍경 감상하기",
+          "전망이 트인 산책로 따라 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "스페이스 K 노들",
+              "summary": "옛 노량진 취수장을 리모델링한 미디어아트 카페 겸 복합문화공간",
+              "address": "서울 동작구 현충로 11 1층",
+              "lat": 37.5133081706521,
+              "lng": 126.957454466539,
+              "use_time": "11:00-22:00",
+              "kind": "cafe",
+              "dist_km": 0.2
+            },
+            {
+              "title": "터방내",
+              "summary": "80년대 감성을 간직한 사이폰 커피와 프라페",
+              "address": "서울 동작구 흑석로 101-7",
+              "lat": 37.5080576288247,
+              "lng": 126.960755041795,
+              "use_time": "12:00~23:00",
+              "kind": "cafe",
+              "dist_km": 0.46
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "11:30",
+        "end_time": "12:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 30,
+        "travel_mode": "walk"
+      }
+    ],
+    "tags": [
+      "혼자",
+      "오전",
+      "자연",
+      "힐링",
+      "관악산",
+      "달마사",
+      "용양봉저정공원",
+      "여유",
+      "관악",
+      "사당"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 없음"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "관악산, 달마사, 용양봉저정 공원",
+      "picks": [
+        {
+          "name": "관악산",
+          "reason": "혼자 사색하며 숲길을 천천히 걷기 좋은 도심 자연이라 오전 힐링 코스의 첫 출발지로 골랐어요",
+          "activities": [
+            "수려한 산세를 따라 탐방로 산책하기",
+            "전망대에서 사색하며 쉬기",
+            "숲길 풍경을 천천히 둘러보기"
+          ]
+        },
+        {
+          "name": "달마사",
+          "reason": "고즈넉한 사찰 분위기와 산책길이 조용한 몰입을 원하는 오전 시간에 잘 어울려서 골랐어요",
+          "activities": [
+            "전통사찰의 고요한 분위기 감상하기",
+            "나들이용 산책길 따라 걷기",
+            "사찰 주변을 천천히 둘러보기"
+          ]
+        },
+        {
+          "name": "용양봉저정 공원",
+          "reason": "도심 전망대에서 조용히 쉬며 노을 풍경을 바라볼 수 있어 혼자 여유롭게 쉬어 가기 좋은 마무리 장소라서 골랐어요",
+          "activities": [
+            "도심 전망대에서 조용히 쉬기",
+            "아름다운 노을 풍경 감상하기",
+            "전망이 트인 산책로 따라 걷기"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "09:00~12:00 · 장소 3곳 · 식사 0회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 5건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "관악산에서 용양봉저정 공원까지, 혼자 걷는 오전 자연 힐링 코스"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "사당",
+      "category": "쇼핑",
+      "area": "관악·사당",
+      "lat": 37.4767,
+      "lng": 126.9815,
+      "day_hint": null
+    },
+    {
+      "name": "관악산",
+      "category": "자연",
+      "area": "관악·사당",
+      "lat": 37.453668,
+      "lng": 126.949485,
+      "day_hint": null
+    },
+    {
+      "name": "서울시립 남서울미술관",
+      "category": "문화",
+      "area": "관악·사당",
+      "lat": 37.4761,
+      "lng": 126.9795,
+      "day_hint": null
+    },
+    {
+      "name": "달마사",
+      "category": "역사",
+      "area": "관악·사당",
+      "lat": 37.498446,
+      "lng": 126.962205,
+      "day_hint": null
+    },
+    {
+      "name": "롤러팡팡 스케이트장",
+      "category": "체험",
+      "area": "관악·사당",
+      "lat": 37.4843,
+      "lng": 126.9315,
+      "day_hint": null
+    },
+    {
+      "name": "용양봉저정 공원",
+      "category": "자연",
+      "area": "관악·사당",
+      "lat": 37.5118,
+      "lng": 126.958588,
+      "day_hint": null
+    },
+    {
+      "name": "동작문화원 사당분원",
+      "category": "문화",
+      "area": "관악·사당",
+      "lat": 37.4847,
+      "lng": 126.9696,
+      "day_hint": null
+    },
+    {
+      "name": "국립서울현충원",
+      "category": "역사",
+      "area": "관악·사당",
+      "lat": 37.50338,
+      "lng": 126.972835,
+      "day_hint": null
+    },
+    {
+      "name": "샤로수길",
+      "category": "쇼핑",
+      "area": "관악·사당",
+      "lat": 37.4806,
+      "lng": 126.953,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "upstage",
+    "llm_model": "solar-open2",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}

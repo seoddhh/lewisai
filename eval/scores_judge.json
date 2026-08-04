@@ -1,0 +1,1116 @@
+{
+  "base": "solar-open2",
+  "judge_model": "openai/gpt-oss-120b",
+  "pairs": {
+    "claude-haiku-4-5": {
+      "n": 36,
+      "skipped_failed": 2,
+      "judge_errors": 7,
+      "axes": {
+        "feasibility": {
+          "base": 5,
+          "tie": 20,
+          "chal": 11,
+          "chal_win_rate": 30.6,
+          "flip_rate": 52.8
+        },
+        "condition_fit": {
+          "base": 4,
+          "tie": 22,
+          "chal": 10,
+          "chal_win_rate": 27.8,
+          "flip_rate": 50.0
+        },
+        "korean": {
+          "base": 0,
+          "tie": 25,
+          "chal": 11,
+          "chal_win_rate": 30.6,
+          "flip_rate": 58.3
+        },
+        "overall": {
+          "base": 6,
+          "tie": 16,
+          "chal": 14,
+          "chal_win_rate": 38.9,
+          "flip_rate": 44.4
+        }
+      },
+      "details": [
+        {
+          "persona": "P01",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 종로·중구 내에 위치한 네 곳을 순서대로 배치해 이동 거리가 짧고 오후부터 저녁까지 흐름이 자연스럽습니다. 코스 A는 경인미술관이 멀리 있어 실현 가능성이 낮고, 식사 계획이 구체적이지 않아 조건 반영이 부족합니다."
+        },
+        {
+          "persona": "P01",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 경인미술관 → 인사동 → 청계천 광교갤러리 → 창경궁 순으로 이동이 자연스럽고, 점심·저녁 식사와 야간 고궁 방문까지 구체적인 활동을 제시해 실행 가능성이 높습니다. 코스 A는 순서가 혼란스럽고 저녁 식사 장소가 명시되지 않아 조건 반영과 흐름이 약합니다."
+        },
+        {
+          "persona": "P02",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "Course B avoids the unrealistic '노을 감상' in the morning and keeps the itinerary natural, while Course A includes an evening activity that conflicts with the requested time. Additionally, Course B’s description aligns better with the solo morning nature‑healing purpose."
+        },
+        {
+          "persona": "P02",
+          "seed": 22,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 관악·사당 지역 내 3곳만을 골라 이동 거리가 짧고, 자연·힐링 목적에 맞는 야외 활동이 연속돼 실행 가능성이 높습니다. 코스 B는 현충원이 관악·사당을 벗어나 조건을 위배하고 이동 시간이 늘어나 실현성이 떨어집니다."
+        },
+        {
+          "persona": "P02",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 A는 관악산‑달마사‑용양봉저정 공원의 순서가 지리적으로 인접하고 이동 동선이 자연스럽게 이어지며, 각 장소에서 구체적인 산책·전망·휴식 활동을 제시한다. 코스 B는 현충원을 시작점으로 삼아 순서가 뒤섞이고, 힐링 목적에 부합하지 않는 추모 활동이 포함돼 조건 반영과 실행 가능성이 떨어진다."
+        },
+        {
+          "persona": "P03",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 A는 거리 → 쇼핑 → 플리마켓 → 클럽 → 독특한 공간 순으로 동선이 자연스럽고 저녁 식사 후 활동이 명확히 연결돼 실행 가능성이 높다. 코스 B는 쇼핑을 먼저 시작해 흐름이 다소 뒤섞여 현실성이 떨어진다."
+        },
+        {
+          "persona": "P04",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "두 코스 모두 장소 순서와 데이트 활동이 자연스러워 실행 가능성과 조건 반영이 동등하지만, B는 문장이 더 간결하고 중복 표현이 적어 한국어 가독성이 높다."
+        },
+        {
+          "persona": "P04",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "코스 B는 요청된 4곳을 모두 포함해 장소 수 조건을 충족하고, 카페‑음악‑다리‑공원 순서가 데이트 흐름에 자연스럽다. 코스 A는 장소 수가 부족해 조건 반영도가 낮다."
+        },
+        {
+          "persona": "P04",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A maintains a smooth, geographically compact flow within 성수·건대 and all activities are realistic, while Course B adds 응봉산, which lies outside the requested area and disrupts the logical sequence. Additionally, A’s wording is clearer and less repetitive than B’s."
+        },
+        {
+          "persona": "P05",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 A는 강남·서초 지역 내 두 곳만으로 구성돼 장소 수가 부족하지만, 모든 일정이 실내에서 연속적으로 진행돼 이동이 짧고 부모님과의 여유로운 오후에 적합합니다. 코스 B는 요구된 세 곳을 충족하지만 무역센터가 강남·서초 외부에 있어 위치 조건을 어기고 이동 거리가 늘어나 실행 가능성이 낮습니다."
+        },
+        {
+          "persona": "P05",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "A 코스는 점심 후 손 관리와 패션 매장을 인접하게 배치해 이동이 최소화되고 구체적인 체험을 제시한다. B 코스도 동선은 비슷하지만 활동 설명이 다소 일반적이다."
+        },
+        {
+          "persona": "P05",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 강남·서초 지역을 벗어난 무역센터를 포함해 위치 조건을 완전히 만족하지 못하지만, 코스 B는 무신사 스탠다드와 코엑스 사이의 이동이 자연스럽고 쇼핑 목적에 더 부합한다. 코스 A는 뷰티·네일 중심으로 쇼핑 목적과 맞지 않는 요소가 있어 전체적인 적합도가 낮다."
+        },
+        {
+          "persona": "P06",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course A includes the required lunch and follows a smooth indoor‑to‑indoor progression, while Course B omits the meal and forces a backtrack between aquarium and keyzania before moving farther to the stadium. Therefore A is more feasible and matches the conditions better."
+        },
+        {
+          "persona": "P07",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "Course B의 순서는 운현궁 → 경인미술관 → 공평도시유적전시관 → 광화문광장으로 인접성을 고려해 이동 거리가 최소화돼 실행이 자연스럽다. 또한 요청한 ‘노을 보기’ 목적을 광화문광장에서의 노을 감상으로 가장 잘 반영한다."
+        },
+        {
+          "persona": "P07",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 경인미술관 → 인사동 → 광화문광장 → 서촌 순으로 이동해 동선이 일관되고 이동 거리가 최소화됩니다. 코스 B는 실내·실외를 오가며 경인미술관까지 다시 이동해 흐름이 다소 비효율적이며, 두 코스 모두 한강 자전거 요청을 반영하지 못했습니다."
+        },
+        {
+          "persona": "P08",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B aligns better with the requested afternoon start, explicitly includes lunch and dinner points, and its sequence flows more naturally between photo spots, shopping, tower view, nature walk and night river walk. Course A’s order is scattered and lacks clear meal timing."
+        },
+        {
+          "persona": "P08",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B의 동선이 녹사평육교 → 국립중앙박물관 → 이태원 등 순서대로 이어져 자연스럽고 실제로 할 수 있는 활동이 명확합니다. Course A는 장소가 산재하고 순서가 흐트러져 실행 가능성이 낮으며 문장도 중복 표현이 많습니다."
+        },
+        {
+          "persona": "P09",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "B 코스는 지역별로 묶어 이동 거리를 최소화하고 점심·저녁 시간을 자연스럽게 배치해 실행 가능성이 높다. 두 코스 모두 요청된 4곳 제한을 초과해 조건 반영도가 낮으며 문장은 비슷한 수준이다."
+        },
+        {
+          "persona": "P09",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 12곳을 제시해 요청된 4곳을 초과하고, 일정 구성이 구체적이지 않아 조건 충족도가 낮다. B 코스는 지역별 흐름이 비교적 자연스럽고 표현이 간결해 실행 가능성과 문장 품질이 A보다 약간 우수하다."
+        },
+        {
+          "persona": "P09",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 지역별로 묶어 이동 거리를 최소화하고, 하루 4곳씩 순차적으로 배치해 실제 관람 흐름이 자연스럽다. 코스 A는 장소 순서가 뒤섞이고 설명이 중복돼 실행 가능성이 낮다."
+        },
+        {
+          "persona": "P10",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A keeps a smoother southward flow and avoids far‑away spots like Ansan, making daily travel realistic; both courses ignore the 5‑place limit, so condition fit is similar, while B’s wording is a bit cleaner but A’s itinerary is more feasible, thus A wins overall."
+        },
+        {
+          "persona": "P10",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A covers all requested districts and keeps the packed pace while staying realistic, but its sequence jumps between areas causing some inefficiency. Course B has a smoother daily flow but includes a location outside the specified zones, reducing condition fit."
+        },
+        {
+          "persona": "P10",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B groups attractions by the three requested zones and orders them day‑by‑day, making travel flow natural; Course A jumps between distant sites and includes locations outside the specified zones. B also reflects the packed pace and friend‑travel context more clearly while using more concise Korean phrasing."
+        },
+        {
+          "persona": "P11",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 여의도·영등포 일대에서 오후에 자연을 즐기며 점심을 끼는 흐름이 일관되고 이동 거리가 최소화돼 실행이 쉽다. 문장은 간결하고 ‘천천히’, ‘여유롭게’ 같은 반복 표현이 적어 가독성이 높다."
+        },
+        {
+          "persona": "P11",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A follows a logical riverside route with concrete activities, while Course B inserts an unrelated library and has a less coherent order. Additionally, A aligns better with the requested nature‑healing purpose and afternoon‑lunch schedule."
+        },
+        {
+          "persona": "P12",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 오후 카페·쇼핑 → 저녁 시장 식사 → 노을 감상 순으로 동선이 자연스럽고 구체적인 활동을 제시한다. 또한 바다 전망 요청을 ‘자연 속 노을’으로 대체해 언급하며, 표현도 비교적 간결하고 중복이 적다."
+        },
+        {
+          "persona": "P12",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "B는 강북과 성수 지역을 순차적으로 배치해 이동 거리를 최소화했으며, 노을과 카페를 연결해 사용자의 ‘바다 보이는 카페에서 노을’ 요청을 더 잘 반영했습니다. A는 장소 간 이동이 빈번하고 설명이 중복돼 실행 가능성과 문장 품질이 다소 떨어집니다."
+        },
+        {
+          "persona": "P12",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "A는 지역별로 하루에 4곳씩 배치해 이동 동선을 최소화해 실행 가능성이 높지만, B는 사용자가 원하는 바다 보이는 카페에서 노을 감상을 직접 언급해 조건 반영도가 더 좋다."
+        },
+        {
+          "persona": "P13",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 경복궁 → 국립고궁박물관 → 서울역사박물관 순으로 동선이 자연스럽고 이동 거리가 최소이며, 부모님과의 오전 고궁·박물관 관람·점심 전 휴식이라는 요청 조건을 충실히 반영한다. 반면 코스 A는 박물관을 먼저 방문하고, 민속촌과 집옥재 등 추가 장소가 순서를 어색하게 만든다."
+        },
+        {
+          "persona": "P13",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B places the palace and the nearby museum consecutively, then adds a single additional museum before lunch, keeping the morning route compact and clearly indicating a lunch spot. Course A adds extra stops that make the morning schedule tighter and omits a specific lunch venue, while its wording is more verbose."
+        },
+        {
+          "persona": "P14",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 서울숲‑응봉산‑남산 순으로 이동해 동선이 자연스럽고 이동 시간이 최소화돼 실행 가능성이 높습니다. 코스 A는 장소가 분산돼 이동이 번거롭고 설명에 반복적인 표현이 많아 조건 반영도와 문장 품질이 떨어집니다."
+        },
+        {
+          "persona": "P14",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 이동 동선이 짧고 장소가 인접해 실행이 용이하지만, 코스 A는 더 다양한 자연·실내 옵션을 제공해 요청 조건을 폭넓게 반영합니다. 또한 B의 문장은 간결하고 중복 표현이 적어 한국어 가독성이 높습니다."
+        },
+        {
+          "persona": "P14",
+          "seed": 33,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 A는 12곳을 하루에 4곳씩 배정했지만 장소가 서울 전역에 흩어져 있어 이동 동선이 비효율적이다. 코스 B는 4곳만 골라 이동 거리가 짧고 활동이 구체적이며 요청 조건과 문장 표현이 더 적절하다."
+        },
+        {
+          "persona": "P15",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 북촌·순라길·청계천이 인접해 있어 밤에 걸으며 이동이 자연스럽고, 각 장소가 사진 촬영에 적합하도록 구체적인 활동을 제시한다. 반면 코스 A는 한양도성의 야간 접근성이 제한되고, 이동 거리가 멀어 실행 가능성이 낮다."
+        },
+        {
+          "persona": "P15",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "Course B follows a compact, north‑central route where each stop is within walking distance, making the night walk smooth; Course A’s points are more scattered, requiring longer transit between the bridge and the film street. Both meet the request, but B’s historic alleys are inherently quieter, aligning better with a solitary night photo walk."
+        },
+        {
+          "persona": "P15",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "tie",
+          "reason": "코스 A는 이촌한강공원 → 용양봉저정공원 → 마포대교·서울색공원 → 밤섬 순으로 인접성이 높아 이동이 자연스럽고, 각 지점에서 구체적인 산책·촬영 활동을 제시한다. 코스 B는 잠실·광진·고덕이라는 서로 떨어진 구역을 연결해 이동 시간이 많이 소요될 가능성이 있다."
+        }
+      ]
+    },
+    "solar-pro4": {
+      "n": 35,
+      "skipped_failed": 3,
+      "judge_errors": 7,
+      "axes": {
+        "feasibility": {
+          "base": 11,
+          "tie": 19,
+          "chal": 5,
+          "chal_win_rate": 14.3,
+          "flip_rate": 51.4
+        },
+        "condition_fit": {
+          "base": 6,
+          "tie": 21,
+          "chal": 8,
+          "chal_win_rate": 22.9,
+          "flip_rate": 40.0
+        },
+        "korean": {
+          "base": 5,
+          "tie": 26,
+          "chal": 4,
+          "chal_win_rate": 11.4,
+          "flip_rate": 48.6
+        },
+        "overall": {
+          "base": 11,
+          "tie": 15,
+          "chal": 9,
+          "chal_win_rate": 25.7,
+          "flip_rate": 42.9
+        }
+      },
+      "details": [
+        {
+          "persona": "P01",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course A follows a logical afternoon flow with concrete activities and realistic travel distances, while Course B starts with an obscure venue and less clear logistics. Both meet the requested conditions, but A’s language is more concise and natural."
+        },
+        {
+          "persona": "P01",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "Course B의 동선은 인사동 → 경인미술관 → 인사도시유적전시관 → 아뜰리에 광화 순으로 이동이 자연스럽고 뒤돌아가는 구간이 없어 실행 가능성이 높습니다. 또한 점심·저녁 식사와 문화·예술·데이트 목적을 모두 구체적으로 반영하고 문장이 간결합니다."
+        },
+        {
+          "persona": "P01",
+          "seed": 33,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "Course B orders the sites in a logical walking route from lunch in Insadong to the nearby exhibition, then to Cheonggyecheon and finally the night media, while Course A requires back‑and‑forth travel and lacks a concrete lunch spot. B also matches the requested afternoon, meals and date atmosphere more concretely and uses clearer Korean."
+        },
+        {
+          "persona": "P02",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A follows a natural geographic flow—mountain walk, nearby temple, then viewpoint park—each activity matches solo morning nature healing. Course B includes a library and a cemetery, which deviate from the requested nature‑healing focus and make the itinerary less coherent."
+        },
+        {
+          "persona": "P02",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "Course B follows a logical outdoor‑first route and its activities are concrete, while Course A starts with an indoor museum which breaks the natural‑healing flow. 또한 B는 요청 조건인 자연·힐링과 혼자 오전 산책을 더 잘 반영한다."
+        },
+        {
+          "persona": "P02",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "base",
+          "overall": "base",
+          "reason": "Course A maintains a logical morning flow and its activities are feasible within 관악·사당, while Course B includes distant landmarks that are unrealistic for the time and area. 또한 A는 조건을 충실히 반영하고 문장이 더 자연스럽다."
+        },
+        {
+          "persona": "P03",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 A는 홍대 거리 → 레드컬처마켓 → 패션거리 순으로 이동해 동선이 자연스럽고, 핫플레이스인 플리마켓·패션거리·버스킹 등 밤에 친구와 즐기기 좋은 활동을 골고루 담았다. 두 코스 모두 저녁 식사 장소를 명시하지 않아 조건 반영이 다소 부족하지만, A가 더 밀도 높고 목적에 부합한다."
+        },
+        {
+          "persona": "P03",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "A는 거리 → 쇼핑 → 플리마켓 → 클럽 → 문화공간 순으로 흐름이 자연스러워 실제 밤에 할 수 있는 활동이 구체적이다. B는 순서가 뒤섞여 있어 이동 동선이 비효율적이며, 두 코스 모두 저녁 식사 장소가 명시되지 않아 조건 반영도는 비슷하다."
+        },
+        {
+          "persona": "P04",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A follows a smooth geographic progression from the cafe street to the flagship store, then to the historic bridge and finally the hill, with concrete activities at each spot; it also meets the requested four‑place count, while Course B skips one location and its order is less intuitive. Therefore A is superior in feasibility, condition fit, and language clarity."
+        },
+        {
+          "persona": "P04",
+          "seed": 22,
+          "feasibility": "base",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "코스 A는 장소 수가 요청(4곳)과 맞지 않아 조건 반영이 부족하고, 코스 B는 4곳을 골라 흐름을 유지하면서 실내·야외를 균형 있게 배치했다. 실행 가능성은 A가 이동 거리가 짧아 다소 더 자연스럽지만, 전체적으로 조건 충족도가 높은 B가 더 적합하다."
+        },
+        {
+          "persona": "P04",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "A 코스는 아침 산책 → 음악 감상 → 전시 체험 → 역사적 다리 순으로 동선이 자연스럽고 실제로 할 수 있는 활동이 명확합니다. B도 조건을 충족하지만 순서가 실내→실내→야외로 흐름이 다소 어색합니다."
+        },
+        {
+          "persona": "P05",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 A는 강남·서초 내 두 곳만으로도 점심 후 실내 이동이 짧고 부모님과 편안히 쇼핑하기에 적합하지만 장소 수가 요청한 3곳보다 적습니다. 코스 B는 3곳을 제시했지만 무역센터가 강남·서초 외부에 있어 이동이 비효율적이며 조건과 맞지 않는 점이 있습니다."
+        },
+        {
+          "persona": "P05",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "두 코스 모두 오후에 3곳을 순차적으로 방문하도록 구성돼 이동이 자연스럽고 실제로 할 수 있는 활동을 제시한다. 코스 B는 쇼핑 목적과 부모님 동반, 점심 후 여유로운 흐름을 더 명확히 반영하고 표현도 비교적 깔끔하다."
+        },
+        {
+          "persona": "P07",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "코스 B는 종로·중구 내에서 순차적으로 이동하며 마지막에 광화문광장에서 노을을 감상하도록 구성돼 실행 흐름이 자연스럽고, 요청한 문화·예술 목적과 연인과의 오후 데이트, 그리고 노을 감상 욕구를 모두 반영한다. 코스 A는 지역 외 장소가 포함되고 이동 순서가 비효율적이며 한강 자전거 요구를 전혀 다루지 않는다."
+        },
+        {
+          "persona": "P07",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 청계천을 시작으로 물가와 연계된 야외 활동을 포함해 자유 입력의 ‘노을·자전거’ 욕구에 가까운 분위기를 제공하고, 이동 순서가 종로·중구 내에서 자연스럽게 이어진다. 코스 A는 순서가 다소 뒤섞이고 물과 관련된 요소가 전혀 없어 실행 가능성과 조건 반영 면에서 뒤처진다."
+        },
+        {
+          "persona": "P07",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 경인미술관 → 인사동 → 광화문광장 → 서촌한옥마을 순서가 지리적으로 인접해 자연스러운 동선을 만들고, 서촌까지 포함해 종로·중구 내 장소 비중이 높다. 코스 B는 두 개의 미술관을 포함해 중복이 있고, 마지막 일민미술관이 위치 조건과 맞지 않아 흐름이 다소 어색하다."
+        },
+        {
+          "persona": "P08",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 오후·점심·저녁 흐름에 맞춰 산책·문화·쇼핑을 배치해 실행 가능성이 높고, 연인과의 데이트·관광 목적, 지역·시간·식사 조건을 동일하게 반영한다. 문장 표현에서도 과도한 상투어 사용이 비슷해 차별점이 없으므로 동등하게 평가한다."
+        },
+        {
+          "persona": "P09",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 3일 일정에 12곳을 제시해 요청된 4곳 조건을 충족하지 못하고, 동선과 행동 설명이 비슷하게 구체성이 부족합니다. 따라서 어느 쪽도 명확히 우위가 없으며 동등하게 평가합니다."
+        },
+        {
+          "persona": "P09",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B arranges sites by geographic proximity and inserts lunch/ dinner breaks, so the daily route is smooth and activities are concrete. Course A mixes distant venues and lacks clear meal timing, making the flow less practical."
+        },
+        {
+          "persona": "P09",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 지역별로 동선을 묶어 이동이 자연스럽고 구체적인 관람·체험 행동을 제시해 실행 가능성이 높다. 문장은 비교적 간결하고 중복 표현이 적어 가독성이 좋다."
+        },
+        {
+          "persona": "P10",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B groups sites by region, so movement is smoother; Course A jumps between districts causing inefficient travel. Course B aligns better with the packed 3‑day, 5‑places‑per‑day requirement and uses clearer tourist‑focused spots, while its language is slightly more concise."
+        },
+        {
+          "persona": "P11",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B arranges the sites in a smoother geographic sequence, avoiding back‑and‑forth moves seen in Course A. It also respects the requested afternoon, lunch and spouse‑focused nature‑healing theme while keeping the language concise."
+        },
+        {
+          "persona": "P11",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B arranges the sites in a geographically progressive order, minimizing backtracking, while Course A’s sequence jumps between distant parks. Both courses satisfy all user conditions and use natural Korean, so they tie on condition fit and language quality."
+        },
+        {
+          "persona": "P11",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "base",
+          "overall": "base",
+          "reason": "Course A keeps a coherent afternoon route through natural spots and avoids non‑nature venues, matching the spouse‑focused, relaxed healing theme. Course B adds a library and extra stops, breaking the nature‑only flow and lowering feasibility."
+        },
+        {
+          "persona": "P12",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "Course B는 요청된 장소 수와 노을 포인트를 명확히 반영하고, 오후 중심의 흐름이 자연스럽다. Course A는 장소가 과다하고 순서가 산만해 실행이 어려워 보인다."
+        },
+        {
+          "persona": "P12",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 강북·성북·성수·건대 지역을 오후에 친구와 돌아다니며 핫플레이스와 쇼핑을 할 수 있게 구성했지만, B 코스는 요청한 ‘바다 보이는 카페에서 노을’을 명시적으로 반영해 조건 부합도가 높다. 실행 흐름은 크게 차이 없으며 문체는 비슷해 큰 차이가 없다."
+        },
+        {
+          "persona": "P13",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "base",
+          "overall": "base",
+          "reason": "코스 A는 고궁·박물관이 같은 구역에 집중돼 이동이 최소화돼 실행이 쉽고, 부모님과의 오전 관람·점심 조건을 충실히 반영했으며 문장이 간결하고 불필요한 수식이 적다. 반면 코스 B는 광화문·서울역사박물관까지 이동 거리가 늘어나 실현성이 떨어지고, 조건 외 장소가 포함돼 있다."
+        },
+        {
+          "persona": "P13",
+          "seed": 22,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 국립고궁박물관과 경복궁 집옥재가 같은 복합시설에 인접해 있어 이동이 자연스럽고, 이후 인근의 공예·생활사 박물관을 연속으로 방문해 동선이 매끄럽다. 코스 B는 마지막에 서울역사박물관을 포함해 광화문광장과의 거리가 멀어 오전 일정에 비효율적인 이동이 발생한다."
+        },
+        {
+          "persona": "P13",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "base",
+          "overall": "tie",
+          "reason": "Course A keeps all sites within the 경복궁 권역, so the walking route is short and the sequence of visits is logical; Course B forces a detour to 광화문광장 before the palace, which adds unnecessary back‑and‑forth."
+        },
+        {
+          "persona": "P14",
+          "seed": 11,
+          "feasibility": "chal",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 일정 순서가 논리적이며 각 장소에서 할 수 있는 구체적인 활동이 제시돼 실행이 쉽다. 코스 A는 장소가 많아 동선이 복잡하고 일부 설명이 부족해 실현 가능성이 낮다."
+        },
+        {
+          "persona": "P14",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 A는 장소가 산재해 이동 동선이 비효율적이며, 데이트·자연 요소가 혼재해 구체성이 떨어진다. 코스 B는 3일 일정에 맞춰 자연과 실내 문화가 조화롭게 배치돼 흐름이 자연스럽고 요청 조건을 잘 반영한다."
+        },
+        {
+          "persona": "P14",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "Course B has a more logical daily flow and realistic activities, while Course A’s list is scattered and includes impractical spots; B also uses clearer Korean, though A aligns slightly better with the nature‑focused request."
+        },
+        {
+          "persona": "P15",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 잠원한강공원·그라스정원에서 시작해 한양도성까지 연속적인 도보 경로로 구성돼 이동 거리가 짧고 밤에 조용히 걸으며 사진 찍기에 적합합니다. 코스 B는 이동 구간이 길고 밤 자전거 이용·인기 명소 방문 등 조건과 맞지 않는 요소가 있어 실현 가능성과 목적 부합도가 낮습니다."
+        },
+        {
+          "persona": "P15",
+          "seed": 22,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 장소 간 이동이 인접 지역을 따라 자연스럽고, 각 지점에서 밤에 조용히 사진을 찍을 구체적인 활동이 제시돼 실행 가능성이 높다. 코스 B는 마지막 한양도성 등 동선이 뒤섞이고 일부 장소는 야간 조용함이 보장되지 않아 조건 반영과 실현성이 다소 떨어진다."
+        },
+        {
+          "persona": "P15",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "base",
+          "overall": "base",
+          "reason": "코스 A는 한강을 따라 인접한 장소들로 구성돼 밤에 도보 이동이 자연스럽고, 각 지점에서 사진 촬영과 조용한 산책 행동이 구체적으로 제시돼 요청에 부합합니다. 코스 B는 장소 간 거리가 멀어 도보로 연결하기 어려워 실행 가능성이 낮고, 조건 반영도 상대적으로 약합니다."
+        }
+      ]
+    },
+    "gemini-3.1-flash-lite": {
+      "n": 40,
+      "skipped_failed": 1,
+      "judge_errors": 4,
+      "axes": {
+        "feasibility": {
+          "base": 7,
+          "tie": 28,
+          "chal": 5,
+          "chal_win_rate": 12.5,
+          "flip_rate": 52.5
+        },
+        "condition_fit": {
+          "base": 7,
+          "tie": 29,
+          "chal": 4,
+          "chal_win_rate": 10.0,
+          "flip_rate": 45.0
+        },
+        "korean": {
+          "base": 2,
+          "tie": 35,
+          "chal": 3,
+          "chal_win_rate": 7.5,
+          "flip_rate": 60.0
+        },
+        "overall": {
+          "base": 9,
+          "tie": 27,
+          "chal": 4,
+          "chal_win_rate": 10.0,
+          "flip_rate": 52.5
+        }
+      },
+      "details": [
+        {
+          "persona": "P01",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A follows a natural afternoon flow with specific, doable activities and aligns with the requested lunch and dinner slots, whereas Course B adds a night‑time media façade and a venue that may lie outside the stipulated 종로·중구 area, breaking the time constraint. Therefore A better satisfies feasibility and condition fit."
+        },
+        {
+          "persona": "P01",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스는 동일한 4곳을 같은 순서로 배치하고, 오후 데이트·문화·예술이라는 조건을 비슷하게 반영했으며, 구체적인 활동도 유사합니다. 표현상의 차이도 미미해 어느 쪽을 우선 선택하기 어렵습니다."
+        },
+        {
+          "persona": "P01",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 A는 점심 식사 후 청계천에서 산책을 시작해 인사도시·인사동을 연속으로 둘러본 뒤 저녁 식사 후 아뜰리에에서 마무리하는 흐름이 시간대와 동선을 자연스럽게 연결한다. 코스 B는 점심 전 인사도시·인사동을 먼저 방문해 오후 중반에 청계천으로 이동하는 순서가 다소 어색하다."
+        },
+        {
+          "persona": "P02",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "base",
+          "overall": "base",
+          "reason": "코스 A는 관악산 → 달마사 → 용양봉저정 공원의 순서가 지형과 오전 시간 흐름에 맞아 자연·힐링을 효율적으로 할 수 있다. 코스 B는 실내 도서관으로 시작해 목적과 동선이 비효율적이다."
+        },
+        {
+          "persona": "P02",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 관악·사당 지역 내 3곳을 오전에 혼자 자연·힐링 목적에 맞게 배치했으며 이동 동선도 짧게 설계돼 실행 가능하다. 표현에서는 약간의 중복과 순서 설명의 불일치가 있지만 차별적인 장점이 없어 동등하게 평가한다."
+        },
+        {
+          "persona": "P02",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course A follows a natural morning flow and all activities are outdoor nature‑healing, while Course B includes an indoor museum that does not match the nature‑healing purpose. Therefore A is more feasible and fits the conditions better."
+        },
+        {
+          "persona": "P03",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "chal",
+          "overall": "tie",
+          "reason": "두 코스 모두 5곳을 밤에 친구와 함께 방문하도록 구성했지만, A코스는 연남동에서 홍대 패션거리로 돌아오는 비효율적인 동선과 밤에 전통놀이 같은 비핵심 활동이 포함돼 실현성이 다소 떨어진다. B코스는 흐름이 일관되고 핫플 중심의 활동만을 제시해 조건에 더 부합하며 문장도 간결하다."
+        },
+        {
+          "persona": "P03",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 위드뮤에서 시작해 저녁 식사 후 순차적으로 문화·쇼핑·전시를 배치해 동선이 자연스럽고 밤 시간대에 맞는 활동을 제공한다. 코스 A는 순서가 다소 뒤섞이고 ‘탈영역우정국’처럼 핫플레이스와 연관성이 약한 장소가 포함돼 전반적인 흐름이 덜 매끄럽다."
+        },
+        {
+          "persona": "P04",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 성수·건대 일대에서 4곳을 순차적으로 방문하도록 구성돼 이동 흐름이 자연스럽고, 구체적인 활동이 제시돼 실행 가능성이 높다. 조건 반영과 문장 표현에서도 큰 차이가 없어 동등하게 평가한다."
+        },
+        {
+          "persona": "P04",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "코스 B는 요청된 4곳을 모두 포함해 조건을 충족하지만 코스 A는 장소 수가 부족하고 조건 반영이 미흡합니다. 다만 한국어 표현에서는 코스 A가 비교적 간결하고 상투어 사용이 적어 더 자연합니다."
+        },
+        {
+          "persona": "P05",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A follows a compact, indoor route that fits an afternoon with parents, while Course B adds a distant venue outside the requested 강남·서초 area, breaking the location condition and making the flow less natural. Although A lacks the exact three‑place count, its feasibility and adherence to the main constraints outweigh B’s extra stop."
+        },
+        {
+          "persona": "P05",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 쇼핑 목적에 맞는 실내 매장을 연속으로 배치해 이동이 최소화되고, 모두 쇼핑 활동에 집중돼 조건에 더 부합한다. 코스 A는 손 관리 체험 등 쇼핑과 직접 연관되지 않은 활동을 포함해 목적 일치도가 낮다."
+        },
+        {
+          "persona": "P05",
+          "seed": 33,
+          "feasibility": "chal",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B은 강남역 → 코엑스 → 무역센터 순으로 이동 동선이 자연스럽고, 코엑스에서 점심을 할 수 있어 오후 쇼핑·식사 목적을 충족합니다. 반면 Course A는 점심 장소가 명시되지 않고, 반디인하우스는 쇼핑 목적과 맞지 않아 조건 반영이 부족합니다."
+        },
+        {
+          "persona": "P06",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "코스 B는 아이스링크와 같은 순서 혼란이 없고, 아쿠아리움 관람 후 점심을 잡아 오전 흐름이 자연스럽다. 또한 키자니아·아쿠아리움·박물관 순서가 체험·놀거리 목적과 점심 포함 조건을 가장 잘 반영한다."
+        },
+        {
+          "persona": "P07",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 연인과 오후에 종로·중구에서 문화·예술을 체험하도록 4곳을 배치했으며 이동 순서도 크게 어색하지 않다. 그러나 한강 자전거 타기 요청은 어느 코스에도 반영되지 않아 조건 충족도와 전반적인 매력에서 차이가 없다."
+        },
+        {
+          "persona": "P07",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course A follows a geographically logical sequence with concrete activities, whereas Course B’s route backtracks and includes less defined spots. Both miss the Han River request, but A’s wording is clearer and avoids clichés."
+        },
+        {
+          "persona": "P07",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "코스 A는 광화문·서촌 등 인접 지역을 순차적으로 배치해 이동이 자연스럽고, 광화문에서 노을 감상을 포함해 요청한 ‘노을’ 요소를 반영했습니다. 코스 B는 시작점이 멀고 한강 자전거 요청을 전혀 반영하지 않아 조건 부합도가 낮습니다."
+        },
+        {
+          "persona": "P08",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B의 하루 4곳씩 배치가 동선을 자연스럽게 연결하고, 남산·노들섬 등 저녁 데이트 장소가 명확히 제시돼 오후 일정에 맞는다. Course A는 장소 순서가 뒤섞이고 일부 활동이 구체적 시간과 연결되지 않아 실행 가능성이 낮다."
+        },
+        {
+          "persona": "P08",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 하루 4곳씩 구역을 나누어 이동 거리를 최소화하고, 점심·저녁 식사 시점을 자연스럽게 배치해 실제 데이트 흐름을 구현했다. 코스 A는 장소 순서와 시간대 연결이 흐릿하고 설명이 중복·장황해 실행 가능성이 낮다."
+        },
+        {
+          "persona": "P08",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 박물관‑문화공간‑인근 골목‑남산타워 순으로 이동 동선이 자연스럽고 실제로 할 수 있는 활동이 구체적이다. 두 코스 모두 점심·저녁 식사 장소를 명시하지 않아 조건 반영도가 비슷하다."
+        },
+        {
+          "persona": "P09",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 권역별로 일정을 배치해 이동 동선이 자연스럽고, 혼자 여행·문화·예술·점심·저녁 조건을 비교적 명확히 반영했으며, 문장 표현이 더 간결하고 상투어 사용이 적습니다. 코스 A는 장소가 과다하고 순서가 흐트러져 실행 가능성이 낮으며, 조건 반영이 부족하고 문장이 중복됩니다."
+        },
+        {
+          "persona": "P09",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 12곳을 제시해 사용자가 요구한 4곳과 크게 차이 나며, 이동 동선은 권역별로 나누어 비교적 자연하지만 구체적인 행동 설명은 충분히 제시돼 실행 가능성은 비슷하다. 문장 표현에서도 ‘혼자’, ‘차분히’ 등 상투어가 반복돼 차별성이 크지 않다."
+        },
+        {
+          "persona": "P09",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 지역별로 묶어 이동 흐름이 자연스럽고 구체적인 관람·체험 활동을 제시한다. 두 코스 모두 요청된 4곳 제한을 초과했으나, 언어 측면에서는 B가 반복 표현이 적어 더 깔끔하다."
+        },
+        {
+          "persona": "P10",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 하루에 한 권역을 집중해 이동 동선을 자연스럽게 구성하고, 각 명소에서 구체적인 활동을 제시해 실행 가능성이 높습니다. 코스 A는 지역 이동이 빈번하고 표현이 중복돼 가독성이 떨어지며, 조건 반영과 문장 품질 면에서 B에 비해 약합니다."
+        },
+        {
+          "persona": "P10",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B arranges the 15 sites in a clear, zone‑by‑zone order that matches a packed three‑day, five‑stop‑per‑day schedule, while Course A’s list jumps between distant spots making the daily flow ambiguous. 또한 B는 문장이 간결하고 ‘다채로운’·‘다양한’ 같은 흔한 수식어 사용을 최소화해 한국어 가독성이 더 높다."
+        },
+        {
+          "persona": "P11",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 여의도·영등포 일대의 이동 흐름이 일관되고 중복 장소가 없어 오후에 점심 후 자연을 즐기기에 실용적이다. 코스 A는 장소가 과도하게 늘어나고 순환이 비효율적이며 표현이 반복돼 한국어 가독성이 떨어진다."
+        },
+        {
+          "persona": "P11",
+          "seed": 22,
+          "feasibility": "base",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A는 구체적인 활동 제시와 논리적인 동선으로 실제 실행이 용이합니다. 두 코스 모두 조건을 충족하지만 언어 표현에서는 큰 차이가 없습니다."
+        },
+        {
+          "persona": "P11",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "두 코스 모두 장소 수와 점심 포함 여부 등 요청 조건을 완전히 만족하지 못하지만, A 코스는 전부 자연 공간으로 구성돼 힐링 목적에 더 부합한다. B 코스는 도서관 등 비자연 요소가 포함돼 목적 일관성이 떨어진다."
+        },
+        {
+          "persona": "P12",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 강북·성북에서 성수·건대로 이동하는 동선이 자연스러워 실행 가능성은 비슷하지만, 요청한 4곳 제한과 바다 전망 카페를 포함하지 않아 조건 반영도가 낮다. 문장은 반복적인 표현이 많아 차이가 없으므로 전반적으로 동등하다."
+        },
+        {
+          "persona": "P12",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 하루 4곳씩 구역별로 묶어 이동 흐름을 자연스럽게 설계했으며, 오후와 저녁 활동을 명확히 제시해 실행 가능성이 높다. 두 코스 모두 바다 전망 카페를 포함하지 않아 조건 반영도는 비슷하지만, B는 문장이 더 간결하고 중복 표현이 적어 한국어 표현이 우수하다."
+        },
+        {
+          "persona": "P12",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "두 코스 모두 2일에 8곳을 제시해 요청된 4곳보다 과다하고, 바다 전망 카페는 포함되지 않아 조건 반영이 부족합니다. 이동 동선도 강북·성북과 성수·건대를 오가며 비슷하게 복잡해 실행 가능성이나 문장 표현에서도 큰 차이가 없습니다."
+        },
+        {
+          "persona": "P13",
+          "seed": 11,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "A 코스는 고궁·박물관 관람 후 점심을 명시적으로 배치해 요청 조건을 충실히 반영했으며, 동선이 자연스럽고 이동 거리가 최소화됩니다. B 코스는 추가 장소가 포함돼 동선이 다소 늘어나고 점심 언급이 없어 조건 부합도가 낮습니다."
+        },
+        {
+          "persona": "P13",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "tie",
+          "overall": "chal",
+          "reason": "코스 B는 경복궁‑국립고궁박물관‑대한민국역사박물관‑광화문광장의 순서가 인접 지역을 따라 자연스럽게 이어져 이동이 효율적이며, 점심을 포함한 일정이 요청 조건을 충족합니다. 코스 A는 순서가 뒤섞이고 점심 장소가 없으며 설명이 중복돼 실용성이 떨어집니다."
+        },
+        {
+          "persona": "P13",
+          "seed": 33,
+          "feasibility": "chal",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course B follows a logical north‑south flow from 경복궁 to 인접한 박물관, then outward to 광화문, keeping the walking route smooth; Course A jumps between 민속박물관, 경복궁, and 박물관, causing unnecessary backtracking and an unclear sequence. Both courses omit a specific lunch spot, so they equally miss that request element."
+        },
+        {
+          "persona": "P14",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "base",
+          "reason": "Course A concentrates on parks and rivers that let a couple experience nature directly, while Course B mixes many urban attractions that dilute the nature focus. Both itineraries lack clear daily sequencing, so their travel feasibility is comparable."
+        },
+        {
+          "persona": "P14",
+          "seed": 22,
+          "feasibility": "tie",
+          "condition_fit": "base",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "Course A matches the nature‑and‑date request with many green spots, but its order jumps across distant areas, reducing travel feasibility; Course B arranges sites more logically, yet its program leans toward cultural venues rather than nature."
+        },
+        {
+          "persona": "P14",
+          "seed": 33,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "tie",
+          "overall": "tie",
+          "reason": "코스 B는 하루에 같은 권역을 묶어 이동 거리를 최소화하고, 한강·도심 숲길 등 구체적인 데이트 활동을 제시해 실행 가능성이 높다. 또한 요청한 ‘데이트와 자연’을 자연스럽게 반영하면서 문장도 간결하고 반복 표현이 적다."
+        },
+        {
+          "persona": "P15",
+          "seed": 11,
+          "feasibility": "tie",
+          "condition_fit": "tie",
+          "korean": "base",
+          "overall": "tie",
+          "reason": "Course B는 한강 인근에 위치한 세 곳을 연속으로 배치해 밤에 이동 거리가 짧고 구체적인 활동이 제시돼 실행이 쉽다. Course A는 한양도성까지 포함해 이동이 멀고, 일부 표현이 일반적이라 조건 반영과 문장 흐름에서 A가 다소 우수하지만 전체적으로 실현 가능성이 낮다."
+        },
+        {
+          "persona": "P15",
+          "seed": 22,
+          "feasibility": "chal",
+          "condition_fit": "chal",
+          "korean": "chal",
+          "overall": "chal",
+          "reason": "코스 B는 잠원·반포 일대가 인접해 있어 이동 동선이 자연스럽고 밤 시간에도 조용히 걸으며 촬영하기에 적합합니다. 코스 A는 일부 장소가 야간에 사람 흐름이 있을 수 있고, 설명에 반복적인 표현이 많아 실질적 만족도가 낮아 보입니다."
+        },
+        {
+          "persona": "P15",
+          "seed": 33,
+          "feasibility": "base",
+          "condition_fit": "base",
+          "korean": "chal",
+          "overall": "base",
+          "reason": "Course A has a more natural walking flow and concrete night‑time activities, while both meet the solo night‑photo request; however Course B’s wording is slightly less clichéd. Therefore A is recommended overall."
+        }
+      ]
+    }
+  }
+}

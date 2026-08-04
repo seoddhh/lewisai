@@ -1,0 +1,356 @@
+{
+  "persona": "P02",
+  "persona_name": "관악 혼자 오전 산책",
+  "seed": 11,
+  "seed_applied": true,
+  "entry": "chips",
+  "started_at": "2026-08-04T07:21:41+00:00",
+  "total_sec": 13.344,
+  "timings": {
+    "parse_intent": 0.001,
+    "plan": 0.001,
+    "retrieve": 0.483,
+    "select_places": 4.069,
+    "fit_schedule": 0.0,
+    "meals": 0.0,
+    "enrich": 0.0,
+    "nearby": 0.004,
+    "compose": 8.785
+  },
+  "counters": {
+    "embed_calls": 2,
+    "embed_sec": 0.416,
+    "search_calls": 2,
+    "llm_calls": 3,
+    "llm_sec_total": 9.299,
+    "llm_sec_max": 3.433,
+    "input_tokens": 5067,
+    "output_tokens": 790,
+    "truncated": 0,
+    "per_call": [
+      {
+        "sec": 3.433,
+        "in": 2447,
+        "out": 303,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 2.651,
+        "in": 1592,
+        "out": 174,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "sec": 3.215,
+        "in": 1028,
+        "out": 313,
+        "truncated": false,
+        "error": null
+      }
+    ]
+  },
+  "error": null,
+  "source": "ai",
+  "course": {
+    "title": "관악산 자락에서 누리는 고요한 사색",
+    "subtitle": "자연의 숨결과 사찰의 정취를 따라 걷는 나만의 오롯한 시간",
+    "description": "혼자 떠나는 오전의 자연·힐링 목적과 관악·사당 지역이라는 조건을 바탕으로 3곳을 골랐어요. 관악산과 같은 자연 공간을 배치하여 혼자만의 사색에 집중할 수 있는 환경을 조성했어요. 여유로운 분위기를 위해 달마사와 같은 고즈넉한 장소를 포함하여 전체 일정을 구성했어요.",
+    "stops": [
+      {
+        "name": "사당솔밭도서관",
+        "preview": "도심 속 숲길 옆에 자리한 아늑한 독서 공간이에요.",
+        "description": "공원 인근에 위치하여 숲의 기운을 이어받은 쾌적한 실내 환경을 갖추고 있어요. 도서관 내에 비치된 책을 읽으며 차분히 머물거나 다양한 문화 자료를 관람하며 시간을 보내보세요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.4841,
+        "lng": 126.9674,
+        "reason": "앞선 야외 활동 후 실내에서 조용히 독서하며 혼자만의 힐링 시간을 마무리하기 좋아서 골랐어요.",
+        "activities": [
+          "도서관 내에서 책 읽기",
+          "다양한 문화 자료 관람하기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "애플하우스",
+              "summary": "연예인들도 잊지 못하고 찾아오는 즉석 떡볶이 맛집",
+              "address": "서울 동작구 동작대로27다길 29 (사당동, 서광시티뷰)",
+              "lat": 37.4862850569156,
+              "lng": 126.980662610028,
+              "use_time": "10:30~21:00",
+              "kind": "restaurant",
+              "dist_km": 1.2
+            },
+            {
+              "title": "외양간",
+              "summary": "대기줄이 언제나 길 만큼 인기 있는 고기요리 전문점입니다. 특수부위 모듬과 키조개 관자, 묵은지의 조합을 함께 구워먹으면 그 맛이 한층 더 깊어집니다.",
+              "address": "서울 동작구 동작대로11길 16 (사당동, HS하우스)",
+              "lat": 37.4812579802722,
+              "lng": 126.98072812446,
+              "use_time": "15:00 - 24:00\r\n",
+              "kind": "restaurant",
+              "dist_km": 1.22
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "09:00",
+        "end_time": "09:30",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": null,
+        "travel_mode": null
+      },
+      {
+        "name": "달마사",
+        "preview": "관악산 자락에 위치한 고즈넉한 사찰이에요.",
+        "description": "산 중턱에 자리 잡아 서울 시내를 내려다보는 탁 트인 전망과 정갈한 사찰의 분위기를 동시에 느낄 수 있어요. 전통사찰 경내를 천천히 둘러보고 사찰 주변으로 이어지는 산책길을 걸으며 사색의 시간을 가져보세요.",
+        "duration": "30분",
+        "duration_min": 30,
+        "tip": null,
+        "lat": 37.498446,
+        "lng": 126.962205,
+        "reason": "관악산에서 내려와 고즈넉한 사찰의 정취를 느끼며 마음의 안정을 찾기 적합해서 골랐어요.",
+        "activities": [
+          "전통사찰 경내 둘러보기",
+          "사찰 주변 산책길 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [],
+          "attractions": []
+        },
+        "start_time": "09:53",
+        "end_time": "10:23",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 23,
+        "travel_mode": "transit"
+      },
+      {
+        "name": "관악산",
+        "preview": "울창한 숲과 바위가 어우러진 서울의 대표적인 산이에요.",
+        "description": "다양한 탐방로가 정비되어 있어 본인의 속도에 맞춰 산행을 즐기기에 좋은 규모의 산이에요. 탐방로를 따라 숲길을 걸으며 수려한 산세를 조망하고 자연 속에서 온전한 휴식을 취해보세요.",
+        "duration": "1시간 1분",
+        "duration_min": 61,
+        "tip": null,
+        "lat": 37.453668,
+        "lng": 126.949485,
+        "reason": "도심 속에서 자연을 온전히 느끼며 사색에 잠기기 좋은 환경이라 코스의 첫 시작으로 골랐어요.",
+        "activities": [
+          "수려한 산세 조망하기",
+          "탐방로 따라 숲길 걷기"
+        ],
+        "congestion": null,
+        "nearby": {
+          "restaurants": [
+            {
+              "title": "두레미담(서울대점)",
+              "summary": "양껏 먹을 수 있는 자율 배식의 매력",
+              "address": "서울특별시 관악구 관악로 1  (신림동)",
+              "lat": 37.456426009687135,
+              "lng": 126.94866512663356,
+              "use_time": "11:00 ~ 14:00 / 17:00 ~ 19:00",
+              "kind": "restaurant",
+              "dist_km": 0.32
+            }
+          ],
+          "attractions": []
+        },
+        "start_time": "10:59",
+        "end_time": "12:00",
+        "slot_type": "place",
+        "day": null,
+        "meal_options": [],
+        "travel_min": 36,
+        "travel_mode": "transit"
+      }
+    ],
+    "tags": [
+      "혼자여행",
+      "관악산",
+      "사색",
+      "자연힐링"
+    ],
+    "scheduled": true,
+    "days": 1,
+    "day_areas": {},
+    "day_descriptions": {}
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "tool": "plan",
+      "label": "시간 골격 구성 (식사 시각·장소 구간)",
+      "ok": true,
+      "detail": "구간 1개 · 식사 없음"
+    },
+    {
+      "id": "s2",
+      "tool": "retrieve",
+      "label": "후보 장소 검색 (RAG)",
+      "ok": true,
+      "detail": "후보 9곳"
+    },
+    {
+      "id": "s3",
+      "tool": "select_places",
+      "label": "AI 장소 선정",
+      "ok": true,
+      "detail": "사당솔밭도서관, 달마사, 관악산",
+      "picks": [
+        {
+          "name": "사당솔밭도서관",
+          "reason": "앞선 야외 활동 후 실내에서 조용히 독서하며 혼자만의 힐링 시간을 마무리하기 좋아서 골랐어요.",
+          "activities": [
+            "도서관 내에서 책 읽기",
+            "다양한 문화 자료 관람하기"
+          ]
+        },
+        {
+          "name": "달마사",
+          "reason": "관악산에서 내려와 고즈넉한 사찰의 정취를 느끼며 마음의 안정을 찾기 적합해서 골랐어요.",
+          "activities": [
+            "전통사찰 경내 둘러보기",
+            "사찰 주변 산책길 걷기"
+          ]
+        },
+        {
+          "name": "관악산",
+          "reason": "도심 속에서 자연을 온전히 느끼며 사색에 잠기기 좋은 환경이라 코스의 첫 시작으로 골랐어요.",
+          "activities": [
+            "수려한 산세 조망하기",
+            "탐방로 따라 숲길 걷기"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tool": "fit_schedule",
+      "label": "시간표 배치 (구간 예산 배분)",
+      "ok": true,
+      "detail": "09:00~12:00 · 장소 3곳 · 식사 0회"
+    },
+    {
+      "id": "s5",
+      "tool": "meals",
+      "label": "식사 장소 추천",
+      "ok": false,
+      "detail": "식사 미선택 — 건너뜀"
+    },
+    {
+      "id": "s6",
+      "tool": "enrich",
+      "label": "방문 시각 예상 혼잡도 반영",
+      "ok": true,
+      "detail": "예상 혼잡도 측정 지점 없음"
+    },
+    {
+      "id": "s7",
+      "tool": "nearby",
+      "label": "주변 식당·문화행사 조회",
+      "ok": true,
+      "detail": "주변 정보 3건"
+    },
+    {
+      "id": "s8",
+      "tool": "compose",
+      "label": "코스 서사 작성",
+      "ok": true,
+      "detail": "관악산 자락에서 누리는 고요한 사색"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "샤로수길",
+      "category": "쇼핑",
+      "area": "관악·사당",
+      "lat": 37.4806,
+      "lng": 126.953,
+      "day_hint": null
+    },
+    {
+      "name": "관악산",
+      "category": "자연",
+      "area": "관악·사당",
+      "lat": 37.453668,
+      "lng": 126.949485,
+      "day_hint": null
+    },
+    {
+      "name": "다울작은도서관",
+      "category": "문화",
+      "area": "관악·사당",
+      "lat": 37.4789,
+      "lng": 126.9732,
+      "day_hint": null
+    },
+    {
+      "name": "달마사",
+      "category": "역사",
+      "area": "관악·사당",
+      "lat": 37.498446,
+      "lng": 126.962205,
+      "day_hint": null
+    },
+    {
+      "name": "롤러팡팡 스케이트장",
+      "category": "체험",
+      "area": "관악·사당",
+      "lat": 37.4843,
+      "lng": 126.9315,
+      "day_hint": null
+    },
+    {
+      "name": "사당",
+      "category": "쇼핑",
+      "area": "관악·사당",
+      "lat": 37.4767,
+      "lng": 126.9815,
+      "day_hint": null
+    },
+    {
+      "name": "용양봉저정 공원",
+      "category": "자연",
+      "area": "관악·사당",
+      "lat": 37.5118,
+      "lng": 126.958588,
+      "day_hint": null
+    },
+    {
+      "name": "사당솔밭도서관",
+      "category": "문화",
+      "area": "관악·사당",
+      "lat": 37.4841,
+      "lng": 126.9674,
+      "day_hint": null
+    },
+    {
+      "name": "국립서울현충원",
+      "category": "역사",
+      "area": "관악·사당",
+      "lat": 37.50338,
+      "lng": 126.972835,
+      "day_hint": null
+    }
+  ],
+  "day_areas": {},
+  "skeleton_segments": 1,
+  "meta": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "embedding_provider": "ollama",
+    "embedding_model": "qwen3-embedding:8b",
+    "chroma_collection": "seoulro_v2",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "commit": "2fc2bbd"
+  }
+}
