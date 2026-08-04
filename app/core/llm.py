@@ -1,12 +1,8 @@
-"""LLM 프로바이더 레이어. 모든 체인은 `PROMPT | get_llm()` 형태로 쓴다.
+"""챗 LLM 을 만들어 주는 곳. 모든 체인은 `PROMPT | get_llm()` 형태로 쓴다.
 
-프로바이더는 `LLM_PROVIDER`(upstage|gemini)로 고른다 — 기본 솔라, 값만 바꾸면 제미나이.
-솔라가 Private Beta 라 기간·크레딧이 끊길 수 있어 전환은 env 한 줄로 끝나야 한다.
-
-이력: 이전에는 제미나이 우선 + 쿼터 소진 시 클로드 폴백(FallbackLLM) 구조였다. 솔라로
-전환하며 폴백을 비활성화했고, 멀티 프로바이더 폴백을 다시 붙일 계획이라 FallbackLLM ·
-is_quota_error 는 **의도적으로 남겨둔다**(현재 미사용 — 어느 체인도 감싸지 않는다).
-클로드를 secondary 로 되살리려면 `langchain-anthropic` 을 의존성에 다시 넣어야 한다.
+어떤 모델을 쓸지는 `LLM_PROVIDER`(upstage|gemini|claude) 하나로 정해진다. 프로바이더가
+막히면 코드가 아니라 .env 한 줄만 고쳐서 갈아탈 수 있게 하려는 것이다.
+docs/llm-provider-eval.md 의 3-arm 평가도 이 값 하나만 바꿔가며 돌린다.
 """
 from __future__ import annotations
 
@@ -22,7 +18,7 @@ from app.config import get_settings
 
 logger = logging.getLogger("lewisai.llm")
 
-# 쿼터/한도 계열로 판정할 메시지 마커 (프로바이더별 표현이 제각각이라 문자열 검사 병행)
+# 프로바이더마다 쿼터 초과 에러의 표현이 달라서, 클래스 이름과 메시지 문자열을 같이 본다.
 _QUOTA_MARKERS = (
     "429",
     "quota",
@@ -38,7 +34,7 @@ _QUOTA_CLASS_NAMES = ("ResourceExhausted", "TooManyRequests", "DeadlineExceeded"
 
 
 def is_quota_error(err: BaseException) -> bool:
-    """제미나이 쿼터 소진/429/타임아웃 계열 에러인지 판정 (폴백 트리거 조건)."""
+    """쿼터 소진·429·타임아웃 계열 에러인지 본다. 원인 예외까지 거슬러 올라가며 확인한다."""
     seen: set[int] = set()
     cur: BaseException | None = err
     while cur is not None and id(cur) not in seen:
@@ -53,15 +49,12 @@ def is_quota_error(err: BaseException) -> bool:
 
 
 class FallbackLLM(Runnable):
-    """primary(제미나이) 실패 시 secondary(클로드)로 폴백하는 Runnable.
+    """모델 두 개를 묶어, 앞쪽이 쿼터로 막히면 뒤쪽으로 넘기는 래퍼.
 
-    NOTE: 솔라 단일 프로바이더로 전환하면서 현재는 사용하지 않는다.
-    추후 솔라+백업 프로바이더 구성이 필요해지면 그대로 재사용 가능.
+    지금은 프로바이더를 하나만 쓰기 때문에 아무 데서도 감싸지 않는다.
+    백업 프로바이더가 다시 필요해지면 그대로 쓰려고 남겨둔 코드다.
 
-    - 폴백 트리거: is_quota_error() == True 인 예외만. 그 외 예외는 그대로 전파.
-    - 어떤 프로바이더가 응답했는지 logger 로 기록 (비용/품질 모니터링).
-    - bind_tools() 는 양쪽 모델에 각각 bind 한 새 FallbackLLM 을 반환
-      (Gemini function-calling ↔ Claude tool_use 스펙 변환은 LangChain이 처리).
+    쿼터 계열 에러(is_quota_error)일 때만 넘긴다. 다른 에러는 그대로 올려보낸다.
     """
 
     def __init__(self, primary: Runnable, secondary: Runnable | None = None):
@@ -107,7 +100,7 @@ class FallbackLLM(Runnable):
 
 @lru_cache
 def _solar() -> BaseChatModel:
-    """업스테이지 솔라 챗 모델. OpenAI 호환 엔드포인트를 ChatUpstage 가 감싼다."""
+    """업스테이지 솔라 모델. LLM_PROVIDER 가 upstage(기본)일 때 쓰인다."""
     from langchain_upstage import ChatUpstage
 
     s = get_settings()
@@ -118,15 +111,15 @@ def _solar() -> BaseChatModel:
         api_key=s.upstage_api_key,
         base_url=s.upstage_base_url,
         temperature=s.llm_temperature,
-        max_tokens=s.llm_max_tokens,  # 명시하지 않으면 프로바이더 기본값이 짧아 3일치 JSON이 중간에 잘린다
+        max_tokens=s.llm_max_tokens,  # 기본값이 짧아서, 안 주면 3일치 JSON이 중간에 잘린다
         reasoning_effort=s.llm_reasoning_effort,
-        streaming=True,  # ainvoke도 내부 스트리밍 경로 → LangGraph messages 모드가 토큰 조각을 잡음
+        streaming=True,  # 켜둬야 LangGraph 가 토큰을 조각으로 흘려보낼 수 있다
     )
 
 
 @lru_cache
 def _gemini() -> BaseChatModel:
-    """제미나이 챗 모델. LLM_PROVIDER=gemini 일 때 get_llm() 이 이 경로를 쓴다."""
+    """제미나이 모델. LLM_PROVIDER=gemini 일 때 쓰인다."""
     from langchain_google_genai import ChatGoogleGenerativeAI
 
     s = get_settings()
@@ -142,38 +135,44 @@ def _gemini() -> BaseChatModel:
 
 
 @lru_cache
-def get_llm() -> BaseChatModel:
-    """설정된 프로바이더의 챗 모델. LLM_PROVIDER=gemini 면 제미나이 경로로 넘어간다.
+def _claude() -> BaseChatModel:
+    """클로드 모델. LLM_PROVIDER=claude 일 때 쓰인다.
 
-    프로바이더 전환이 env 한 줄로 끝나야 한다 — 솔라는 Private Beta 라 기간·크레딧이
-    끊길 수 있고, 그때 코드를 고치는 건 위험하다.
+    기본값 claude-haiku-4-5 는 솔라·제미나이와 같은 빠른/저가 티어라 평가 비교가 공정하다.
+    이 세대는 temperature 를 그대로 받는다 — 상위 세대(Opus 4.7 계열)로 바꾸면
+    temperature 가 거부되므로(400) 그때는 여기서 빼야 한다.
     """
-    if get_settings().llm_provider.lower() == "gemini":
+    from langchain_anthropic import ChatAnthropic
+
+    s = get_settings()
+    if not s.anthropic_api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY 가 설정되지 않았습니다 (.env 확인).")
+    return ChatAnthropic(
+        model=s.claude_model,
+        api_key=s.anthropic_api_key,
+        temperature=s.llm_temperature,
+        max_tokens=s.llm_max_tokens,
+        streaming=True,
+    )
+
+
+@lru_cache
+def get_llm() -> BaseChatModel:
+    """지금 설정된 챗 모델을 돌려준다. 체인은 전부 이 함수만 부른다."""
+    provider = get_settings().llm_provider.lower()
+    if provider == "gemini":
         return _gemini()
+    if provider == "claude":
+        return _claude()
     return _solar()
 
 
-# --- 이전 프로바이더(클로드 폴백) — 솔라 전환으로 비활성 -----------------------
-# @lru_cache
-# def _claude() -> BaseChatModel:
-#     from langchain_anthropic import ChatAnthropic
-#
-#     s = get_settings()
-#     return ChatAnthropic(
-#         model=s.claude_model,
-#         api_key=s.anthropic_api_key,
-#         temperature=s.llm_temperature,
-#         max_tokens=s.llm_max_tokens,
-#         streaming=True,
-#     )
-
-
 def extract_text(content: str | list) -> str:
-    """AIMessage.content를 텍스트로 정규화.
+    """모델 응답(AIMessage.content)에서 사람이 읽을 본문만 뽑아 문자열로 만든다.
 
-    솔라(OpenAI 호환)는 content를 문자열로 반환하므로 대개 그대로 통과한다.
-    제미나이 3.x / 클로드는 [{"type": "text", "text": "..."}] 블록 리스트를 쓰므로
-    (tool_use/thinking 블록은 건너뜀) 프로바이더를 되돌려도 그대로 동작한다.
+    프로바이더마다 응답 모양이 다르다. 솔라는 문자열 하나로 주지만,
+    제미나이는 [{"type": "text", ...}, ...] 처럼 블록 목록으로 준다.
+    본문이 아닌 블록(생각 과정 등)은 건너뛰므로 어느 쪽이든 같은 결과가 나온다.
     """
     if isinstance(content, str):
         return content

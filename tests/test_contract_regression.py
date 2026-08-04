@@ -28,6 +28,13 @@ async def _aboom(*args, **kwargs):
     raise ValueError("stub llm: no network in tests")
 
 
+def _clear_llm_caches() -> None:
+    """프로바이더 캐시 전부 비우기 — LLM_PROVIDER 가 바뀌어도 테스트가 안 깨지도록."""
+    llm_mod.get_llm.cache_clear()
+    llm_mod._solar.cache_clear()
+    llm_mod._gemini.cache_clear()
+
+
 def _doc(name: str, lat: float, lng: float, area: str = "") -> Document:
     return Document(
         page_content=f"[{name}] 서울의 명소 {name} 소개 텍스트",
@@ -50,13 +57,14 @@ _DOCS = [
 @pytest.fixture()
 def client(monkeypatch):
     # LLM 강제 실패 → mock 폴백 경로.
-    # ChatUpstage 는 pydantic 모델이라 인스턴스 속성을 못 바꾼다 → 클래스 메서드를 패치
-    # (monkeypatch 가 테스트 종료 시 원복).
-    # 테스트용 더미 키를 넣어 실제 .env 키 유무와 무관하게 생성되도록 한다.
+    # 챗 모델(ChatUpstage/ChatGoogleGenerativeAI)은 pydantic 모델이라 인스턴스 속성을 못
+    # 바꾼다 → 클래스 메서드를 패치한다 (monkeypatch 가 테스트 종료 시 원복).
+    # 양쪽 프로바이더 더미 키를 다 넣어, LLM_PROVIDER 가 무엇이든 실제 키 유무와 무관하게
+    # 모델이 생성되도록 한다.
     monkeypatch.setenv("UPSTAGE_API_KEY", "test-key")
+    monkeypatch.setenv("GOOGLE_API_KEY", "test-key")
     config.get_settings.cache_clear()
-    llm_mod.get_llm.cache_clear()
-    llm_mod._solar.cache_clear()
+    _clear_llm_caches()
     llm = get_llm()
     monkeypatch.setattr(type(llm), "invoke", _boom)
     monkeypatch.setattr(type(llm), "ainvoke", _aboom)
@@ -71,8 +79,7 @@ def client(monkeypatch):
     config.get_settings.cache_clear()
     yield TestClient(app)
     config.get_settings.cache_clear()
-    llm_mod.get_llm.cache_clear()
-    llm_mod._solar.cache_clear()
+    _clear_llm_caches()
 
 
 def test_health(client):
