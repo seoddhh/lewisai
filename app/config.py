@@ -12,7 +12,11 @@ class Settings(BaseSettings):
     # 챗에 쓸 모델 선택 — upstage | gemini | claude. 한쪽이 막히면 이 값만 바꾸면 된다.
     # 임베딩과는 무관하다(아래 embedding_provider 가 따로 있다).
     # docs/llm-provider-eval.md 의 3-arm 비교가 이 값 하나로 갈린다.
-    llm_provider: str = "upstage"
+    #
+    # solar-open2 프라이빗 베타가 끝나 챗은 제미나이로 간다(2026-08-05). upstage 분기는
+    # 그대로 남겨 뒀으니 키가 다시 열리면 이 값만 되돌리면 된다.
+    # (임베딩 쪽 솔라는 계속 쓴다 — 막힌 건 챗 모델뿐이다.)
+    llm_provider: str = "gemini"
 
     # 업스테이지 솔라
     upstage_api_key: str = ""
@@ -36,24 +40,37 @@ class Settings(BaseSettings):
     anthropic_api_key: str = ""
     claude_model: str = "claude-haiku-4-5"
 
-    # 임베딩에 쓸 모델 선택 — gemini | ollama. 위 llm_provider 와는 별개다.
+    # 임베딩에 쓸 모델 선택 — upstage | ollama. 위 llm_provider 와는 별개다.
     #
     # 이 값을 바꾸면 CHROMA_COLLECTION 도 새 이름으로 바꾸고 전부 다시 인제스트해야 한다.
-    # 모델이 다르면 벡터 차원부터 다르고(제미나이 3072 ↔ qwen8b 4096), 같은 컬렉션에
-    # 섞으면 Chroma 가 에러를 낸다.
-    embedding_provider: str = "gemini"
+    # 특히 솔라와 qwen8b 는 둘 다 4096 차원이라 컬렉션을 섞어도 Chroma 가 에러를 안 낸다 —
+    # 평소 같으면 차원 불일치로 잡혔을 실수가 조용히 엉뚱한 검색 결과로만 나타난다.
+    embedding_provider: str = "upstage"
 
-    # 제미나이 임베딩 — 무료 쿼터가 빡빡해서(25 RPM / 하루 500회) 전체 인제스트에 24분 넘게 걸린다
+    # 솔라 임베딩 — 배포용 기본값. 2,000 RPM / 700,000 TPM 이고 하루 한도가 없다
+    # (제미나이의 "하루 500회" 같은 캡이 없어서 인제스트를 한 번에 끝낼 수 있다).
+    #
+    # 검색어와 문서를 서로 다른 모델로 부르는 비대칭 임베딩이라 실제 모델 이름은
+    # `embedding-2-query` / `embedding-2-passage` 다. UpstageEmbeddings 가 용도에 맞는
+    # 접미사를 알아서 붙이므로 여기엔 접미사 없는 이름만 둔다.
+    #
+    # 구버전 `embedding`(=solar-embedding-1-large)은 2026-12-31 서비스 종료라 쓰지 않는다.
+    # 2 세대는 1024 차원이라(1 세대 4096) 인덱스도 1/4 로 줄어 이미지가 가벼워진다.
+    upstage_embedding_model: str = "embedding-2"
+
+    # 제미나이 임베딩 — 무료 쿼터가 빡빡해서(25 RPM / 하루 500회) 전체 인제스트에 24분 넘게 걸린다.
+    # 그 한도 때문에 배포에서 빠졌다(app/core/embeddings.py 의 주석 처리된 분기).
     embedding_model: str = "models/gemini-embedding-001"
 
     # ollama 임베딩 — 로컬이라 쿼터가 없고 더 빠르다(전체 인제스트 약 9분).
-    # 미리 `ollama pull` 로 모델을 받아둬야 한다.
+    # 미리 `ollama pull` 로 모델을 받아둬야 한다. 컨테이너 안엔 ollama 가 없으니 로컬 전용이다.
     ollama_embedding_model: str = "qwen3-embedding:8b"
     ollama_base_url: str = "http://localhost:11434"
 
     # 벡터 DB
+    # 컬렉션 이름은 임베딩 모델과 1:1 이다. seoulro_v3 = embedding-2(솔라 2세대, 1024차원).
     chroma_dir: str = "./data/chroma"
-    chroma_collection: str = "seoullo"
+    chroma_collection: str = "seoulro_v3"
 
     # BFF 만 이 서버를 부르도록 막는 공유 비밀값. 비어 있으면 검사를 건너뛴다(로컬 개발용).
     # 프로덕션에서만 채우고, .env 밖으로 나가면 안 된다.
@@ -84,9 +101,17 @@ class Settings(BaseSettings):
         return self.embedding_provider.lower() == "ollama"
 
     @property
+    def use_upstage_embeddings(self) -> bool:
+        return self.embedding_provider.lower() == "upstage"
+
+    @property
     def active_embedding_model(self) -> str:
         """지금 실제로 쓰는 임베딩 모델 이름. 헬스체크와 로그가 이 값만 보면 되게 한다."""
-        return self.ollama_embedding_model if self.use_ollama_embeddings else self.embedding_model
+        if self.use_upstage_embeddings:
+            return self.upstage_embedding_model
+        if self.use_ollama_embeddings:
+            return self.ollama_embedding_model
+        return self.embedding_model
 
 
 @lru_cache

@@ -192,9 +192,11 @@ def _default_sleep() -> float:
     """배치 사이에 얼마나 쉴지 정한다.
 
     제미나이는 무료 쿼터가 빡빡해서 안 쉬면 중간에 막힌다.
-    ollama 는 로컬이라 쉴 필요가 없다. 여기서 괜히 쉬면 대기 시간이 작업 시간보다 길어진다.
+    ollama(로컬)와 솔라(2,000 RPM · 하루 한도 없음)는 쉴 필요가 없다.
+    여기서 괜히 쉬면 대기 시간이 작업 시간보다 길어진다.
     """
-    return 0.0 if get_settings().use_ollama_embeddings else 60.0
+    s = get_settings()
+    return 0.0 if (s.use_ollama_embeddings or s.use_upstage_embeddings) else 60.0
 
 
 def run(*, reset: bool = False, size: int = 70, sleep: float | None = None,
