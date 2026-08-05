@@ -1,0 +1,26 @@
+# 이미지에 들어갈 것은 Dockerfile 이 COPY 로 하나씩 지정한다.
+# 여기서는 실수로라도 들어가면 안 되는 것(키·백업)을 확실히 막는다.
+
+# 키가 든 파일 — 절대 이미지에 굽지 않는다. 배포 env 로만 넣는다
+.env
+.env.*
+!.env.example
+
+# 개발 부산물
+.venv/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.git/
+.gitignore
+.vscode/
+
+# 서버가 안 쓰는 것들
+tests/
+scripts/
+eval/
+docs/
+data/mock/
+data/chroma_backup_*/
+*.md
