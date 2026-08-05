@@ -1,7 +1,7 @@
 # 서울로 AI (lewisai)
 
 > 선택 몇 번으로 **시간표까지 완성된 코스**를 만들어 주는 LangGraph RAG 에이전트 서버.
-> 실제 서울속 장소 1,651곳을 임베딩해 두고, 검색 → 선정 → 시간표 → 실시간 정보 → 서사를 9개 노드로 나눠 처리한다.
+> 실제 서울속 장소 1,648곳을 임베딩해 두고, 검색 → 선정 → 시간표 → 실시간 정보 → 서사를 9개 노드로 나눠 처리한다.
 
 **서비스 주소**: https://seoulro.site/ 
 
@@ -44,12 +44,38 @@ lewisai는 나만의 코스 기능을 에이전트로 고도화 하기 위한 �
 | 기술 | 왜 선택했나 |
 |---|---|
 | **LangGraph** (StateGraph) | 단계별 중간 산출물을 `AgentState` 한 곳에 쌓아야 했다. 체인으로 엮으면 "이 코스가 왜 이렇게 나왔는지" 트레이스를 못 만든다. 노드 단위라 `steps[]` 트레이스와 SSE 진행률이 공짜로 나온다 |
-| **Chroma** (로컬 persistent) | 장소 1,651개는 벡터 DB 를 따로 띄울 규모가 아니다. sqlite 파일이라 배포 이미지에 구워 읽기 전용으로 올릴 수 있다 |
+| **Chroma** (로컬 persistent) | 장소 1,648개는 벡터 DB 를 따로 띄울 규모가 아니다. sqlite 파일이라 배포 이미지에 구워 읽기 전용으로 올릴 수 있다 |
 | **FastAPI + SSE** | 코스 생성이 20~30초 걸려 진행 상황 표시가 필수였다. 양방향 통신이 필요 없어 WebSocket 대신 **SSE** — BFF 가 그대로 파이프만 하면 되고 재연결도 브라우저가 알아서 한다 |
-| **Upstage `solar-open2`** | 한국어 장소명·지명 처리와 JSON 구조화 출력이 안정적이었다. 추론 모드는 껐다(아래 트러블슈팅 참고) |
-| **임베딩 프로바이더 분리** (`gemini` \| `ollama`) | 제미나이 무료 쿼터로는 1,651청크 재인제스트에 24분+ 이 걸려 데이터 수정 루프를 못 돈다. 로컬 `qwen3-embedding:8b` 로 9분으로 줄였다. 챗 LLM 과 완전히 독립이라 챗은 솔라-open2 API를 사용, 임베딩은 현재는 로컬 테스트 단계라 `qwen3-embedding:8b` 모델을 사용중이만 실제 서빙시에는 메모리에 제약이 있어 바꿀 예정이다. |
+| **챗 LLM `gemini-3.1-flash-lite`** | 한국어 장소명·지명 처리와 JSON 구조화 출력이 안정적이다. 프로바이더 스위치(`upstage` \| `gemini` \| `claude`)를 둬서 코드 수정 없이 `LLM_PROVIDER` 값 하나로 갈아탄다 |
+| **임베딩 Upstage `embedding-2`** (솔라 임베딩 2세대) | 아래 "임베딩을 로컬 GPU 에서 API 로 바꾼 이유" 참고. 챗 LLM 과 완전히 독립된 축이라 챗 모델을 바꿔도 인덱스를 다시 굽지 않는다 |
 | **순수 계산 노드 분리** (`plan`/`fit_schedule`) | 시간 산술과 동선 최적화는 결정적이어야 한다. LLM 에 맡기면 검증이 불가능 하기 때문에 로직으로 처리한다. |
 | **uv** | `pyproject.toml` + `uv.lock` 커밋으로 팀·배포 환경 버전을 고정 |
+
+### 임베딩을 로컬 GPU 에서 API 로 바꾼 이유
+
+개발 중에는 로컬 ollama 의 `qwen3-embedding:8b`(4096차원)로 인덱스를 구웠다. 쿼터가 없어 데이터
+수정 루프를 빠르게 돌 수 있었기 때문이다. 하지만 **로컬 모델은 배포에서 그대로 쓸 수 없다.**
+
+인덱스는 미리 구워 이미지에 넣으면 되지만, **검색어를 벡터로 바꾸는 일은 요청이 들어올 때마다
+서버에서 일어난다.** 즉 서버도 같은 임베딩 모델에 닿을 수 있어야 한다. 8B 모델을 서빙하려면
+**GPU 인스턴스를 상시 띄워야 하는데, 트래픽이 없는 시간에도 비용이 계속 나간다.** 코스 생성은
+요청이 몰리는 서비스가 아니라 이 비용 구조가 전혀 맞지 않았다.
+
+그래서 **모델을 직접 서빙하지 않고 API 를 호출하는 구조로 바꿨다.** scale-to-zero 가 되는
+CPU 컨테이너(Cloud Run)만 있으면 되고, 임베딩 비용은 실제 호출한 만큼만 낸다.
+
+API 중에서 **Upstage `embedding-2`(솔라 임베딩 2세대)** 를 골랐다.
+
+| 항목 | 판단 |
+|---|---|
+| **한국어 검색 품질** | 검색어와 문서를 서로 다른 모델로 임베딩하는 **비대칭 구조**(`embedding-2-query` / `-passage`)다. `"비 오는 날 실내에서 조용히 볼 만한 전시"` 같은 상황 문장이 실제 전시·실내 장소로 걸리는 걸 확인했고, 코스 품질이 qwen3 때와 차이가 없었다 |
+| **쿼터** | 2,000 RPM · 700,000 TPM 에 **하루 한도가 없다.** 1,648청크 전체 재인제스트를 대기 없이 한 번에 끝낸다 |
+| **인덱스 크기** | 1024차원이라 4096차원 대비 **인덱스가 1/4**(`data/chroma` 62M → 20M). 배포 이미지가 그만큼 가벼워진다 |
+
+> **임베딩 모델을 바꾸면 컬렉션 이름도 반드시 바꿔야 한다.** 벡터의 생김새가 달라 거리 비교가
+> 의미를 잃기 때문이다. 현재는 `embedding-2` ↔ `seoulro_v3` 짝이다. 특히 솔라 1세대와
+> qwen3-8b 는 **둘 다 4096차원이라 컬렉션을 섞어도 Chroma 가 에러를 내지 않는다** — 차원
+> 불일치로 잡혔을 실수가 조용히 엉뚱한 검색 결과로만 나타난다.
 
 ## 클라이언트와 AI 서버의 연결 아키텍쳐
 
@@ -69,10 +95,10 @@ flowchart LR
     end
 
     subgraph data["데이터 계층"]
-        CH[("Chroma<br/>places 1,651청크")]
+        CH[("Chroma seoulro_v3<br/>places 1,648청크 · 1024차원")]
         MC[("meal_cache<br/>9권역 1,234곳")]
-        LLM["Upstage solar-open2"]
-        EMB["임베딩<br/>gemini | ollama(qwen3)"]
+        LLM["챗 LLM<br/>gemini-3.1-flash-lite"]
+        EMB["임베딩 API<br/>Upstage embedding-2"]
         SEO["서울시 열린데이터<br/>혼잡도 · 문화행사"]
         VS["Visit Seoul API<br/>식당 라이브 폴백"]
     end
@@ -129,7 +155,7 @@ flowchart TD
 ```
 
 초록 = 순수 계산(LLM 없음) · 파랑 = LLM 호출 · 노랑 = 외부 데이터 · **테두리가 굵은 4개 = 노드 안에서 갈래가 생기는 지점**.
-외부 의존은 `retrieve` → Chroma, `meals`·`nearby` → meal_cache, `enrich`·`nearby` → 서울시 citydata, LLM 3노드 → solar-open2 다.
+외부 의존은 `retrieve` → Chroma(+ 쿼리 임베딩 API), `meals`·`nearby` → meal_cache, `enrich`·`nearby` → 서울시 citydata, LLM 3노드 → 챗 LLM 이다.
 
 9개 노드 중 LLM이 판단해야 할 TASK는 3개이고, 나머지는 로직으로 계산한다.
 
@@ -221,7 +247,7 @@ app/
   api/routes/          health · course · chat(+SSE)
   core/                LLM·임베딩·벡터스토어 팩토리 + 순수 계산 로직
     llm.py             프로바이더 스위치 (upstage | gemini | claude)
-    embeddings.py      gemini | ollama(Qwen3 쿼리 프리픽스 래퍼)
+    embeddings.py      upstage(embedding-2 비대칭) | ollama(Qwen3 쿼리 프리픽스 래퍼)
     vectorstore.py     Chroma persistent 싱글턴
     json_parse.py      LLM JSON 파싱 + 잘린 응답 부분 복구(salvage)
     geo.py             haversine · 위치 칩 9종 · 자치구→권역 매핑
@@ -240,9 +266,9 @@ app/
   static/              index.html (검증용 챗봇 UI)
 
 data/
-  embed/places.json    임베딩 세트 1,651곳 — 인제스트 소스이자 소스오브트루스
+  embed/places.json    임베딩 세트 1,648곳 — 인제스트 소스이자 소스오브트루스
   meal_cache/          권역별 식당 캐시 9파일 1,234곳 (런타임이 직접 읽음)
-  chroma/              Chroma 영속 sqlite (gitignore)
+  chroma/              Chroma 영속 sqlite — 컬렉션 seoulro_v3 (gitignore)
   mock/                키 없을 때 쓰는 Mock 응답
 
 scripts/               인제스트·캐시 빌드 (run_ingest · build_meal_cache · start_ollama.sh)
@@ -261,9 +287,17 @@ docs/                  배포 아키텍처 · LLM 프로바이더 평가 · 로�
 uv sync                             # pyproject.toml + uv.lock 기준 .venv 동기화
 cp .env.example .env                # UPSTAGE_API_KEY / GOOGLE_API_KEY / SEOUL_API_KEY / VISITSEOUL_API_KEY
 
-bash scripts/start_ollama.sh                   # EMBEDDING_PROVIDER=ollama 일 때만
-uv run python -m scripts.run_ingest            # places.json → 임베딩 → Chroma
+# data/chroma 는 gitignore 라 clone 직후에는 인덱스가 없다. 한 번은 구워야 한다
+uv run python -m scripts.run_ingest            # places.json → 임베딩 → Chroma (약 1분)
 uv run uvicorn app.main:app --reload --port 8800
+```
+
+`GET /health` 로 지금 어떤 모델·컬렉션에 붙어 있는지 확인할 수 있다 — 임베딩 모델과 컬렉션
+짝이 어긋나면 에러 없이 검색 결과만 이상해지므로, 배포 후 이 한 줄을 먼저 본다.
+
+```jsonc
+{ "llm_provider": "gemini", "embedding_provider": "upstage",
+  "embedding_model": "embedding-2", "chroma_collection": "seoulro_v3" }
 ```
 
 ```bash
@@ -273,6 +307,19 @@ uv run python -m scripts.profile_diversity --stage retrieve    # 다양성·개�
 uv run python -m scripts.normalize_places --check              # 장소 데이터 스키마 검증
 ```
 
+### 컨테이너로 띄우기
+
+```bash
+docker build -t lewisai:seoulro_v3 .
+docker run --rm -p 8800:8800 --env-file .env lewisai:seoulro_v3
+```
+
+- **인덱스를 이미지에 굽는다.** 컨테이너 안에서는 읽기만 하고 인제스트하지 않는다 — Cloud Run
+  파일시스템은 인스턴스가 죽으면 사라지고, 인스턴스가 늘어나면 각자 다른 인덱스를 갖게 된다.
+  장소를 고쳤다면 **로컬에서 다시 인제스트한 뒤 이미지를 새로 굽는다.**
+- 컨테이너 안엔 ollama 가 없으므로 `EMBEDDING_PROVIDER=upstage` 가 `ENV` 로 못 박혀 있다.
+- 포트는 `$PORT` 를 따른다(Cloud Run 규약). 키는 이미지에 넣지 않고 배포 env 로만 주입한다 —
+  `.env` 는 `.dockerignore` 로 차단.
 
 ---
 
