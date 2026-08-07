@@ -1,7 +1,7 @@
 # 서울로 AI (lewisai)
 
 > 선택 몇 번으로 **시간표까지 완성된 코스**를 만들어 주는 LangGraph RAG 에이전트 서버.
-> 실제 서울속 장소 1,648곳을 임베딩해 두고, 검색 → 선정 → 시간표 → 실시간 정보 → 서사를 9개 노드로 나눠 처리한다.
+> 실제 서울속 장소 1,648곳을 임베딩해 두고, 검색 → 선정 → 시간표 → 실시간 정보 → 추천이유등 9개 노드로 나눠 처리한다.
 
 **서비스 주소**: https://seoulro.site/ 
 
@@ -29,10 +29,10 @@ lewisai는 나만의 코스 기능을 에이전트로 고도화 하기 위한 �
 ## 주요 기능
 
 - **사용자 선택에 따라 완성되는 코스** — 동반·목적·위치·시간·식사수·인원·일수·혼잡도 여부를 고르면 장소 선정부터 방문 시각까지 서버가 확정한다. 자연어 한 줄(`"저녁에 연인이랑 홍대에서 야경"`)로도 같은 결과를 낸다.
-- **"왜 이 장소인가"를 함께 추천한다.** — 각 스톱에 선정 이유(`reason`)와 그곳에서 할 일(`activities`)이 붙는다. 실제 시설·볼거리(`highlights`)에 근거를 걸어 "산책하기 좋아요" 같은 일반론을 막았다.
+- **"왜 이 장소인가"를 함께 추천한다.** — 각 스톱에 선정 이유(`reason`)와 그곳에서 할 일(`activities`)이 붙는다. 실제 시설·볼거리(`highlights`)에 따라 공원이라 산책하기 좋아요 같은 일반적인 대답을 막았다.
 - **실행 가능한 시간표** — 방문 순서를 순열 전수 탐색으로 최적화하고, 남은 시간 예산을 체류시간 비율대로 나눠 방문 시각·이동수단까지 확정한다. 시간 산술은 LLM 에게 맡기지 않는다.
-- **예상 혼잡도 반영** — 방문 시각 기준 서울시 **예상 혼잡도**(현재값이 아니라 예보), 진행 중인 문화행사, 주변 식당 정보를 붙인다.
-- **같은 조건이면 같은 코스, "다시 만들기"는 다른 코스** — 시드를 칩+자유입력 해시로 잡아 재현 가능하게 두고, `seed` 를 실어 보내면 달라진다. A/B 와 디버깅이 가능해진다.
+- **예상 혼잡도 반영** — 방문 시각 기준 서울시 **예상 혼잡도**(미래에 방문할 시간대를 기반으로 하기 때문), 진행 중인 문화행사, 주변 식당 정보를 붙인다.
+- **같은 조건이면 같은 코스, "다시 만들기"는 다른 코스** — 시드를 칩+자유입력 해시로 잡아 재현 가능하게 두고, `seed` 를 실어 보내면 달라지도록 한다.(다양한 코스 생성을 위함)
 - **생성 과정이 보이는 스트리밍** — SSE 로 노드별 진행 상황(`progress`)을 흘려 "지금 뭘 하고 있는지"를 UI 가 그대로 보여준다.
 
 ---
@@ -43,32 +43,28 @@ lewisai는 나만의 코스 기능을 에이전트로 고도화 하기 위한 �
 
 | 기술 | 왜 선택했나 |
 |---|---|
-| **LangGraph** (StateGraph) | 단계별 중간 산출물을 `AgentState` 한 곳에 쌓아야 했다. 체인으로 엮으면 "이 코스가 왜 이렇게 나왔는지" 트레이스를 못 만든다. 노드 단위라 `steps[]` 트레이스와 SSE 진행률이 공짜로 나온다 |
-| **Chroma** (로컬 persistent) | 장소 1,648개는 벡터 DB 를 따로 띄울 규모가 아니다. sqlite 파일이라 배포 이미지에 구워 읽기 전용으로 올릴 수 있다 |
-| **FastAPI + SSE** | 코스 생성이 20~30초 걸려 진행 상황 표시가 필수였다. 양방향 통신이 필요 없어 WebSocket 대신 **SSE** — BFF 가 그대로 파이프만 하면 되고 재연결도 브라우저가 알아서 한다 |
-| **챗 LLM `gemini-3.1-flash-lite`** | 한국어 장소명·지명 처리와 JSON 구조화 출력이 안정적이다. 프로바이더 스위치(`upstage` \| `gemini` \| `claude`)를 둬서 코드 수정 없이 `LLM_PROVIDER` 값 하나로 갈아탄다 |
-| **임베딩 Upstage `embedding-2`** (솔라 임베딩 2세대) | 아래 "임베딩을 로컬 GPU 에서 API 로 바꾼 이유" 참고. 챗 LLM 과 완전히 독립된 축이라 챗 모델을 바꿔도 인덱스를 다시 굽지 않는다 |
-| **순수 계산 노드 분리** (`plan`/`fit_schedule`) | 시간 산술과 동선 최적화는 결정적이어야 한다. LLM 에 맡기면 검증이 불가능 하기 때문에 로직으로 처리한다. |
-| **uv** | `pyproject.toml` + `uv.lock` 커밋으로 팀·배포 환경 버전을 고정 |
+| **LangGraph** (StateGraph) | 나만의 코스 기능은 사용자 선택기반으로 동작하기 때문에 확실한 워크플로우가 있고 분기에 맞게 처리해야해서 LangGraph를 선택했다. 코스 생성은 무엇을 할지가 요청 시점에 이미 정해져 있어서 모델이 다음 단계를 고를 필요가 없다. 여기에 Toolcalling 루프를 씌우면 레이턴시만 길어지게 된다 |
+| **Chroma** (로컬 persistent) | 장소 1,648개는 벡터 DB를 따로 띄울 규모가 아니다(데이터 적음). sqlite 파일이라 배포 이미지에 같이 구워서 읽기 전용으로 올릴 수 있다 |
+| **FastAPI + SSE** | 코스 하나 만드는 데 5~6초 정도 걸려서 진행 상황 표시가 꼭 필요했다. 서버가 보내주기만 하면 되고 양방향이 필요 없어서 WebSocket 대신 SSE를 썼다. BFF는 그대로 흘려보내기만 하면 되고 재연결도 브라우저가 알아서 한다 |
+| **챗 LLM `gemini-3.1-flash-lite`** | 한국어 장소명·지명을 잘 다루고 JSON 형식으로 안정적으로 뱉는다. 다만 호출제한이 있어 프로바이더 스위치(`upstage` \| `gemini` \| `claude`)를 둬서 `LLM_PROVIDER` 값만 바꾸면 코드 수정 없이 fallback 처리가 가능하도록 했다 |
+| **임베딩 Upstage `embedding-2`** | 아래 "임베딩을 로컬 GPU에서 API로 바꾼 이유" 참고. 챗 LLM과 완전히 따로 놀아서 챗 모델을 바꿔도 인덱스를 다시 구울 필요가 없다 |
+| **계산 노드 분리** (`plan`/`fit_schedule`) | 시간 계산과 동선 최적화는 항상 같은 답이 나와야 한다. LLM에 맡기면 검증할 방법이 없어서 로직으로 처리한다 |
+| **uv** | `pyproject.toml` + `uv.lock` 을 커밋해서 팀·배포 환경의 버전을 고정하였다. |
 
-### 임베딩을 로컬 GPU 에서 API 로 바꾼 이유
+### 임베딩을 로컬 GPU에서 API로 바꾼 이유
 
-개발 중에는 로컬 ollama 의 `qwen3-embedding:8b`(4096차원)로 인덱스를 구웠다. 쿼터제한이 없어 데이터
-테스트를 빠르게 돌수 있었다. 하지만 이 로컬 모델은 배포 단계에서 그대로 쓸 수 없는데
+개발 단계에서는 로컬 Ollama의 qwen3-embedding:8b(4096차원)로 인덱스를 구축했다. 로컬 환경이라 쿼터 제한 없이 데이터 테스트를 빠르게 반복할 수 있었다.
 
-인덱스는 미리 올려 이미지에 넣으면 되지만, 자연어 검색을 벡터로 바꾸는 일은 요청이 들어올 때마다
-서버에서 돌려야 하기 때문에 8B 모델을 서빙하려면 GPU 인스턴스를 상시 띄워야 하고, 이렇게 되면 트래픽이 없는 시간에도 비용이 계속 나가는 문제가 생긴다.
+하지만 이 모델을 그대로 배포에 쓰기엔 비용 부담이 컸다. AI 서버에서는 벡터 임베딩 자체가 아니라, 검색어가 들어올 때마다 이를 벡터로 변환하는 임베딩 추론 요청을 처리해야 한다. 즉 qwen3-embedding:8b를 서빙하려면 GPU 인스턴스를 상시 띄워둬야 하고, 트래픽이 없는 시간에도 비용이 그대로 발생하는 구조였다.
+그래서 모델을 직접 서빙하는 대신 API 임베딩으로 전환했다. 서버는 트래픽이 없으면 0으로 스케일 다운되는 Cloud Run CPU 컨테이너를 사용하고, 임베딩 비용은 실제 호출량만큼만 지불하도록 구조를 바꿨다.
 
-그래서 임베딩 모델 서빙 대신 api 호출 구조로 변경 하였고 scale-to-zero 가 되는
-CPU 컨테이너(Cloud Run)을 사용하여 임베딩 비용은 실제 호출한 만큼만 내게 바꾸었다.
-
-API 중에서 **Upstage `embedding-2`(솔라 임베딩 2세대)** 를 골랐다.
+API는 **Upstage `embedding-2`** 를 사용한다. 여러 임베딩 모델을 테스트 해본 결과 한국어 검색 품질이 가장 좋았으며 코스 생성 품질 또한 뛰어나다. 아래 표 참조.
 
 | 항목 | 판단 |
 |---|---|
-| **한국어 검색 품질** | 검색어와 문서를 서로 다른 모델로 임베딩하는 **비대칭 구조**(`embedding-2-query` / `-passage`)다. `"비 오는 날 실내에서 조용히 볼 만한 전시"` 같은 상황 문장이 실제 전시·실내 장소로 걸리는 걸 확인했고, 코스 품질이 qwen3 때와 차이가 없었다 |
-| **쿼터** | 2,000 RPM · 700,000 TPM 에 **하루 한도가 없다.** 1,648청크 전체 재인제스트를 대기 없이 한 번에 끝낸다 |
-| **인덱스 크기** | 1024차원이라 4096차원 대비 **인덱스가 1/4**(`data/chroma` 62M → 20M). 배포 이미지가 그만큼 가벼워진다 |
+| **한국어 검색 품질** | 검색어와 문서를 서로 다른 모델로 임베딩하는 비대칭 구조(`embedding-2-query` / `-passage`)다. `"비 오는 날 실내에서 조용히 볼 만한 전시"` 같은 문장이 실제 전시·실내 장소로 잘 걸리는 걸 확인했고, 코스 품질도 qwen3 때와 차이가 없었다 |
+| **쿼터** | 2,000 RPM · 700,000 TPM에 하루 한도가 없다. 1,648청크를 통째로 다시 넣어도 기다림 없이 한 번에 끝난다 |
+| **인덱스 크기** | 1024차원이라 4096차원 대비 인덱스가 1/4로 줄었다(`data/chroma` 62M → 20M). 배포 이미지도 그만큼 가벼워진다 |
 
 
 ## 클라이언트와 AI 서버의 연결 아키텍쳐
@@ -94,8 +90,9 @@ flowchart LR
         LLM["챗 LLM<br/>gemini-3.1-flash-lite"]
         EMB["임베딩 API<br/>Upstage embedding-2"]
         SEO["서울시 열린데이터<br/>혼잡도 · 문화행사"]
-        VS["Visit Seoul API<br/>식당 라이브 폴백"]
     end
+
+    VS["Visit Seoul API<br/>배포 전 캐시 구울 때만<br/>scripts/build_meal_cache.py"]
 
     BR -->|same-origin| BFF
     BFF -->|HTTPS| MW
@@ -106,19 +103,19 @@ flowchart LR
     CH -. 쿼리 임베딩 .-> EMB
     G -. 식당 풀 .-> MC
     G -. 예보·행사 .-> SEO
-    G -. 풀이 얇을 때만 .-> VS
+    VS -. 배포 전 오프라인 .-> MC
     G -. select · compose .-> LLM
     G ==>|"stops[] 순서 확정"| BFF
     BFF ==>|"폴리라인 · 실거리 렌더링"| BR
 ```
 
-**역할 경계**: "어디를·왜·어떤 순서로" 는 AI 서버가 끝낸다. 프론트는 그 순서 위에 지도 SDK 로 **실제 도로 폴리라인을** 그린다.
+**역할 나누기**: 어디를, 왜, 어떤 순서로 갈지는 AI 서버가 다 정한다. 프론트는 그 순서 위에 지도 SDK로 실제 도로 폴리라인을 그린다.
 
 ### LangGraph 파이프라인
 
-그래프 엣지는 고정된 워크플로우 기반의 선형노드이다. 관광객/현지인, 시간대 선택 유무, 식사 유무 같은 갈래는 엣지가 아니라 노드 안에서 처리한다 
+노드는 순서대로 이어지는 고정 워크플로우다. 관광객/현지인, 시간대 선택 유무, 식사 유무 같은 갈래는 엣지로 나누지 않고 노드 안에서 처리한다.
 
-워크플로우 방식을 사용하는 이유는 코스 생성은 무엇을 할지가 요청 시점에 이미 정해지는 작업이라, 모델이 다음 단계를 선택할 필요가 없다. 툴콜링 루프를 씌우면 레이턴시만 늘어나기 때문이다.
+
 
 ```mermaid
 flowchart TD
@@ -136,34 +133,78 @@ flowchart TD
 
     PI --> PL --> RT --> SP --> FS --> ML --> EN --> NB --> CP --> E(["END"])
 
+    subgraph ext["노드 바깥"]
+        direction TB
+        subgraph aiModels["AI 모델"]
+            direction LR
+            LLM["챗 LLM<br/>gemini-3.1-flash-lite"]
+            EMB["Upstage embedding-2-query<br/>1024차원 · 검색어 1개당 1콜"]
+        end
+        subgraph localStore["AI 서버"]
+            direction LR
+            CHR[("Chroma seoulro_v3<br/>places 1,648청크")]
+            MCF[("data/meal_cache 권역.json<br/>9권역 1,234곳")]
+        end
+        subgraph seoulApi["서울시 Open API"]
+            direction LR
+            PPL["서울시 citydata_ppltn<br/>AREA_CONGEST_LVL · FCST_PPLTN"]
+            CTY["서울시 citydata<br/>EVENT_STTS"]
+        end
+    end
+
+    PI -. "칩 JSON · 1콜" .-> LLM
+    RT -. "검색어 임베딩" .-> EMB
+    RT -. "similarity_search_with_score k=40<br/>area · slug 필터" .-> CHR
+    SP -. "장소 선정 JSON · 1콜 또는 일차별 N콜" .-> LLM
+    ML -. "권역별 식당 풀 로드 (lru_cache)" .-> MCF
+    EN -. "스톱의 area_name 별 · 5분 캐시" .-> PPL
+    NB -. "meals 가 만든 meal_pool 재사용" .-> MCF
+    NB -. "권역별 진행중 행사 · 5분 캐시" .-> CTY
+    CP -. "제목 · 근거 · 스톱 카드 문구<br/>1 + N + M콜" .-> LLM
+
     classDef pure fill:#eaf6ea,stroke:#4a8f4a,color:#1d3d1d
     classDef ai fill:#e9eefb,stroke:#4a67b0,color:#1b2748
     classDef io fill:#fbf5e6,stroke:#b09344,color:#4a3c14
     classDef term fill:#f2f2f2,stroke:#999,color:#333
     classDef branch stroke-width:3px
+    classDef net fill:#fff,stroke:#8a5a8a,color:#3a1f3a,stroke-dasharray:4 3
+    classDef local fill:#ececec,stroke:#777,color:#333
     class PL,FS pure
     class PI,SP,CP ai
     class RT,ML,EN,NB io
     class S,E term
     class PL,RT,SP,FS branch
+    class LLM,EMB,PPL,CTY net
+    class CHR,MCF local
 ```
 
-초록 = 순수 계산(LLM 없음) · 파랑 = LLM 호출 · 노랑 = 외부 데이터 · **테두리가 굵은 4개 = 노드 안에서 갈래가 생기는 지점**.
-외부 의존은 `retrieve` → Chroma(+ 쿼리 임베딩 API), `meals`·`nearby` → meal_cache, `enrich`·`nearby` → 서울시 citydata, LLM 3노드 → 챗 LLM 이다.
+초록은 LLM 없이 계산만 하는 노드, 파랑은 LLM을 부르는 노드, 노랑은 외부 데이터를 가져오는 노드다. 테두리가 굵은 4개는 노드 안에서 갈래가 생기는 지점이다.
 
-9개 노드 중 LLM이 판단해야 할 TASK는 3개이고, 나머지는 로직으로 계산한다.
+점선으로 빠지는 게 노드 바깥 의존이다. 테두리가 점선인 넷은 **요청 중에 네트워크를 타는 것**이고, 회색 실린더 둘은 **배포 이미지에 같이 구워 들어가는 로컬 데이터**라 네트워크를 타지 않는다.
+
+| 노드 | 가져오는 것 | 어디서 |
+|---|---|---|
+| `parse_intent` | 자연어 → 칩 JSON (칩 진입이면 호출 안 함) | 챗 LLM |
+| `retrieve` | 검색어 임베딩 1개 → 유사 장소 상위 40개 + 점수 | Upstage `embedding-2-query` → Chroma `seoulro_v3` |
+| `select_places` | 후보 중 어디를 넣을지 + `reason` · `activities` | 챗 LLM (멀티데이는 일차별 병렬 N콜) |
+| `meals` | 스톱이 속한 권역의 식당 · 카페 · 주점 풀 | `data/meal_cache/권역.json` (`lru_cache`) |
+| `enrich` | 스톱 `area_name` 의 현재 혼잡도 + 12시간 예보에서 방문 시각 값 | 서울시 `citydata_ppltn` (5분 캐시) |
+| `nearby` | 스톱 반경 안 식당 카드 / 권역별 진행중 행사 카드 | `meal_pool` 재사용 · 서울시 `citydata` `EVENT_STTS` (5분 캐시) |
+| `compose` | 코스 제목 · 선정 근거 · 스톱 카드 문구 | 챗 LLM (전역 1 + 일차 N + 스톱 M) |
+
+`plan` 과 `fit_schedule` 은 바깥을 전혀 보지 않는다. 9개 노드 중 LLM이 판단하는 건 3개고, 나머지는 전부 로직으로 계산한다.
 
 ### 관광객 · 현지인 분기
 
-페르소나 축은 `audience`(`local` | `tourist`) 하나뿐이고, 코드에서 실제로 갈라지는 곳은 **정확히 세 군데**다. 나머지는 전부 같은 함수를 탄다.
+사람 구분은 `audience`(`local` | `tourist`) 하나뿐이고, 코드에서 실제로 갈라지는 곳은 딱 세 군데다. 나머지는 전부 같은 함수를 사용한다.
 
 | 갈라지는 곳 | `tourist` | `local` |
 |---|---|---|
-| `_base_window()` — 시간 칩이 없을 때 | 기본 창 **09~21시**를 준다 (여행자는 하루를 기준으로 코스를 생성한다.) | 창을 만들지 않는다 → **시각 없는 자유 방문 코스** |
-| `_day_areas()` — 여러 날 요청일 때 | 일차별로 **권역을 나눠 배정** | 항상 단일 권역 (생활권 안에서 논다) |
+| `_base_window()` — 시간 칩이 없을 때 | 기본 여행 시간을 09~21시로 설정한다(여행자는 하루 단위로 코스이기 때문) | 시간창을 만들지 않는다 → 시각 없는 자유 방문 코스 |
+| `_day_areas()` — 여러 날 요청일 때 | 일차별로 권역을 나눠 배정 | 항상 한 권역만 선택하도록 |
 | `summary()` 프롬프트 라벨 | `"서울 여행자"` | `"시민"` |
 
-이 중 `_day_areas()` 의 결과가 있느냐 없느냐가 하위 세 노드의 동작까지 바꾼다:
+이 중 `_day_areas()` 결과가 있느냐 없느냐가 아래 세 노드의 동작까지 바꾼다.
 
 ```mermaid
 flowchart TD
@@ -212,13 +253,13 @@ flowchart TD
     class IN,WS,MG,REST both
 ```
 
-**합쳐 둔 것** — 갈래를 늘리지 않으려고 의도적으로 공유한 지점들이다.
+**일부러 합쳐 둔 것** — 갈래를 늘리지 않으려고 공유한 지점들이다.
 
-- `locations` 를 **하나만** 고른 여행자는 현지인과 똑같이 단일 권역으로 떨어진다. "그 동네에서만 놀고 싶다"는 뜻이라 굳이 나눌 이유가 없다.
-- `retrieve` 의 갈래는 **루프를 도느냐 마느냐**뿐이다. 안쪽에서 쓰는 `_search_pool` → `_geo_rerank` → `_dedupe_same_place` → `_quota_pick` 는 완전히 같은 함수다. 일차별 호출은 시드에 일차 번호만 더한다(`seed + d`).
-- `select_places` 의 병렬 N콜도 **프롬프트가 다른 게 아니라 후보 목록만 일차별로 잘라 넣은** 같은 콜이다. 후보에 `day_hint` 가 박혀 있어 서로소라 중복이 날 수 없다.
+- `locations` 를 하나만 고른 여행자는 현지인과 똑같이 단일 권역으로 간다. "그 동네에서만 놀고 싶다"는 뜻이라 나눌 이유가 없다.
+- `retrieve` 의 차이는 루프를 도느냐 마느냐뿐이다. 안에서 쓰는 `_search_pool` → `_geo_rerank` → `_dedupe_same_place` → `_quota_pick` 는 완전히 같은 함수다. 일차별 호출은 시드에 일차 번호만 더한다(`seed + d`).
+- `select_places` 의 병렬 N콜도 프롬프트가 다른 게 아니라 후보 목록만 일차별로 잘라 넣은 같은 콜이다. 후보에 `day_hint` 가 박혀 있어서 서로 겹칠 수가 없다.
 - `fit_schedule` 은 앵커 좌표만 다르고 순열 탐색·예산 배분 로직은 하나다 (`day_areas` 가 없으면 위치 칩으로 폴백).
-- **`meals` 부터 `compose` 까지 4개 노드는 분기가 아예 없다.** 여행자든 현지인이든 그 시점엔 "확정된 스톱 목록 + 시간표"라는 같은 모양이 되어 있기 때문이다.
+- `meals` 부터 `compose` 까지 4개 노드는 분기가 아예 없다. 여행자든 현지인이든 그 시점엔 "확정된 스톱 목록 + 시간표"라는 같은 모양이 되어 있기 때문이다.
 
 ### 엔드포인트
 
@@ -226,9 +267,9 @@ flowchart TD
 |---|---|
 | `GET /` | 검증용 챗봇 UI (정적 페이지) |
 | `GET /health` | 헬스체크 · LLM/임베딩 프로바이더 · Chroma 컬렉션 |
-| `POST /agent/chat` | 통합 진입점 — `chips` 있으면 칩 진입, 없으면 `message` 자연어 진입 |
-| `POST /agent/chat/stream` | 위와 동일 입력의 SSE. `progress`(노드 완료) → `final`(payload). **프론트가 실제로 쓰는 경로** |
-| `POST /agent/course` | 코스 생성 단일 기능 (`CourseResponse`) |
+| `POST /agent/chat` | 통합 진입점 — `chips` 가 있으면 칩 진입, 없으면 `message` 자연어 진입 |
+| `POST /agent/chat/stream` | 입력은 위와 같고 응답이 SSE. `progress`(노드 완료) → `final`(payload). 프론트가 실제로 쓰는 경로 |
+| `POST /agent/course` | 코스 생성만 하는 단일 기능 (`CourseResponse`) |
 
 ---
 
@@ -255,7 +296,7 @@ app/
   rag/
     retriever.py       Chroma 메타필터 검색(+score)
     ingest.py          places.json → 임베딩 본문 조립 → 배치 인제스트
-  tools/               congestion · events · visitseoul · meal_cache (실시간/캐시, RAG 아님)
+  tools/               congestion · events (서울시 citydata) · meal_cache (캐시 읽기, RAG 아님)
   features/course/     schema.py (칩·가중치·응답 계약) · chain.py (어댑터)
   static/              index.html (검증용 챗봇 UI)
 
@@ -266,6 +307,7 @@ data/
   mock/                키 없을 때 쓰는 Mock 응답
 
 scripts/               인제스트·캐시 빌드 (run_ingest · build_meal_cache · start_ollama.sh)
+  lib/visitseoul.py    Visit Seoul 클라이언트 — 캐시 구울 때만 쓴다(런타임·이미지에 없음)
                        스키마 검증 (normalize_places)
                        계측 (profile_course · profile_diversity)
                        프로바이더 점검 (check_upstage · check_claude)
@@ -286,8 +328,7 @@ uv run python -m scripts.run_ingest            # places.json → 임베딩 → C
 uv run uvicorn app.main:app --reload --port 8800
 ```
 
-`GET /health` 로 지금 어떤 모델·컬렉션에 붙어 있는지 확인할 수 있다 — 임베딩 모델과 컬렉션
-짝이 어긋나면 에러 없이 검색 결과만 이상해지므로, 배포 후 이 한 줄을 먼저 본다.
+지금 어떤 모델과 컬렉션에 붙어 있는지는 `GET /health` 로 볼 수 있다. 임베딩 모델과 컬렉션 짝이 어긋나면 에러 없이 검색 결과만 이상해지기 때문에, 배포하고 나면 이 줄부터 확인한다.
 
 ```jsonc
 { "llm_provider": "gemini", "embedding_provider": "upstage",
@@ -312,4 +353,4 @@ docker run --rm -p 8800:8800 --env-file .env lewisai:seoulro_v3
 
 ## 회고 / 배운 점
 
-작성중...
+추후작성
