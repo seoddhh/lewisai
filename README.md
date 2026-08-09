@@ -12,7 +12,7 @@
 ## 데모영상
 
 
-[![서울로 AI 시연영상](https://img.youtube.com/vi/RV52gQDhmHY/maxresdefault.jpg)](https://youtu.be/RV52gQDhmHY?si=HnIQZoENgQ7e65H2)
+[![서울로 AI 시연영상](https://img.youtube.com/vi/RV52gQDhmHY/maxresdefault.jpg)](https://youtu.be/ltkDEYeeAxc?si=XYFXiKIZ46MjOPhk)
 
 
 
